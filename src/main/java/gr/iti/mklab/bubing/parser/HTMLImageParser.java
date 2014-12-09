@@ -92,10 +92,10 @@ public class HTMLImageParser extends HTMLParser {
                         item.setLastModifiedDate(new Date(con.getLastModified()));
                         item.setObjectId(new ObjectId());
 
-                        if (VisualIndexer.getInstance().index(item)) {
+                        /*if (VisualIndexer.getInstance().(item)) {
                             indexedImgs.add(id);
                             //TODO: store in the DB
-                        }
+                        }*/
                     }
                 }
             }

@@ -105,13 +105,15 @@ public class ImageParser<T> implements Parser<T> {
                 item.setWidth(image.getWidth());
                 item.setHeight(image.getHeight());
                 item.setWebPageUrl(uri.toString());
-                String lastModified = httpResponse.getFirstHeader("Last-Modified").getValue();
+
                 try {
+                    String lastModified = httpResponse.getFirstHeader("Last-Modified").getValue();
                     item.setLastModifiedDate(sdf.parse(lastModified));
-                } catch (java.text.ParseException e) {
-                    System.out.println("Date parse exception: " + e);
+                    VisualIndexer.getInstance().indexAndStore(image, item);
+                } catch (Exception e) {
+                    System.out.println("ImageParser parse exeption: " + e);
                 }
-                VisualIndexer.getInstance().indexAndStore(image, item);
+
             }
         }
         //for (int length; (length = is.read(buffer, 0, buffer.length)) > 0; ) hasher.putBytes(buffer, 0, length);
