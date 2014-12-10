@@ -1,0 +1,29 @@
+avascript">
+<!--//--><![CDATA[//><!--
+var pp_gemius_identifier = 'Aorr2Wu7bHyFQQB6JZyBisV4.mO1fobOcM6SRwIEnhv.p7';
+  (function(d,t) {
+      var ex; try {
+        var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':'');
+        gt.async='true'; 
+        gt.src=l+'://gadk.hit.gemius.pl/xlgemius.js';
+        s.parentNode.insertBefore(gt,s);
+      } catch (ex) {}
+    }(document,'script')); 
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://js.cdn.k.dk/sites/all/modules/contrib/eu-cookie-compliance/js/eu_cookie_compliance.js?ng29xz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.post(Drupal.settings.basePath + 'jstats.php', {"path":"kdk_forside"});
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://js.cdn.k.dk/sites/all/modules/custom/kdstats/js/chartbeat.js?ng29xz"></script>
+
+      <noscript><style type="text/css" media="all">img[data-src] { display: none; }</style></noscript>
+      <script type="text/javascript">
+        jQuery(function($){          
+         $("img[data-src]").lazyloader({distance: 300, icon: "/sites/all/modules/contrib/lazyloader/loader/loader-8.gif" });
+        });
+      </script>	<div id="myModal" class="reveal-modal" style="top: 100px; opacity: 1;"></div>
+</body>
+</html>

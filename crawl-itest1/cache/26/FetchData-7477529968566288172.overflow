@@ -1,0 +1,475 @@
+ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	<div class="adOuterContainer"><div id="EAS_fif_2514" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=2514;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=2514;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	
+	<div class="adOuterContainer"><div id="EAS_fif_1690" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=1690;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=1690;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	<div class="adOuterContainer"><div id="EAS_fif_1691" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=1691;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=1691;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	<div class="adOuterContainer"><div id="EAS_fif_1692" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=1692;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=1692;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	<div class="adOuterContainer"><div id="EAS_fif_1693" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=1693;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=1693;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	<div class="adOuterContainer"><div id="EAS_fif_1694" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=1694;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=1694;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	<div class="adOuterContainer"><div id="EAS_fif_2521" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=2521;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=2521;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+	<div class="adOuterContainer"><div id="EAS_fif_2542" class="adInnerContainer"></div><noscript><a target="_blank" href="http://eas3.emediate.se/eas?cu=2542;url=http%3A%2F%2Fwww-1.ts.fi%2F;ty=ct;cat1=km_etusivu"><img src="http://eas3.emediate.se/eas?cu=2542;url=http%3A%2F%2Fwww-1.ts.fi%2F;url;cre=img;cat1=km_etusivu" alt="Click me" style="border:0px"/></a></noscript></div>
+
+        </div>
+    </div>
+
+    </div>
+</div> <!-- middle -->
+
+
+    
+    
+
+    
+
+
+                <div id="preBottom"> 
+	<!-- SimpleCms_AreaPlace:ts_etusivu_ala_1 --><!-- /SimpleCms_AreaPlace:ts_etusivu_ala_1 -->
+	<div id="ad-tscarousel" style="display: none">
+		<iframe src="about:blank" scrolling="no" allowtransparency="true" frameborder="0" marginwidth="0" marginheight="0" width="980" height="515"></iframe>
+	</div>
+	<script>
+		(function (loader, container) {
+			var arrayIframes = [
+					{ base: 'http://ostapaikallisesti.ts.fi', path: '/export/ts/karuselli', height: 515 },
+					{ base: 'http://tyopaikat.ts.fi', path: '/export/ts/karuselli/tyopaikat', height: 515 },
+					{ base: 'http://kupongit.ts.fi', path: '/karuselli', height: 370 }
+				],
+				index = Math.abs(parseInt($.cookie('tscarousel_index'))) || 0,
+				current = arrayIframes[index % arrayIframes.length],
+				timestamp = (new Date()).getTime();
+
+			$(loader).attr('src', current.base + '/transparent.gif?' + timestamp).on('load', function () {
+				container.show().find('iframe')
+					.attr('src', current.base + current.path + '?' + timestamp)
+					.attr('height', current.height);
+			});
+			container.hide();
+
+			$.cookie('tscarousel_index', (index + 1) % arrayIframes.length, { expires: 356 });
+		})(new Image(), $('#ad-tscarousel'));
+	</script>
+ </div>
+
+
+
+
+<div id="bottom">
+    <div class="bottom-inner">
+        <div class="footer-infoContainer">
+            <div class="footer-logo">
+                <img src="/Content/TS3-TS/css/ts-logo-footer.gif" alt="Turun Sanomat" />
+            </div>
+
+                <div class="footer-info">
+                    20. vuosikerta<br />
+                    Copyright &copy; 2000-2014 <a href="http://www.ts.fi">Turun Sanomat</a><br />
+                    Vastaava p&#228;&#228;toimittaja: Kari Vainio<br />
+                    ISSN: 0356-133X
+                </div>
+
+                <div class="footer-links">
+                    <ul class="menu clearfix">
+                        <li class="first icon-post left">
+                            <a href="http://ts.fi/palaute/">Palaute</a>
+                        </li>
+                        <li>
+                            <a href="http://www.ts.fi/ts-yhtyma/index.html">TS-Yhtymä</a>
+                        </li>
+                        <li>
+                            <a href="http://www.ts.fi/pulpetti/index.html">Pulpetti</a>
+                        </li>
+                        <li>
+                            <a href="http://www.ts.fi/yhteystiedot/index.html">Yhteystiedot</a>
+                        </li>
+                        <li class="last">
+                            <a href="http://www.ts.fi/inenglish/index.html">In English</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+
+<ul class="footer-departments clearfix">
+    
+
+
+<li class="item clearfix">
+    <a href="http://www.ts.fi/uutiset/">Uutiset</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/uutiset/lahialue/">L&#228;hialue</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/uutiset/kotimaa/">Kotimaa</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/uutiset/talous/">Talous</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/uutiset/ulkomaat/">Ulkomaat</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="/uutiset/saa/">S&#228;&#228;</a>
+</li> </ul>
+</li>
+
+
+<li class="item clearfix">
+    <a href="http://www.ts.fi/urheilu/">Urheilu</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://kiekko.ts.fi/">J&#228;&#228;kiekko</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://futis.ts.fi/">Jalkapallo</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/moottoriurheilu/">Moottoriurheilu</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/urheilu/juniorijalkapallo/">Juniorijalkapallo</a>
+</li> </ul>
+</li>
+
+
+<li class="item clearfix">
+    <a href="http://www.ts.fi/kulttuuri/">Kulttuuri</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/kulttuuri/elokuvat/">Elokuvat</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/kulttuuri/kirjat/">Kirjat</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/kulttuuri/musiikki/">Musiikki</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/kulttuuri/nayttelyt/">N&#228;yttelyt</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/kulttuuri/nayttamotaide/">N&#228;ytt&#228;m&#246;taide</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/kulttuuri/kolumnit/">Kulttuurin kolumnit</a>
+</li> </ul>
+</li>
+
+
+<li class="item clearfix">
+    <a href="http://www.ts.fi/teemat/">Teemat</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/teemat/auto+ja+liikenne/">Auto ja liikenne</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://koti.ts.fi/">Koti</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/teemat/liikunta/">Liikunta</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/teemat/matkailu/">Matkailu</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://ruoka.ts.fi/">Ruoka</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/teemat/terveys/">Terveys</a>
+</li> </ul>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/teemat/tiede/">Tiede</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/teemat/luonto/">Luonto</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/teemat/extra/">Extra</a>
+</li> </ul>
+</li>
+
+
+<li class="item clearfix">
+    <a href="http://www.ts.fi/mielipiteet/">Mielipiteet</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/mielipiteet/paakirjoitukset/">P&#228;&#228;kirjoitukset</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/mielipiteet/kolumnit/">Kolumnit</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://blogit.ts.fi/">Blogit</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/mielipiteet/lukijoilta/">Lukijoilta</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://www.ts.fi/mielipiteet/lukijan+kolumni/">Lukijan kolumni</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="/mielipiteet/tekstiviestit/">Tekstiviestit</a>
+</li> </ul>
+</li>
+
+
+<li class="item clearfix">
+    <a href="/keskustelut/">Keskustelut</a>
+</li>
+
+
+<li class="item clearfix">
+    <a href="http://www.ts.fi/viihde/">Viihde</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="/viihde/tv-ohjelmat/">TV-ohjelmat</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="/viihde/fingerpori/">Fingerpori</a>
+</li> </ul>
+</li>
+<li class="item clearfix">
+    <ul class="item-group">
+        
+
+
+<li class="item clearfix">
+    <a href="http://kuvat.ts.fi/">Kuvat</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://kuvat.ts.fi/Kuvat/Lukijan_kuvat/">Lukijan kuvat</a>
+</li>
+
+
+<li class="subitem clearfix">
+    <a href="http://kuvat.ts.fi/Kuvat/TS_Galleria/">Kuvagalleria</a>
+</li>
+
+
+<li class="subitem icon-post right clearfix">
+    <a href="http://kuvat.ts.fi/Laheta_Kuva/">L&#228;het&#228; kuva tai video</a>
+</li> </ul>
+</li>
+
+
+<li class="item clearfix">
+    <a href="http://tstv.fi/">TSTV</a>
+</li>
+    </ul>
+</li>
+
+
+<li class="item clearfix">
+    <a href="http://menovinkit.ts.fi/">Menovinkit</a>
+ <ul>
+
+
+
+<li class="subitem clearfix">
+    <a href="http://menovinkit.ts.fi/">Menovinkit etusivu</a>
+</li>
+
+
+<li class="subitem icon-search right clearfix">
+    <a href="http://menovinkit.ts.fi/?os=kaikki">Tapahtumahaku</a>
+</li>
+
+
+<li class="subitem icon-search right clearfix">
+    <a href="http://menovinkit.ts.fi/ravintolat.aspx">Ravintolahaku</a>
+</li>
+
+
+<li class="subitem icon-post right clearfix">
+    <a href="http://menovinkit.ts.fi/yllapito/kirjaudu.aspx?r=0&amp;p=6&amp;urli=default.aspx?r=0&amp;auml;p=6">Ilmoita menovinkki</a>
+</li>
+
+
+<li class="subitem icon-post right clearfix">
+    <a href="http://menovinkit.ts.fi/yllapito/kirjaudu.aspx?r=1&amp;p=13&amp;urli=default.aspx?r=1&amp;auml;p=13">Hallitse ravintolatietoja</a>
+</li>
+
+
+<li class="subitem icon-post right clearfix">
+    <a href="http://menovinkit.ts.fi/palaute.aspx">Menovinkit palaute</a>
+</li> </ul>
+</li>
+</ul>    
+            <div class="footer-links">
+                <ul class="menu clearfix">
+                    <li class="first">
+                        <a target="_blank" href="http://asiakaspalvelu.ts.fi/wp-content/themes/TS-Henkiloasiakkaat/rekisteriseloste/Rekisteriseloste.pdf">Rekisteriseloste</a>
+                    </li>
+                    <li class="last">
+                        <a target="_blank" href="http://asiakaspalvelu.ts.fi/ts-tuotteet/tilaus-ja-kayttoehdot/">Käyttöehdot</a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>            <!-- bottom -->
+        </div> <!-- container-inner -->
+    </div> <!-- container -->
+     
+		<!-- InterQuest begin v2.1 -->
+		<script type="text/javascript">
+			 iq_site_id = "447a96b5b6f38862";
+			 iq_sampl_max = 2;
+			 if (1 > (Math.random() * iq_sampl_max)) {
+				document.write(unescape('%3Cscript%20type%3D%22text/javascript%22%20' +
+				'src%3D%22http://survey.interquest.fi/cgi/invite%3Fid%3D' + iq_site_id +
+				'%26js20%22%3E%3C/script%3E'));
+			 }    
+		</script>    
+		<!-- InterQuest end -->
+ 
+
+    <!-- Emediate friendly iframe calls (32) -->
+<script type="text/javascript">
+<!--
+(function(){
+if (typeof EAS_load_fif != 'function') {return;}
+EAS_load_fif("EAS_fif_2252", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=2252;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_4223", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=4223;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_8895", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=8895;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_12665", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=12665;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_4765", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=4765;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_741", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=741;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1175", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1175;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_739", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=739;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_6744", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=6744;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_12140", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=12140;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_6745", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=6745;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1261", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1261;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1343", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1343;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1344", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1344;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_2454", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=2454;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1331", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1331;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1345", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1345;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1346", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1346;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1347", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1347;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1680", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1680;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1686", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1686;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1486", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1486;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1855", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1855;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_2513", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=2513;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_2514", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=2514;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1690", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1690;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1691", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1691;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1692", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1692;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1693", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1693;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_1694", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=1694;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_2521", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=2521;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+EAS_load_fif("EAS_fif_2542", "/TS_EAS_fif_v5.html", "http://eas3.emediate.se/eas?cu=2542;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;cat1=km_etusivu", 0, 0);
+})();
+//-->
+</script>
+<!-- /Emediate friendly iframe calls (32) -->
+
+
+        <script>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    xfbml: true,
+                    cookie: false,
+                    status: false,
+                    channelUrl: 'http://www.ts.fi/fb_channel.html'
+                });
+
+                // Additional initialization code here
+            };
+
+            // Load the SDK Asynchronously
+            (function (d) {
+                var js, id = 'facebook-jssdk'; if (d.getElementById(id)) { return; }
+                js = d.createElement('script'); js.id = id; js.async = true;
+                js.src = "//connect.facebook.net/fi_FI/all.js";
+                d.getElementsByTagName('head')[0].appendChild(js);
+            } (document));
+        </script>
+<script type="text/javascript" src="/Content/TS3-TS/js/lib/spring.js"></script>
+<script type="text/javascript">
+var sp_e0 = {
+"s":"ts",
+"cp":"etusivu",
+"url":document.location.href
+}
+spring.c(sp_e0);
+</script>
+<noscript><img src="http://ts.spring-tns.net/j0=,,,;+,,cp=etusivu;;;;" alt="" /></noscript>
+<script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://eas3.emediate.se/eas?cu=10048;url=http%3A%2F%2Fwww-1.ts.fi%2F;cre=mu;js=y;target=_blank;pageviewid='+EAS_pageviewid+'"></scr'+'ipt>');</script><script type="text/javascript">EAS_cu=5387;EAS_statistics();</script></body>
+</html>

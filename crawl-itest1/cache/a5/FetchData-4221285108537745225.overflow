@@ -1,0 +1,21 @@
+
+
+document.write('<script>');
+
+document.write('__videoid="sQQF24UNOVA";');
+
+document.write('__movetext=\'    <a  href="http://www.youtube.com/astvmanagervdo" target="_blank" style="color:rgba(255,255,255,1);">News 1 Live </a>| <a  href="https://www.facebook.com/ASTV.manager.LIVE" target="_blank" style="color:rgba(255,255,255,1);">ไม่พลาดทุกประเด็นร้อนกับ Fanpage : ASTV ผู้จัดการ Live </a> \';');
+document.write('__bgcolor="#3B2314";');
+document.write('__auto="0";');
+document.write('<\/script>');
+m=Math.random();
+//document.write('<script language="Javascript" src="livefloatnew.js?v='+m+'"><\/script>');
+document.write('<script language="Javascript" src="livefloatstream.js?v='+m+'"><\/script>');
+        
+    }  
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,395 @@
+blind">일본어</h3>
+						<dl>
+							<dt></dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<!-- //일본어 -->
+					<!-- 아랍어// -->
+					<div id="foreignAR" class="list-wrap">
+						<h3 class="blind">아랍어</h3>
+						<dl>
+							<dt></dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<!-- //아랍어 -->
+					<!-- 스페인어// -->
+					<div id="foreignES" class="list-wrap">
+						<h3 class="blind">스페인어</h3>
+						<dl>
+							<dt></dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<!-- //스페인어 -->
+					<!-- 프랑스어// -->
+					<div id="foreignFR" class="list-wrap">
+						<h3 class="blind">프랑스어</h3>
+						<dl>
+							<dt></dt>
+							<dd></dd>
+						</dl>
+					</div>
+					<!-- //프랑스어 -->
+				</div>
+				<script type="text/javascript">
+				<!--//[CDATA[
+				$(function(){
+					$(function() {
+						tickerFNews.loadData();	/* 티커 :  외국어뉴스 */
+					});
+				});
+				//]]-->
+				</script>
+				<!-- //이시각 외국어뉴스 -->
+				<!-- 단독 뉴스// -->
+								<div class="contents-box list-style02">
+					<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_only.gif" alt="단독 뉴스"/></h2>
+					<ul class="list-ellip">
+												<li><a href="HTTP://www.yonhapnews.co.kr/society/2014/12/09/0701000000AKR20141209193700004.HTML?template=7247">직원 뺨 맞는 소리로 경품 추첨…엽기 이벤트 빈축</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/economy/2014/12/09/0318000000AKR20141209183700030.HTML?template=7247">'허니버터칩 대신 행복버터칩'…일본산 대체재 인기</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/economy/2014/12/09/0318000000AKR20141209183400030.HTML?template=7247">차명금지법·금값하락에 금테크 붐…'바가지 주의보'</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/economy/2014/12/09/0318000000AKR20141209150400030.HTML?template=7247">아웃도어 소재도 '친환경 웰빙' 바람 거세</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/economy/2014/12/09/0318000000AKR20141209180900030.HTML?template=7247">中 VIP고객, 한국내 쇼핑 씀씀이 일본인 3배이상</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/economy/2014/12/09/0301000000AKR20141209148000003.HTML?template=7247">연말 인사철 떠나는 임원들…기업들 후속 대우는</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/economy/2014/12/09/0318000000AKR20141209174200030.HTML?template=7247">유통업계 '인문학 바람' 내년에도 계속된다</a></li>						
+					</ul>
+					</div>
+				<!-- //단독 뉴스 -->
+				<!-- 우측 와이스페셜// -->
+					<div class="contents-box list-style01">
+		<iframe src="http://www.yonhapnews.co.kr/0196000000.html" width="300" height="100" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" title="와이스페셜"></iframe>
+	</div>
+				<!-- //우측 와이스페셜 -->
+				<!-- 오늘의판결// -->
+								<div class="contents-box list-style02">
+					<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_judgment.gif" alt="오늘의 판결"/></h2>
+					<ul class="list-ellip">
+												<li><a href="HTTP://www.yonhapnews.co.kr/judge/2014/12/10/4100000000AKR20141210083400057.HTML?template=7239">울산지법, 노조위원장 야콥병 사망 재해 '불인정'</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/judge/2014/12/10/4100000000AKR20141210053800057.HTML?template=7239">경쟁자 허위사실 공표한 시의원 후보·운동원 벌금형 </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/judge/2014/12/09/4100000000AKR20141209194300064.HTML?template=7239">배심원도 외면한 상습 강도범의 '심신미약'…징역 8년 </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/judge/2014/12/09/4100000000AKR20141209195500004.HTML?template=7239">접근금지 어긴 '폭력 남편' 때려 숨지게 한 아내 집유 </a></li>						
+					</ul>
+					<a href="http://www.yonhapnews.co.kr/judge/4100000001.html?template=7239" title="오늘의 판결 더보기" class="btn_more">더보기</a>
+				</div>
+				<!-- //오늘의판결 -->
+				<!-- 특파원 리포트// -->
+				<div class="contents-box list-style02">
+	<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_correspondent.gif" alt="특파원 리포트"/></h2>
+	<ul class="correspondent">
+				<li>			<a href="HTTP://www.yonhapnews.co.kr/international/2014/12/10/0601080000AKR20141210014300071.HTML?template=7228">				<strong class="tit">미국 정부, 북한인권 단체에 최고 25만달러 지원</strong>				<span class="txt">미국 워싱턴 심인성 특파원</span>			</a>		</li>				<li>			<a href="HTTP://www.yonhapnews.co.kr/international/2014/12/09/0601210000AKR20141209203900094.HTML?template=7228">				<strong class="tit">한-우루과이 수교 50주년…스포츠·문화행사로 대미</strong>				<span class="txt">브라질 상파울루 김재순 특파원</span>			</a>		</li>		
+	</ul>
+	<a href="http://www.yonhapnews.co.kr/international/0601000001.html?template=7228" title="특파원 리포트 더보기" class="btn_more">더보기</a>
+</div>
+
+				<!-- //특파원 리포트 -->
+				<!-- 이슈 돋보기// -->
+								<div class="contents-box list-style02">
+					<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_issues.gif" alt="이슈 돋보기"/></h2>
+
+					<ul class="list-ellip">
+<li><a href="http://www.yonhapnews.co.kr/issue/3002000000.html?ctype=A&id=IC20144405&template=6888">'美 CIA 고문실태 보고서' 일파만파</a></li>
+<li><a href="http://www.yonhapnews.co.kr/issue/3002000000.html?ctype=A&id=IC20144388&template=6888">조현아 '땅콩 리턴' 여론 뭇매</a></li>
+<li><a href="http://www.yonhapnews.co.kr/issue/3002000000.html?ctype=A&id=IC20144239&template=6888">靑 문건유출 파장…비선실세 논란 확산 </a></li>
+<li><a href="http://www.yonhapnews.co.kr/issue/3002000000.html?ctype=A&id=IC20144382&template=6888">한.아세안 특별정상회의</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+						
+			
+					</ul>
+					<a href="http://www.yonhapnews.co.kr/issue/index.html?template=6888" title="이슈 돋보기 더보기" class="btn_more">더보기</a>
+				</div>
+				<!-- //이슈 돋보기 -->
+				<!-- 시론// -->
+								<div class="contents-box list-style02">
+					<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_commentary.gif" alt="시론"/></h2>
+					<ul class="list-ellip">
+												<li><a href="HTTP://www.yonhapnews.co.kr/society/2014/12/10/0701000000AKR20141210093200022.HTML?template=7224">국민 안전 위협하는 엉터리 안전진단</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/advisory/2014/12/09/2201000000AKR20141209165300022.HTML?template=7224">공영 TV 홈쇼핑 신설, 우려는 여전 </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/society/2014/12/09/0701000000AKR20141209096900022.HTML?template=7224">자격미달 선원에다 필수인력도 못채우고 출항했다니 </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/advisory/2014/12/08/2201000000AKR20141208150500022.HTML?template=7224">새누리당, 국정위기감이 보이지않는다 </a></li>						
+					</ul>
+					<a href="http://www.yonhapnews.co.kr/advisory/2201000001.html?template=7224" title="시론 더보기" class="btn_more">더보기</a>
+				</div>
+				<!-- /시론 -->
+				<!-- 지방지 톱뉴스// -->
+				<div class="contents-box list-style02 local-news-zone" id="areaTopWrap">
+	<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_local.gif" alt="지방지 톱뉴스" /></h2>
+	<ul class="list-ellip">
+
+
+<li><a href="http://www.kwnews.co.kr?template=7243" target="_blank"><b>[강원일보] </b>  
+정윤회 출석…"엄청난 불장난 누가했는지 밝혀질 것"</a></li>
+
+
+<li><a href="http://www.knnews.co.kr/autoi/index.html?template=7243" target="_blank"><b>[경남신문] </b> 
+경찰 고위급 인사…경남 경무관·총경 승진자는?</a></li>		
+
+
+<li><a href="http://www.kyeongin.com?template=7243" target="_blank"><b>[경인일보] </b>
+수원 팔달산 토막시신 감식결과 나와</a></li> 	
+
+
+<li><a href="http://www.kwangju.co.kr?template=7243" target="_blank"><b>[광주일보] </b>
+한전.KT 나주서 손잡고 "에너지 신산업 선도"</a></li>		
+
+
+<li><a href="http://www.daejonilbo.com?template=7243" target="_blank"><b>[대전일보] </b>
+"집으로 돌아고고 싶지만" 가출청소년들은 지금</a></li>
+	</ul>
+
+
+
+
+	<ul class="list-ellip">
+
+		
+<li><a href="http://www.imaeil.com?template=7243" target="_blank"><b>[매일신문] </b>
+대구 도금공장서 화학물질 유출 사고…47명 부상 </a></li>
+
+<li><a href="http://www.busan.com?template=7243" target="_blank"><b>[부산일보] </b>
+해운대 특급호텔 객실 '싹쓸이'한 부의 끝판왕은?</a></li>
+
+
+<li><a href="http://www.jjan.kr?template=7243" target="_blank"><b>[전북일보] </b>
+2018 평창 동계올림픽 활강 '무주 개최' 급부상</a></li>		
+
+<li><a href="http://www.jejunews.com?template=7243" target="_blank"><b>[제주일보] </b>
+국제자유도시 '빛 좋은 개살구' 지적</a></li>		
+
+<li><a href="http://www.joongboo.com?template=7243" target="_blank"><b>[중부일보] </b>
+남경필, 첫 고위직 인사...대폭 물갈이 예고</a></li>
+
+
+
+	</ul>
+	<span class="page-nation">0/0</span>
+	<input type="button" value="이전 톱뉴스 보기" class="btn_prev" />
+	<input type="button" value="다음 톱뉴스 보기" class="btn_next" />
+</div>
+<script type="text/javascript">
+<!--//[CDATA[
+$(function($) {
+	$("#areaTopWrap").moveContents({
+		conEl: ">ul",
+		iconFlag: false,
+		autoPlay: true,
+		changeTimer: 4000,
+		btnFlag: true,
+		btnFlagAll: true,
+		btnPrev: ".btn_prev",
+		btnNext: ".btn_next",
+		pagingFlag: true,
+		setId: "areaTopWrap"
+	});
+});
+//]]-->
+</script>
+
+				<!-- //지방지 톱뉴스 -->
+				<!-- 사람들// -->
+				<div class="contents-box list-style02">
+					<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_people.gif" alt="사람들"/></h2>
+					<div class="people-wrap" id="peopleWrap">
+						<span class="people-btn">
+							<a><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/noimg_73x55.gif" alt="사람들1"/></a>
+							<a><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/noimg_73x55.gif" alt="사람들2"/></a>
+							<a><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/noimg_73x55.gif" alt="사람들3"/></a>
+						</span>
+						<ul class="people-list">
+							<li><div class="box-flex">	<a href="HTTP://www.yonhapnews.co.kr/economy/2014/12/10/0317000000AKR20141210017000007.HTML?template=7387">		<span class="img-con"><img src="http://img.yonhapnews.co.kr/basic/template/kr/2014/12/10/tmp_7387_2014121083231.jpg" alt="레이싱모델서 대회 장내 아나운서로 변신한 서승현 씨 "/></span>		<span  class="tit-con">			<strong class="tit">레이싱모델서 대회 장내 아나운서로<br /> 변신한 서승현 씨 </strong>		</span>	</a></div></li>
+							<li><div class="box-flex">	<a href="HTTP://www.yonhapnews.co.kr/society/2014/12/09/0703000000AKR20141209195300004.HTML?template=7388">		<span class="img-con"><img src="http://img.yonhapnews.co.kr/basic/template/kr/2014/12/10/tmp_7388_20141210104845.jpg" alt=" SCI급 해외 학술지에 논문 게재한 당찬 공학도"/></span>		<span  class="tit-con">			<strong class="tit"> SCI급 해외 학술지에<br /> 논문 게재한 당찬 공학도</strong>		</span>	</a></div></li>
+							<li><div class="box-flex">	<a href="HTTP://www.yonhapnews.co.kr/society/2014/12/10/0701000000AKR20141210097100004.HTML?template=7389">		<span class="img-con"><img src="http://img.yonhapnews.co.kr/basic/template/kr/2014/12/10/tmp_7389_20141210134443.jpg" alt="'인권상' 인요한 교수 &quot;온돌방의 도덕 회복해야&quot;"/></span>		<span  class="tit-con">			<strong class="tit">'인권상' 인요한 교수<br /> &quot;온돌방의 도덕 회복해야&quot;</strong>		</span>	</a></div></li>
+						</ul>
+					</div>
+					<a href="http://www.yonhapnews.co.kr/section/7311000001.html?template=5557" title="사람들 더보기" class="btn_more">더보기</a>
+				</div>
+				<script type="text/javascript">
+				<!--//[CDATA[
+				$(function($){
+					var people_thum = $('.people-btn>a>img');
+					var people_img = $('.people-list>li .box-flex .img-con>img');
+					people_thum.each(function(index){
+						$(this).attr('src',people_img.eq(index).attr('src'));
+					});
+
+					$("#peopleWrap").moveContents({
+						eventEl : ">span>a",
+						conEl : ">ul>li",
+						effect : "fade",
+						setId : "peoplePhoto"
+					});
+				});
+				//]]-->
+				</script>
+				<!-- //사람들 -->
+				<!-- 건강// -->
+								<div class="contents-box list-style02">
+					<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_health.gif" alt="건강"/></h2>
+					<ul class="list-ellip">
+												<li><a href="HTTP://www.yonhapnews.co.kr/health/2014/12/10/3700000000AKR20141210073300009.HTML?template=7236">&quot;임신 합병증, 자폐아 출산 위험 높여&quot;</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/health/2014/12/10/3700000000AKR20141210054300009.HTML?template=7236">&quot;치매 원인은 '뇌 청소부' 세포 기능장애&quot; </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/health/2014/12/10/3700000000AKR20141210056400030.HTML?template=7236">&quot;마블링 기준 소고기등급제, 건강에 '적신호'&quot; </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/health/2014/12/09/3700000000AKR20141209073400009.HTML?template=7236">&quot;항우울제, 월경전증후군에도 효과&quot; </a></li>						
+					</ul>
+					<a href="http://www.yonhapnews.co.kr/health/3700000001.html?template=7236" title="건강 더보기" class="btn_more">더보기</a>
+				</div>
+				<!-- /건강 -->
+				<!-- 서평// -->
+								<div class="contents-box list-style02">
+					<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_bookreview.gif" alt="책/서평"/></h2>
+					<ul class="list-ellip">
+												<li><a href="HTTP://www.yonhapnews.co.kr/review/2014/12/10/3900000000AKR20141210067100005.HTML?template=6601">바벨탑 일화를 보는 새로운 관점-문화비평적 성서읽기</a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/review/2014/12/09/3900000000AKR20141209181700005.HTML?template=6601">&quot;한국 2014~2019년 대대적 디플레 대비하라&quot; </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/review/2014/12/09/3900000000AKR20141209132400005.HTML?template=6601">한국사회의 '변경'에서 사람을 만나다 </a></li>												<li><a href="HTTP://www.yonhapnews.co.kr/review/2014/12/08/3900000000AKR20141208155600005.HTML?template=6601">아버지는 그렇게 작아져간다·말할 수 없는 안녕 </a></li>						
+					</ul>
+					<a href="http://www.yonhapnews.co.kr/review/3900000001.html?template=6601" title="책/서평 더보기" class="btn_more">더보기</a>
+				</div>
+				<!-- /서평 -->
+				<!-- 특집모음// -->
+								<div class="contents-box list-style08" style="position:relative;z-index:100;">
+					<h2 style="height:29px;line-height:29px;padding:12px 0 0 19px;vertical-align:top;"><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_special.gif" alt="특집모음"/></h2>
+					<a href="http://www.yonhapnews.co.kr/0193000000.html?template=8539" title="특집모음 더보기" class="btn_more" style="position:absolute;z-index:101;top:12px;right:17px;color:#999;text-decoration:none;">더보기</a>
+				</div>
+				<!-- //특집모음 -->
+					<div class="contents-box list-style02">
+		<div style="margin:10px 0;text-align:center;"><a href="http://www.wikitree.co.kr" target="_blank"><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/140902_wiki_290x40.gif" alt="위키트리" /></a></div>
+ 		<div style="margin:10px 0;text-align:center;"><a href="http://english.yonhapnews.co.kr/daily_briefing/index.html" target="_blank"><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/140911_ydb.gif" alt="YONHAP DAILY BRIEFING" /></a></div>
+
+	</div>
+
+			</div>
+			<!--  //contents02 -->
+		</div>
+		<!-- //contents -->
+	</div>
+	<!-- //content -->
+	<!-- footer// -->
+		<!-- 위로가기// -->
+	<span class="btn-top" id="btnScrollTop">
+		<button type="button">맨위로</button>
+	</span>
+	<!-- //위로가기 -->
+	<div id="footer">
+		<!-- 서비스 안내// -->
+		<div class="contents-box service-wrap">
+			<h2><img src="http://img.yonhapnews.co.kr/basic/svc/14_images/tit_service.gif" alt="서비스 안내"/></h2>
+			<div class="service-top-wrap">
+				<!-- 상품소개// -->
+				<dl>
+					<dt><a href="http://www.yonhapnews.co.kr/product/7601000000.html">상품소개</a></dt>
+					<dd><a href="http://www.yonhapnews.co.kr/product/7601000000.html">프리미엄뉴스</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/product/7602000000.html">영문뉴스</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/product/7603000000.html">뉴스리더</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/product/7604000000.html">온라인뉴스</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/product/7605000000.html">보도자료 해외배포</a></dd>
+				</dl>
+				<!-- //상품소개 -->
+				<!-- 광고안내// -->
+				<dl>
+					<dt><a href="http://www.yonhapnews.co.kr/ad/7701000000.html">광고안내</a></dt>
+					<dd><a href="http://www.yonhapnews.co.kr/ad/7701000000.html">KTX 열차광고</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/ad/7702000000.html">A.REX 공항철도</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/ad/7703000000.html">인터넷</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/ad/7704000000.html">출판물 광고</a></dd>
+				</dl>
+				<!-- //광고안내 -->
+				<!-- 모바일서비스// -->
+				<dl>
+					<dt><a href="http://www.yonhapnews.co.kr/mobile/7801000000.html">모바일서비스</a></dt>
+					<dd><a href="http://www.yonhapnews.co.kr/mobile/7801000000.html">모바일웹</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/mobile/7802000000.html">모바일앱</a></dd>
+					<!--<dd><a href="http://www.yonhapnews.co.kr/mobile/7803000000.html">인물정보앱</a></dd>-->
+					<dd><a href="http://www.yonhapnews.co.kr/mobile/7804000000.html">긴급뉴스SMS</a></dd>
+				</dl>
+				<!-- //모바일서비스 -->
+				<!-- 출판물// -->
+				<dl>
+					<dt><a href="http://www.yonhapnews.co.kr/book/index.html" target="_blank" title="새창">출판물</a></dt>
+					<dd><a href="http://www.repere.co.kr/" target="_blank" title="새창">이매진</a></dd>
+					<dd><a href="http://yearbook.yonhapnews.co.kr/" target="_blank" title="새창">연합연감</a></dd>
+					<dd><a href="http://www.yonhapmidas.com/" target="_blank" title="새창">월간마이더스</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/book/8101000000.html" target="_blank" title="새창">단행본</a></dd>
+				</dl>
+				<!-- //출판물 -->
+				<!-- 콘텐츠// -->
+				<dl>
+					<dt><a href="#none" target="_blank" title="새창">콘텐츠</a></dt>
+					<dd><a href="http://sales.yonhapnews.co.kr/" target="_blank" title="새창">콘텐츠판매</a></dd>
+					<dd><a href="http://www.hellophoto.kr/YNA/Front/Main/YIPW_Main.aspx" target="_blank" title="새창">헬로포토</a></dd>
+					<dd><a href="http://sales.yonhapnews.co.kr/YNA/ContentsSales/ContentsData/YISW_PeopleHome.aspx" target="_blank" title="새창">인물정보</a></dd>
+					<dd><a href="http://sales.yonhapnews.co.kr/YNA/ContentsSales/ContentsData/YISW_MpicHome.aspx" target="_blank" title="새창">영상</a></dd>
+					<dd><a href="http://sales.yonhapnews.co.kr/YNA/ContentsSales/ContentsData/YISW_GraphicHome.aspx" target="_blank" title="새창">그래픽</a></dd>
+				</dl>
+				<!-- //콘텐츠 -->
+				<!-- 관련사이트// -->
+				<dl>
+					<dt><a href="#none" title="새창">관련사이트</a></dt>
+					<!--<dd><a href="http://efestival.yonhapnews.co.kr/" target="_blank" title="새창">축제장터</a></dd>-->
+					<dd><a href="http://blog.yonhapnews.co.kr/" target="_blank" title="새창">블로그</a></dd>
+					<dd><a href="https://www.koreancenter.or.kr/koreancenter.html" target="_blank" title="새창">세계속 한민족</a></dd>
+					<dd><a href="http://prlink.yonhapnews.co.kr/" target="_blank" title="새창">보도자료</a></dd>
+					<dd><a href="http://www.yonhapnews.co.kr/medialabs/index.html" target="_blank" title="새창">인터랙티브</a></dd>
+				</dl>
+				<!-- //관련사이트 -->
+			</div>
+			<div class="service-bot-wrap">
+				<a href="http://www.yonhapnews.co.kr/policy/7907000000.html">계약사/제휴문의</a>
+			</div>
+		</div>
+		<!-- //서비스 안내 -->
+		<!-- 링크// -->
+		<ul class="footer-link">
+			<li><a href="http://www.yonhapnews.co.kr/aboutus/index.html">회사소개</a></li>
+			<li><a href="http://www.yonhapnews.co.kr/policy/7902000000.html">저작권규약</a></li>
+			<li><a href="http://app.yonhapnews.co.kr/yna/Basic/BBS/YIBW_showRightBBSList.aspx?bbsID=485">수용자권익위원회</a></li>
+			<li><a href="http://www.yonhapnews.co.kr/policy/7904000000.html">고충처리</a></li>
+			<li><a href="http://www.yonhapnews.co.kr/policy/7905000000.html"><strong>개인정보취급방침</strong></a></li>
+			<li><a href="http://app.yonhapnews.co.kr/YNA/Basic/BBS/YIBW_showBBSList.aspx?bbsid=301">독자게시판</a></li>
+			<li><a href="http://app.yonhapnews.co.kr/YNA/Basic/ArticleOffer/YIBW_addArticleOffer2.aspx">기사제보</a></li>
+		</ul>
+		<!-- //링크 -->
+		<!-- 주소 -->
+		<div class="addr-info">
+			<address>연합뉴스 서울시 종로구 율곡로 2길 25 | 등록번호  문화, 나00009  | 등록일자 1980.12.29  | 발행일자 1980.12.29 | Tel. 02-398-3114</address>
+		</div>
+		<!-- 주소 -->
+		<!-- copy// -->
+		<ul class="copy">
+			<li><strong>(C) Yonhapnews</strong></li>
+			<li class="copy-in">[발행인] 송현승</li>
+			<li class="copy-in">[편집인] 이병로</li>
+		</ul>
+		<!-- //copy -->
+	</div>
+
+	<!-- //footer -->
+</div>
+<!-- 모바일 버전 보기-메인에만 있음// -->
+<span class="btn_mobile" id="btnGoMobile">
+	<a href="#none">모바일 버전으로 보기</a>
+</span>
+<!-- //모바일 버전 보기 -->
+<script type="text/javascript" src="http://www.yonhapnews.co.kr/jscript/2014/kr_PredictiveSearch.js"></script>
+<script type="text/javascript" src="http://www.yonhapnews.co.kr/jscript/2014/kr_login.js"></script>
+<script type = "text/javascript">
+//<![CDATA[
+/*아이프레임 투명*/
+$('body').find('.ifm-hot-news').attr('allowTransparency','true');
+//]]>
+</script>
+<script type="text/javascript" src="http://www.yonhapnews.co.kr/jscript/2014/siteoverlay2.js"></script>
+<script type="text/javascript">
+wn_so_pid(1);
+</script>
+
+<script type="text/javascript" src="http://img.yonhapnews.co.kr/basic/svc/14_images/js/main.js"></script>
+</body>
+</html>

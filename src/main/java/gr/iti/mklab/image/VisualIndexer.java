@@ -84,7 +84,7 @@ public class VisualIndexer {
         if (StringUtils.isEmpty(result.getExceptionMessage())) {
             String id = result.getImageName();
             double[] vector = result.getImageVector();
-            System.out.println("Vectorization Result: " + vector.length + " " + id);
+            //System.out.println("Vectorization Result: " + vector.length + " " + id);
             if (index.indexVector(id, vector))
                 imageDAO.save(obj);
         }

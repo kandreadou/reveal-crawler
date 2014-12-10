@@ -1,0 +1,70 @@
+ndefined) {
+	window.adgroupid = Math.round(Math.random() * 1000);
+}
+
+document.write('<scr'+'ipt language="javascript1.1" src="http://ad.dc2.adtech.de/addyn/3.0/1084/3514383/0/154/ADTECH;loc=100;target=_blank;key=+key2+home+key4;grp='+window.adgroupid+';misc='+new Date().getTime()+'"></scri'+'pt>');
+//-->
+</script><noscript><a href="http://ad.dc2.adtech.de/adlink/3.0/1084/3514383/0/154/ADTECH;loc=300;key=+key2+home+key4" target="_blank"><img src="http://ad.dc2.adtech.de/adserv/3.0/1084/3514383/0/154/ADTECH;loc=300;key=+key2+home+key4" border="0" width="160" height="600"></a></noscript>
+<!-- End of JavaScript Tag -->
+</div>
+			<!-- werbung ende -->
+			
+	
+</div>
+
+<script src="http://files.newsnetz.ch/scripts/footer.js?v=5"></script>
+
+<!-- GOOGLE ANALYTICS -->
+<script>
+	if (typeof(_gat) == 'object') {
+		var pageTracker = _gat._getTracker("UA-4334105-1");
+		pageTracker._setDomainName("24heures.ch");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		var secondTracker = _gat._getTracker("UA-431029-7");
+		secondTracker._setDomainName("none");
+		secondTracker._setAllowLinker(true);
+		secondTracker._initData();
+		secondTracker._trackPageview();
+	}
+</script>
+
+
+
+				<div style="position:absolute">
+					<script language="JavaScript" type="text/javascript"> <!--
+						var WEMF2="http://newsnetz.wemfbox.ch/cgi-bin/ivw/CP/24heures/";
+                        if (navigator.userAgent.match(/iPad/gi)) {
+                            WEMF2 = "http://newsnetz.wemfbox.ch/cgi-bin/ivw/CP/24heures/mobile/tablet/web/";
+                        }
+						document.write("<img src='"+WEMF2+"home?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+" ' width='1' height='1' alt='' />");
+						// -->
+					</script>
+					<noscript>
+						<img src="http://newsnetz.wemfbox.ch/cgi-bin/ivw/CP/24heures/home" width="1" height="1" alt="" />
+					</noscript>
+				</div>
+			
+	  <!-- user-agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0) -->
+			<div style="position:absolute">
+				<script language="JavaScript" type="text/javascript"> <!--
+					var WEMF="http://24heures.wemfbox.ch/cgi-bin/ivw/CP/";
+                    if (navigator.userAgent.match(/iPad/gi)) {
+                            WEMF="http://24heures.wemfbox.ch/cgi-bin/ivw/CP/mobile/tablet/web/";
+                    }
+					document.write("<img src='"+WEMF+"home?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+"' width='1' height='1' alt='' />");
+					// -->
+				</script>
+				<noscript>
+					<img src="http://24heures.wemfbox.ch/cgi-bin/ivw/CP/home" width="1" height="1" alt="" />
+				</noscript>
+				<script language="Javascript">var szmvars="24heures//CP//home";</script>
+				<script language="Javascript" src="http://24heures.wemfbox.ch/2004/01/survey.js"></script>
+			</div>
+		
+<!-- START: This should be directly over the closing body tag -->
+
+<!-- END: This should be directly over the closing body tag -->
+</body>
+</html>
+

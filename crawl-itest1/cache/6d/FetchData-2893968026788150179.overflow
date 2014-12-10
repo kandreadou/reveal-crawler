@@ -1,0 +1,2073 @@
+mentarios" onclick="trackEvent('COMENTARIO_FRASE', 'CLICK', 'CLICK')">Entrevistas de Sócrates nas mãos do juiz Carlos Alexandre</a></cite>
+                            
+                    </footer>
+                
+            </blockquote>
+        </div>
+    </section> <!-- /.reader-comment -->
+
+</div>
+
+    <!--
+        4254 Caixa from Redis
+4254 Caixa from Redis
+        True
+     -->
+        <div data-action="edit_in_place" data-caixa-id="4266" class=" ">
+
+    
+<style>
+#creative_1373377662393_0 > div {
+z-index:9 !important;
+}
+</style>
+</div>
+
+    <!--
+        4266 Caixa from Redis
+4266 Caixa from Redis
+        True
+     -->
+        <div data-action="edit_in_place" data-caixa-id="4256" class=" ">
+
+    
+
+        <section class="module todays-paper">
+			<div class="module-header">
+				<h1 class="module-title"><a href="/jornal" onclick="trackEvent('JORNAL', 'CAIXA', 'CLICK')">Edição Impressa <span class="icon icon-more"></span></a></h1>
+			</div>
+			<div class="module-content media">
+				<div class="media-object">
+					<a href="/hoje#content" title="Clique para aumentar" data-toggle="fancybox" data-fancybox-type="ajax" onclick="trackEvent('JORNAL', 'CAPA', 'CLICK')">
+			    <img src="http://imagens.publico.pt/imagens.aspx/67b6a658-5aee-40ab-8efc-027624cce6d3?tp=EI&amp;db=EDITIONS&w=180&h=226&act=cropResize&force=1" alt=""/>
+                    </a>
+				</div>
+				<div class="media-content">
+					<p>Assine o Público Online e entre no mundo das notícias sem limites. 1ª mês, <b>apenas 1€*</b>. Meses seguintes 9,99€ <small>* para pagamentos com renovação automática.</small></p>
+                    
+					<p><a class="btn" href="/hoje#content" data-toggle="fancybox" data-fancybox-type="ajax" onclick="trackEvent('JORNAL', 'CAPA', 'CLICK')">Ver capa</a></p>
+                    
+					<p><a class="btn btn-primary" href="https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalId=3df697a5-f96d-4e99-99df-5e52732eb2d9" onclick="ga('send', 'event', 'Assinar junto capa do dia', 'Clicou Assinar junto capa do dia', 'Assine_ja');">Assinar</a></p>
+								
+				</div>
+			</div> <!-- /.module-content -->
+		</section> <!-- /.todays-paper -->
+    <script type="text/javascript">
+        var date = new Date(2014, 12-1, 10);
+        function navigate(d)
+        {
+            document.location = "#" + d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear();
+        }
+
+        $(document).ready(function(){
+            resetCoverNavigation();
+            $(window).bind('hashchange', function () {
+                getCovers();
+            });
+
+            if(window.location.hash)
+            {
+                getCovers();
+            }
+        });
+
+        function resetCoverNavigation()
+        {
+            $(".prev").on("click", function(){
+                var today = new Date();
+                today.setDate(date.getDate() - 1);
+                navigate(today);
+                return false;
+            });
+            $(".next").on("click", function(){
+                var today = new Date();
+                today.setDate(date.getDate() + 1);
+                navigate(today);
+                return false;
+            });        
+        }
+
+        function getCovers()
+        {
+            var pieces = window.location.hash.replace("#", "").split("-");
+            var newDate = new Date(pieces[2], pieces[1]-1, pieces[0]);
+            $(".newspaper-cover-container time").html(newDate.getDate() + " de " + MonthName[newDate.getMonth()] + " de " + newDate.getFullYear());
+            LoadJsonData("cover-holder", [{ DataInicio: newDate.toGMTString() }], function (d) {
+                if(d && d.length > 0){
+                    $("#thumbnails").html($("#thumbnailTemplate").tmpl({data: d}));
+                    $("#thumbnails li").addClass("active");
+                }
+            }, null, 'GET');
+            date = newDate;        
+        }
+    </script>
+
+</div>
+
+    <!--
+        4256 Caixa from Redis
+4256 Caixa from Redis
+        True
+     -->
+    <div data-caixa-id="11221" class="nb ">
+
+    
+
+<div id="PublicoHomepage300x60Btn05">
+	<aside class="module ad ad-300x60">
+		<!-- PublicoHomepage300x60Btn05 -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (($('#google_ads_div_PublicoHomepage300x60Btn05_ad_container').html() == null) && ($('#PublicoHomepage300x60Btn05_ad_container').html() == null)) {
+					$('#PublicoHomepage300x60Btn05').hide();
+				}
+			});
+
+			try{ Comunique.tag('PublicoHomepage300x60Btn05'); } catch(e) { }
+		</script>
+		<span><abbr title="Publicidade">Pub</abbr></span>
+	</aside>
+</div>
+</div>
+
+    <!--
+        11221 Caixa from Redis
+11221 Caixa from Redis
+        False
+     -->
+    <div data-caixa-id="4264" class="nb ">
+
+    
+
+<div id="PublicoHomepage10x10Textlink">
+	<aside class="module ad ad-300x60">
+		<!-- PublicoHomepage10x10Textlink -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (($('#google_ads_div_PublicoHomepage10x10Textlink_ad_container').html() == null) && ($('#PublicoHomepage10x10Textlink_ad_container').html() == null)) {
+					$('#PublicoHomepage10x10Textlink').hide();
+				}
+			});
+
+			try{ Comunique.tag('PublicoHomepage10x10Textlink'); } catch(e) { }
+		</script>
+		<span><abbr title="Publicidade">Pub</abbr></span>
+	</aside>
+</div>
+</div>
+
+    <!--
+        4264 Caixa from Redis
+4264 Caixa from Redis
+        False
+     -->
+    <div data-caixa-id="4303" class="nb ">
+
+    
+
+<div id="PublicoHomepage300x60Btn06">
+	<aside class="module ad ad-300x60">
+		<!-- PublicoHomepage300x60Btn06 -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (($('#google_ads_div_PublicoHomepage300x60Btn06_ad_container').html() == null) && ($('#PublicoHomepage300x60Btn06_ad_container').html() == null)) {
+					$('#PublicoHomepage300x60Btn06').hide();
+				}
+			});
+
+			try{ Comunique.tag('PublicoHomepage300x60Btn06'); } catch(e) { }
+		</script>
+		<span><abbr title="Publicidade">Pub</abbr></span>
+	</aside>
+</div>
+</div>
+
+    <!--
+        4303 Caixa from Redis
+4303 Caixa from Redis
+        False
+     -->
+    <div data-caixa-id="4301" class="nb ">
+
+    
+
+<div id="PublicoHomepage300x250Slot02">
+	<aside class="module ad ad-300x250 wsz" data-pid="2380">
+		<!-- PublicoHomepage300x250Slot02 -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (($('#google_ads_div_PublicoHomepage300x250Slot02_ad_container').html() == null) && ($('#PublicoHomepage300x250Slot02_ad_container').html() == null)) {
+					$('#PublicoHomepage300x250Slot02').hide();
+				}
+			});
+
+			try{ Comunique.tag('PublicoHomepage300x250Slot02'); } catch(e) { }
+		</script>
+		<span><abbr title="Publicidade">Pub</abbr></span>
+	</aside>
+</div>
+</div>
+
+    <!--
+        4301 Caixa from Redis
+4301 Caixa from Redis
+        False
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="14054" class="nb ">
+
+    <section class="module premieres" data-carousel="standard" data-carousel-scroll="4">
+		<div class="module-header">
+            <h1 class="module-title"><a href="http://cinecartaz.publico.pt" title="Mais Estreias Cinecartaz">Estreias Cinecartaz<span class="icon icon-more"></span></a> <small><a href="http://cinecartaz.publico.pt/" class="ir logo-cinecartaz">Cinecartaz</a></small></h1>
+		</div>
+								
+		<div class="module-content group">
+			<ul class="thumbnails carousel">
+
+				    <li class="thumbnail">
+					    <a href="http://cinecartaz.publico.pt/Filme/famel-top-secret-338588" rel="bookmark" data-toggle="save" itemprop="url"
+                            data-fonte="CINECARTAZ_ESTREIAS" data-dados-id="">
+                            <figure>
+                                <div class="img-wrapper ratio-171-254">
+                                    
+<img src="http://static.publico.pt/files/homepage/img/1x1.png" class="lazy-load" data-src-l="http://imagens.publico.pt/imagens.aspx/507859?tp=KM&amp;db=IMAGENS&amp;w=171&amp;h=254&amp;act=cropResize" alt="" itemprop="thumbnailUrl">
+
+
+                                </div>
+                                
+                            </figure>
+						    <h2 class="entry-title">Famel Top Secret</h2>
+					    </a>
+				    </li>					
+				    <li class="thumbnail">
+					    <a href="http://cinecartaz.publico.pt/Filme/variacoes-de-casanova-340704" rel="bookmark" data-toggle="save" itemprop="url"
+                            data-fonte="CINECARTAZ_ESTREIAS" data-dados-id="">
+                            <figure>
+                                <div class="img-wrapper ratio-171-254">
+                                    
+<img src="http://static.publico.pt/files/homepage/img/1x1.png" class="lazy-load" data-src-l="http://imagens.publico.pt/imagens.aspx/505102?tp=KM&amp;db=IMAGENS&amp;w=171&amp;h=254&amp;act=cropResize" alt="" itemprop="thumbnailUrl">
+
+
+                                </div>
+                                
+                            </figure>
+						    <h2 class="entry-title">Varia&#231;&#245;es de Casanova</h2>
+					    </a>
+				    </li>					
+				    <li class="thumbnail">
+					    <a href="http://cinecartaz.publico.pt/Filme/doidos-a-solta-de-novo-340705" rel="bookmark" data-toggle="save" itemprop="url"
+                            data-fonte="CINECARTAZ_ESTREIAS" data-dados-id="">
+                            <figure>
+                                <div class="img-wrapper ratio-171-254">
+                                    
+<img src="http://static.publico.pt/files/homepage/img/1x1.png" class="lazy-load" data-src-l="http://imagens.publico.pt/imagens.aspx/508734?tp=KM&amp;db=IMAGENS&amp;w=171&amp;h=254&amp;act=cropResize" alt="" itemprop="thumbnailUrl">
+
+
+                                </div>
+                                
+                            </figure>
+						    <h2 class="entry-title">Doidos &#224; Solta, de Novo</h2>
+					    </a>
+				    </li>					
+				    <li class="thumbnail">
+					    <a href="http://cinecartaz.publico.pt/Filme/cavalo-dinheiro-341063" rel="bookmark" data-toggle="save" itemprop="url"
+                            data-fonte="CINECARTAZ_ESTREIAS" data-dados-id="">
+                            <figure>
+                                <div class="img-wrapper ratio-171-254">
+                                    
+<img src="http://static.publico.pt/files/homepage/img/1x1.png" class="lazy-load" data-src-l="http://imagens.publico.pt/imagens.aspx/506673?tp=KM&amp;db=IMAGENS&amp;w=171&amp;h=254&amp;act=cropResize" alt="" itemprop="thumbnailUrl">
+
+
+                                </div>
+                                
+                            </figure>
+						    <h2 class="entry-title">Cavalo Dinheiro</h2>
+					    </a>
+				    </li>					
+				    <li class="thumbnail">
+					    <a href="http://cinecartaz.publico.pt/Filme/os-pinguins-do-madagascar-341306" rel="bookmark" data-toggle="save" itemprop="url"
+                            data-fonte="CINECARTAZ_ESTREIAS" data-dados-id="">
+                            <figure>
+                                <div class="img-wrapper ratio-171-254">
+                                    
+<img src="http://static.publico.pt/files/homepage/img/1x1.png" class="lazy-load" data-src-l="http://imagens.publico.pt/imagens.aspx/507765?tp=KM&amp;db=IMAGENS&amp;w=171&amp;h=254&amp;act=cropResize" alt="" itemprop="thumbnailUrl">
+
+
+                                </div>
+                                
+                            </figure>
+						    <h2 class="entry-title">Os Pinguins de Madag&#225;scar</h2>
+					    </a>
+				    </li>					
+				    <li class="thumbnail">
+					    <a href="http://cinecartaz.publico.pt/Filme/jogo-duplo-james-benning-e-richard-linklater-342028" rel="bookmark" data-toggle="save" itemprop="url"
+                            data-fonte="CINECARTAZ_ESTREIAS" data-dados-id="">
+                            <figure>
+                                <div class="img-wrapper ratio-171-254">
+                                    
+<img src="http://static.publico.pt/files/homepage/img/1x1.png" class="lazy-load" data-src-l="http://imagens.publico.pt/imagens.aspx/508057?tp=KM&amp;db=IMAGENS&amp;w=171&amp;h=254&amp;act=cropResize" alt="" itemprop="thumbnailUrl">
+
+
+                                </div>
+                                
+                            </figure>
+						    <h2 class="entry-title">Jogo Duplo: James Benning e Richard Linklater</h2>
+					    </a>
+				    </li>					
+
+			</ul> <!-- /.thumbnails -->
+		</div> <!-- /.module-content -->
+	</section> <!-- /.premieres -->
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        14054 Caixa from Redis
+14054 Caixa from Redis
+     -->
+
+    </aside>
+</div>
+</div><div class="group content-featured">
+
+        <section class="module module-network-features box box-standout" id="network-features">
+			<div class="container">
+				<div class="module-content">
+					<div class="tabbable tabs-alt">
+						<ul class="nav nav-tabs">
+							<li class="active"><span data-target="#network-features-01">Escolha do editor</span></li>
+							<li><a onclick="trackEvent('SATELITES', 'REVISTA2', 'CLICK')" href="http://www.publico.pt/revista2" data-target="#network-features-02" title="Ir para Revista 2">Revista 2</a></li>
+							<li><a onclick="trackEvent('SATELITES', 'FUGAS', 'CLICK')" href="http://fugas.publico.pt" data-target="#network-features-03" title="Ir para Fugas">Fugas</a></li>
+							<li><a onclick="trackEvent('SATELITES', 'LIFESTYLE', 'CLICK')" href="http://lifestyle.publico.pt" data-target="#network-features-04" title="Ir para Lifestyle">Lifestyle</a></li>
+							<li><a onclick="trackEvent('SATELITES', 'P3', 'CLICK')" href="http://p3.publico.pt" data-target="#network-features-05" title="Ir para P3">P3</a></li>
+							<li><a onclick="trackEvent('SATELITES', 'IPSILON', 'CLICK')" href="http://ipsilon.publico.pt" data-target="#network-features-06" title="Ir para Ípsilon">Ípsilon</a></li>
+							<li><a onclick="trackEvent('SATELITES', 'CINECARTAZ', 'CLICK')" href="http://cinecartaz.publico.pt" data-target="#network-features-07" title="Ir para Cinecartaz">Cinecartaz</a></li>
+							<li><a onclick="trackEvent('SATELITES', 'LAZER', 'CLICK')" href="http://lazer.publico.pt" data-target="#network-features-08" title="Ir para Guia do Lazer">Guia do Lazer</a></li>
+							<li><a onclick="trackEvent('SATELITES', 'INIMIGO', 'CLICK')" href="http://inimigo.publico.pt/" title="Ir para Inimigo Público">Inimigo Público</a></li>
+						</ul>
+								
+						<div class="tab-content">
+
+    <div data-action="edit_in_place" data-caixa-id="7595" class=" ">
+
+    <div class="tab-pane active scrollable" id="network-features-01" data-id="7595" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="Escolha do Editor">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="7597" class=" ">
+
+    <div class="tab-pane scrollable" id="network-features-02" data-id="7597" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="Revista 2">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="7598" class=" ">
+
+    <div class="tab-pane scrollable" id="network-features-03" data-id="7598" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="Fugas">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="7600" class=" ">
+
+    <div class="tab-pane scrollable" id="network-features-04" data-id="7600" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="Lifestyle">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="7602" class=" ">
+
+    <div class="tab-pane scrollable" id="network-features-06" data-id="7602" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="&#205;psilon">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="7601" class=" ">
+
+    <div class="tab-pane scrollable" id="network-features-05" data-id="7601" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="P3">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="7603" class=" ">
+
+    <div class="tab-pane scrollable" id="network-features-07" data-id="7603" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="Cinecartaz">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="7599" class=" ">
+
+    <div class="tab-pane scrollable" id="network-features-08" data-id="7599" data-isbycontext="true" data-template="satelites" data-fonte="PAGINA" data-dados-id="208" data-name="Guia do Lazer">
+    </div>
+    <script type="text/ng-template" id="test.html">
+    </script>    
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section></div>
+<div class="container"><div class="group content-opinion">
+
+    <section class="primary">
+
+
+    <div data-action="edit_in_place" data-caixa-id="4279" class=" ">
+
+    <section class="module opinion-featured" data-carousel="standard" data-carousel-scroll="3">
+	    <div class="module-header">
+		    <h1 class="module-title"><a href="/opiniao" onclick="trackEvent('Opini&#227;o', 'CAIXA', 'CLICK')">Opini&#227;o <span class="icon icon-more"></span></a></h1>
+	    </div>
+	    <div class="module-content group scrollable" data-id="4279" data-isbycontext="true" data-template="opiniao" data-fonte="PAGINA" data-dados-id="208" data-name="Opini&#227;o">
+		    
+	    </div> <!-- /.module-content -->
+    </section> <!-- /.opinion-featured -->
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+    </section>
+    <aside class="secondary">
+        
+
+    <div data-action="edit_in_place" data-caixa-id="4280" class=" ">
+
+    <section class="module bartoon">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/opiniao#bartoon" title="Clique para aumentar" onclick="trackEvent('BARTOON', 'CAIXA', 'CLICK')">BARTOON <span class="icon icon-more"></span>
+                </a>
+            </h1>
+        </div>
+        <div class="modsule-content scrollable" data-id="4280" data-isbycontext="true" data-template="bartoon" data-fonte="PAGINA" data-dados-id="208" data-name="Bartoon">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    </aside>
+</div>
+<div class="group content-sections">
+
+    <section class="primary">
+
+
+    <div data-action="edit_in_place" data-caixa-id="4286" class=" ">
+
+    <section class="module overview-section">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/portugal" onclick="trackEvent('SECCOES', 'Portugal', 'CAIXA')">Portugal <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content group scrollable" data-id="4286" data-isbycontext="true" data-template="destaques_265_177" data-fonte="PAGINA" data-dados-id="208" data-name="Portugal">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+        <div data-action="edit_in_place" data-caixa-id="4292" class="nb ">
+
+    
+
+<div id="PublicoHomepage620x50WideBanner1">
+	<aside class="module ad ad-620x50">
+		<!-- PublicoHomepage620x50WideBanner1 -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (($('#google_ads_div_PublicoHomepage620x50WideBanner1_ad_container').html() == null) && ($('#PublicoHomepage620x50WideBanner1_ad_container').html() == null)) {
+					$('#PublicoHomepage620x50WideBanner1').hide();
+				}
+			});
+
+			try{ Comunique.tag('PublicoHomepage620x50WideBanner1'); } catch(e) { }
+		</script>
+		<span><abbr title="Publicidade">Pub</abbr></span>
+	</aside>
+</div>
+</div>
+
+    <!--
+        4292 Caixa from Redis
+4292 Caixa from Redis
+        True
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4287" class=" ">
+
+    <section class="module overview-section">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/economia" onclick="trackEvent('SECCOES', 'Economia', 'CAIXA')">Economia <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content group scrollable" data-id="4287" data-isbycontext="true" data-template="destaques_265_177" data-fonte="PAGINA" data-dados-id="208" data-name="Economia">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4285" class=" ">
+
+    <section class="module overview-section">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/mundo" onclick="trackEvent('SECCOES', 'Mundo', 'CAIXA')">Mundo <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content group scrollable" data-id="4285" data-isbycontext="true" data-template="destaques_265_177" data-fonte="PAGINA" data-dados-id="208" data-name="Mundo">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+        <div data-action="edit_in_place" data-caixa-id="4293" class="nb ">
+
+    
+
+<div id="PublicoHomepage620x50WideBanner2">
+	<aside class="module ad ad-620x50">
+		<!-- PublicoHomepage620x50WideBanner2 -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (($('#google_ads_div_PublicoHomepage620x50WideBanner2_ad_container').html() == null) && ($('#PublicoHomepage620x50WideBanner2_ad_container').html() == null)) {
+					$('#PublicoHomepage620x50WideBanner2').hide();
+				}
+			});
+
+			try{ Comunique.tag('PublicoHomepage620x50WideBanner2'); } catch(e) { }
+		</script>
+		<span><abbr title="Publicidade">Pub</abbr></span>
+	</aside>
+</div>
+</div>
+
+    <!--
+        4293 Caixa from Redis
+4293 Caixa from Redis
+        True
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4289" class=" ">
+
+    <section class="module overview-section">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/cultura" onclick="trackEvent('SECCOES', 'Cultura', 'CAIXA')">Cultura <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content group scrollable" data-id="4289" data-isbycontext="true" data-template="destaques_265_177" data-fonte="PAGINA" data-dados-id="208" data-name="Cultura">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4288" class=" ">
+
+    <section class="module overview-section">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/desporto" onclick="trackEvent('SECCOES', 'Desporto', 'CAIXA')">Desporto <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content group scrollable" data-id="4288" data-isbycontext="true" data-template="destaques_265_177" data-fonte="PAGINA" data-dados-id="208" data-name="Desporto">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+        <div data-action="edit_in_place" data-caixa-id="4294" class="nb ">
+
+    
+
+<div id="PublicoHomepage620x50WideBanner3">
+	<aside class="module ad ad-620x50">
+		<!-- PublicoHomepage620x50WideBanner3 -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if (($('#google_ads_div_PublicoHomepage620x50WideBanner3_ad_container').html() == null) && ($('#PublicoHomepage620x50WideBanner3_ad_container').html() == null)) {
+					$('#PublicoHomepage620x50WideBanner3').hide();
+				}
+			});
+
+			try{ Comunique.tag('PublicoHomepage620x50WideBanner3'); } catch(e) { }
+		</script>
+		<span><abbr title="Publicidade">Pub</abbr></span>
+	</aside>
+</div>
+</div>
+
+    <!--
+        4294 Caixa from Redis
+4294 Caixa from Redis
+        True
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4291" class=" ">
+
+    <section class="module overview-section">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/ciencia" onclick="trackEvent('SECCOES', 'Ci&#234;ncia', 'CAIXA')">Ci&#234;ncia <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content group scrollable" data-id="4291" data-isbycontext="true" data-template="destaques_265_177" data-fonte="PAGINA" data-dados-id="208" data-name="Ci&#234;ncia">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4290" class=" ">
+
+    <section class="module overview-section">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/tecnologia" onclick="trackEvent('SECCOES', 'Tecnologia', 'CAIXA')">Tecnologia <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content group scrollable" data-id="4290" data-isbycontext="true" data-template="destaques_265_177" data-fonte="PAGINA" data-dados-id="208" data-name="Tecnologia">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+    </section>
+    <aside class="secondary">
+        
+
+    <div data-action="edit_in_place" data-caixa-id="4295" class=" ">
+
+    <section class="module box box-standout auto-promo carousel" data-carousel="standard" data-carousel-scroll="1" data-carousel-auto="true" data-carousel-circular="true">
+        <div class="module-header">
+            <h1 class="module-title">
+                Novidades Público</h1>
+        </div>
+        <div class="module-content scrollable" data-id="4295" data-isbycontext="true" data-template="novidades" data-fonte="PAGINA" data-dados-id="208" data-name="Novidades">
+        </div>
+    </section>                   
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4296" class=" ">
+
+    <section class="module special-features carousel" data-carousel="standard" data-carousel-scroll="1">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/especiais" onclick="trackEvent('Especiais', 'CAIXA', 'CLICK')">Especiais <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content scrollable" data-id="4296" data-isbycontext="true" data-template="especiais_362_241" data-fonte="PAGINA" data-dados-id="208" data-name="Especiais">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4297" class=" ">
+
+<section class="module facebook-activity">
+	<div class="module-header">
+		<h1 class="module-title">Os seus amigos no Público</h1>
+	</div>
+							
+	<div class="module-content">
+		<iframe class="fb" src="http://www.facebook.com/plugins/activity.php?site=publico.pt&amp;height=340&amp;header=false&amp;colorscheme=light&amp;font&amp;border_color=%23fff&amp;recommendations=false&amp;locale=pt_PT&amp;linktarget=_top&amp;max_age=7" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+    </div>
+</section> <!-- /.facebook-activity -->
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        4297 Caixa From Memory
+4297 Caixa From Memory
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4299" class=" ">
+
+    <section class="module poll">
+	    <div class="module-header">
+		    <h1 class="module-title"><a href="/lista/inqueritos"  onclick="trackEvent('Inqu&#233;ritos', 'CAIXA', 'CLICK')">Inqu&#233;ritos <span class="icon icon-more"></span></a></h1>
+	    </div>
+	        <div class="module-content">
+		        <h2 class="entry-title">
+			        <a href="http://www.publico.pt/culturaipsilon/noticia/corrupcao-banco-legionela-selfie-e-xurdir-entre-as-candidatas-a-palavra-do-ano-2014-1678052#poll"  onclick="trackEvent('Inqu&#233;ritos', 'TITULO', 'CLICK')">Qual &#233;, para si, a palavra do ano</a>
+			        <small>em <a href="http://www.publico.pt/culturaipsilon/noticia/corrupcao-banco-legionela-selfie-e-xurdir-entre-as-candidatas-a-palavra-do-ano-2014-1678052#poll" onclick="trackEvent('Inqu&#233;ritos', 'NOTICIA', 'CLICK')">&quot;Corrup&#231;&#227;o&quot;, &quot;banco&quot;, &quot;legionela&quot;, &lt;i&gt;&quot;selfie&quot;&lt;/i&gt; e &quot;xurdir&quot; entre as candidatas a Palavra do Ano 2014</a></small>	
+		        </h2>
+		        <div class="answers">
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Banco</span></p>
+				        <p class="percentage" data-percentage="0"><span style="width: 0%;" class="percentage-bar"><span class="percentage-value">0%</span></span></p>
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Basqueiro</span></p>
+				        <p class="percentage" data-percentage="10"><span style="width: 10%;" class="percentage-bar"><span class="percentage-value">10%</span></span></p>
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Cibervadiagem</span></p>
+				        <p class="percentage" data-percentage="0"><span style="width: 0%;" class="percentage-bar"><span class="percentage-value">0%</span></span></p>
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Corrup&#231;&#227;o</span></p>
+				        <p class="percentage" data-percentage="71"><span style="width: 71%;" class="percentage-bar"><span class="percentage-value">71%</span></span></p>
+                        <div class="answer-cases">
+					        <h3>Argumentos</h3>
+					        <ul>
+						        <li class=""><span class="case-count">3 <span class="assistive">votos:</span></span> N&#227;o &#233; preciso dizer porqu&#234; V&#234;-se &#224; vista desarmada!</li>
+						        <li class=""><span class="case-count">3 <span class="assistive">votos:</span></span> Sintetiza toda a podrid&#227;o, n&#227;o apenas a corrup&#231;&#227;o no sentido estrito.</li>
+						        <li class=""><span class="case-count">2 <span class="assistive">votos:</span></span> senao fosse a corrup&#231;ao,as contas estariam boas</li>
+						        <li class=""><span class="case-count">2 <span class="assistive">votos:</span></span> A corrup&#231;&#227;o &#233; um dos maiores cancros. Veio &#224; tona o cume do iceberg</li>
+						        <li class=""><span class="case-count">1 <span class="assistive">votos:</span></span> infelizmente!</li>
+						        <li class=""><span class="case-count">1 <span class="assistive">votos:</span></span> Tem que se acabar com isto!</li>
+						        <li class=""><span class="case-count">0 <span class="assistive">votos:</span></span> N&#227;o &#233; preciso dizer porqu&#234;. V&#234;-se &#224; vista desarmada!</li>
+						        <li class=""><span class="case-count">0 <span class="assistive">votos:</span></span> Corrup&#231;&#227;o vem c/ pessoas corruptas</li>
+                            </ul>
+				        </div> <!-- /.answer-cases -->
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">&#201;bola</span></p>
+				        <p class="percentage" data-percentage="0"><span style="width: 0%;" class="percentage-bar"><span class="percentage-value">0%</span></span></p>
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Gamifica&#231;&#227;o</span></p>
+				        <p class="percentage" data-percentage="3"><span style="width: 3%;" class="percentage-bar"><span class="percentage-value">3%</span></span></p>
+                        <div class="answer-cases">
+					        <h3>Argumentos</h3>
+					        <ul>
+						        <li class=""><span class="case-count">1 <span class="assistive">votos:</span></span> Do verbo Gamar, utilizado na pol&#237;tica.</li>
+                            </ul>
+				        </div> <!-- /.answer-cases -->
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Jihadismo</span></p>
+				        <p class="percentage" data-percentage="6"><span style="width: 6%;" class="percentage-bar"><span class="percentage-value">6%</span></span></p>
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Legionela</span></p>
+				        <p class="percentage" data-percentage="0"><span style="width: 0%;" class="percentage-bar"><span class="percentage-value">0%</span></span></p>
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Selfie</span></p>
+				        <p class="percentage" data-percentage="3"><span style="width: 3%;" class="percentage-bar"><span class="percentage-value">3%</span></span></p>
+                        <div class="answer-cases">
+					        <h3>Argumentos</h3>
+					        <ul>
+						        <li class=""><span class="case-count">0 <span class="assistive">votos:</span></span> Acontece a cada minuto, praticada e pronunciada em todo o mundo</li>
+                            </ul>
+				        </div> <!-- /.answer-cases -->
+			        </div> <!-- /.poll-answer -->
+                    <div class="poll-answer answer-01">
+				        <p><span class="answer-value">Xurdir</span></p>
+				        <p class="percentage" data-percentage="6"><span style="width: 6%;" class="percentage-bar"><span class="percentage-value">6%</span></span></p>
+                        <div class="answer-cases">
+					        <h3>Argumentos</h3>
+					        <ul>
+						        <li class=""><span class="case-count">1 <span class="assistive">votos:</span></span> Ironicamente pode ser um sin&#243;nimo de corrup&#231;&#227;o.</li>
+                            </ul>
+				        </div> <!-- /.answer-cases -->
+			        </div> <!-- /.poll-answer -->
+		        </div> <!-- /.answers -->
+		        <p><a href="http://www.publico.pt/culturaipsilon/noticia/corrupcao-banco-legionela-selfie-e-xurdir-entre-as-candidatas-a-palavra-do-ano-2014-1678052#poll" class="btn" onclick="trackEvent('Inqu&#233;ritos', 'INQUERITOS', 'CLICK')">Ver inquérito</a></p>
+	        </div> <!-- /.module-content -->
+        </section> <!-- /.poll -->
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        4299 Caixa from Redis
+4299 Caixa from Redis
+     -->
+
+    </aside>
+</div>
+<div class="group content-multimedia">
+
+
+
+    <div data-action="edit_in_place" data-caixa-id="4281" class=" ">
+
+    <section class="module daily-photos carousel" data-carousel="standard" data-carousel-scroll="1">
+        <div class="module-header">
+            <h1 class="module-title">Fotos do Dia</h1>
+        </div>
+        <div class="module-content scrollable" data-id="4281" data-isbycontext="true" data-template="foto_do_dia" data-fonte="PAGINA" data-dados-id="208" data-name="Foto do Dia">
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4282" class=" ">
+
+    <section class="module multimedia">
+        <div class="module-header">
+            <h1 class="module-title">
+                <a href="/multimedia" onclick="trackEvent('Multim&#233;dia', 'CAIXA', 'CLICK')">Multim&#233;dia <span class="icon icon-more"></span></a>
+            </h1>
+        </div>
+        <div class="module-content scrollable" data-id="4282" data-isbycontext="true" data-template="multimedia_265_177_6" data-fonte="PAGINA" data-dados-id="208" data-name="Multim&#233;dia">
+
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+</div>
+<div class="group content-aside">
+
+
+    <div class="entries-primary">
+    </div>
+    <!-- /.entries-primary -->
+    <div class="entries-secondary">
+    </div>
+    <!-- /.entries-secondary -->
+</div>
+<div class="group content-extra">
+
+
+
+    <div data-action="edit_in_place" data-caixa-id="4283" class=" ">
+
+    <section class="module subscriptions carousel" data-carousel="standard" data-carousel-scroll="1">
+		<div class="module-header">
+			<h1 class="module-title">Quiosque P&#250;blico</h1>
+		</div>						
+		<div class="module-content scrollable" data-id="4283" data-isbycontext="true" data-template="assinatura" data-fonte="PAGINA" data-dados-id="208" data-name="Quiosque P&#250;blico">
+
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+
+    <div data-action="edit_in_place" data-caixa-id="4284" class=" ">
+
+    <section class="module store" data-carousel="standard" data-carousel-scroll="2">
+		<div class="module-header">
+			<h1 class="module-title"><a href="http://loja.publico.pt/" rel="me" onclick="trackEvent('LOJA', 'CAIXA', 'CLICK')">Loja <span class="icon icon-more"></span></a></h1>
+		</div>						
+		<div class="module-content media scrollable" data-id="4284" data-isbycontext="true" data-template="loja" data-fonte="PAGINA" data-dados-id="208" data-name="Loja">
+		    <ul class="thumbnails thumbnails-square carousel group">
+
+		    </ul>
+        </div>
+    </section>
+
+<div class="SubCaixas">
+</div>
+
+</div>
+
+    <!--
+        
+     -->
+</div>
+<div class="group content-aside">
+
+
+    <div data-caixa-id="4307" class="nb ">
+
+    
+
+<style type="text/css">
+	div[data-caixa-id="4307"] {
+		height: 0px !important;
+		line-height: 0px !important;
+	}
+</style>
+
+<!-- PublicoHomepage990x30 -->
+<div id="PublicoHomepage990x30">
+	<script type="text/javascript">try { Comunique.tag('PublicoHomepage990x30'); } catch(e) {  }</script>
+</div>
+</div>
+
+    <!--
+        4307 Caixa from Redis
+4307 Caixa from Redis
+        False
+     -->
+    <div data-caixa-id="4308" class=" ">
+
+    
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#ComuniquePublicoHomepage150x600").parent().removeClass("editable");
+
+		if ($('#google_ads_div_PublicoHomepage150x600_ad_wrapper').html() != null) {
+			masthead_size_barra_lateral = $('#masthead').height() + 20;
+			$('#google_ads_div_PublicoHomepage150x600_ad_wrapper').css("cssText", "position: absolute; margin-left: " + $('#content .container').width() + "px !important; top: " + masthead_size_barra_lateral + "px;");
+			
+			$(window).resize(function() {
+				$('#google_ads_div_PublicoHomepage150x600_ad_wrapper').css("cssText", "position: absolute; margin-left: " + $('#content .container').width() + "px !important; top: " + masthead_size_barra_lateral + "px;");
+			});
+		}
+	});
+</script>
+<div class="Comunique150x600" id="ComuniquePublicoHomepage150x600">
+	<div id="PublicoHomepage150x600">
+		<style type="text/css">
+			div[data-caixa-id="4308"] {
+				height: 0px !important;
+				line-height: 0px !important;
+			}
+			
+			#google_ads_div_PublicoHomepage150x600_ad_wrapper {
+				min-width: 120px;
+			}
+		</style>
+
+		<!-- PublicoHomepage150x600 -->
+		<script type="text/javascript">try { Comunique.tag('PublicoHomepage150x600'); } catch(e) { }</script>
+	</div>
+</div>
+</div>
+
+    <!--
+        4308 Caixa from Redis
+4308 Caixa from Redis
+        False
+     -->
+    <div data-caixa-id="4306" class=" ">
+
+    
+
+<style type="text/css">
+	div[data-caixa-id="4306"] {
+		height: 0px !important;
+		line-height: 0px !important;
+	}
+</style>
+
+<!-- PublicoHomepage1x1 -->
+<div id="PublicoHomepage1x1">
+	<script type="text/javascript">try { Comunique.tag('PublicoHomepage1x1');} catch(e) {}</script>
+</div>
+
+<div id="PublicoPaywall1Artigo2x2"></div>
+</div>
+
+    <!--
+        4306 Caixa from Redis
+4306 Caixa from Redis
+        False
+     -->
+    <div data-caixa-id="6828" class="nb ">
+
+    
+
+<style type="text/css">
+	div[data-caixa-id="6828"] {
+		height: 0px !important;
+		line-height: 0px !important;
+	}
+</style>
+
+<!-- PublicoMenuNavegacaoBanner140x30 -->
+<div id="PublicoMenuNavegacaoBanner140x30">
+	<script type="text/javascript">try { Comunique.tag('PublicoMenuNavegacaoBanner140x30'); } catch(e) { }</script>
+</div>
+</div>
+
+    <!--
+        6828 Caixa from Redis
+6828 Caixa from Redis
+        False
+     -->
+</div>
+
+
+</div>
+    <!--
+        Cache From Redis
+
+    -->
+
+		    </div> <!-- /#content -->
+            <div id="rwd-toggle" class="rwd-toggle">
+                <p><a onclick="changeLayout(0);" href="javascript:void(0);" class="rwd-toggle-responsive">Versão Responsiva</a> <span class="assistive">ou</span> <a onclick="changeLayout(1);" href="javascript:void(0);" class="rwd-toggle-normal">Versão Normal</a></p>
+            </div>            
+		    	<div id="login-modal" class="login-modal hidden robots-nocontent">
+		<h2>Disponível para leitores registados</h2>
+		<p class="description">Para continuar, inicie sessão ou registe-te já</p>
+		
+	    <div class="login-box">
+	        <h3 class="sub-title">Iniciar Sessão</h3>
+                <div class="btn-stack">
+        <div class="btn-stack social-signup">
+	<!-- FACEBOOK-->
+    <a class="btn btn-medium btn-social-login" href="javascript:void(0);" 
+        onclick="javascript:open('https://graph.facebook.com/oauth/authorize?type=web_server&client_id=263434066253&scope=user_birthday,user_hometown,user_interests,user_location,email&redirect_uri=http%3a%2f%2fwww.publico.pt%2fUtilizador%2fFacebookLogin', 'Facebook', 'status=1,toolbar=0,menubar=0,width=1000, height=600');trackEvent('LOGIN', 'FACEBOOK', 'CLICK');">
+        <span class="icon icon-facebook"></span>
+        Entrar com o Facebook</a> 
+
+    <!-- TWITTER-->
+    <a class="btn btn-medium btn-social-login" href="/Utilizador/LoginTwitter" id="twitterSigninBtn" onclick="trackEvent('LOGIN', 'TWITTER', 'CLICK')"><span class="icon icon-twitter"></span>
+        Entrar com o Twitter</a>
+</div>
+    </div>
+    <div class="divider-options">
+        <span class="divider-text">Ou</span>
+    </div>
+<form action="/Utilizador/SubmitLogin" class="login-form" id="loginForm" method="post"><div class="validation-summary-valid" data-valmsg-summary="true" id="loginValidationSummary"><ul><li style="display:none"></li>
+</ul></div>        <label>
+            <span class="email assistive"></span>
+            <input class="input-medium" data-val="true" data-val-regex="Utilizador inv&amp;#225;lido" data-val-regex-pattern="(\w+([-+.&#39;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|^(\d{9}|\d{14})$" data-val-required="Preencha Nome de Utilizador" id="Email" name="Email" placeholder="Email" type="text" value="" />
+        </label>
+        <label>
+            <span class="password assistive">Palavra-chave</span>
+            <input class="input-medium" data-val="true" data-val-required="Preencha Password" id="Password" name="Password" placeholder="Palavra-chave" type="password" />
+        </label>
+        <label class="checkbox">
+            <input data-val="true" data-val-required="The RememberMe field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+            <span>Lembrar-se de mim</span>
+        </label>
+        <input type="submit" class="btn" value="Entrar"  onclick="trackEvent('LOGIN', 'PUBLICO', 'CLICK')"/>
+        <p><a class="forgot" href="http://www.publico.pt/Utilizador/RecuperarPassword"  onclick="trackEvent('LOGIN', 'FORGET', 'CLICK')">Esqueceu-se da sua palavra-chave?</a></p>
+</form>
+        </div>
+
+		<div class="signup-box media">
+			<h3 class="sub-title">Registe-se já</h3>
+			<div class="media-object"><img src="//static.publico.pt/files/homepage/img/content/new_account.png" alt=""></div>
+			<div class="media-content">
+				<p>Registe-se no <span class="caps">Público</span> para guardar quantos artigos quiser para ler mais tarde, participar dos inquéritos, tornar-se um moderador de comentários e muito mais.</p>
+				<p><a class="btn btn-primary" href="/utilizador/registo">Registar</a></p>
+			</div>
+		</div>
+	</div> <!-- #login-modal -->
+	
+    <div id="login-modal-arquivo" class="login-modal login-modal-subscribers hidden robots-nocontent">
+        <h2>Conteúdo exclusivo</h2>
+        <p>Para continuar a ler, inicie sessão ou assine já</p>
+        <div class="login-box">
+	        <h3 class="sub-title"></h3>
+	        <form action="/Utilizador/SubmitLogin" class="login-form" id="loginFormArquivo" method="post">        <input type="hidden" name="filedownload" id="filedownload" />
+<div class="validation-summary-valid" data-valmsg-summary="true" id="loginValidationSummary"><ul><li style="display:none"></li>
+</ul></div>        <label>
+            <span class="email assistive"></span>
+            <input class="input-medium" data-val="true" data-val-regex="Utilizador inv&amp;#225;lido" data-val-regex-pattern="(\w+([-+.&#39;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|^(\d{9}|\d{14})$" data-val-required="Preencha Nome de Utilizador" id="Email" name="Email" placeholder="Email" type="text" value="" />
+        </label>
+        <label>
+            <span class="password assistive">Palavra-chave</span>
+            <input class="input-medium" data-val="true" data-val-required="Preencha Password" id="Password" name="Password" placeholder="Palavra-chave" type="password" />
+        </label>
+        <label class="checkbox">
+            <input data-val="true" data-val-required="The RememberMe field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+            <span>Lembrar-se de mim</span>
+        </label>
+        <input type="submit" class="btn" value="Entrar" />
+        <p><a class="forgot" href="http://www.publico.pt/Utilizador/RecuperarPassword">Esqueceu-se da sua palavra-chave?</a></p>
+</form>
+        </div>
+
+        <div class="signup-box media">
+			<h1>ASSINE O PÚBLICO ONLINE<br/>E ENTRE NO MUNDO<br/>DAS NOTICIAS SEM LIMITES</h1>
+			<h3>Nasceu um mundo sem limites:</h3>
+			<p>Economia sem limites, política sem limites, cultura sem limites, desporto sem limites, opinião sem limites, vídeo sem limites...</p>
+			<p class="destaque">Entre neste mundo por apenas 1€*.</p>
+			<a href="https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalId=3df697a5-f96d-4e99-99df-5e52732eb2d9" onclick="ga('send', 'event', 'Pop up Arquivo', 'Clicou Pop up Arquivo ', 'Assine_ja');" class="btn">Assine já</a>
+			<p class="rodape">* Campanha para pagamento por VISA / PayPal / débito directo. <br>Restantes meses: 9,99€/cada.</p>
+		</div>
+    </div>
+
+<footer id="colophon" role="contentinfo">
+	<div class="site-footer">
+		<div class="site-footer-outer">
+			<div class="container">
+				<div class="site-footer-inner group">
+				
+					<div class="copyright media">
+						<a href="/" rel="home" class="ir logo">Público</a>						
+						<p>© 2014 <span class="brand-name">Público</span></p>
+						<p>Comunicação Social SA</p>
+                        <nav class="nav-social group">
+                            <ul class="nav nav-menu">
+                                <li class="facebook"><a href="https://www.facebook.com/Publico" title="Público no Facebook">Facebook</a></li>
+                                <li class="twitter"><a href="http://twitter.com/publico" title="Público no Twitter">Twitter</a></li>
+                                <li class="googleplus"><a href="https://plus.google.com/104287153847431321278" title="Público no Google+">Google+</a></li>
+                                <li class="rss"><a href="http://feeds.feedburner.com/PublicoRSS" title="Feeds RSS do Público">RSS</a></li>
+
+                            </ul> <!-- /.nav.nav-menu -->
+                        </nav> <!-- /.nav-meta -->
+					</div> <!-- /.copyright -->
+							
+					<nav class="nav-footer" role="navigation">
+						<h1 class="assistive">Mapa do site</h1>
+							
+						<ul class="site-map nav">
+							<li>
+								<h2 class="sub-title">Secções</h2>
+										
+								<ul class="nav">
+									<li><a href="/portugal">Portugal</a></li>
+									<li><a href="/economia">Economia</a></li>
+									<li><a href="/mundo">Mundo</a></li>
+									<li><a href="/culturaipsilon">Cultura-Ípsilon</a></li>
+									<li><a href="/desporto">Desporto</a></li>
+									<li><a href="/ciencia">Ciência</a></li>
+									<li><a href="/tecnologia">Tecnologia</a></li>
+									<li><a href="/opiniao">Opinião</a></li>
+									<li><a href="/multimedia">Multimédia</a></li>
+                                    <li><a href="/jornal">Edição Impressa</a></li>
+									<li><a href="/topicos">Tópicos</a></li>
+								</ul>
+							</li>
+							<li>
+								<h2 class="sub-title">Sites Público</h2>
+										
+								<ul class="nav">
+									<li><a href="http://www.publico.pt/revista2" rel="me">2</a>
+                                    <li><a href="http://fugas.publico.pt/" rel="me">Fugas</a>
+									<li><a href="http://lifestyle.publico.pt/" rel="me">Life&amp;Style</a></li>
+									<li><a href="http://p3.publico.pt/" rel="me">P3</a></li>
+									<li><a href="http://ipsilon.publico.pt/" rel="me">Ípsilon</a></li>
+									<li><a href="http://cinecartaz.publico.pt/" rel="me">Cinecartaz</a></li>
+									<li><a href="http://lazer.publico.pt/" rel="me">Guia do Lazer</a></li>
+									<li><a href="http://inimigo.publico.pt/" rel="me">Inimigo Público</a></li>
+								</ul>
+							</li>
+							<li>
+								<h2 class="sub-title">Serviços</h2>
+										
+								<ul class="nav">
+									<li><a href="/tempo">Meteorologia</a></li>
+									<li><a href="http://loja.publico.pt">Loja</a></li>
+                                    <li><a href="http://emprego.publico.pt">Emprego</a></li>
+									<li><a href="http://jogos.publico.pt">Jogos</a></li>
+									<li><a href="http://lazer.publico.pt/GuiaTV">TV</a></li>
+									<li><a href="http://static.publico.pt/Classificados/">Classificados</a></li>
+									<li><a href="http://www.publico.clix.pt/Homepage/Includes/Imobiliario/imob/Imobiliario.pdf">Imobiliário</a></li>
+									<li><a href="http://coleccoes.publico.pt/">Iniciativas</a></li>
+									
+								</ul>
+							</li>
+							<li>
+								<h2 class="sub-title">QUIOSQUE PÚBLICO</h2>
+										
+								<ul class="nav">
+									<li><a href="http://assinaturas.publico.pt">Assinaturas</a></li>
+									<li><a href="http://static.publico.pt/digital/publico-iphone.php">Aplicações Mobile</a></li>
+									<li><a href="http://static.publico.pt/digital/publico-mobile.php">Sites Mobile</a></li>
+									<li><a href="http://static.publico.pt/digital/publico-ipad.php">Tablet</a></li>
+									<li><a href="http://static.publico.pt/digital/publico-kindle.php">Kindle</a></li>
+								</ul>
+							</li>
+							<li>
+								<h2 class="sub-title">Informações</h2>
+										
+                                <ul class="nav">
+                                    <li><a href="http://static.publico.pt/novosite/">Novo site</a></li>
+                                    <li><a href="/nos/contactos">Contactos</a></li>
+                                    <li><a href="/nos/ficha-tecnica">Ficha Técnica</a></li>
+                                    <li><a href="/autores">Autores</a></li>
+                                    <li><a href="/nos/ajuda">Ajuda</a></li>
+                                    <li><a href="/nos/comentarios-e-inqueritos">Comentários e Inquéritos</a></li>
+                                    
+                                    <li><a href="http://static.publico.pt/publicomais/">Público+</a></li>
+                                    <li><a href="http://blogues.publico.pt/provedordoleitor/">Provedor do Leitor</a></li>
+                                    <li><a href="/nos/termos-e-condicoes">Termos e Condições</a></li>
+                                    <li><a href="/nos/politica-de-privacidade">Política de Privacidade</a></li>
+                                    <li><a href="http://static.publico.pt/publicidade/online/">Publicidade</a></li>
+                                </ul>
+							</li>
+						</ul>
+					</nav> <!-- /.nav-footer -->
+							
+				</div> <!-- /.site-footer-inner -->		
+			</div> <!-- /.container -->
+		</div> <!-- /.site-footer-outer -->
+	</div> <!-- /.site-footer -->
+</footer> <!-- /#colophon -->
+
+<link rel="stylesheet" href="http://static.publico.pt/files/paywall/css/paywall-blocker-nov14-viagem.css?v1" />
+<div id="paywall-blocker" class="paywall-blocker paywall-blocker-nov14-viagem" style="display:none">
+		<div class="paywall-header">
+			<p class="paywall-header-title">Atingiu o seu limite de artigos gratuitos </p>
+			
+			<p class="paywall-header-login">Já é assinante? <a href="http://www.publico.pt/utilizador/login" target="_top">Inicie a sessão</a></p>
+		</div>
+		
+		<div class="paywall-content">
+				
+			<div class="paywall-main">
+				<a href="https://assinaturas.publico.pt/p_subscriptions/storedigitalV3.aspx?Promo=&IsCCTestMode=False&CampaignExternalId=&IsCupon=False&PId=0&Ref=" title="Assine já">
+					<div class="paywall-campaign-wrapper">
+						<p class="paywall-campaign">
+							<span class="paywall-campaign-1">Garanta já</span>
+							<span class="paywall-campaign-2">a sua viagem</span>
+							<span class="paywall-campaign-3">ou descubra outras modalidades de assinatura</span>
+						</p>
+					</div>
+
+					<p class="paywall-title">Na compra de uma assinatura de 18 meses (149,99€) oferecemos-lhe <span>um voo à Europa.</span> </p>
+				</a>
+			</div>
+			
+			<p class="paywall-legal">CAMPANHA VÁLIDA ATÉ 31 DE DEZEMBRO PARA NOVAS ASSINATURAS NA LOJA PÚBLICO, EM ASSINATURAS.PUBLICO.PT. O ASSINANTE TEM 15 DIAS PARA INICIAR O PROCESSO DE ACTIVAÇÃO DA OFERTA. PARA SABER MAIS CONSULTE AS CONDIÇÕES EM ASSINATURAS.PUBLICO.PT. VÁLIDA PARA MAIORES DE 18 ANOS E LIMITADA AO STOCK EXISTENTE. FACILIDADE DE MARCAÇÃO DE VIAGEM PARA A SEGUNDA A PESSOA.</p>
+
+			<ul class="paywall-support">
+				<li class="paywall-support-faqs"><a href="http://www.publico.pt/assinaturas/perguntas-frequentes" data-toggle="tooltip" title="Perguntas Frequentes" target="_top">Perguntas Frequentes</a></li>
+				<li class="paywall-support-chat"><a href="http://www.publico.pt/assinaturas/nos-ligamos" data-toggle="tooltip" title="Nós Ligamos-lhe" target="_top">Nós Ligamos-lhe</a></li>
+				<li class="paywall-support-call last"><a href="http://www.publico.pt/assinaturas/apoio-online" data-toggle="tooltip" title="Apoio Online" target="_top">Apoio Online</a></li>
+			</ul>
+		</div>
+	</div>
+
+<div id="_paywall-blocker" class="paywall-blocker paywall-blocker-weeks" style="display:none">
+	<div class="paywall-header">
+		<p class="paywall-campaign">
+            <span class="paywall-campaign-1">8 semanas</span>
+            <span class="paywall-campaign-2"><span> apenas </span></span>
+            <span class="paywall-campaign-3">0,99€<span>*</span></span>
+            <span class="paywall-campaign-4">Para novos assinantes</span>
+		</p>
+		
+		<p class="paywall-header-title">Assine o Público Online<br> e continue a ler e a pensar sem limites.</p>
+	</div>
+		
+	<div class="paywall-content">
+		<div class="paywall-body">
+			<p class="paywall-body-text">Ao atingir o limite de artigos do Público Online mostrou como é importante para si a excelência e qualidade do jornalismo em Portugal.</p>
+			
+			<p class="paywall-body-footer">* Para pagamentos por Visa/PayPal/débito directo. Restantes meses €9,99/cada. Sem período de fidelização.</p>
+				
+			<p class="paywall-body-extra">
+				<span class="paywall-body-extra-signup"><a onclick="trackEvent('PAYWALL', 'PORTUGAL', 'ASSINAR')" href="https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalid=3c5723f7-0118-45f5-b3dd-83af3e526e69">Assine já</a> e leia o Público durante 30 dias por apenas 1€.</span>
+				<span class="paywall-body-extra-login">Já é assinante? <a href="http://www.publico.pt/utilizador/login">Inicie a sessão</a></span>
+			</p>
+
+			<ul class="paywall-body-support">
+				<li class="paywall-body-support-faqs"><a href="http://www.publico.pt/assinaturas/perguntas-frequentes" data-toggle="tooltip" title="Perguntas Frequentes">Perguntas Frequentes</a></li>
+				<li class="paywall-body-support-chat"><a href="http://www.publico.pt/assinaturas/nos-ligamos" data-toggle="tooltip" title="Nós Ligamos-lhe">Nós Ligamos-lhe</a></li>
+				<li class="paywall-body-support-call last"><a href="http://www.publico.pt/assinaturas/apoio-online" data-toggle="tooltip" title="Apoio Online">Apoio Online</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="paywall-blocker-foreign" class="paywall-blocker paywall-blocker-alt" style="display:none">
+	<div class="paywall-header">
+		<p class="paywall-campaign">
+            <span class="paywall-campaign-1">8 semanas</span>
+            <span class="paywall-campaign-2"><span> apenas </span></span>
+            <span class="paywall-campaign-3">0,99€<span>*</span></span>
+            <span class="paywall-campaign-4">Para novos assinantes</span>
+		</p>
+		
+		<p class="paywall-header-title">Assine o Público Online<br> e continue a ler e a pensar sem limites.</p>
+	</div>
+		
+	<div class="paywall-content">
+		<div class="paywall-body">
+			<p class="paywall-body-text">Ao atingir o limite de artigos do Público Online mostrou como é importante para si a excelência e qualidade do jornalismo em Portugal.</p>
+			
+			<p class="paywall-body-footer">* Para pagamentos por Visa/PayPal/débito directo. Restantes meses €9,99/cada. Sem período de fidelização.</p>
+				
+			<p class="paywall-body-extra">
+				<span class="paywall-body-extra-signup"><a onclick="trackEvent('PAYWALL', 'ESTRANGEIROS', 'ASSINAR')" href="https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalid=ec0b16fd-8444-4cdb-a4d2-9feecfa82883">Assine já</a> e leia o Público durante 8 semanas por apenas 0,99€.</span>
+				<span class="paywall-body-extra-login">Já é assinante? <a href="http://www.publico.pt/utilizador/login">Inicie a sessão</a></span>
+			</p>
+
+			<ul class="paywall-body-support">
+				<li class="paywall-body-support-faqs"><a href="http://www.publico.pt/assinaturas/perguntas-frequentes" data-toggle="tooltip" title="Perguntas Frequentes">Perguntas Frequentes</a></li>
+				<li class="paywall-body-support-chat"><a href="http://www.publico.pt/assinaturas/nos-ligamos" data-toggle="tooltip" title="Nós Ligamos-lhe">Nós Ligamos-lhe</a></li>
+				<li class="paywall-body-support-call last"><a href="http://www.publico.pt/assinaturas/apoio-online" data-toggle="tooltip" title="Apoio Online">Apoio Online</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<section class="paywall-warning" style="display:none">
+	<div class="paywall-warning-header">
+		<span class="paywall-warning-logo"></span>
+	</div>
+										
+	<div class="paywall-warning-content">
+		<img src="http://static.publico.pt/files/homepage/img/paywall-devices.png" alt="" width="400" />
+
+		<h1>Aprecia o jornalismo do PÚBLICO?</h1>
+		<h2>Então assine o jornal e tenha o caminho livre para todos os conteúdos online, em qualquer plataforma (mobile, tablet ou web).</h2>
+		<p>Não perca as notícias, reportagens, fotografias e trabalhos multimédia que fazem do PÚBLICO um jornal premiado e líder online.</p>
+	</div>
+
+	<div class="paywall-warning-footer">
+		<p class="cta"><span>Experimente por 1€ *</span> no primeiro mês.</p>
+		<p><a class="btn btn-primary" onclick="trackEvent('PAYWALL', 'PORTUGAL', 'ASSINAR')" href="https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalid=6d50121e-9c01-4619-b725-3cae9fe3a75d">Assine já</a></p>
+		<p>Já é assinante? <a href="http://www.publico.pt/utilizador/login">Inicie sessão</a></p>
+		<p class="note"><small>* Campanha para pagamentos por VISA / PayPal / débito directo, com renovação mensal de 9,99€.</small></p>
+		<div class="paywall-warning-help">
+			<h2>Tem dúvidas?</h2>											
+			<ul class="nav">
+				<li class="paywall-warning-help-faq">
+					<a href="/assinaturas/perguntas-frequentes">
+						<span class="icon"></span>
+						<h3 class="paywall-warning-help-title">Perguntas Frequentes</h3>
+						<p class="paywall-warning-help-text">Esclarecemos as suas questões. Veja os videos explicativos.</p>
+					</a>
+				</li>
+				<li class="paywall-warning-help-call">
+					<a href="/assinaturas/nos-ligamos">
+						<span class="icon"></span>
+						<h3 class="paywall-warning-help-title">Nós ligamos-lhe</h3>
+						<p class="paywall-warning-help-text">Deixe-nos o seu contato e ligamos-lhe de seguida.</p>
+					</a>
+				</li>
+				<li class="paywall-warning-help-chat">
+					<a href="/assinaturas/apoio-online">
+						<span class="icon"></span>
+						<h3 class="paywall-warning-help-title">Apoio Online</h3>
+						<p class="paywall-warning-help-text">Submeta a sua questão e respondemos de imediato por chat.</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+
+    <script type="text/javascript">
+        window.fbAsyncInit = function () {
+            // init the FB JS SDK
+            FB.init({
+                appId: '263434066253',
+                channelUrl: 'http://www.publico.pt/channel.html',
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+
+            FB.Event.subscribe('edge.create',
+                function (response) {
+                    AddSocialInteraction("FACEBOOK", response);
+                }
+            );
+        };
+
+        (function (d) {
+            var js, id = 'facebook-jssdk'; if (d.getElementById(id)) { return; }
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/pt_PT/all.js";
+            d.getElementsByTagName('head')[0].appendChild(js);
+        } (document));
+//        (function (d, s, id) {
+//            var js, fjs = d.getElementsByTagName(s)[0];
+//            if (d.getElementById(id)) { return; }
+//            js = d.createElement(s); js.id = id;
+//            js.src = "//connect.facebook.net/pt_PT/all.js#xfbml=1&appId=263434066253";
+//            fjs.parentNode.insertBefore(js, fjs);
+        //        } (document, 'script', 'facebook-jssdk'));
+
+        try { Comunique.tag("PublicoPaywall1Artigo2x2"); } catch (e) { }
+
+        
+        var popup14Notice = { "Data": "jQuery(\u0027\u003clink\u003e\u0027).appendTo(jQuery(\u0027head\u0027)).attr({ type: \u0027text/css\u0027, rel: \u0027stylesheet\u0027 }).attr(\u0027href\u0027, \u0027http://static.publico.pt/files/paywall/css/paywall_notice.css?v3\u0027);\r\njQuery(function () {\t\r\nvar $paywallNotice = jQuery(\u0027\u003cscr\u0027+\u0027ipt\u003ewindow.hasPubInPlace = true;if(typeof ga.getByName(\"ga2\") == \"undefined\"){ga(\"create\", \"UA-15474788-21\", \"publico.pt\", { \"name\": \"ga2\" });}\u003c/scr\u0027+\u0027ipt\u003e\u0027 +\r\n\u0027\u003cdiv id=\"paywall-notice\" class=\"paywall-notice paywall-notice-nov14-viagem\"\u003e\u003cdiv class=\"paywall-header\"\u003e\u003cp class=\"paywall-header-title\"\u003eJá só tem 1 artigo grátis\u003c/p\u003e\u003cp class=\"paywall-header-login\"\u003eJá é assinante? \u003ca href=\"http://www.publico.pt/utilizador/login\"\u003eInicie a sessão\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\"paywall-content\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Assine_ja\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Assine_ja\\\');\" href=\"https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalid=7d870ce1-d489-48c9-aa0c-9200c4fdff11\" title=\"Assine já\"\u003e\u003cp class=\"paywall-campaign\"\u003e\u003cspan class=\"paywall-campaign-1\"\u003eReceba já\u003c/span\u003e\u003cspan class=\"paywall-campaign-2\"\u003eo seu voucher\u003cbr\u003ede voo\u003c/span\u003e\u003cspan class=\"paywall-campaign-3\"\u003eou descubra outras modalidades de assinatura\u003c/span\u003e\u003c/p\u003e\u003cdiv class=\"paywall-body\"\u003e\u003cp class=\"paywall-body-title\"\u003eNa compra de uma assinatura de 18 meses (149,99€) oferecemos-lhe um voo à Europa. \u003c/p\u003e\u003c/div\u003e\u003c/a\u003e\u003cul class=\"paywall-body-support\"\u003e\u003cli class=\"paywall-body-support-faqs\"\u003e\u003ca href=\"http://www.publico.pt/assinaturas/perguntas-frequentes\" data-toggle=\"tooltip\" title=\"Perguntas Frequentes\"\u003ePerguntas Frequentes\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-chat\"\u003e\u003ca href=\"http://www.publico.pt/assinaturas/nos-ligamos\" data-toggle=\"tooltip\" title=\"Nós Ligamos-lhe\"\u003eNós Ligamos-lhe\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-call last\"\u003e\u003ca href=\"http://www.publico.pt/assinaturas/apoio-online\" data-toggle=\"tooltip\" title=\"Apoio Online\"\u003eApoio Online\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\u003c/div\u003e\u003ca href=\"#\" class=\"paywall-close\" title=\"Fechar\"\u003e\u003c/a\u003e\u003c/div\u003e\u0027 +\r\n\u0027\u003cscr\u0027+\u0027ipt\u003ega(\"send\", \"event\", \"Pop up 3 artigo\", \"Viu Pop up 3 artigo\");ga(\"ga2.send\", \"event\", \"Pop up 1 artigo\", \"Viu Pop up 1 artigo\");\u003c/scr\u0027+\u0027ipt\u003e\u0027);\r\n$paywallNotice.hide().appendTo(\u0027body\u0027).fadeIn(\u0027slow\u0027).find(\u0027.paywall-close\u0027).on(\u0027click\u0027, function (e) {$paywallNotice.fadeOut(\u0027fast\u0027); e.preventDefault();});});" };
+
+        
+        var popup12Notice = { "Data": "jQuery(\u0027\u003clink\u003e\u0027).appendTo(jQuery(\u0027head\u0027)).attr({ type: \u0027text/css\u0027, rel: \u0027stylesheet\u0027 }).attr(\u0027href\u0027, \u0027http://static.publico.pt/files/paywall/css/paywall_notice.css?v3\u0027);\r\njQuery(function () {\t\r\nvar $paywallNotice = jQuery(\u0027\u003cscr\u0027+\u0027ipt\u003ewindow.hasPubInPlace = true;if(typeof ga.getByName(\"ga2\") == \"undefined\"){ga(\"create\", \"UA-15474788-21\", \"publico.pt\", { \"name\": \"ga2\" });}\u003c/scr\u0027+\u0027ipt\u003e\u0027 +\r\n\u0027\u003cdiv id=\"paywall-notice\" class=\"paywall-notice paywall-notice-nov14-viagem\"\u003e\u003cdiv class=\"paywall-header\"\u003e\u003cp class=\"paywall-header-title\"\u003eJá só tem 3 artigos grátis\u003c/p\u003e\u003cp class=\"paywall-header-login\"\u003eJá é assinante? \u003ca href=\"http://www.publico.pt/utilizador/login\"\u003eInicie a sessão\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\"paywall-content\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 3 artigo\\\', \\\'Clicou Pop up 3 artigo\\\', \\\'Assine_ja\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 3 artigo\\\', \\\'Clicou Pop up 3 artigo\\\', \\\'Assine_ja\\\');\" href=\"https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalid=7b69d6b1-96ce-4269-bc43-bb2ddeae9f8d\" title=\"Assine já\"\u003e\u003cp class=\"paywall-campaign\"\u003e\u003cspan class=\"paywall-campaign-1\"\u003eReceba já\u003c/span\u003e\u003cspan class=\"paywall-campaign-2\"\u003eo seu voucher\u003cbr/\u003ede voo\u003c/span\u003e\u003cspan class=\"paywall-campaign-3\"\u003eou descubra outras modalidades de assinatura\u003c/span\u003e\u003c/p\u003e\u003cdiv class=\"paywall-body\"\u003e\u003cp class=\"paywall-body-title\"\u003eNa compra de uma assinatura de 18 meses (149,99€) oferecemos-lhe um voo à Europa. \u003c/p\u003e\u003c/div\u003e\u003c/a\u003e\u003cul class=\"paywall-body-support\"\u003e\u003cli class=\"paywall-body-support-faqs\"\u003e\u003ca href=\"http://www.publico.pt/assinaturas/perguntas-frequentes\" data-toggle=\"tooltip\" title=\"Perguntas Frequentes\"\u003ePerguntas Frequentes\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-chat\"\u003e\u003ca href=\"http://www.publico.pt/assinaturas/nos-ligamos\" data-toggle=\"tooltip\" title=\"Nós Ligamos-lhe\"\u003eNós Ligamos-lhe\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-call last\"\u003e\u003ca href=\"http://www.publico.pt/assinaturas/apoio-online\" data-toggle=\"tooltip\" title=\"Apoio Online\"\u003eApoio Online\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\u003c/div\u003e\u003ca href=\"#\" class=\"paywall-close\" title=\"Fechar\"\u003e\u003c/a\u003e\u003c/div\u003e\u0027 +\r\n\u0027\u003cscr\u0027+\u0027ipt\u003ega(\"send\", \"event\", \"Pop up 3 artigo\", \"Viu Pop up 3 artigo\");ga(\"ga2.send\", \"event\", \"Pop up 1 artigo\", \"Viu Pop up 1 artigo\");\u003c/scr\u0027+\u0027ipt\u003e\u0027);\r\n$paywallNotice.hide().appendTo(\u0027body\u0027).fadeIn(\u0027slow\u0027).find(\u0027.paywall-close\u0027).on(\u0027click\u0027, function (e) {$paywallNotice.fadeOut(\u0027fast\u0027); e.preventDefault();});});" };
+
+        
+
+        
+        var popup14NoticeE = { "Data": "jQuery(\u0027\u003clink\u003e\u0027).appendTo(jQuery(\u0027head\u0027)).attr({ type: \u0027text/css\u0027, rel: \u0027stylesheet\u0027 }).attr(\u0027href\u0027, \u0027http://static.publico.pt/files/paywall/css/paywall_notice.css?v3\u0027);\r\njQuery(function () {\t\r\nvar $paywallNotice = jQuery(\u0027\u003cscr\u0027+\u0027ipt\u003ewindow.hasPubInPlace = true;if(typeof ga.getByName(\"ga2\") == \"undefined\"){ga(\"create\", \"UA-15474788-21\", \"publico.pt\", { \"name\": \"ga2\" });}\u003c/scr\u0027+\u0027ipt\u003e\u0027 +\r\n\u0027\u003cdiv id=\"paywall-notice\" class=\"paywall-notice paywall-notice-weeks\"\u003e\u003cdiv class=\"paywall-header\"\u003e\u003cp class=\"paywall-header-title\"\u003eJá só tem 1 artigo grátis\u003c/p\u003e\u003cp class=\"paywall-header-login\"\u003eJá é assinante? \u003ca href=\"http://www.publico.pt/utilizador/login\"\u003eInicie a sessão\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\"paywall-content\"\u003e\u003cp class=\"paywall-campaign\"\u003e\u003cspan class=\"paywall-campaign-1\"\u003e8 semanas\u003c/span\u003e\u003cspan class=\"paywall-campaign-2\"\u003e\u003cspan\u003e apenas \u003c/span\u003e\u003c/span\u003e\u003cspan class=\"paywall-campaign-3\"\u003e 0,99€\u003cspan\u003e*\u003c/span\u003e\u003c/span\u003e\u003cspan class=\"paywall-campaign-4\"\u003ePara novos assinantes\u003c/span\u003e\u003c/p\u003e\u003cdiv class=\"paywall-body\"\u003e\u003cp class=\"paywall-body-title\"\u003eEstá prestes a atingir o limite de visualizações grátis.\u003c/p\u003e\u003cp\u003eSe para si o saber não tem limites, \u003ca href=\"https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalid=405b1552-d09a-442a-bb39-a6dc085f6cff\" onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Assine_ja\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Assine_ja\\\');\"\u003eassine o Público Online\u003c/a\u003e e apoie tanto a excelência e qualidade do nosso jornal, como do jornalismo em Portugal.\u003c/p\u003e\u003cul class=\"paywall-body-support\"\u003e\u003cli class=\"paywall-body-support-faqs\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'FAQ\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'FAQ\\\');\" href=\"http://www.publico.pt/assinaturas/perguntas-frequentes\" data-toggle=\"tooltip\" title=\"Perguntas Frequentes\"\u003ePerguntas Frequentes\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-chat\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Ligar\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Ligar\\\');\" href=\"http://www.publico.pt/assinaturas/nos-ligamos\" data-toggle=\"tooltip\" title=\"Nós Ligamos-lhe\"\u003eNós Ligamos-lhe\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-call last\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'A_Online\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'A_Online\\\');\" href=\"http://www.publico.pt/assinaturas/apoio-online\" data-toggle=\"tooltip\" title=\"Apoio Online\"\u003eApoio Online\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\u003cp class=\"paywall-body-footer\"\u003e* Para pagamentos por Visa/PayPal/débito directo. Restantes meses €9,99/cada. Sem período de fidelização.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003ca href=\"#\" class=\"paywall-close\" title=\"Fechar\"\u003e\u003c/a\u003e\u003c/div\u003e\u0027 +\r\n\u0027\u003cscr\u0027+\u0027ipt\u003ega(\"send\", \"event\", \"Pop up 1 artigo\", \"Viu Pop up 1 artigo\");ga(\"ga2.send\", \"event\", \"Pop up 1 artigo\", \"Viu Pop up 1 artigo\");\u003c/scr\u0027+\u0027ipt\u003e\u0027);\r\n$paywallNotice.hide().appendTo(\u0027body\u0027).fadeIn(\u0027slow\u0027).find(\u0027.paywall-close\u0027).on(\u0027click\u0027, function (e) {$paywallNotice.fadeOut(\u0027fast\u0027); e.preventDefault();});});" };
+		
+
+        
+        var popup12NoticeE = { "Data": "jQuery(\u0027\u003clink\u003e\u0027).appendTo(jQuery(\u0027head\u0027)).attr({ type: \u0027text/css\u0027, rel: \u0027stylesheet\u0027 }).attr(\u0027href\u0027, \u0027http://static.publico.pt/files/paywall/css/paywall_notice.css?v3\u0027);\r\njQuery(function () {\t\r\nvar $paywallNotice = jQuery(\u0027\u003cscr\u0027+\u0027ipt\u003ewindow.hasPubInPlace = true;if(typeof ga.getByName(\"ga2\") == \"undefined\"){ga(\"create\", \"UA-15474788-21\", \"publico.pt\", { \"name\": \"ga2\" });}\u003c/scr\u0027+\u0027ipt\u003e\u0027 +\r\n\u0027\u003cdiv id=\"paywall-notice\" class=\"paywall-notice paywall-notice-weeks\"\u003e\u003cdiv class=\"paywall-header\"\u003e\u003cp class=\"paywall-header-title\"\u003eJá só tem 3 artigos grátis\u003c/p\u003e\u003cp class=\"paywall-header-login\"\u003eJá é assinante? \u003ca href=\"http://www.publico.pt/utilizador/login\"\u003eInicie a sessão\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\"paywall-content\"\u003e\u003cp class=\"paywall-campaign\"\u003e\u003cspan class=\"paywall-campaign-1\"\u003e8 semanas\u003c/span\u003e\u003cspan class=\"paywall-campaign-2\"\u003e\u003cspan\u003e apenas \u003c/span\u003e\u003c/span\u003e\u003cspan class=\"paywall-campaign-3\"\u003e 0,99€\u003cspan\u003e*\u003c/span\u003e\u003c/span\u003e\u003cspan class=\"paywall-campaign-4\"\u003ePara novos assinantes\u003c/span\u003e\u003c/p\u003e\u003cdiv class=\"paywall-body\"\u003e\u003cp class=\"paywall-body-title\"\u003eEstá prestes a atingir o limite de visualizações grátis.\u003c/p\u003e\u003cp\u003eSe para si o saber não tem limites, \u003ca href=\"https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalid=c03e5c56-c587-43e3-a3cc-73145c8b95cd\" onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 3 artigo\\\', \\\'Clicou Pop up 3 artigo\\\', \\\'Assine_ja\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Assine_ja\\\');\"\u003eassine o Público Online\u003c/a\u003e e apoie tanto a excelência e qualidade do nosso jornal, como do jornalismo em Portugal.\u003c/p\u003e\u003cul class=\"paywall-body-support\"\u003e\u003cli class=\"paywall-body-support-faqs\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'FAQ\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'FAQ\\\');\" href=\"http://www.publico.pt/assinaturas/perguntas-frequentes\" data-toggle=\"tooltip\" title=\"Perguntas Frequentes\"\u003ePerguntas Frequentes\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-chat\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Ligar\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'Ligar\\\');\" href=\"http://www.publico.pt/assinaturas/nos-ligamos\" data-toggle=\"tooltip\" title=\"Nós Ligamos-lhe\"\u003eNós Ligamos-lhe\u003c/a\u003e\u003c/li\u003e\u003cli class=\"paywall-body-support-call last\"\u003e\u003ca onclick=\"ga(\\\'send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'A_Online\\\');ga(\\\'ga2.send\\\', \\\'event\\\', \\\'Pop up 1 artigo\\\', \\\'Clicou Pop up 1 artigo\\\', \\\'A_Online\\\');\" href=\"http://www.publico.pt/assinaturas/apoio-online\" data-toggle=\"tooltip\" title=\"Apoio Online\"\u003eApoio Online\u003c/a\u003e\u003c/li\u003e\u003c/ul\u003e\u003cp class=\"paywall-body-footer\"\u003e* Para pagamentos por Visa/PayPal/débito directo. Restantes meses €9,99/cada. Sem período de fidelização.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003ca href=\"#\" class=\"paywall-close\" title=\"Fechar\"\u003e\u003c/a\u003e\u003c/div\u003e\u0027 +\r\n\u0027\u003cscr\u0027+\u0027ipt\u003ega(\"send\", \"event\", \"Pop up 1 artigo\", \"Viu Pop up 1 artigo\");ga(\"ga2.send\", \"event\", \"Pop up 1 artigo\", \"Viu Pop up 1 artigo\");\u003c/scr\u0027+\u0027ipt\u003e\u0027);\r\n$paywallNotice.hide().appendTo(\u0027body\u0027).fadeIn(\u0027slow\u0027).find(\u0027.paywall-close\u0027).on(\u0027click\u0027, function (e) {$paywallNotice.fadeOut(\u0027fast\u0027); e.preventDefault();});});" };
+		
+        
+		
+
+        var WRP_HOST = 'publico2.solution.weborama.fr';
+        var WRP_ID = 480395;
+        var WRP_SECTION = 'Publico';
+        var WRP_SUBSECTION = WRP_SECTION;
+
+        (function () {
+            var wrsc, s;
+            wrsc = document.createElement('script');
+            wrsc.type = 'text/javascript';
+            wrsc.src = 'http' + ('https:' == document.location.protocol ? 's://cstatic' : '://cstatic') + '.weborama.fr/js/products.js';
+            s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wrsc, s);
+        })();
+
+        window.wex_callback = function () {
+            wex.account('912');
+            wex.push('Publico', 1, '');
+            wex.push('Publico', 1, '');
+
+        };
+
+        (function () {
+            var wsc = document.createElement('script');
+            wsc.type = 'text/javascript';
+            wsc.onload = function () {
+                window.wex_callback();
+                wex.send();
+            };
+            wsc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cstatic.weborama.fr/wam/wfpd.min.js';
+
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wsc, s);
+        })();
+    </script>
+
+
+	    </div>
+	</div> <!-- /#page -->
+	
+    <div id="login-modal-diario" class="login-modal hidden robots-nocontent">
+            <style type="text/css">
+		        .signup-box.media {
+			        width: 61%;
+                }
+		        .signup-box .rodape {
+			        font-size:11px;
+			        line-height:normal;
+			        color:#999;
+		        }
+
+		        .signup-box-row {
+			        float: left;
+			        width: 95%;
+			        margin-bottom: 12px;
+			        line-height: normal;
+		        }
+
+		        .line {
+			        padding-bottom: 10px;
+			        border-bottom: 1px solid #ccc;
+		        }
+
+		        .signup-box-row .title {
+			        font: 15px/28px "PublicoMedium",serif;
+			        color: #444;
+		        }
+
+		        .signup-box-row .gray {
+			        color: #999;
+		        }
+
+		        .signup-box-row .gray a {
+			        color: #999;
+		        }
+
+		        .signup-box-row .bt {
+			        float: right;
+			        text-align: right;
+			        margin-top: 5px;
+		        }
+
+		        .signup-box-col {
+			        float: right;
+			        width: 150px;
+			        margin-left: 12px;
+			        text-align: right;
+		        }
+
+		        .signup-box-col .number {
+			        font: 16px/28px 'PublicoMedium', Georgia, Serif;
+			        color:#b94a48;
+		        }
+
+		        .clear {
+			        clear: both;
+		        }
+            </style>
+
+	        <h2>Conteúdo exclusivo para assinantes</h2>
+	        <p>Para continuar a ler, faça login ou assine já.</p>
+								
+            <div class="login-box">
+	            <h3 class="sub-title">Iniciar Sessão</h3>
+	                <div class="btn-stack">
+        <div class="btn-stack social-signup">
+	<!-- FACEBOOK-->
+    <a class="btn btn-medium btn-social-login" href="javascript:void(0);" 
+        onclick="javascript:open('https://graph.facebook.com/oauth/authorize?type=web_server&client_id=263434066253&scope=user_birthday,user_hometown,user_interests,user_location,email&redirect_uri=http%3a%2f%2fwww.publico.pt%2fUtilizador%2fFacebookLogin', 'Facebook', 'status=1,toolbar=0,menubar=0,width=1000, height=600');trackEvent('LOGIN', 'FACEBOOK', 'CLICK');">
+        <span class="icon icon-facebook"></span>
+        Entrar com o Facebook</a> 
+
+    <!-- TWITTER-->
+    <a class="btn btn-medium btn-social-login" href="/Utilizador/LoginTwitter" id="twitterSigninBtn" onclick="trackEvent('LOGIN', 'TWITTER', 'CLICK')"><span class="icon icon-twitter"></span>
+        Entrar com o Twitter</a>
+</div>
+    </div>
+    <div class="divider-options">
+        <span class="divider-text">Ou</span>
+    </div>
+<form action="/Utilizador/SubmitLogin" class="login-form" id="loginForm" method="post"><div class="validation-summary-valid" data-valmsg-summary="true" id="loginValidationSummary"><ul><li style="display:none"></li>
+</ul></div>        <label>
+            <span class="email assistive"></span>
+            <input class="input-medium" data-val="true" data-val-regex="Utilizador inv&amp;#225;lido" data-val-regex-pattern="(\w+([-+.&#39;]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)|^(\d{9}|\d{14})$" data-val-required="Preencha Nome de Utilizador" id="Email" name="Email" placeholder="Email" type="text" value="" />
+        </label>
+        <label>
+            <span class="password assistive">Palavra-chave</span>
+            <input class="input-medium" data-val="true" data-val-required="Preencha Password" id="Password" name="Password" placeholder="Palavra-chave" type="password" />
+        </label>
+        <label class="checkbox">
+            <input data-val="true" data-val-required="The RememberMe field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+            <span>Lembrar-se de mim</span>
+        </label>
+        <input type="submit" class="btn" value="Entrar"  onclick="trackEvent('LOGIN', 'PUBLICO', 'CLICK')"/>
+        <p><a class="forgot" href="http://www.publico.pt/Utilizador/RecuperarPassword"  onclick="trackEvent('LOGIN', 'FORGET', 'CLICK')">Esqueceu-se da sua palavra-chave?</a></p>
+</form>
+            </div>
+            <!-- /.login-box -->
+
+            <div class="signup-box media">
+        	    <h3 class="sub-title">Assine o Público</h3>
+			    <div class="signup-box-row line">
+            	    <div class="signup-box-col">
+            		    <span class="number">Ligue 760 10 50 20</span>
+                        <img src="//static.publico.pt/files/homepage/img/content/new_account.png" alt="" width="150">
+                    </div>            
+                    <span class="title">Assinatura Diária*</span>
+                    <p>Para usufruir de uma assinatura diária e ter acesso a todos os <strong>conteúdos exclusivos</strong> durante o dia de hoje.</p>
+                    <p class="gray">Tome nota do código e introduza-o no campo ao lado para iniciar a sessão.</p>
+                    <p class="gray"><a href="http://static.publico.pt/assinaturas/condicoes.pdf">Condições <span style="font-size:11px">[+]</span></a></p>
+                </div>
+                <div class="clear"></div>
+                <div class="signup-box-row">
+            	    <div class="bt"><a class="btn btn-primary" href="http://assinaturas.publico.pt/p_Subscriptions/StoreDigital.aspx" target="_blank">Subscrever</a></div>
+            	    <span class="title">Outras modalidades</span>
+                    <p>A partir de 2,30€</p>
+                </div>
+                <div class="clear"></div>
+                <div class="rodape">* Número válido apenas para Portugal. Custo da chamada €0,60 + IVA. Esta assinatura é válida até ao final do dia corrente.</div>
+            </div>
+        </div>    
+
+    <aside id="subscription-tab" class="subscription-tab robots-nocontent">
+	    <a class="tab ir" href="https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalId=79eabf6f-4a26-4a00-a1c3-1b443cd0cf79">Assine já</a>
+	    <button class="close">&times;</button>
+	    <p><img src="//static.publico.pt/files/homepage/img/media.png" alt=""></p>
+	    <h1>Entre no Mundo das notícias sem limites</h1>
+	    <p><b>Experimente por 1€*</b> no primeiro mês e garanta o acesso simples e imediato a todos os conteúdos.</p>
+        
+	    <p class="muted">* Campanha para pagamento por VISA / PayPal / débito directo. Restantes meses: 9,99€/cada.</p>
+        <a class="btn btn-block" href="https://assinaturas.publico.pt/p_Subscriptions/LojaOnlineDigital.aspx?CampaignExternalId=79eabf6f-4a26-4a00-a1c3-1b443cd0cf79" onclick="ga('send', 'event', 'Assine ja', 'Clicou Assine ja', 'S_Limites');">Leia o Público sem limites</a>
+        <ul class="nav">
+    	    <li><a href="/assinaturas/perguntas-frequentes" onclick="ga('send', 'event', 'Assine ja', 'Clicou Assine ja', 'FAQ');"><span class="icon icon-subscription-tab-faq"></span> Perguntas Frequentes</a></li></li>
+    	    <li><a href="/assinaturas/nos-ligamos" onclick="ga('send', 'event', 'Assine ja', 'Clicou Assine ja', 'Ligar');"><span class="icon icon-subscription-tab-call"></span> Nós Ligamos-lhe</a></li></li>
+    	    <li><a href="/assinaturas/apoio-online" onclick="ga('send', 'event', 'Assine ja', 'Clicou Assine ja', 'A_Online');"><span class="icon icon-subscription-tab-chat"></span> Apoio Online</a></li></li>
+        </ul>
+    </aside> <!-- #subscription-tab -->
+
+    
+    <script type="text/javascript"> <!--//--><![CDATA[//><!—
+        var pp_gemius_identifier = '.X2bGScWCGLZzbLgX2VHcuV176EdwCbMhDcUvgzZW8b.A7';
+        var pp_gemius_extraparameters = new Array('gA=Homepage_do_site');
+        var pp_gemius_event = pp_gemius_event || function() {var x = window.gemius_sevents = window.gemius_sevents || [];x[x.length]=arguments;};
+        ( function(d,t) { var ex; try { var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s://secure':'://data'); gt.async='true'; gt.src=l+'.netscope.marktest.pt/netscope-gemius.js'; s.parentNode.appendChild(gt);} catch
+        (ex){}}(document,'script')); //--><!]]>
+    </script>
+
+    <script type="text/javascript">
+        var WRP_ID = 294353;
+        var WRP_SECTION = 'HOMEPAGE';
+        var WRP_SUBSECTION = 'Homepage';
+        var WRP_CONTENT = 'Home';
+        var WRP_CHANNEL;
+
+        wreport_ok = 0;
+        var WRP_ACC;        
+
+    </script>
+
+    <script language="javascript" src="//www.publico.pt/includes/JS/netscope2.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        if (wreport_ok == 1) {
+            var w_counter = new wreport_counter(WRP_SECTION, WRP_SUBSECTION, WRP_ID, WRP_ACC, WRP_CHANNEL);
+            w_counter.add_content(WRP_CONTENT);
+            w_counter.count();
+        }
+    </script>
+
+    <script type="text/javascript">
+        var fonte = 'PAGINA';
+        var DadosId = [];
+                DadosId.push('208');
+    </script>
+
+
+    <!--[if lt IE 8]>
+        <script src="/Scripts/JSON2.js" type="text/javascript"></script>
+    <![endif]-->
+    <script src="//static.publico.pt/files/homepage/js/plugins.rwd.js?v1" type="text/javascript" ></script>
+    <script src="/Scripts/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+	<script src="//static.publico.pt/files/homepage/js/script.rwd.js?v1" type="text/javascript" ></script>
+    <script src="/Scripts/jquery-fieldselection.min.js" type="text/javascript"></script>
+	<script src="http://assets.pinterest.com/js/pinit.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    <script src="/Scripts/store.min.js"></script>
+	
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js" type="text/javascript"></script>
+    <script src="/Scripts/Home/home.min.js?20141014"></script>
+    <script src="/Scripts/Home/recomendacao.min.js?20141028"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (location.href == 'http://www.publico.pt/' || location.href == 'http://publico.pt/' || location.href == '') {
+                var idle_time = 0, idle_limit = 3, idle_interval;
+                idle_interval = setInterval(function () {
+                    idle_time = idle_time + 1;
+                    if (idle_time >= idle_limit) {
+                        window.location = "http://www.publico.pt";
+                    }
+                }, 60000);
+//                jQuery(window).bind('mousemove keydown scroll focus', function () {
+                    //idle_time = 0;
+//                });
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-15474788-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+
+    <script type="text/javascript" src="http://tracker.publico.pt/pbasitetracker/pbasitetracker.min.js"></script>
+    <script type="text/javascript">
+        PbaSiteTracker.Init({ siteID: "PUBLICO" });
+        PbaSiteTracker.trackPage();
+        PbaSiteTracker.trackLinks();
+    </script>
+    
+    <script type="text/javascript">
+        var mainTag = 'HOMEPAGE';
+    </script>
+	<script type="text/javascript" src ="//static.publico.pt/files/homepage/js/jquery.cookie.js"></script>
+    <script src="/Scripts/publico.utils.js?v1"  type="text/javascript"></script>
+    <script src="/Scripts/publico.blocks.js?v03"  type="text/javascript"></script>
+<script id="LateLoadCaixaMENU_DEFAULT" type="text/x-jquery-tmpl">
+<div class="box group">
+    <div class="menu-featured">
+        <h3 class="assistive">Principais Destaques</h3>
+        <ul class="nav">
+        {{each(i, conteudo) Conteudos}}
+            {{if conteudo.Dados != null && conteudo.Dados != ""}}
+                {{if (conteudo.IS_CONTEUDO_HTML == true)}}
+                    {{html conteudo.CONTEUDOS_HTML.CONTEUDOS_HTML}}
+                {{else (i < 2)}}
+                <li>
+                    <a class="media" href="${conteudo.Dados.Url}" data-toggle="save" data-fonte="${conteudo.FONTE.TOKEN}" data-dados-id="${conteudo.Dados.Id}" onclick="trackEvent('MEGA_MENU', 'CLICK', '${conteudo.Dados.Titulo}')">
+                    {{if (conteudo.Dados.FonteMultimediaPrincipal != null && conteudo.Dados.MultimediaPrincipal != null && conteudo.Dados.MultimediaPrincipal != '')}}
+                        <div class="media-object">
+                            {{if conteudo.Dados.FonteMultimediaPrincipal == "VIDEOS_TVI"}}
+                                <img src="{{html conteudo.Dados.MultimediaPrincipal.replace("{0}", 171)}}" alt="" itemprop="thumbnailUrl">
+                            {{else}}
+                                <img src="{{html conteudo.Dados.MultimediaPrincipal.replace("{0}", 171)}}&w=171&h=114&act=cropResize" alt="">   
+                            {{/if}}
+                            {{if (conteudo.Dados.FonteMultimediaPrincipal == "VIDEOS" || conteudo.Dados.FonteMultimediaPrincipal == "VIDEOS_TVI")}}
+                                <span class="icon icon-media icon-media-video">Vídeo</span>                        
+                            {{else (conteudo.Dados.FonteMultimediaPrincipal == "FOTOGALERIAS")}}
+                                <span class="icon icon-media icon-media-gallery">Fotogaleria</span>
+                            {{else (conteudo.Dados.FonteMultimediaPrincipal == "INFOGRAFIAS")}}
+                                <span class="icon icon-media icon-media-infographics">Infografia</span>
+                            {{/if}}
+                        </div>
+                    {{/if}}
+                    <div class="media-content">
+                        <hgroup>
+                            <h5 class="rubric-title">${conteudo.Dados.Rubrica}</h5>
+                            <h4 class="entry-title">
+                                {{if conteudo.Dados.Exclusivo}}
+                                    <span class="icon icon-exclusive" data-toggle="tooltip" title="Exclusivo Assinantes"></span>
+                                {{/if}}
+                                {{html conteudo.Dados.Titulo}}
+                            </h4>
+                        </hgroup>
+                    </div>
+                    </a>
+                </li>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+        </ul> <!-- /.nav -->
+    </div> <!-- /.menu-featured -->
+    <div class="menu-headlines headline-list">
+        <h3 class="assistive">Outros Destaques</h3>
+        <ul class="nav">
+        {{each(i, conteudo) Conteudos}}
+            {{if conteudo.Dados != null && conteudo.Dados != ""}}
+                {{if (conteudo.IS_CONTEUDO_HTML == true)}}
+                    {{html conteudo.CONTEUDOS_HTML.CONTEUDOS_HTML}}
+                {{else (i >= 2 && i < 6)}}
+                    <li><a href="${conteudo.Dados.Url}" data-toggle="save" data-fonte="${conteudo.FONTE.TOKEN}" data-dados-id="${conteudo.Dados.Id}" onclick="trackEvent('MEGA_MENU', 'CLICK', 'SECUNDARIO')">
+                        {{if conteudo.Dados.Exclusivo}}
+                            <span class="icon icon-exclusive" data-toggle="tooltip" title="Exclusivo Assinantes"></span>
+                        {{/if}}                        
+                        {{html conteudo.Dados.Titulo}}</a>
+                    </li>
+                {{/if}}
+            {{/if}}
+        {{/each}}
+        </ul> <!-- /.nav -->
+        </div> <!-- /.menu-headlines -->
+ 
+        <div class="menu-more">
+        <h3 class="rubric-title">Mais</h3>
+        <ul class="nav">
+            {{each(i, conteudo) Conteudos}}
+                {{if (i >= 6 && i < 14)}}
+                    <li><a {{if conteudo.Dados.Url != ""}}href="${conteudo.Dados.Url}"{{/if}} onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAG')">
+                        {{if conteudo.Dados.Exclusivo}}
+                            <span class="icon icon-exclusive" data-toggle="tooltip" title="Exclusivo Assinantes"></span>
+                        {{/if}}
+                        {{html conteudo.Dados.Titulo}}
+                    </a></li>
+                {{/if}}
+            {{/each}}
+        </ul> <!-- /.nav -->
+        </div> <!-- /.menu-more -->
+
+</div> <!-- /.box -->
+</script><script id="LateLoadCaixaMENU_MULTIMEDIA" type="text/x-jquery-tmpl">
+<div class="box group">
+    <div class="menu-thumbnails">
+        <h3 class="assistive">Principais Destaques</h3>
+        <ul class="thumbnails group">
+        {{each(i, conteudo) Conteudos}}
+            {{if (i < 3)}}
+            <li>
+                <a class="thumbnail" href="${conteudo.Dados.Url}" onclick="trackEvent('MEGA_MENU', 'CLICK', '${conteudo.Dados.Titulo}')">
+                    <div class="thumbnail-wrapper">
+                        {{if (conteudo.Dados.FonteMultimediaPrincipal != null && conteudo.Dados.MultimediaPrincipal != null && conteudo.Dados.MultimediaPrincipal != '')}}
+                        <span class="thumbnail-clip">
+                            <span class="thumbnail-clip-inner">
+                                {{if conteudo.Dados.FonteMultimediaPrincipal == "VIDEOS_TVI"}}
+                                    <img src="{{html conteudo.Dados.MultimediaPrincipal.replace("{0}", 265)}}" alt="" itemprop="thumbnailUrl">
+                                {{else}}
+                                    <img src="${conteudo.Dados.MultimediaPrincipal}&w=265&h=177&act=cropResize" alt="">
+                                {{/if}}
+                                <span class="valign"></span>
+                            </span>
+                        </span>
+                            {{if (conteudo.Dados.FonteMultimediaPrincipal == "VIDEOS" || conteudo.Dados.FonteMultimediaPrincipal == "VIDEOS_TVI")}}
+                            <span class="icon icon-media icon-media-video">Vídeo</span>
+                            {{else (conteudo.Dados.FonteMultimediaPrincipal == "FOTOGALERIAS")}}
+                            <span class="icon icon-media icon-media-gallery">Fotogaleria</span>
+                            {{else (conteudo.Dados.FonteMultimediaPrincipal == "INFOGRAFIAS")}}
+                            <span class="icon icon-media icon-media-infographics">Infografia</span>
+                        {{/if}}
+                    </div>
+                        <div class="caption">
+							<hgroup>
+								<h4 class="entry-title">{{html conteudo.Dados.Titulo}}</h4>
+							</hgroup>
+                        </div>
+                {{/if}}            
+                </a>
+            </li>
+            {{/if}}
+        {{/each}}
+        </ul> <!-- /.nav -->
+        </div> <!-- /.menu-thumbnails -->
+       
+        <div class="menu-more">
+        <h3 class="rubric-title">Mais</h3>
+        <ul class="nav">
+            {{each(i, conteudo) Conteudos}}
+                {{if (i >= 5 && i < 14)}}
+                    <li><a {{if conteudo.Dados.Url != ""}}href="${conteudo.Dados.Url}"{{/if}} onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAG')">${conteudo.Dados.Titulo}</a></li>
+                {{/if}}
+            {{/each}}
+        </ul> <!-- /.nav -->
+        </div> <!-- /.menu-more -->
+
+</div> <!-- /.box -->
+
+</script>
+
+<script id="LateLoadCaixaMENU_OPINIAO" type="text/x-jquery-tmpl">
+<div class="box group">
+    <div class="menu-featured">
+        <h3 class="assistive">Principais Destaques</h3>
+        <ul class="thumbnails thumbnails-square">
+        {{each(i, conteudo) Conteudos}}
+            {{if (i < 2)}}
+            {{if conteudo.Dados != null}}
+            <li class="thumbnail exclusive" data-toggle="save">
+                <a href="${conteudo.Dados.Url}" rel="bookmark" onclick="trackEvent('MEGA_MENU', 'CLICK', '${conteudo.Dados.Titulo}')">
+                    {{if (conteudo.Dados.MultimediaPrincipal != null && conteudo.Dados.MultimediaPrincipal != '')}}
+                        <img src="${conteudo.Dados.MultimediaPrincipal}&w=160&h=160&act=cropResize" alt="">
+                    {{/if}}
+                    <hgroup>
+				        {{if conteudo.Dados.Autores.length > 0}}
+					        <h3 class="rubric-title">${conteudo.Dados.Autores[0].Nome}</h3>
+					    {{/if}}
+                        <h2 class="entry-title">
+                            {{if conteudo.Dados.Exclusivo}}
+                                <span class="icon icon-exclusive" data-toggle="tooltip" title="Exclusivo Assinantes"></span>                                
+                            {{/if}}
+                            {{html conteudo.Dados.Titulo}}
+                        </h2>
+				    </hgroup>
+                </a>
+            </li>
+            {{/if}}
+            {{/if}}
+        {{/each}}
+        </ul> <!-- /.nav -->
+        </div> <!-- /.menu-thumbnails -->
+
+        <div class="menu-headlines headline-list">
+            <h3 class="assistive">Outros Destaques</h3>
+            <ul class="nav">
+                {{each(i, conteudo) Conteudos}}
+                    {{if (conteudo.IS_CONTEUDO_HTML == true)}}
+                        {{html conteudo.CONTEUDOS_HTML.CONTEUDOS_HTML}}
+                    {{else (i >= 2 && i < 6)}}
+                        {{if conteudo.Dados != null}}
+                        <li><a href="${conteudo.Dados.Url}" data-toggle="save" data-fonte="${conteudo.FONTE.TOKEN}" data-dados-id="${conteudo.DADOS_ID}" onclick="trackEvent('MEGA_MENU', 'CLICK', 'SECUNDARIO')">
+                            <span class="rubric-title">
+                            {{if conteudo.Dados.Autores.length > 0}}
+                            ${conteudo.Dados.Autores[0].Nome}<span class="assistive">: </span>
+                            {{/if}}
+                            </span>
+                            {{if conteudo.Dados.Exclusivo}}
+                                <span class="icon icon-exclusive" data-toggle="tooltip" title="Exclusivo Assinantes"></span>                                
+                            {{/if}}
+                            {{html conteudo.Dados.Titulo}}
+                            </a>
+                        </li>
+                        {{/if}}
+                    {{/if}}
+                {{/each}}
+            </ul> <!-- /.nav -->
+        </div> <!-- /.menu-headlines -->
+       
+        <div class="menu-more">
+        <h3 class="rubric-title">Mais</h3>
+        <ul class="nav">
+            <li><a href="/opiniao#blogues" onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAGS')">Blogues</a></li>
+            <li><a href="/opiniao#editoriais" onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAGS')">Editoriais</a></li>
+            <li><a href="/opiniao#project-syndicate" onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAGS')">Project Syndicate</a></li>
+            <li><a href="/opiniao#colunistas" onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAGS')">Colunistas</a></li>
+            <li><a href="/opiniao#videos" onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAGS')">Vídeos</a></li>
+            <li><a href="/opiniao#bartoon" onclick="trackEvent('MEGA_MENU', 'CLICK', 'TAGS')">Bartoon</a></li>
+        </ul> <!-- /.nav -->
+        </div> <!-- /.menu-more -->
+
+</div> <!-- /.box -->
+
+</script>
+
+
+    <script type="text/javascript" >
+
+        $(document).ready(function() {
+                AddPageContext("PAGINA", "208");
+
+                    PrepareMenuJsonData("861");
+                    PrepareMenuJsonData("866");
+                    PrepareMenuJsonData("862");
+                    PrepareMenuJsonData("867");
+                    PrepareMenuJsonData("865");
+                    PrepareMenuJsonData("864");
+                    PrepareMenuJsonData("863");
+                    PrepareMenuJsonData("930");
+                    PrepareMenuJsonData("869");
+
+            PrepareMenuJsonData("3078");
+
+
+            
+
+            PlaceSubCaixas();
+            LateLoadJs();
+			
+			if(typeof allDone === "function"){
+				allDone();
+			}
+        });
+    </script>
+
+    <script type="text/javascript" src="/advertisement.js"></script>
+</body>
+</html>

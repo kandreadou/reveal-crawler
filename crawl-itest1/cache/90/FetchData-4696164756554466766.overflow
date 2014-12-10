@@ -1,0 +1,2358 @@
+{
+                        event.preventDefault();
+                        om.parametrizeOmnitureByTabTeaser(this);
+                    });
+
+                    var selectorsBunch =  "ul.mndteaser-list article.group a, section.teaser.slideshows a,"
+                            +" section.teaser.relatedTopics article a";
+                    $(selectorsBunch).on("click", function(event) {
+                        event.preventDefault();
+                        om.parametrizeOmnitureByStandardTeaser(this);
+                    });
+
+                    if(typeof twttr == 'object') {
+                        twttr.events.bind('click', function() {
+                            om.parametrizeOmniture('Tweet');
+                        });
+                    }
+
+                    $(document).on('social.fire.gplus', function() {
+                        om.parametrizeOmniture('Googleplus');
+                    });
+
+                    var facebookEventHandler = {
+                        checkIsAlreadyLoaded : function () {
+                            var fbIframe = $('.shareButtons .facebook iframe');
+                            if(fbIframe.length > 0) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        },
+                        bindFBCallback : function () {
+                            FB.Event.subscribe('edge.create', function () {
+                                om.parametrizeOmniture('Facebook');
+                            });
+                        }
+                    }
+                    var intervalId = setInterval(function () {
+                        if(facebookEventHandler.checkIsAlreadyLoaded()) {
+                            facebookEventHandler.bindFBCallback();
+                            clearInterval(intervalId);
+                        }
+                    }, 100);
+                }
+            </script><!-- SiteCatalyst code version: H.24.2.
+            Copyright 1996-2012 Adobe, Inc. All Rights Reserved
+            More info available at http://www.omniture.com --><script language="JavaScript" type="text/javascript"><!--
+                                
+                
+                
+                s.server="http://www.nzz.ch";
+
+                                    s.channel="impressum";
+                    s.pageName="impressum";
+                
+                /* Delivery channel */
+                s.prop1 = "nzz";
+
+                                                                                                                                                                                                                                    /* Titletag */
+                    s.prop16="Impressum - NZZ.ch";
+
+                
+                /* Conversion Variables */
+
+                /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+                var s_code=s.t();if(s_code)document.write(s_code)//--></script><script language="JavaScript" type="text/javascript"><!--
+                if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+                //--></script><noscript><img src="http://nzz.d3.sc.omtrdc.net/b/ss/nzzch/1/H.24.2--NS/0"
+                                             height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/--><!-- End SiteCatalyst code version: H.24.2. --></body></html>id="638" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/materiel/tests-bancs-essai" class="figh-nav__expander" title="Tests &amp; bancs d&#039;essai">
+                                                            <a href="http://golf.lefigaro.fr/materiel/tests-bancs-essai" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Tests &amp; bancs d&#039;essai</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="639" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/mode/" class="figh-nav__expander" title="Derni&egrave;res tendances Mode">
+                                                            <a href="http://golf.lefigaro.fr/mode/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Derni&egrave;res tendances Mode</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="640" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/materiel/shopping-accessoires" class="figh-nav__expander" title="Shopping &amp; Accessoires">
+                                                            <a href="http://golf.lefigaro.fr/materiel/shopping-accessoires" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Shopping &amp; Accessoires</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="615" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/parcours-tourisme/destinations-golf" class="figh-nav__expander" title="Parcours &amp; Tourisme">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://golf.lefigaro.fr/parcours-tourisme/destinations-golf" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Parcours &amp; Tourisme</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="641" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/parcours-tourisme/destinations-golf" class="figh-nav__expander" title="Destinations golf">
+                                                            <a href="http://golf.lefigaro.fr/parcours-tourisme/destinations-golf" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Destinations golf</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="642" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/parcours-tourisme/rolex-les1000meilleursgolfsdumonde/recherche.php " class="figh-nav__expander" title="Rolex - Les 1 000 Meilleurs Golfs du Monde">
+                                                            <a href="http://golf.lefigaro.fr/parcours-tourisme/rolex-les1000meilleursgolfsdumonde/recherche.php " class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Rolex - Les 1 000 Meilleurs Golfs du Monde</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="643" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/pratique/parcours-en-france/" class="figh-nav__expander" title="Tous les parcours en France">
+                                                            <a href="http://golf.lefigaro.fr/pratique/parcours-en-france/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Tous les parcours en France</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="644" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/tourisme/tous-les-parcours-du-monde/" class="figh-nav__expander" title="Tous les parcours du monde">
+                                                            <a href="http://golf.lefigaro.fr/tourisme/tous-les-parcours-du-monde/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Tous les parcours du monde</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="645" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/pratique/annuaire-du-golfeur/" class="figh-nav__expander" title="Annuaire du golf">
+                                                            <a href="http://golf.lefigaro.fr/pratique/annuaire-du-golfeur/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Annuaire du golf</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="646" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/tourisme/les-parcours-essentiels/" class="figh-nav__expander" title="Les parcours essentiels">
+                                                            <a href="http://golf.lefigaro.fr/tourisme/les-parcours-essentiels/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Les parcours essentiels</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="616" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/madame-golf/" class="figh-nav__expander" title="Madame Golf">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://golf.lefigaro.fr/madame-golf/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Madame Golf</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="647" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://golf.lefigaro.fr/trophee-madame-figaro/" class="figh-nav__expander" title="Troph&eacute;e Madame Figaro">
+                                                            <a href="http://golf.lefigaro.fr/trophee-madame-figaro/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Troph&eacute;e Madame Figaro</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="1183" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://blog.lefigaro.fr/golf/" class="figh-nav__expander" title="Blog French connexion">
+                                                            <a href="http://blog.lefigaro.fr/golf/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Blog French connexion</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1179" class="figh-nav__level--4">
+            <div class="links">
+                <span  class="figh-nav__expander" title="Services">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a class="js-arrow-event" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Services</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="1180" class="figh-nav__level--5">
+            <div class="links">
+                <span href="https://bookandgolf.com/fr/reserver-un-green-fee" class="figh-nav__expander" title="R&eacute;servez un d&eacute;part">
+                                                            <a href="https://bookandgolf.com/fr/reserver-un-green-fee" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">R&eacute;servez un d&eacute;part</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1181" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://boutique.lefigaro.fr/recherche?facets%5Bkeyword%5D=golf&amp;commit=OK&amp;utf8=%E2%9C%93" class="figh-nav__expander" title="Galerie Photo">
+                                                            <a href="http://boutique.lefigaro.fr/recherche?facets%5Bkeyword%5D=golf&amp;commit=OK&amp;utf8=%E2%9C%93" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Galerie Photo</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1182" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://boutique.lefigaro.fr/recherche?facets%5Bkeyword%5D=croisi%C3%A8res+golf&amp;commit=OK&amp;utf8=%E2%9C%93" class="figh-nav__expander" title="Croisi&egrave;re Golf">
+                                                            <a href="http://boutique.lefigaro.fr/recherche?facets%5Bkeyword%5D=croisi%C3%A8res+golf&amp;commit=OK&amp;utf8=%E2%9C%93" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Croisi&egrave;re Golf</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+    </ul>                    </li>
+            <li data-id="238" class="figh-nav__level--3">
+            <div class="links">
+                <span  class="figh-nav__expander" title="Plus de sports">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a class="js-arrow-event" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Plus de sports</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="239" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/athletisme" class="figh-nav__expander" title="Athl&eacute;tisme">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://sport24.lefigaro.fr/athletisme" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Athl&eacute;tisme</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="766" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/athletisme/running" class="figh-nav__expander" title="Running">
+                                                            <a href="http://sport24.lefigaro.fr/athletisme/running" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Running</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="767" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/athletisme/l-affaire-oscar-pistorius" class="figh-nav__expander" title="L&#039;affaire Oscar Pistorius">
+                                                            <a href="http://sport24.lefigaro.fr/athletisme/l-affaire-oscar-pistorius" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">L&#039;affaire Oscar Pistorius</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="240" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/boxe" class="figh-nav__expander" title="Boxe">
+                                                            <a href="http://sport24.lefigaro.fr/boxe" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Boxe</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="231" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/cyclisme" class="figh-nav__expander" title="Cyclisme">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://sport24.lefigaro.fr/cyclisme" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Cyclisme</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="232" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/cyclisme/tour-de-france" class="figh-nav__expander" title="Tour de France">
+                                                            <a href="http://sport24.lefigaro.fr/cyclisme/tour-de-france" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Tour de France</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="233" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/cyclisme/giro" class="figh-nav__expander" title="Giro">
+                                                            <a href="http://sport24.lefigaro.fr/cyclisme/giro" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Giro</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="234" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/cyclisme/vuelta" class="figh-nav__expander" title="Vuelta">
+                                                            <a href="http://sport24.lefigaro.fr/cyclisme/vuelta" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Vuelta</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="765" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/cyclisme/l-affaire-armstrong" class="figh-nav__expander" title="L&#039;affaire Armstrong">
+                                                            <a href="http://sport24.lefigaro.fr/cyclisme/l-affaire-armstrong" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">L&#039;affaire Armstrong</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="241" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/escrime" class="figh-nav__expander" title="Escrime">
+                                                            <a href="http://sport24.lefigaro.fr/escrime" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Escrime</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1136" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/equitation" class="figh-nav__expander" title="Equitation">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://sport24.lefigaro.fr/equitation" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Equitation</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="1138" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://gucciparismasters.lefigaro.fr/" class="figh-nav__expander" title="Gucci Masters">
+                                                            <a href="http://gucciparismasters.lefigaro.fr/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Gucci Masters</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1137" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://blog.lefigaro.fr/mise-en-selle/" class="figh-nav__expander" title="Mise en selle">
+                                                            <a href="http://blog.lefigaro.fr/mise-en-selle/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Mise en selle</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="1156" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/free-zone" class="figh-nav__expander" title="Freezone">
+                                                            <a href="http://sport24.lefigaro.fr/free-zone" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Freezone</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="242" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/handball" class="figh-nav__expander" title="Handball">
+                                                            <a href="http://sport24.lefigaro.fr/handball" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Handball</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="243" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/jeux-olympiques" class="figh-nav__expander" title="Handisport">
+                                                            <a href="http://sport24.lefigaro.fr/jeux-olympiques" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Handisport</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="244" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/jeux-olympiques" class="figh-nav__expander" title="Jeux Olympiques">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://sport24.lefigaro.fr/jeux-olympiques" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Jeux Olympiques</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="1325" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/jeux-olympiques/sotchi-2014" class="figh-nav__expander" title="Sotchi 2014">
+                                                            <a href="http://sport24.lefigaro.fr/jeux-olympiques/sotchi-2014" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Sotchi 2014</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1324" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/jeux-olympiques/londres-2012" class="figh-nav__expander" title="Londres 2012">
+                                                            <a href="http://sport24.lefigaro.fr/jeux-olympiques/londres-2012" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Londres 2012</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1323" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/jeux-olympiques/jo-2010" class="figh-nav__expander" title="Vancouver 2010">
+                                                            <a href="http://sport24.lefigaro.fr/jeux-olympiques/jo-2010" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Vancouver 2010</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1322" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/jeux-olympiques/pekin-2008" class="figh-nav__expander" title="P&eacute;kin 2008">
+                                                            <a href="http://sport24.lefigaro.fr/jeux-olympiques/pekin-2008" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">P&eacute;kin 2008</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="245" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/judo" class="figh-nav__expander" title="Judo">
+                                                            <a href="http://sport24.lefigaro.fr/judo" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Judo</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="246" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/natation" class="figh-nav__expander" title="Natation">
+                                                            <a href="http://sport24.lefigaro.fr/natation" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Natation</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1142" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://www.lefigaro.fr/sport-business/" class="figh-nav__expander" title="Sport Business">
+                                                            <a href="http://www.lefigaro.fr/sport-business/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Sport Business</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="247" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/sports-d-hiver" class="figh-nav__expander" title="Sports d&#039;hiver">
+                                                            <a href="http://sport24.lefigaro.fr/sports-d-hiver" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Sports d&#039;hiver</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="248" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/sports-us" class="figh-nav__expander" title="Sports US">
+                                                            <a href="http://sport24.lefigaro.fr/sports-us" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Sports US</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="249" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/volley" class="figh-nav__expander" title="Volley">
+                                                            <a href="http://sport24.lefigaro.fr/volley" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Volley</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1231" class="figh-nav__level--4">
+            <div class="links">
+                <span  class="figh-nav__expander" title="Bons Plans">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a class="js-arrow-event" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Bons Plans</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="1232" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://codespromo.lefigaro.fr/" class="figh-nav__expander" title="Promotions">
+                                                            <a href="http://codespromo.lefigaro.fr/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Promotions</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+    </ul>                    </li>
+            <li data-id="488" class="figh-nav__level--3">
+            <div class="links">
+                <span href="http://video.lefigaro.fr/sport24/" class="figh-nav__expander" title="Vid&eacute;os Sport">
+                                                            <a href="http://video.lefigaro.fr/sport24/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Vid&eacute;os Sport</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="735" class="figh-nav__level--3">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/diaporamas" class="figh-nav__expander" title="Diapo Sport">
+                                                            <a href="http://sport24.lefigaro.fr/diaporamas" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Diapo Sport</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="736" class="figh-nav__level--3">
+            <div class="links">
+                <span href="http://sport24.lefigaro.fr/pages/home_blogs.html" class="figh-nav__expander" title="Blogs Sport">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://sport24.lefigaro.fr/pages/home_blogs.html" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Blogs Sport</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="770" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://blog.lefigaro.fr/football/bruno_roger-petit/" class="figh-nav__expander" title="BRP HD">
+                                                            <a href="http://blog.lefigaro.fr/football/bruno_roger-petit/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">BRP HD</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="774" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://blog.lefigaro.fr/terrains-virtuels/" class="figh-nav__expander" title="Terrains Virtuels">
+                                                            <a href="http://blog.lefigaro.fr/terrains-virtuels/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Terrains Virtuels</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="773" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://blog.lefigaro.fr/mise-en-selle/" class="figh-nav__expander" title="Mise en selle">
+                                                            <a href="http://blog.lefigaro.fr/mise-en-selle/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Mise en selle</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="771" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://blog.lefigaro.fr/golf/" class="figh-nav__expander" title="French Connexion">
+                                                            <a href="http://blog.lefigaro.fr/golf/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">French Connexion</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="772" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://blog.lefigaro.fr/sport-business/" class="figh-nav__expander" title="Sport Business">
+                                                            <a href="http://blog.lefigaro.fr/sport-business/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Sport Business</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="1140" class="figh-nav__level--3">
+            <div class="links">
+                <span href="http://tvmag.sport24.lefigaro.fr/programme-tv" class="figh-nav__expander" title="Agenda TV Sport">
+                                                            <a href="http://tvmag.sport24.lefigaro.fr/programme-tv" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Agenda TV Sport</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1143" class="figh-nav__level--3">
+            <div class="links">
+                <span  class="figh-nav__expander" title="Bons Plans">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a class="js-arrow-event" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Bons Plans</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="1233" class="figh-nav__level--4 figh-nav__ad">
+            <div class="links">
+                <span href="http://codespromo.lefigaro.fr/" class="figh-nav__expander" title="Codes promos">
+                                                            <a href="http://codespromo.lefigaro.fr/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Codes promos</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1234" class="figh-nav__level--4 figh-nav__ad">
+            <div class="links">
+                <span href="http://www.lefigaro.fr/jeuxetinvitations/#!" class="figh-nav__expander" title="Quiz et invitations">
+                                                            <a href="http://www.lefigaro.fr/jeuxetinvitations/#!" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Quiz et invitations</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+    </ul>        </nav>
+
+    </div>
+            <div id="reader-block" class="js-reader-collapsed figh-reader figh-reader--collapsed">
+    <div class="figh-reader__container">
+    </div>
+</div>        <div id="signin-block" class="figh-sign-in js-figh-signin-block mobile-only">
+        <div class="figh-sign-in__container">
+        </div>
+    </div>
+</div>
+<div id="right-panel" class="figh-right-panel figh-logged figh-logged--collapsed">
+    <div class="figh-logged__container">
+        <ul id="figh-user-menu-liste1" class="figh-logged__list figh-logged__list--bold"></ul>
+        <ul id="figh-user-menu-liste2" class="figh-logged__list"></ul>
+        <ul id="figh-user-menu-liste3" class="figh-logged__list"></ul>
+        <ul id="figh-user-menu-liste4" class="figh-logged__list"></ul>
+    </div>
+</div>
+<div class="header-placeholder"></div>
+<style>
+    #fig-header .figh__full,
+    #fig-header .collapsed_content,
+    .fig-secondary-background {
+        background-color: #383538;
+    }
+
+    .fig-secondary-color {
+        color: #383538;
+    }
+
+    #fig-header .figh-keyword__link, #fig-header .figh a {
+        color: #fff;
+    }
+
+    #fig-header .figh-keyword__link--more {
+        border-color: #fff;
+    }
+
+    #fig-header .figh-keyword__item--current a {
+        color: #ffffff;
+    }
+
+    .figh__not-ios #fig-header .figh-keyword__item--current a:hover,
+    #fig-header .figh-keyword__item--current a:focus,
+    .figh__not-ios #fig-header.figh a:hover, #fig-header.figh a:focus,
+    .figh__not-ios #fig-header .figh-nav__container a:hover {
+        color: #ff9900;
+    }
+
+    .figh__not-ios #fig-header .figh-menu-item--nav:hover .burger i {
+        border-color: #ff9900;
+    }
+
+    .figh__not-ios #fig-header .figh-keyword__link--more:hover, #fig-header .figh-keyword__link--more:focus {
+        border-color: #ff9900;
+    }
+
+    #fig-header .figh-menu-item--nav, #fig-header .figh-collapse__nav-btn {
+        background-color: #383538;
+    }
+
+    #fig-header .figh-keyword__link--highlighted {
+        background-color: #fc0522;
+        color: #ffffff;
+    }
+
+    #fig-header .figh-menu-item__container, #fig-header .figh-menu-item__container, #fig-header .figh-keyword__item--current a, #fig-header .figh-keyword__item {
+        border-color: #7d7a7d;
+    }
+
+    #fig-header .figh-search__btn, #fig-header button.figh-search__btn, #fig-header .figh-sign-in__btn {
+        background-color: #fc0522;
+        color: #ffffff;
+    }
+
+    #fig-header .figh-nav__root-node {
+        border-color: #fc0522;
+    }
+
+</style>
+                    
+
+</header>
+<script id="fig-header-script">
+    var headerRootNodeId = '157';
+    var headerId = '3';
+    var treeNodeCacheKiller = '4f46e';
+
+            var headerLogoNoSvg = 'http://a.f1g.fr/h/assets-components/header-footer/sport-fallback.png';
+                                        
+                    var treenode_html_url = 'http://a.f1g.fr/h/assets-components/header-footer/header-treenode.js';
+    
+    var headerGaVarName = false;
+    var readerUrl = 'http\x3A\x2F\x2Fa.f1g.fr\x2Fh\x2Fassets\x2Dcomponents\x2Fheader\x2Dfooter\x2F3\x2Dreader.js';
+
+    headerOnSetup();
+
+</script>
+		
+						
+				<section class="pub_banner">
+			<script charset="ISO-8859-1" type="text/javascript">document.write("<scr"+"ipt src=\"http://adnext.fr/richmedia.adv?id=102379&plc=1&s=big&section=hp&ts="+(new Date).getTime()+"\"></scr"+"ipt>");</script>
+<script charset="ISO-8859-1" type="text/javascript">document.write("<scr"+"ipt src=\"http://adnext.fr/richmedia.adv?id=102379&plc=2&section=hp&ts="+(new Date).getTime()+"\"></scr"+"ipt>");</script>
+
+
+		</section>
+					
+									<!-- ESI-START called [/layout/set/esi/content/view/vignette/2] -->	<!--
+        ESI Generated : 13:40 10 décembre 2014
+        TTL : 
+-->
+
+	<section id="evenements">
+														<a href="/football/ligue-des-champions" >
+										<div class="event">
+															
+
+    
+        
+                
+    
+                                                                                                                                            <!-- good file -->
+        <img src="/var/plain_site/storage/images/vignettes/football-l.-des-champions/13407487-288-fre-FR/Football-L.-des-champions_vignettes_home.png"  width="60" height="49"  style="" alt="Football, L. des champions" title="Football, L. des champions" />
+            
+    
+    
+    														<span class="texte_3 titre_event">
+Football, L. des champions</span>
+							<span class="texte_2 nom_event">Luis Suarez, l'affamé</span>
+						</div>
+					</a>
+																	<a href="/basket/nba" >
+										<div class="event">
+															
+
+    
+        
+                
+    
+                                                                                                                                            <!-- good file -->
+        <img src="/var/plain_site/storage/images/vignettes/basket-nba/16159232-1-fre-FR/Basket-NBA_vignettes_home.png"  width="60" height="49"  style="" alt="Basket, NBA" title="Basket, NBA" />
+            
+    
+    
+    														<span class="texte_3 titre_event">
+Basket, NBA</span>
+							<span class="texte_2 nom_event">Cavs OK, Spurs KO</span>
+						</div>
+					</a>
+																	<a href="/tennis/coupe-davis" >
+										<div class="event">
+															
+
+    
+        
+                
+    
+                                                                                                                                            <!-- good file -->
+        <img src="/var/plain_site/storage/images/vignettes/tennis-coupe-davis/17822732-95-fre-FR/Tennis-Coupe-Davis_vignettes_home.png"  width="60" height="49"  style="" alt="Tennis, Coupe Davis" title="Tennis, Coupe Davis" />
+            
+    
+    
+    														<span class="texte_3 titre_event">
+Tennis, Coupe Davis</span>
+							<span class="texte_2 nom_event">Gasquet rompt le silence</span>
+						</div>
+					</a>
+																	<a href="/cyclisme" >
+										<div class="event">
+															
+
+    
+        
+                
+    
+                                                                                                                                            <!-- good file -->
+        <img src="/var/plain_site/storage/images/vignettes/cyclisme-tdf/12405383-690-fre-FR/Cyclisme-TdF_vignettes_home.png"  width="60" height="49"  style="" alt="Cyclisme, TdF" title="Cyclisme, TdF" />
+            
+    
+    
+    														<span class="texte_3 titre_event">
+Cyclisme, TdF</span>
+							<span class="texte_2 nom_event">Mont Saint-Michel en 2016</span>
+						</div>
+					</a>
+						</section><!-- ESI-END -->
+							</section>
+		<section id="main" role="main" class="container_6">
+			            
+            
+			<!-- ESI-START called [/layout/set/esi/content/view/comp_menu/2] -->	<!--
+        ESI Generated : 13:40 10 décembre 2014
+        TTL : 
+-->
+
+
+<!-- ESI-END -->
+			
+
+			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="grille" class="container_6">
+	<div class="grid_1"></div>
+	<div class="line grid_1"></div>
+	<div class="line grid_1"></div>
+	<div class="line grid_1"></div>
+	<div class="line grid_1"></div>
+	<div class="line grid_1"></div>
+</div>	<script type="text/javascript">var sptypecontenu='home';</script>
+
+<!-- PAGE Generated : 1418215236 -->
+<section id="bloc_une" class="bloc">
+	<div class="grid_4">
+							    		<article class="home_page full ">
+							
+
+    
+        
+                
+    
+                                                                                                                <a href="/football/ligue-des-champions/actualites/luis-suarez-plus-affame-que-jamais-726539">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/ligue-des-champions/actualites/luis-suarez-plus-affame-que-jamais-726539/18019871-4-fre-FR/Luis-Suarez-plus-affame-que-jamais_une_large_preview.jpg"  width="650" height="290"  style="" alt="Luis Suarez, plus affamé que jamais" title="Luis Suarez, plus affamé que jamais" />
+        </a>    
+    
+    
+    					   <div class="titraille">
+			   <h2><a class="titre titre_une titre_1 " href="/football/ligue-des-champions/actualites/luis-suarez-plus-affame-que-jamais-726539" >
+Luis Suarez, plus affamé que jamais</a></h2>
+				<div class="entete">
+					<span class="picto_article  no_type ">
+Football, L. des champions</span>
+					<span class="entete_comment"><a href="/football/ligue-des-champions/actualites/luis-suarez-plus-affame-que-jamais-726539#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>				</div>
+				<p class="chapo_une texte_2">	
+Suspendu jusqu’au 24 octobre en raison de sa morsure sur l’Italien Chiellini lors du dernier Mondial, l’Uruguayen commence à prendre ses marques au sein de l’attaque barcelonaise où Neymar et Messi tournent déjà à plein régime.</p>
+				<aside>
+					<div class="liens_complementaires">
+						
+
+<ul>
+
+<li><b><a href="http://sport24.lefigaro.fr/livescore/football/ligue-des-champions/2014-2015/6eme-journee/barcelone-paris-sg" target="_self">Barcelone - Paris SG</a></b></li>
+
+<li><b><a href="http://sport24.lefigaro.fr/football/ligue-des-champions/actualites/test-capital-pour-le-psg-a-barcelone-726588" target="_self">Test capital pour le PSG</a></b></li>
+
+</ul>
+					</div>
+					
+				</aside>
+			</div>
+		</article>
+    														    		<article >
+			
+
+    
+        
+                
+    
+                                                                                                                <a href="/athletisme/actualites/pistorius-le-proces-sera-reexamine-en-appel-726602">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/athletisme/actualites/pistorius-le-proces-sera-reexamine-en-appel-726602/18021563-1-fre-FR/Pistorius-Le-proces-sera-reexamine-en-appel_une_medium_preview.jpg"  width="210" height="134"  style="" alt="Oscar Pistorius" title="Pistorius : Le procès sera réexaminé en appel " />
+        </a>    
+    
+    
+    			<div class="entete">
+				<span class="picto_article  no_type ">
+Athlétisme, Justice </span>
+				<span class="entete_comment"><a href="/athletisme/actualites/pistorius-le-proces-sera-reexamine-en-appel-726602#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>			</div>
+			<h2><a class="titre titre_2 titre_second " href="/athletisme/actualites/pistorius-le-proces-sera-reexamine-en-appel-726602" >
+Pistorius : Le procès sera réexaminé en appel </a></h2>
+			<p class="texte_2">Le procès du champion paralympique sud-africain Oscar Pistorius, condamné à 5 ans de prison pour avoir abattu sa petite amie, sera réexaminé en appel à la demande du parq...</p>
+		</article>
+    																			    		<article >
+			
+
+    
+        
+                
+    
+                                                                                                                <a href="/football/ligue-des-champions/actualites/lionel-messi-quittera-t-il-un-jour-barcelone-726589">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/ligue-des-champions/actualites/lionel-messi-quittera-t-il-un-jour-barcelone-726589/18021178-2-fre-FR/Lionel-Messi-quittera-t-il-un-jour-Barcelone_une_medium_preview.jpg"  width="210" height="134"  style="" alt="Lionel Messi Barcelone" title="Lionel Messi quittera-t-il un jour Barcelone ?" />
+        </a>    
+    
+    
+    			<div class="entete">
+				<span class="picto_article  type_article_eidos ">
+Football, L. des champions</span>
+				<span class="entete_comment"><a href="/football/ligue-des-champions/actualites/lionel-messi-quittera-t-il-un-jour-barcelone-726589#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>
+			</div>
+			<h2><a class="titre titre_2 titre_second " href="/football/ligue-des-champions/actualites/lionel-messi-quittera-t-il-un-jour-barcelone-726589" >
+Lionel Messi quittera-t-il un jour Barcelone ?</a></h2>
+			<p class="texte_2">	
+Annoncé de moins en moins heureux en Catalogne, Lionel Messi peut-il à l'avenir quitter son club de toujours ?</p>
+		</article>
+    																		    		<article class="article_last">
+			
+
+    
+        
+                
+    
+                                                                                                                <a href="/tennis/coupe-davis/actualites/gasquet-premier-joueur-a-rompre-le-silence-726623">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/tennis/coupe-davis/actualites/gasquet-premier-joueur-a-rompre-le-silence-726623/18022169-1-fre-FR/Gasquet-premier-joueur-a-rompre-le-silence_une_medium_preview.jpg"  width="210" height="134"  style="" alt="Arnaud Clément et Richard Gasquet" title="Gasquet, premier joueur à rompre le silence" />
+        </a>    
+    
+    
+    			<div class="entete">
+				<span class="picto_article  no_type ">
+Tennis, Coupe Davis</span>
+				<span class="entete_comment"><a href="/tennis/coupe-davis/actualites/gasquet-premier-joueur-a-rompre-le-silence-726623#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>			</div>
+			<h2><a class="titre titre_2 titre_second " href="/tennis/coupe-davis/actualites/gasquet-premier-joueur-a-rompre-le-silence-726623" >
+Gasquet, premier joueur à rompre le silence</a></h2>
+			<p class="texte_2">Battu lors de la rencontre décisive par Roger Federer en finale de la Coupe Davis, Richard Gasquet s’est exprimé mercredi dans les colonnes de L’Equipe. Malgré la terribl...</p>
+		</article>
+    										</div>
+	<div class="grid_2">
+							<div class="pub_pave">
+			<div class="tag_pub_pave">
+				<script charset="ISO-8859-1" type="text/javascript">document.write("<scr"+"ipt src=\"http://adnext.fr/richmedia.adv?id=102379&plc=3&w=300&h=250&s=fixed&section=hp," + sptypecontenu +"&ts="+(new Date).getTime()+"\"></scr"+"ipt>");</script>
+			</div>
+			<img class="mention_pub_pave" src="/extension/sport24/design/site/images/mention_pub_pave.jpg" alt="" />
+		</div>
+					<span class="separateur"></span>
+		<!-- ESI-START called [/layout/set/esi/content/view/filinfo/2/offset/1] -->	<!--
+        ESI Generated : 13:40 10 décembre 2014
+        TTL : 
+-->
+
+	
+
+    	<section class="fil_info">
+		<span class="tetiere tetiere_flash">LE FLASH</span>
+		<select id="listsport">
+			<option value="2">Tous sports</option>
+																													<option value="474819">Athlenergy</option>
+                																													<option value="282">Athlétisme</option>
+                																													<option value="220">Auto/Moto</option>
+                																													<option value="149">Basket</option>
+                																													<option value="288">Boxe</option>
+                																													<option value="197">Cyclisme</option>
+                																													<option value="664776">Endurance</option>
+                																													<option value="831911">Equitation</option>
+                																													<option value="289">Escrime</option>
+                																													<option value="59">Football</option>
+                																													<option value="231">Formule 1</option>
+                																													<option value="225060">Free zone</option>
+                																													<option value="534">Golf</option>
+                																													<option value="267">Handball</option>
+                																													<option value="739675">Handisport</option>
+                																													<option value="290">Hockey/NHL</option>
+                																													<option value="151235">Jeux Olympiques</option>
+                																													<option value="2572">Judo</option>
+                																													<option value="225">Moto</option>
+                																													<option value="292">Natation</option>
+                																													<option value="221">Rallye</option>
+                																													<option value="361240">Red Bull Air Race</option>
+                																													<option value="590603">Red Bull Cliff Diving</option>
+                																													<option value="168">Rugby</option>
+                																													<option value="293">Sports d'hiver</option>
+                																													<option value="291">Sports US</option>
+                																													<option value="117">Tennis</option>
+                																													<option value="535">Voile</option>
+                								</select>
+		<ol class="listeinfo">
+															<li>
+				<a href="/football/ligue-1/Homes-Clubs/lens/fil-info/touzghar-a-l-entrainement-726635" class="texte_2 ">
+					<time>
+																		13h32
+																</time>Foot, L1 : Touzghar à l'entraînement
+				</a>
+			</li>
+															<li>
+				<a href="/cyclisme/fil-info/gallopin-prolonge-chez-lotto-726634" class="texte_2 ">
+					<time>
+																		13h13
+																</time>Cyclisme : Gallopin prolonge chez Lotto
+				</a>
+			</li>
+															<li>
+				<a href="/football/ligue-des-champions/fil-info/d.-luiz-montrer-notre-force-726633" class="texte_2 ">
+					<time>
+																		13h09
+																</time>Foot, LdC : D. Luiz : «Montrer notre force»
+				</a>
+			</li>
+															<li>
+				<a href="/football/ligue-europa/fil-info/tottenham-sans-adebayor-726631" class="texte_2 ">
+					<time>
+																		12h30
+																</time>Foot, L. Europa : Tottenham sans Adebayor
+				</a>
+			</li>
+															<li>
+				<a href="/football/ligue-1/Homes-Clubs/evian-tg/fil-info/evian-tg-perd-kone-726630" class="texte_2 ">
+					<time>
+																		12h27
+																</time>Foot, L1 : Evian TG perd Koné
+				</a>
+			</li>
+															<li>
+				<a href="/handball/division-1/fil-info/le-montpellierain-kavticnik-suspendu-726629" class="texte_2 ">
+					<time>
+																		12h23
+																</time>Hand, D1 : Le Montpelliérain Kavticnik suspendu
+				</a>
+			</li>
+															<li>
+				<a href="/football/transferts/fil-info/l-om-sur-abdoulay-konko-726626" class="texte_2 ">
+					<time>
+																		12h14
+																</time>Foot, Transferts : L'OM sur Abdoulay Konko ?
+				</a>
+			</li>
+															<li>
+				<a href="/football/etranger/fil-info/un-joueur-frappe-par-la-foudre-726625" class="texte_2 ">
+					<time>
+																		12h14
+																</time>Foot, Pérou : Un joueur frappé par la foudre
+				</a>
+			</li>
+															<li>
+				<a href="/football/transferts/fil-info/leo-suarez-a-villarreal-726622" class="texte_2 ">
+					<time>
+																		11h55
+																</time>Foot, Transferts : Leo Suarez à Villarreal
+				</a>
+			</li>
+				</ol>
+		<div class="boutons_filinfo">
+			<a role="button" class="bouton_large bouton_bleu plus_infos" href="/Lintegrale/(filter)/depeche/(sport)/2">PLUS D'INFOS</a>
+			<a role="button" class="bouton_large bouton_bleu rss" href="/rssfeeds/sport24-accueil.xml"><img src="/extension/sport24/design/site/images/picto_rss.png" alt="Flux RSS" title="Abonnez-vous aux flux sport24" class="picto_rss"/>RSS</a>
+			<input name="offset" id="offset" value=1 type="hidden" />
+			<input name="max" id="max" value=5 type="hidden" />
+			<span class="pages">1/5</span>
+			<input type="hidden" value="" id="ContentFillInfosSportCompetID" />
+			<a role="button" href="javascript:void(0)" class="bouton_large bouton_blanc btprec_single_disabled b1"></a>
+			<a role="button" value="2" title="Page suivante" class="bouton_large bouton_bleu btsuiv_single" href="javascript:void(0)"></a>
+		</div>
+	</section><!-- ESI-END -->
+	</div>
+</section>
+<section id="scan-sport" class="bloc">
+    <span class="tetiere">SUR LE SCAN</span>
+    <section class="grid_6">
+        <div class="scan-body"><div class="scan-main-link"><a href="http://sport24.lefigaro.fr/le-scan-sport/" target="_blank"><img src="/pages/scan-sport/img/logoScanSport.png" alt="Découvrez le scan sport" /></a><a role="button" class="bouton_large bouton_bleu" href="http://sport24.lefigaro.fr/le-scan-sport/">découvrir</a></div><a href="http://sport24.lefigaro.fr/le-scan-sport/business/2014/12/09/27004-20141209ARTFIG00417-en-dehors-du-plan-sportif-le-psg-est-encore-loin-du-barca.php" target="_blank" class="scan-links"><img src="http://www.lefigaro.fr/medias/2014/12/09/PHO31989500-7f8b-11e4-b7ee-0a5ce1fcbbcb-245x160.jpg" alt="En dehors du terrain, le PSG reste un nain face au Barça" class="scan-links-img" width="194" height="116"/><p class="scan-title">En dehors du terrain, le PSG reste un nain face au Barça</p></a><a href="http://sport24.lefigaro.fr/le-scan-sport/buzz/2014/12/09/27002-20141209ARTFIG00418-cinq-choses-que-vous-ignoriez-sur-le-camp-nou.php" target="_blank" class="scan-links"><img src="http://www.lefigaro.fr/medias/2014/12/09/PHOc492d9e2-7fc7-11e4-9d0a-3ea4b60c2dea-245x160.jpg" alt="Cinq choses que vous ignoriez sur le Camp Nou" class="scan-links-img" width="194" height="116"/><p class="scan-title">Cinq choses que vous ignoriez sur le Camp Nou</p></a><a href="http://sport24.lefigaro.fr/le-scan-sport/buzz/2014/12/09/27002-20141209ARTFIG00402-les-plus-beaux-buts-de-zlatan-ibrahimovic-avec-le-fc-barcelone.php" target="_blank" class="scan-links"><img src="http://www.lefigaro.fr/medias/2014/12/09/PHO8211b66e-7fcd-11e4-9d0a-3ea4b60c2dea-245x160.jpg" alt="Les plus beaux buts d'Ibrahimovic avec Barcelone" class="scan-links-img" width="194" height="116"/><p class="scan-title">Les plus beaux buts d'Ibrahimovic avec Barcelone</p></a><a href="http://sport24.lefigaro.fr/le-scan-sport/buzz/2014/12/09/27002-20141209ARTFIG00409-emmanuel-petit-barcelone-j-ai-eu-l-impression-d-entrer-dans-un-musee.php" target="_blank" class="scan-links"><img src="http://www.lefigaro.fr/medias/2014/12/09/PHO47780c44-7fbc-11e4-baa9-677c572de9ff-245x160.jpg" alt="Emmanuel Petit : «Barcelone ? J'ai eu l'impression d'entrer dans un musée»" class="scan-links-img" width="194" height="116"/><p class="scan-title">Emmanuel Petit : «Barcelone ? J'ai eu l'impression d'entrer dans un musée»</p></a></div>
+    </section>
+</section>		
+	<section id="bloc_twenga" class="bloc">
+        <iframe src="http://assets5.lefigaro.fr/assets-components/verticales/le-guide/index-sport24-home.html" height="130" width="980" style="border:0;"></iframe>
+	</section>	<section id="bloc_lire_aussi" role="seealso" class="bloc">
+	<section class="articles_lire_aussi grid_4">
+		<span class="tetiere">A LIRE AUSSI</span>
+		<section class="bloc_articles_second">
+																								    		<article>
+			
+
+    
+        
+                
+            <div class="img_article">
+    
+                                                                                                                <a href="javascript:void(0);" onclick="window.open('http://blog.lefigaro.fr/football/bruno_roger-petit/2014/12/lexemple-monaco-contre-le-barca-il-faut-un-psg-de-combat-pas-de-gala.html','_blank');return(false)">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/ligue-des-champions/actualites/contre-le-barca-il-faut-un-psg-de-combat-pas-de-gala/18022208-1-fre-FR/Contre-le-Barca-il-faut-un-PSG-de-combat-pas-de-gala_une_small_preview.jpg"  height="98"  style="" alt="Contre le Barça, il faut un PSG de combat, pas de gala" title="Contre le Barça, il faut un PSG de combat, pas de gala" />
+        </a>    
+            </div>
+    
+    
+    			<div class="entete">
+				<span class="picto_article  type_article_court ">
+Football, L. des champions</span>
+			</div>
+			<h2><a class="titre titre_2 titre_second " href="javascript:void(0);" onclick="window.open('http://blog.lefigaro.fr/football/bruno_roger-petit/2014/12/lexemple-monaco-contre-le-barca-il-faut-un-psg-de-combat-pas-de-gala.html','_blank');return(false)">
+Contre le Barça, il faut un PSG de combat, pas de gala</a></h2>
+			<p class="texte_2">	
+BLOG -&nbsp;Monaco a montré l'exemple. En Ligue des champions, pas de chichi artistique, on n'est pas là pour ça. D'abord du résultat.</p>
+		</article>
+    													    		<article>
+			
+
+    
+        
+                
+            <div class="img_article">
+    
+                                                                                                                <a href="/football/ligue-des-champions/actualites/city-peut-il-le-faire-sans-son-arme-fatale-726485">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/ligue-des-champions/actualites/city-peut-il-le-faire-sans-son-arme-fatale-726485/18018419-1-fre-FR/City-peut-il-le-faire-sans-son-arme-fatale_une_small_preview.jpg"  height="98"  style="" alt="Sergio Agüero" title="City peut-il le faire sans son arme fatale ?" />
+        </a>    
+            </div>
+    
+    
+    			<div class="entete">
+				<span class="picto_article  no_type ">
+Football, L. des champions</span>
+				<span class="entete_comment"><a href="/football/ligue-des-champions/actualites/city-peut-il-le-faire-sans-son-arme-fatale-726485#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>			</div>
+			<h2><a class="titre titre_2 titre_second " href="/football/ligue-des-champions/actualites/city-peut-il-le-faire-sans-son-arme-fatale-726485" >
+City peut-il le faire sans son arme fatale ?</a></h2>
+			<p class="texte_2">	
+Manchester City joue son avenir européen ce mercredi sur la pelouse de la Roma. Et ce sans sa star argentine, Sergio Agüero, blessée au genou le week-end dernier.</p>
+		</article>
+    													    		<article>
+			
+
+    
+        
+                
+            <div class="img_article">
+    
+                                                                                                                <a href="/rugby/coupe-d-europe/actualites/gibbes-le-porte-bonheur-de-clermont-726492">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/rugby/coupe-d-europe/actualites/gibbes-le-porte-bonheur-de-clermont-726492/18018627-1-fre-FR/Gibbes-le-porte-bonheur-de-Clermont_une_small_preview.jpg"  height="98"  style="" alt="Gibbes, le porte-bonheur de Clermont" title="Gibbes, le porte-bonheur de Clermont" />
+        </a>    
+            </div>
+    
+    
+    			<div class="entete">
+				<span class="picto_article  no_type ">
+Rugby, ERC Cup</span>
+				<span class="entete_comment"><a href="/rugby/coupe-d-europe/actualites/gibbes-le-porte-bonheur-de-clermont-726492#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>			</div>
+			<h2><a class="titre titre_2 titre_second " href="/rugby/coupe-d-europe/actualites/gibbes-le-porte-bonheur-de-clermont-726492" >
+Gibbes, le porte-bonheur de Clermont</a></h2>
+			<p class="texte_2">Arrivé l'été dernier en provenance du Leinster où il a tout gagné en six saisons, le Néo-Zélandais apporte désormais son expertise au pack auvergnat. Pour perme...</p>
+		</article>
+    													    		<article>
+			
+
+    
+        
+                
+            <div class="img_article">
+    
+                                                                                                                <a href="/basket/pro-a/actualites/tchicamboud-ne-gardera-pas-un-grand-souvenir-de-choulet-726632">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/basket/pro-a/actualites/tchicamboud-ne-gardera-pas-un-grand-souvenir-de-choulet-726632/18022401-1-fre-FR/Tchicamboud-ne-gardera-pas-un-grand-souvenir-de-Choulet_une_small_preview.jpg"  height="98"  style="" alt="Steed Tchicamboud" title="Tchicamboud ne gardera pas un grand souvenir de Choulet..." />
+        </a>    
+            </div>
+    
+    
+    			<div class="entete">
+				<span class="picto_article  no_type ">
+Basket, Pro A </span>
+				<span class="entete_comment"><a href="/basket/pro-a/actualites/tchicamboud-ne-gardera-pas-un-grand-souvenir-de-choulet-726632#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>			</div>
+			<h2><a class="titre titre_2 titre_second " href="/basket/pro-a/actualites/tchicamboud-ne-gardera-pas-un-grand-souvenir-de-choulet-726632" >
+Tchicamboud ne gardera pas un grand souvenir de Choulet...</a></h2>
+			<p class="texte_2">Le néo-Limougeaud Steed Tchicamboud retrouvait Chalon mardi soir, deux semaines après avoir quitté l’Elan.&nbsp;Un match remporté (dans la douleur) par le CSP,...</p>
+		</article>
+    													    		<article>
+			
+
+    
+        
+                
+            <div class="img_article">
+    
+                                                                                                                <a href="/football/ligue-des-champions/actualites/daniele-de-rossi-a-la-relance-726503">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/ligue-des-champions/actualites/daniele-de-rossi-a-la-relance-726503/18018991-1-fre-FR/Daniele-De-Rossi-a-la-relance_une_small_preview.jpg"  height="98"  style="" alt="De Rossi a été expulsé contre Sassuolo lors du dernier match de Serie A" title="Daniele De Rossi à la relance" />
+        </a>    
+            </div>
+    
+    
+    			<div class="entete">
+				<span class="picto_article  no_type ">
+Football, Ligue des champions</span>
+				<span class="entete_comment"><a href="/football/ligue-des-champions/actualites/daniele-de-rossi-a-la-relance-726503#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>			</div>
+			<h2><a class="titre titre_2 titre_second " href="/football/ligue-des-champions/actualites/daniele-de-rossi-a-la-relance-726503" >
+Daniele De Rossi à la relance</a></h2>
+			<p class="texte_2">Expulsé lors du dernier match de la Roma en championnat, le vice-capitaine vit actuellement des moments difficiles alors que la Louve affronte Manchester City d...</p>
+		</article>
+    														    		<article>
+			
+
+    
+        
+                
+            <div class="img_article">
+    
+                                                                                                                <a href="/football/ligue-des-champions/actualites/test-capital-pour-le-psg-a-barcelone-726588">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/ligue-des-champions/actualites/test-capital-pour-le-psg-a-barcelone-726588/18021163-2-fre-FR/Test-capital-pour-le-PSG-a-Barcelone_une_small_preview.jpg"  height="98"  style="" alt="Thiago Motta Neymar PSG Barcelone Ligue des champions" title="Test capital pour le PSG à Barcelone" />
+        </a>    
+            </div>
+    
+    
+    			<div class="entete">
+				<span class="picto_article  type_article_eidos ">
+Football, L. des champions</span>
+				<span class="entete_comment"><a href="/football/ligue-des-champions/actualites/test-capital-pour-le-psg-a-barcelone-726588#zone_commentaires"><img class="img_commentaire img_commentaire_chevron" src="/extension/sport24/design/site/images/puce.png">Réagir</a></span>
+			</div>
+			<h2><a class="titre titre_2 titre_second " href="/football/ligue-des-champions/actualites/test-capital-pour-le-psg-a-barcelone-726588" >
+Test capital pour le PSG à Barcelone</a></h2>
+			<p class="texte_2">	
+En tête de leur groupe, les Parisiens vont défendre leur première place sur la pelouse du Barça en Ligue des champions.</p>
+		</article>
+    									            		</section>
+		<section class="autres_titres AS_home">
+																									<article>
+		<span class="entete">
+Golf</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="javascript:void(0);" onclick="window.open('http://golf.lefigaro.fr/actualite/tours-americains/2014/12/09/01008-20141209ARTWWW00001-tiger-woods-retour-vers-le-futur-.php','_blank');return(false)">Tiger Woods, retour vers le...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Basket, NBA </span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/basket/nba/actualites/Ca-swingue-pour-cleveland-pas-pour-les-spurs-726592" >Ça swingue pour Cleveland,...</a></h2>
+	</article>																		<article>
+		<span class="entete">
+Tennis</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="http://sport24.lefigaro.fr/le-scan-sport/buzz/2014/12/10/27002-20141210ARTFIG00081-le-geste-magique-de-federer-face-a-djokovic.php" onclick="window.location='http://sport24.lefigaro.fr/le-scan-sport/buzz/2014/12/10/27002-20141210ARTFIG00081-le-geste-magique-de-federer-face-a-djokovic.php';">Le geste magique de Federer...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-des-champions/actualites/abdennour-magique-!-726594" >Abdennour : «Magique !»</a></h2>
+	</article>													<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/diaporamas/les-images-marquantes-de-monaco-zenit" target="">Les images marquantes de Mo...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-des-champions/actualites/monaco-dix-ans-apres-!" >Monaco, dix ans après ! </a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-des-champions/actualites/liverpool-s-est-reveille-bien-trop-tard-726559" >Liverpool s'est réveillé bi...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-des-champions/actualites/la-juventus-passe-sans-gloire" >La Juventus passe sans gloire</a></h2>
+	</article>														<article>
+		<span class="entete">
+Basket, Pro A </span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/basket/pro-a/actualites/limoges-s-en-tire-bien-devant-chalon-726595" >Limoges s'en tire bien deva...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Basket, Equipe de France </span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/basket/equipe-de-france/actualites/les-ponts-n-ont-jamais-ete-coupes-entre-noah-et-la-fede-726495" >«Les ponts n'ont jamais été...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-des-champions/actualites/blanc-pour-avancer-il-faut-gagner-des-matches-comme-celui-la-726537" >Blanc : «Pour avancer, il f...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Handball, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/handball/ligue-des-champions/actualites/le-paris-sg-s-enlise-a-zagreb-726548" >Le Paris SG s’enlise à Zagreb</a></h2>
+	</article>														<article>
+		<span class="entete">
+Basket, Transferts</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/basket/euroligue/actualites/heurtel-et-diot-vers-la-turquie-726546" >Heurtel et Diot vers la Tur...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Cyclisme, Tour de France </span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/cyclisme/tour-de-france/actualites/tour-2016-le-mont-saint-michel-terre-d-envol-726482" >Tour 2016 : le Mont-Saint-M...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-des-champions/actualites/revivez-le-mutiplex-726512" >Revivez le mutiplex</a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, Ligue 1</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-1/Homes-Clubs/paris-sg/actualites/pastore-veut-prolonger-a-paris-726466" >Pastore veut prolonger à Paris</a></h2>
+	</article>														<article>
+		<span class="entete">
+JO 2024</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/jeux-olympiques/actualites/bach-paris-serait-une-candidature-tres-tres-forte-726484" >Bach : «Paris serait une ca...</a></h2>
+	</article>														<article>
+		<span class="entete">
+Football, L. des champions</span>
+		<h2><a class="titre titre_3 titre_quatrieme " href="/football/ligue-des-champions/actualites/luis-enrique-paris-est-un-vrai-candidat-a-la-victoire-726497" >Luis Enrique : «Paris est u...</a></h2>
+	</article>																									</section>
+		<a role="button" class="bouton_large bouton_full bouton_bleu" href="/Lintegrale">PLUS D'INFOS</a>	
+	</section>
+	<section id="bloc_home" class="grid_2">
+		<span class="tetiere">LIVESCORE</span>
+		<div class="include_livescore_home"><!-- ESI-START called [/layout/set/esi/content/view/livescore/2] -->	<!--
+        ESI Generated : 13:40 10 décembre 2014
+        TTL : 
+-->
+
+	<!-- Inclusion ESI LiveScore Colonne de droite : BEGIN http://sport24.lefigaro.fr/livescore/esi-home?-->
+
+<div class="squelette">
+
+<div class="scrollbar">
+	<a class="minus"></a>
+	<a class="plus"></a>
+</div>
+<div class="scroll">
+<div class="cadreHome"> 
+	<div class="tabAgenda"> 
+		<div class="fdBleueGhe">
+			<a href="/livescore/football" class="lienfleche liensport">Football</a> 
+			<a href="/livescore/football/ligue-des-champions/2014-2015" class="lienfleche liencompet">Ligue des champions</a>
+			<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee" class="lienfleche lientour">6ème journée</a>
+		</div>
+		<div class="fdBlancheGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324817.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Barcelone</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Paris SG</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324542.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee/barcelone-paris-sg">
+				<img src="/livescore/img/type_statut_0_3.gif" class="icoAgendaLive" alt="" />
+				 
+			</a>
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324875.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Ajax</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">APOEL</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-325006.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324819.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">AS Roma</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Man. City</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324713.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee/as-roma-man-city">
+				<img src="/livescore/img/type_statut_0_3.gif" class="icoAgendaLive" alt="" />
+				 
+			</a>
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324638.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Bayern Munich</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">CSKA Moscou</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-325057.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324667.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Chelsea</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Sporting</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324911.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-334570.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Maribor</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Schalke 04</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324636.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324781.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Athletic Bilbao</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">BATE Borisov</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-334579.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324901.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Porto</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Shakhtar Donetsk</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-325024.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324538.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 txtEquipeAgendaWin">Monaco</span>
+			<div class="but">
+				<span class="scoreAgenda">2 - 0</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Zenit</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-334426.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee/monaco-zenit">
+				<img src="/livescore/img/type_statut_3_3.gif" class="icoAgendaLive" alt="" />
+				 
+			</a>
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324831.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Juventus</span>
+			<div class="but">
+				<span class="scoreAgenda">0 - 0</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Atlético Madrid</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324791.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee/juventus-atletico-madrid">
+				<img src="/livescore/img/type_statut_3_3.gif" class="icoAgendaLive" alt="" />
+				 
+			</a>
+			
+		</div><div class="fdBlancheGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-325030.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Galatasaray</span>
+			<div class="but">
+				<span class="scoreAgenda">0 - 3</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 txtEquipeAgendaWin">Arsenal</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-324677.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div>
+		
+		<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee" class="voirComplet"><span>Voir la journée complète</span></a>	
+	</div><div class="tabAgenda"> 
+		<div class="fdBleueGhe">
+			<a href="/livescore/handball" class="lienfleche liensport">Handball</a> 
+			<a href="/livescore/handball/euro-femmes/2014" class="lienfleche liencompet">Euro Femmes</a>
+			<a href="/livescore/handball/euro-femmes/2014/2eme-journee" class="lienfleche lientour">2ème journée</a>
+		</div>
+		<div class="fdBlancheGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">18h00 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-415140.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Pays-Bas</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Suède</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321872.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">18h00 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321887.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Serbie</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">France</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321867.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h15 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321874.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Croatie</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Allemagne</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321879.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h15 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321866.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Slovaquie</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Monténégro</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-415137.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div>
+		
+		<a href="/livescore/handball/euro-femmes/2014/2eme-journee" class="voirComplet"><span>Voir la journée complète</span></a>	
+	</div><div class="tabAgenda"> 
+		<div class="fdBleueGhe">
+			<a href="/livescore/handball" class="lienfleche liensport">Handball</a> 
+			<a href="/livescore/handball/division-1/2014-2015" class="lienfleche liencompet">Division 1</a>
+			<a href="/livescore/handball/division-1/2014-2015/13eme-journee" class="lienfleche lientour">13ème journée</a>
+		</div>
+		<div class="fdBlancheGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h00 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321788.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Chambéry</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Tremblay</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321800.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			
+			
+			
+			<span class="txtHeureAgenda">20h45 </span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-565985.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Pays d'Aix</span>
+			<div class="but">
+				<span class="scoreAgenda">10/12</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Toulouse</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-321802.png" class="logoEquipe" alt=" " />
+			</span>			
+			<a class="icoAgendaLive icoAgendaLivePariez" target="_blank" href="http://adserver.itsfogo.com/click.aspx?zoneid=129430">Pariez
+				  
+			</a>	
+			
+			
+		</div>
+		
+		<a href="/livescore/handball/division-1/2014-2015/13eme-journee" class="voirComplet"><span>Voir la journée complète</span></a>	
+	</div><div class="tabAgenda"> 
+		<div class="fdBleueGhe">
+			<a href="/livescore/basket" class="lienfleche liensport">Basket</a> 
+			<a href="/livescore/basket/nba/2014-2015" class="lienfleche liencompet">NBA</a>
+			<a href="/livescore/basket/nba/2014-2015/mercredi-10-decembre-2014" class="lienfleche lientour">mercredi 10 décembre 2014</a>
+		</div>
+		<div class="fdBlancheGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322367.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 txtEquipeAgendaWin">Cleveland</span>
+			<div class="but">
+				<span class="scoreAgenda">105 - 101</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Toronto</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322419.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322369.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Detroit</span>
+			<div class="but">
+				<span class="scoreAgenda">86 - 98</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 txtEquipeAgendaWin">Portland</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322389.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322403.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 txtEquipeAgendaWin">Memphis</span>
+			<div class="but">
+				<span class="scoreAgenda">114 - 105</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Dallas</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322387.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322383.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 txtEquipeAgendaWin">New Orleans</span>
+			<div class="but">
+				<span class="scoreAgenda">104 - 93</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">New York</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322411.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322417.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 txtEquipeAgendaWin">Oklahoma City</span>
+			<div class="but">
+				<span class="scoreAgenda">114 - 101</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Milwaukee</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322405.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322413.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 ">Phoenix</span>
+			<div class="but">
+				<span class="scoreAgenda">97 - 103</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 txtEquipeAgendaWin">Miami</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322393.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div><div class="fdBlancheGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322379.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 txtEquipeAgendaWin">Utah</span>
+			<div class="but">
+				<span class="scoreAgenda">100 - 96</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">San Antonio</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322385.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div><div class="fdBleueClairGhe">			
+			
+			<span class="txtHeureAgenda">Term.</span>
+			
+			
+			
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322377.png" class="logoEquipe" alt=" " />
+			</span>
+			<span class="txtEquipeAgenda1 txtEquipeAgendaWin">L.A Lakers</span>
+			<div class="but">
+				<span class="scoreAgenda">98 - 95</span>
+				
+			</div>
+			<span class="txtEquipeAgenda2 ">Sacramento</span>
+			<span class="blockLogoEquipe">
+				<img src="/livescore/media/equipe/23x23/logo-322415.png" class="logoEquipe" alt=" " />
+			</span>			
+				
+			
+			
+		</div>
+		
+		<a href="/livescore/basket/nba/2014-2015/mercredi-10-decembre-2014" class="voirComplet"><span>Voir la journée complète</span></a>	
+	</div>
+</div>
+
+
+
+</div>
+
+</div>
+<!-- Inclusion ESI LiveScore Colonne de droite : END --><!-- ESI-END --></div>
+		<a role="button" class="bouton_large bouton_full bouton_bleu" href="/livescore">PLUS DE RESULTATS</a>		
+	</section>
+</section>
+<!-- ESI-START called [/layout/set/esi/content/view/partners/2] -->	<!--
+        ESI Generated : 13:40 10 décembre 2014
+        TTL : 
+-->
+
+	<section id="bloc_partenaire" class="bloc">
+									<figure class="grid_2">
+					                                                <!-- good file 2 -->
+						
+
+    
+        
+                
+    
+                                                                                                                                    <a href=http://sport24.lefigaro.fr/datacenter target="_blank">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/media/partenaires/foot-center-ligue-1/14564699-16-fre-FR/Foot-Center-Ligue-1.jpg"  width="300" height="100"  style="float:left;border: 0px  ;" alt="Cliquez !" title="Cliquez !" />
+        </a>    
+    
+    
+    						<img src="/extension/sport24/design/site/images/mention_pub_partenaire.jpg" alt="" />
+									</figure>
+							<figure class="grid_2">
+					                                                <!-- good file 2 -->
+						
+
+    
+        
+                
+    
+                                                                                                                                    <a href=http://sport24.lefigaro.fr/athletisme/running target="_blank">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/media/partenaires/running/11504035-32-fre-FR/Running.jpg"  width="300" height="100"  style="float:left;border: 0px  ;" alt="Cliquez ici !" title="Cliquez ici !" />
+        </a>    
+    
+    
+    						<img src="/extension/sport24/design/site/images/mention_pub_partenaire.jpg" alt="" />
+									</figure>
+							<figure class="grid_2">
+					                                                <!-- good file 2 -->
+						
+
+    
+        
+                
+    
+                                                                                                                                    <a href=http://jeux.sport24.lefigaro.fr/retro-sport-2014?xtatc=INT-3 target="_blank">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/media/partenaires/retro-2014/11424373-37-fre-FR/Retro-2014.jpg"  width="300" height="100"  style="float:left;border: 0px  ;" alt="Cliquez ici" title="Cliquez ici" />
+        </a>    
+    
+    
+    						<img src="/extension/sport24/design/site/images/mention_pub_partenaire.jpg" alt="" />
+									</figure>
+						</section><!-- ESI-END -->
+<section id="opinions" class="bloc">
+	<div class="blog grid_2">
+		<span class="tetiere">BLOGS</span>
+		<div class="include_blog">    
+<!-- Chargement de l'ESI blog http://blog.lefigaro.fr/agregateur/bloc-sport24.html (node id = 2) -->
+<style>
+#BlocBlogs {
+    background-color:#FFF;
+    color:#999;
+    font-family:Verdana,sans-serif;
+    font-size:11px;
+    font-weight:normal;
+    height:190px;
+    margin:0 auto;
+    overflow:hidden;
+    padding:10px 10px 0;
+    position:relative;
+    width:300px;
+}
+#BlocBlogs .titre {
+    color: #003872;
+    margin: 0;
+    font: 15px 'Trebuchet MS', Verdana, sans-serif;
+}
+#BlocBlogs .extrait {
+    margin: 0 0 0 60px;
+    font-size:1em;
+    font-weight:normal;
+    line-height:1em;
+}
+#BlocBlogs .avatar {
+    float: left;
+    margin-right:10px;
+}
+#BlocBlogs .source {    
+    clear: both;
+    margin-bottom:10px;
+    margin-top:5px;
+}
+#BlocBlogs a {
+    color:#003872;
+    text-decoration: none;
+}
+#BlocBlogs a:hover {
+    color:#dd6800;
+}
+</style>
+<div id="BlocBlogs">
+   
+      <a href="http://blog.lefigaro.fr/golf/" target="_blank"><img class="avatar" src="http://blog.lefigaro.fr/images/avatar-108.jpg" width="50" height="50" title="Golf" /></a>
+      <div class="titre"><a href="http://blog.lefigaro.fr/golf/2014/12/la-finale-a-dubai.html" target="_blank">«La Finale à Dubaï»</a></div>
+      <div class="extrait">Me voici à Dubaï depuis dimanche soir où Philippe…</div>
+      <div class="source"><a href="http://blog.lefigaro.fr/golf/" target="_blank">Golf</a> par <a href="http://blog.lefigaro.fr/golf/caroline-afonso.html" target="_blank">Caroline AFONSO</a></div>
+   
+      <a href="http://blog.lefigaro.fr/football/bruno_roger-petit/" target="_blank"><img class="avatar" src="http://blog.lefigaro.fr/images/avatar-62.jpg" width="50" height="50" title="BRP HD - Le sport, plein écran" /></a>
+      <div class="titre"><a href="http://blog.lefigaro.fr/football/bruno_roger-petit/2014/12/lexemple-monaco-contre-le-barca-il-faut-un-psg-de-combat-pas-de-gala.html" target="_blank">L'exemple Monaco : contre le Barça, il faut un PSG de combat, pas de gala</a></div>
+      <div class="extrait">Monaco a montré l'exemple. En Ligue des Champions, pas de…</div>
+      <div class="source"><a href="http://blog.lefigaro.fr/football/bruno_roger-petit/" target="_blank">BRP HD - Le sport, plein écran</a> par <a href="http://blog.lefigaro.fr/blogteam/bruno-rogerpetit.html" target="_blank">Bruno Roger-Petit</a></div>
+   
+</div>
+<!-- Fin chargement --></div>
+					<a role="button" class="bouton_large bouton_full bouton_bleu" href="/pages/home_blogs.html" target="_blank">TOUS LES BLOGS</a>
+			</div>
+	<div class="sondage grid_2">
+		<span class="tetiere">SONDAGE</span>
+		<div class="include_sondage">
+			<script type="text/javascript">
+				// <![CDATA[
+					$(".include_sondage").ez("sondage::sondage");
+				// ]]>
+			</script>
+		</div>
+	</div>
+	<div class="grid_2">
+							<div class="pub_pave">
+			<div class=tag_pub_pave>
+				<script charset="ISO-8859-1" type="text/javascript">document.write("<scr"+"ipt src=\"http://adnext.fr/richmedia.adv?id=102379&plc=12&w=300&h=250&s=fixed&section=hp," + sptypecontenu +"&ts="+(new Date).getTime()+"\"></scr"+"ipt>");</script>
+			</div>
+			<img class="mention_pub_pave" src="/extension/sport24/design/site/images/mention_pub_pave.jpg" alt="" />
+		</div>
+				</div>
+</section>
+<section id="top5" class="bloc">
+	<section class="grid_6">
+		<span class="tetiere">LES ARTICLES LES PLUS LUS HIER</span>
+		<figure>
+					<span class='rank'>1</span>
+					<a href='http://sport24.lefigaro.fr/le-scan-sport/buzz//12/09/27002-20141209ARTFIG00163-lionel-messi-ironise-sur-son-controle-antidopage.php'><img width='180' height='120' src='http://www.lefigaro.fr/medias/2014/12/09/PHOc644dc62-74a6-11e4-a1bb-451feabd0975-805x453.jpg' /></a>
+					<figcaption><a class='titre titre_2' href='http://sport24.lefigaro.fr/le-scan-sport/buzz//12/09/27002-20141209ARTFIG00163-lionel-messi-ironise-sur-son-controle-antidopage.php'>Lionel Messi ironise sur son contrôle antidopage</a></figcaption>
+					</figure><figure>
+					<span class='rank'>2</span>
+					<a href='http://sport24.lefigaro.fr/le-scan-sport/buzz//12/09/27002-20141209ARTFIG00222-le-president-de-bastia-et-son-epouse-places-en-garde-a-vue.php'><img width='180' height='120' src='http://www.lefigaro.fr/medias/2014/12/09/PHOb508be9a-7fa1-11e4-9d0a-3ea4b60c2dea-805x453.jpg' /></a>
+					<figcaption><a class='titre titre_2' href='http://sport24.lefigaro.fr/le-scan-sport/buzz//12/09/27002-20141209ARTFIG00222-le-president-de-bastia-et-son-epouse-places-en-garde-a-vue.php'>Le président de Bastia et son épouse placés en garde à vue</a></figcaption>
+					</figure><figure>
+					<span class='rank'>3</span>
+					<a href='http://sport24.lefigaro.fr/le-scan-sport/buzz//12/09/27002-20141209ARTFIG00065-ces-francais-qui-n-ont-pas-brille-au-barca.php'><img width='180' height='120' src='http://www.lefigaro.fr/medias/2014/12/09/PHO54d57d34-7f91-11e4-baa9-677c572de9ff-805x453.jpg' /></a>
+					<figcaption><a class='titre titre_2' href='http://sport24.lefigaro.fr/le-scan-sport/buzz//12/09/27002-20141209ARTFIG00065-ces-francais-qui-n-ont-pas-brille-au-barca.php'>Dugarry, Thuram, Petit: ces Français qui n'ont pas brillé au Barça</a></figcaption>
+					</figure><figure>
+					<span class='rank'>4</span>
+					<a href='http://sport24.lefigaro.fr/basket/nba/actualites/washington-remporte-un-match-completement-fou-726436'><img width='180' height='120' src='http://sport24.lefigaro.fr/var/plain_site/storage/images/basket/nba/actualites/washington-remporte-un-match-completement-fou-726436/18016891-1-fre-FR/Washington-remporte-un-match-completement-fou_article_hover_preview.jpg' /></a>
+					<figcaption><a class='titre titre_2' href='http://sport24.lefigaro.fr/basket/nba/actualites/washington-remporte-un-match-completement-fou-726436'>Washington remporte un match complètement fou</a></figcaption>
+					</figure><figure>
+					<span class='rank'>5</span>
+					<a href='http://sport24.lefigaro.fr/basket/equipe-de-france/actualites/les-ponts-n-ont-jamais-ete-coupes-entre-noah-et-la-fede-726495'><img width='180' height='120' src='http://sport24.lefigaro.fr/var/plain_site/storage/images/basket/equipe-de-france/actualites/les-ponts-n-ont-jamais-ete-coupes-entre-noah-et-la-fede-726495/18018743-1-fre-FR/Les-ponts-n-ont-jamais-ete-coupes-entre-Noah-et-la-Fede_article_hover_preview.jpg' /></a>
+					<figcaption><a class='titre titre_2' href='http://sport24.lefigaro.fr/basket/equipe-de-france/actualites/les-ponts-n-ont-jamais-ete-coupes-entre-noah-et-la-fede-726495'>«Les ponts n'ont jamais été coupés» entre Noah et la Fédé</a></figcaption>
+					</figure>
+	</section>	
+</section>
+<section id="multimedia" class="bloc">
+	<section class="diaporamas grid_4">
+		<span class="tetiere">DIAPORAMAS</span>
+		<!-- ESI-START called [/layout/set/esi/content/view/diaporama/2] -->	<!--
+        ESI Generated : 13:40 10 décembre 2014
+        TTL : 
+-->
+
+    					<figure >
+					    					
+
+    
+        
+                
+    
+                                                                                                                                    <a href="/football/diaporamas/les-images-marquantes-de-monaco-zenit">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/diaporamas/les-images-marquantes-de-monaco-zenit/joie-abdennour/18020845-1-fre-FR/Joie-Abdennour_vignettes_diapo_home.jpg"  width="210" height="160"  style="" alt="Joie Abdennour" title="Joie Abdennour" />
+        </a>    
+    
+    
+    				<figcaption>Les images marquantes de Monaco - Zenit</figcaption>
+     			</figure>
+								<figure >
+					    					
+
+    
+        
+                
+    
+                                                                                                                                    <a href="/autres-sports/diaporamas/le-week-end-en-images161">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/autres-sports/diaporamas/le-week-end-en-images161/mormeck-battu-aux-points/18013778-2-fre-FR/Mormeck-battu-aux-points_vignettes_diapo_home.jpg"  width="210" height="160"  style="" alt=" Mormeck battu aux points" title=" Mormeck battu aux points" />
+        </a>    
+    
+    
+    				<figcaption>Le week-end en images</figcaption>
+     			</figure>
+								<figure  class="last_figure" >
+					    					
+
+    
+        
+                
+    
+                                                                                                                                    <a href="/football/diaporamas/le-week-end-europeen-en-images160">        <!-- good file -->
+        <img src="/var/plain_site/storage/images/football/diaporamas/le-week-end-europeen-en-images160/stoke-arsenal-sanchez/18006271-2-fre-FR/Stoke-Arsenal-Sanchez_vignettes_diapo_home.jpg"  width="210" height="160"  style="" alt="Stoke-Arsenal : Sanchez" title="Stoke-Arsenal : Sanchez" />
+        </a>    
+    
+    
+    				<figcaption>Le week-end européen en images</figcaption>
+     			</figure>
+					<a role="button" class="bouton_large bouton_noir bouton_full" href="/diaporamas">TOUS LES DIAPORAMAS</a>
+	<!-- ESI-END -->
+	</section>
+	<section class="videos grid_2">
+		<span class="tetiere">VIDEOS</span>
+		<!-- ESI-START called [/layout/set/esi/content/view/video/2] -->	<!--
+        ESI Generated : 13:40 10 décembre 2014
+        TTL : 
+-->
+
+
+
+<div class="include_video">						
+	<a href='/pages/home_videos.php/?bctid=3933883352001'><img src='http://lefigaro.brightcove.com.edgesuite.net/pd/731674471001/201412/3570/731674471001_3933891009001_Zap-Monaco-vs.jpg?pubId=731674471001' width='300' height='170' alt='Zap&#039;Foot : «ça devait être une boucherie pour Monaco, ça a été favorable»' border='0' /><div class='btnplay'></div></a>
+</div>
+<a href="/pages/home_videos.php" role="button" class="bouton_large bouton_noir bouton_full" >TOUTES LES VIDEOS</a><!-- ESI-END -->
+	</section>
+</section>
+
+															
+					
+										<section class="pub_banner">
+			<script charset="ISO-8859-1" type="text/javascript">document.write("<scr"+"ipt src=\"http://adnext.fr/richmedia.adv?id=102379&plc=13&s=all&section=hp," + sptypecontenu +"&ts="+(new Date).getTime()+"\"></scr"+"ipt>");</script>
+		</section>
+												</section>
+		<footer id="footer">
+	<ul>
+		<li><a href="/pages/site_map.html">PLAN DU SITE</a></li>
+        <li ><a href="/pages/mentions.html">MENTIONS LEGALES</a></li>
+        <li><a href="/pages/cgu.html">CHARTE</a></li>
+        <li><a href="http://boutique.lefigaro.fr/cgv"|ezurl()>CGV</a></li>
+        <li><a href="/pages/cookies.html">COOKIES</a></li>
+        <li ><a href="/pages/recrutement.html">RECRUTEMENT</a></li>
+        <li class="noborder" ><a href="mailto:contact@sport24.com">CONTACTEZ-NOUS</a></li>
+	</ul>
+</footer>
+<script type="text/javascript" src="/livescore/js/menu.js" ></script>
+<script type="text/javascript" src="/livescore/js/home.js"></script>
+<!--Patch Brightove IE8-->
+<!--[if IE 8]><script>$('*[id^="_containermyExperience"]').css('display', 'block');</script><![endif]-->		<div id="tranche_livescore">
+	<div class="bandeau">
+		<div class="onglet">
+			<div class="bdup" title="Ouvrir">
+				<img src="/livescore/img/bdup.gif" alt="" />
+			</div>
+			<img src="/livescore/img/logoBarre.png" class="logoBarre" alt="livescore">
+		</div>
+		<div class="tiroir">
+			<div class="nav">
+				<div class="bddown" title="Réduire">
+					<img src="/livescore/img/bddown.gif" alt="" />
+				</div>
+				<img src="/livescore/img/logoBarre.png" class="logoBarre" alt="livescore">
+				<select name="sport">
+					<option value="" selected="selected">Tous les sports</option>
+					<option value="57" >Football</option><option value="230" >Formule 1</option><option value="224" >Moto</option><option value="167" >Rugby</option><option value="115" >Tennis</option><option value="267" >Handball</option><option value="147" >Basket</option><option value="196" >Cyclisme</option><option value="220" >Rallye</option>
+				</select>
+			</div>
+			<div class="scrollbar">
+				<img src="/livescore/img/flvGhe.gif" class="minus" alt="" />
+				<img src="/livescore/img/flvDte.gif" class="plus" alt="" />
+			</div>
+			<div class="scroll">
+				
+				<div class="liste"> 
+					<div class="case bleu ">
+						<div>
+							<span class="titrSport">Football - Ligue des champions</span>
+							<span class="sport">CHELSEA</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">SPORTING</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Football - Ligue des champions</span>
+							<span class="sport">BAYERN MUNICH</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">CSKA MOSCOU</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Football - Ligue des champions</span>
+							<span class="sport">AJAX</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">APOEL</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case multiplex">
+						<img src="/livescore/media/bandeau/image-70.png" alt="promotion" />
+						<div>
+							<span class="titrSport"></span>
+							<span class="sport"></span>
+							<span class="sport"></span>
+						</div>
+						<a href="https://www.winamax.fr/landing/landing_leads.php?ldg=meilleures-cotes&amp;banid=26490" target="_blank">
+							<img src="/livescore/media/bandeau/image_hover-70.png" alt="promotion" />
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Football - Ligue des champions</span>
+							<span class="sport">ATHLETIC BILBAO</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">BATE BORISOV</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Football - Ligue des champions</span>
+							<span class="sport">PORTO</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">SHAKHTAR DONETSK</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Football - Ligue des champions</span>
+							<span class="sport">MARIBOR</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">SCHALKE 04</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/football/ligue-des-champions/2014-2015/6eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Euro Femmes</span>
+							<span class="sport">SLOVAQUIE</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">MONTÉNÉGRO</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/euro-femmes/2014/2eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Euro Femmes</span>
+							<span class="sport">SERBIE</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">FRANCE</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/euro-femmes/2014/2eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Euro Femmes</span>
+							<span class="sport">PAYS-BAS</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">SUÈDE</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/euro-femmes/2014/2eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Euro Femmes</span>
+							<span class="sport">CROATIE</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">ALLEMAGNE</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/euro-femmes/2014/2eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Division 1</span>
+							<span class="sport">PAYS D'AIX</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">TOULOUSE</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/division-1/2014-2015/13eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Division 1</span>
+							<span class="sport">CHAMBÉRY</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">TREMBLAY</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/division-1/2014-2015/13eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Division 1</span>
+							<span class="sport">ST-RAPHAËL</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">CESSON</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/division-1/2014-2015/13eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Division 1</span>
+							<span class="sport">NÎMES</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">NANTES</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/division-1/2014-2015/13eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div><div class="case bleu ">
+						<div>
+							<span class="titrSport">Handball - Division 1</span>
+							<span class="sport">CRÉTEIL</span>
+							<span class="score">
+								 
+							</span>
+							<span class="sport">ISTRES</span>
+							<span class="score">
+								 
+							</span>
+						</div>
+						
+						<a href="/livescore/handball/division-1/2014-2015/13eme-journee">
+							 
+							<span>ACCÉDEZ<br />AU CALENDRIER</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	</div><div class="OUTBRAIN" data-src="" data-widget-id="TR_1" data-ob-template="sport24fr" ></div>
+<script type="text/javascript">document.querySelector('.OUTBRAIN').dataset['src'] = document.location</script>
+<script type="text/javascript" src="http://widgets.outbrain.com/outbrain.js"></script>                
+<script type='text/javascript'>
+	if (!window.xtcustom) xtcustom = {}; 
+	xtsite='411571';
+	xtcustom.type='home';
+</script>
+<script type='text/javascript' src='/extension/sport24/design/site/javascript/xtcore.js'></script>
+<noscript><img width='1' height='1' alt='' src='http://logc111.xiti.com/hit.xiti?s=411571'></noscript>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-715796-1']);
+	_gaq.push(['_setDomainName', 'sport24.com']);
+	_gaq.push(['_trackPageview']);
+	(function(){
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+</script>
+<script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0012/8793.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+</body>
+</html>

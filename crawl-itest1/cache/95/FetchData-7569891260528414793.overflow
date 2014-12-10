@@ -1,0 +1,665 @@
+ietopalvelu</span></h3>
+		<form name="company-search" action="http://www.taloussanomat.fi/yritykset/haku/?pos=yrit-promo" method="get">
+		<input id="company-search-field" type="text" name="search" value="Anna yrityksen nimi tai Y-tunnus"/>
+		<input type="submit" value="Hae" />
+		</form>
+		
+		<ul class="featureList">
+			<li><a href="/yritykset/protestit/?pos=yrit-promo">Protestit</a></li>
+			<li><a href="/yritykset/uudet/?pos=yrit-promo">Uudet yritykset</a></li>
+			<li><a href="/yritykset/rating-muutokset/?pos=yrit-promo">Rating-muutokset</a></li>			
+			<li><a href="/yritykset/domainit/?pos=yrit-promo">Hae .fi -domaineja</a></li>			
+			<li><a href="/yritykset/nimitykset/?pos=yrit-promo">Nimitysuutiset</a></li>	
+			<li><a href="/lomake/nimitys/?pos=yrit-promo">Jätä nimitysuutinen</a></li>	
+			<li><a href="/yritykset/uutiset/?pos=yrit-promo">Yritysuutiset</a></li>
+			<li><a href="/kalenteri/?pos=yrit-promo">Talouskalenteri</a></li>
+		</ul>
+		<div class="clear"></div>
+	
+	</div>
+
+</div>
+</div>
+
+<div id="copmany-search-bottom" class="csb-external"></div>
+<div id="company-affiliate">
+	<a href="http://www.asiakastieto.fi"><img src="/img/yritystietopalvelu/logo-text-asiakastieto.png" alt="Asiakastieto"/></a>
+	<p>Yhteistyössä</p>
+</div>
+<!-- poiminnat -->
+
+	<div class="editorsPicks promo">
+		<div class="subHeading">
+			Poiminnat
+		</div>
+		<ul class="body">
+			
+		<li>
+			<a href="http://www.taloussanomat.fi/uutiset/2014/11/17/kesatoimittaja-2015-taloussanomat-ja-startel-etsivat-sinua/201415965/12?pos=picks"><img src="http://tiedostot.taloussanomat.fi/files/90_kesurikuva.jpg" alt="" /></a>
+			<div class="metadata">
+				<span class="storyType"><a href="http://www.taloussanomat.fi/uutiset/2014/11/17/kesatoimittaja-2015-taloussanomat-ja-startel-etsivat-sinua/201415965/12?pos=picks">Uutinen</a></span>
+				<span class="commentsNumber">0</span>
+			</div>
+			<div class="headline"><a href="http://www.taloussanomat.fi/uutiset/2014/11/17/kesatoimittaja-2015-taloussanomat-ja-startel-etsivat-sinua/201415965/12?pos=picks">Kesätoimittaja 2015: Taloussanomat ja Startel etsivät sinua</a></div>
+			<div class="author">Taloussanomat</div>
+			<div class="clear"> </div>
+		</li>
+
+		<li>
+			<a href="http://www.taloussanomat.fi/jan-hurri/2014/12/07/rasistit-ovat-rasittavia-myos-taloudelle/201416852/12?pos=picks"><img src="http://tiedostot.taloussanomat.fi/files/90_B8831375Z120141205190849000GOF78SB021.jpg" alt="" /></a>
+			<div class="metadata">
+				<span class="storyType"><a href="http://www.taloussanomat.fi/jan-hurri/2014/12/07/rasistit-ovat-rasittavia-myos-taloudelle/201416852/12?pos=picks">Analyysi</a></span>
+				<span class="commentsNumber">698</span>
+			</div>
+			<div class="headline"><a href="http://www.taloussanomat.fi/jan-hurri/2014/12/07/rasistit-ovat-rasittavia-myos-taloudelle/201416852/12?pos=picks">Rasistit ovat rasittavia – myös taloudelle</a></div>
+			<div class="author">Jan Hurri</div>
+			<div class="clear"> </div>
+		</li>
+
+		<li>
+			<a href="http://www.taloussanomat.fi/raha/2014/12/07/vanhasta-tavarasta-ilo-irti-vinkit-halpaan-jouluun/201416835/139?pos=picks"><img src="http://tiedostot.taloussanomat.fi/files/90_B8830707Z120141205153030000GPR78S2621.jpg" alt="" /></a>
+			<div class="metadata">
+				<span class="storyType"><a href="http://www.taloussanomat.fi/raha/2014/12/07/vanhasta-tavarasta-ilo-irti-vinkit-halpaan-jouluun/201416835/139?pos=picks">Uutinen</a></span>
+				<span class="commentsNumber">23</span>
+			</div>
+			<div class="headline"><a href="http://www.taloussanomat.fi/raha/2014/12/07/vanhasta-tavarasta-ilo-irti-vinkit-halpaan-jouluun/201416835/139?pos=picks">Vanhasta tavarasta ilo irti – vinkit halpaan jouluun</a></div>
+			<div class="author">Janne Soisalon-Soininen</div>
+			<div class="clear"> </div>
+		</li>
+
+		<li>
+			<a href="http://www.taloussanomat.fi/asuminen/2014/12/06/asuntolaina-maksaa-yha-vahemman-katso-mista-saa-halvinta/201416848/310?pos=picks"><img src="http://tiedostot.taloussanomat.fi/files/90_B8831465Z120141205165023000GQG78TRQ21.jpg" alt="" /></a>
+			<div class="metadata">
+				<span class="storyType"><a href="http://www.taloussanomat.fi/asuminen/2014/12/06/asuntolaina-maksaa-yha-vahemman-katso-mista-saa-halvinta/201416848/310?pos=picks">Uutinen</a></span>
+				<span class="commentsNumber">68</span>
+			</div>
+			<div class="headline"><a href="http://www.taloussanomat.fi/asuminen/2014/12/06/asuntolaina-maksaa-yha-vahemman-katso-mista-saa-halvinta/201416848/310?pos=picks">Asuntolaina maksaa yhä vähemmän – katso, mistä saa halvinta</a></div>
+			<div class="author">Laura Manninen</div>
+			<div class="clear"> </div>
+		</li>
+
+		<li>
+			<a href="http://www.taloussanomat.fi/asuminen/2014/12/05/naita-omakotitaloja-ostajat-karttavat/201416764/310?pos=picks"><img src="http://tiedostot.taloussanomat.fi/files/90_B8830237Z120141204153753000GPO786AO21.jpg" alt="" /></a>
+			<div class="metadata">
+				<span class="storyType"><a href="http://www.taloussanomat.fi/asuminen/2014/12/05/naita-omakotitaloja-ostajat-karttavat/201416764/310?pos=picks">Uutinen</a></span>
+				<span class="commentsNumber">112</span>
+			</div>
+			<div class="headline"><a href="http://www.taloussanomat.fi/asuminen/2014/12/05/naita-omakotitaloja-ostajat-karttavat/201416764/310?pos=picks">Näitä omakotitaloja ostajat karttavat</a></div>
+			<div class="author">Janne Soisalon-Soininen</div>
+			<div class="clear"> </div>
+		</li>
+
+		</ul>
+	</div>
+<div class="multiAds ad">
+	<div class="container">
+
+
+		<div class="row">
+			<div class="multiAd first">
+				
+	<script type="text/javascript">try { cts.render("button01"); } catch (err) { cts.log(err); } </script>		
+	
+			</div>
+		
+			<div class="multiAd second">
+				
+	<script type="text/javascript">try { cts.render("button02"); } catch (err) { cts.log(err); } </script>		
+	
+			</div>
+			<div class="clear"> </div>
+		</div>
+
+		<div class="row">
+			<div class="multiAd first">
+				
+	<script type="text/javascript">try { cts.render("button03"); } catch (err) { cts.log(err); } </script>		
+	
+			</div>
+		
+			<div class="multiAd second">
+				
+	<script type="text/javascript">try { cts.render("button04"); } catch (err) { cts.log(err); } </script>		
+	
+			</div>	
+			<div class="clear"> </div>
+		</div>
+		<div class="clear"> </div>
+
+	</div>	
+</div><!-- kommentoiduimmat nyt -->
+
+<div id="kuumatKeskustelutPromo" class="picksPromo">
+    <div class="promoBox">
+        <div class="subHeading">Kommentoiduimmat nyt</div>
+        <div class="body">	
+
+				<div class="feature">
+					<div class="picture">696</div>
+					<div class="featureContent">
+						<div class="headline">
+							<a href="http://www.taloussanomat.fi/a/201416852">Rasistit ovat rasittavia – myös taloudelle
+							<img alt="" src="/img/icon_read_more.png" />
+							</a>
+						</div> <!-- /.headline -->
+						<div class="author">Jan Hurri</div>
+					</div> <!-- /.featureContent -->
+				</div> <!-- /.feature -->
+				<div class="clear"></div>
+				<div class="feature">
+					<div class="picture">158</div>
+					<div class="featureContent">
+						<div class="headline">
+							<a href="http://www.taloussanomat.fi/a/201416953">EK esittää rajuja säästöjä ja veronkevennyksiä
+							<img alt="" src="/img/icon_read_more.png" />
+							</a>
+						</div> <!-- /.headline -->
+						<div class="author">Taloussanomat</div>
+					</div> <!-- /.featureContent -->
+				</div> <!-- /.feature -->
+				<div class="clear"></div>
+				<div class="feature">
+					<div class="picture">146</div>
+					<div class="featureContent">
+						<div class="headline">
+							<a href="http://www.taloussanomat.fi/a/201416938">Manpower: Missään Euroopassa ei aiota työllistää niin huonosti kuin Suomessa
+							<img alt="" src="/img/icon_read_more.png" />
+							</a>
+						</div> <!-- /.headline -->
+						<div class="author">Taloussanomat</div>
+					</div> <!-- /.featureContent -->
+				</div> <!-- /.feature -->
+				<div class="clear"></div>
+				<div class="feature">
+					<div class="picture">108</div>
+					<div class="featureContent">
+						<div class="headline">
+							<a href="http://www.taloussanomat.fi/a/201416920">Työ kuin työ kelpaa monelle akateemiselle
+							<img alt="" src="/img/icon_read_more.png" />
+							</a>
+						</div> <!-- /.headline -->
+						<div class="author">Kristian Rämö</div>
+					</div> <!-- /.featureContent -->
+				</div> <!-- /.feature -->
+				<div class="clear"></div>
+				<div class="feature">
+					<div class="picture">87</div>
+					<div class="featureContent">
+						<div class="headline">
+							<a href="http://www.taloussanomat.fi/a/201416990">Eurokriisi kytee taas Kreikassa
+							<img alt="" src="/img/icon_read_more.png" />
+							</a>
+						</div> <!-- /.headline -->
+						<div class="author">Jan Hurri</div>
+					</div> <!-- /.featureContent -->
+				</div> <!-- /.feature -->
+				<div class="clear"></div>
+				<div class="feature">
+					<div class="picture">86</div>
+					<div class="featureContent">
+						<div class="headline">
+							<a href="http://www.taloussanomat.fi/a/201416986">"Olemme pikkuhiljaa kyllä vaikeassa tilanteessa"
+							<img alt="" src="/img/icon_read_more.png" />
+							</a>
+						</div> <!-- /.headline -->
+						<div class="author"> Harri Pietarinen </div>
+					</div> <!-- /.featureContent -->
+				</div> <!-- /.feature -->
+				<div class="clear"></div>
+        </div> <!-- /.body -->
+    </div> <!-- /.promoBox -->
+</div> <!-- /#kuumatKeskustelutPromo-->	
+
+<!-- kommentoiduimmat nyt -->	        		<div class="ad300x250 ad">
+
+	<script type="text/javascript">try { cts.render("rectangle2-3"); } catch (err) { cts.log(err); } </script>		
+<!--AD?size=300x250&pp=9&keyword=-->
+
+	        		</div><!-- gAd  336x280 -->
+<div class="googleAd336x280">
+
+<script type="text/javascript"><!--
+
+		/* 336x280 Etusivu 2012-06-11 */
+		google_ad_slot = "8986833312";
+
+google_ad_width = 336;
+google_ad_height = 280;
+google_ad_client = "ca-pub-3078948410672331";
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>	
+
+</div>
+<!-- end GAd --><div id="outlet300x250" class="ad ad300x250">
+<!-- outlet -->
+
+	<script type="text/javascript">try { cts.render("rectangle2-2"); } catch (err) { cts.log(err); } </script>		
+
+</div><!-- teksti alkaa -->
+<p><iframe name="" id="" src="http://ko.snstatic.fi/ts-iltapulu-300-vertical/" scrolling="no" border="0" frameborder="0" vspace="0" hspace="0" style="height: 350px; width: 300px;"></iframe></p>
+<!-- oikotie asunnot -->
+<div id="oikotieAsuntoPromo"> </div>
+<!-- end oikotie asunnot --><div id="soppa365Promo"></div>
+	        	</div>
+	        	<!-- Column 1 B ends -->
+	        	<div class="clear"></div>
+			<div id="bottomAd" class="ad">
+
+
+
+</div>
+	        	<div class="clear"></div>
+		    <!-- dilbert -->
+    
+
+<div id="cartoonStrip">
+<script type="text/javascript">
+
+    //<![CDATA[
+
+	function replaceDillu(aika, sel, pvm) {
+		$("#dillu").attr("src", "/dilbert/dilbert.php?date="+aika);
+        $("#dilbertTitle").html("Dilbert &#8211; "+pvm);
+        $('#dilbertFb').html('<iframe src="http://www.facebook.com/plugins/like.php?href=' + escape('http://www.taloussanomat.fi/dilbert/daysDilbert.php?date=' + aika) + '&amp;layout=button_count&amp;show_faces=false&amp;width=152&amp;action=recommend&amp;font=arial&amp;colorscheme=light&amp;height=21&amp;locale=fi_FI&amp;ref=sarjakuva" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:152px; height:21px;" allowTransparency="true"></iframe>');
+        
+        $("#dilbertSend").html('<a href="/laheta/dilbert/'+aika.replace(/-/g, '')+'"><img alt="Lähetä kaverille" src="/img/icon_email_tool.png" class="icon" />Lähetä</a>');
+         
+		var loadFrom = 40;
+		var endTo = 1;
+		if (sel < 5) {
+			loadFrom = 1;
+			endTo = 10;
+		}
+		if (sel > 25) {
+			loadFrom = 20;
+			endTo = 30;
+		}
+		// Päivitetään linkit
+		for (var i = 1; i <= 30; i++) {
+    		if (i == sel) {
+    			$("#dillink"+i).addClass("current");
+    		} else {
+    			$("#dillink"+i).removeClass("current");
+    		}
+    		if (Math.abs(i-sel) < 5 || (i >= loadFrom && i <= endTo) || i == 1 || i == 30) {
+    			$("#dillink"+i).show();
+    		} else {
+    			$("#dillink"+i).hide();
+    		}
+		}
+
+		// Päivitetään "aukko"
+		if (sel < 7) {
+			$("#dillinkBper").hide();
+		} else {
+			$("#dillinkBper").show();
+		}
+		if (sel > 24) {
+			$("#dillinkEper").hide();
+		} else {
+			$("#dillinkEper").show();
+		}
+        
+        
+		if (sel == 1) { // Ollaan ekassa ruudussa
+			$("#prevBut").addClass("disabled");
+			$("#nextBut").removeClass("disabled");
+		} else if (sel == 30) { // Ollaan vikassa ruudussa
+			$("#nextBut").addClass("disabled");
+			$("#prevBut").removeClass("disabled");
+		} else { // Ollaan muissa ruuduissa
+			$("#nextBut").removeClass("disabled");
+			$("#prevBut").removeClass("disabled");
+		}
+        
+        
+        return false;
+	}
+    
+    function getPeriodFormatted(dateStr) {
+        var t = dateStr.split('-');
+        return t[2] + '.' + t[1] + '.' + t[0];
+    }
+        
+    function changeStrip(direction) {
+        
+        var nOk = pOk = true;
+        
+        var c = $('#cartoonStrip a.current');
+        var i = parseInt(c.attr('id').substring(7));
+        
+         if (i == 1) {
+            var n = c.next('a.page');
+            var next = n.attr("href").split('=')[1];
+            var nextN = getPeriodFormatted(next);
+            pOk = false;
+        } else if (i == 30) {
+            var p = c.prev('a.page');
+            var prev = p.attr("href").split('=')[1];
+            var prevN = getPeriodFormatted(prev);
+            nOk = false;
+        } else {
+            var n = c.next('a.page');
+            var next = n.attr("href").split('=')[1];
+            var nextN = getPeriodFormatted(next);
+            var p = c.prev('a.page');
+            var prev = p.attr("href").split('=')[1];
+            var prevN = getPeriodFormatted(prev);
+        }
+        
+        if (direction == 'next' && nOk) {
+            replaceDillu(next, (i+1), nextN);
+        } else if (direction == 'prev' && pOk) {
+            replaceDillu(prev, (i-1), prevN);
+        }
+        
+        return false;
+            
+    }
+
+    //]]>
+    
+</script>
+<div id="dilbertTitle" class="subHeading"><span id="dilbert">Dilbert</span> &#8211; 10.12.2014</div>
+	<div class="cartoonContainer">
+		<img src="/dilbert/alkuruutu.png" width="168" height="190" alt="Dilbert"/><img src="/dilbert/dilbert.php" alt="Dilbert" title="Dilbert" id="dillu" />
+	</div>
+	<div class="controls">
+		<div class="xvPagination">
+            <div id="dilbertSend"><a href="/laheta/dilbert/20141210"><img alt="Lähetä kaverille" src="/img/icon_email_tool.png" class="icon" />Lähetä</a></div>
+            <div id="dilbertFb">
+            </div>
+			<span class="label">Sarjakuvat:</span> <a class="page current" href="/dilbert/daysDilbert.php?date=2014-12-10" onclick="replaceDillu('2014-12-10', 1, '10.12.2014'); return false;" id="dillink1">1</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-10" onclick="replaceDillu('2014-12-10', 1, '10.12.2014'); return false;" id="dillinkBper" style="display: none;">...</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-09" onclick="replaceDillu('2014-12-09', 2, '9.12.2014'); return false;" id="dillink2" style="">2</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-08" onclick="replaceDillu('2014-12-08', 3, '8.12.2014'); return false;" id="dillink3" style="">3</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-07" onclick="replaceDillu('2014-12-07', 4, '7.12.2014'); return false;" id="dillink4" style="">4</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-06" onclick="replaceDillu('2014-12-06', 5, '6.12.2014'); return false;" id="dillink5" style="">5</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-05" onclick="replaceDillu('2014-12-05', 6, '5.12.2014'); return false;" id="dillink6" style="">6</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-04" onclick="replaceDillu('2014-12-04', 7, '4.12.2014'); return false;" id="dillink7" style="">7</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-03" onclick="replaceDillu('2014-12-03', 8, '3.12.2014'); return false;" id="dillink8" style="">8</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-02" onclick="replaceDillu('2014-12-02', 9, '2.12.2014'); return false;" id="dillink9" style="">9</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-12-01" onclick="replaceDillu('2014-12-01', 10, '1.12.2014'); return false;" id="dillink10" style="">10</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-30" onclick="replaceDillu('2014-11-30', 11, '30.11.2014'); return false;" id="dillink11" style="display: none;">11</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-29" onclick="replaceDillu('2014-11-29', 12, '29.11.2014'); return false;" id="dillink12" style="display: none;">12</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-28" onclick="replaceDillu('2014-11-28', 13, '28.11.2014'); return false;" id="dillink13" style="display: none;">13</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-27" onclick="replaceDillu('2014-11-27', 14, '27.11.2014'); return false;" id="dillink14" style="display: none;">14</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-26" onclick="replaceDillu('2014-11-26', 15, '26.11.2014'); return false;" id="dillink15" style="display: none;">15</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-25" onclick="replaceDillu('2014-11-25', 16, '25.11.2014'); return false;" id="dillink16" style="display: none;">16</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-24" onclick="replaceDillu('2014-11-24', 17, '24.11.2014'); return false;" id="dillink17" style="display: none;">17</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-23" onclick="replaceDillu('2014-11-23', 18, '23.11.2014'); return false;" id="dillink18" style="display: none;">18</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-22" onclick="replaceDillu('2014-11-22', 19, '22.11.2014'); return false;" id="dillink19" style="display: none;">19</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-21" onclick="replaceDillu('2014-11-21', 20, '21.11.2014'); return false;" id="dillink20" style="display: none;">20</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-20" onclick="replaceDillu('2014-11-20', 21, '20.11.2014'); return false;" id="dillink21" style="display: none;">21</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-19" onclick="replaceDillu('2014-11-19', 22, '19.11.2014'); return false;" id="dillink22" style="display: none;">22</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-18" onclick="replaceDillu('2014-11-18', 23, '18.11.2014'); return false;" id="dillink23" style="display: none;">23</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-17" onclick="replaceDillu('2014-11-17', 24, '17.11.2014'); return false;" id="dillink24" style="display: none;">24</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-16" onclick="replaceDillu('2014-11-16', 25, '16.11.2014'); return false;" id="dillink25" style="display: none;">25</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-15" onclick="replaceDillu('2014-11-15', 26, '15.11.2014'); return false;" id="dillink26" style="display: none;">26</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-14" onclick="replaceDillu('2014-11-14', 27, '14.11.2014'); return false;" id="dillink27" style="display: none;">27</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-13" onclick="replaceDillu('2014-11-13', 28, '13.11.2014'); return false;" id="dillink28" style="display: none;">28</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-12" onclick="replaceDillu('2014-11-12', 29, '12.11.2014'); return false;" id="dillink29" style="display: none;">29</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-11" onclick="replaceDillu('2014-11-11', 30, '11.11.2014'); return false;" id="dillinkEper">...</a> <a class="page" href="/dilbert/daysDilbert.php?date=2014-11-11" onclick="replaceDillu('2014-11-11', 30, '11.11.2014'); return false;" id="dillink30">30</a> 
+			<a class="button disabled" href="/dilbert/daysDilbert.php?date=2014-12-10" onclick="changeStrip('prev'); return false;" id="prevBut">&laquo;</a>
+			<a class="button" href="#" onclick="changeStrip('next'); return false;" id="nextBut">&raquo;</a> 
+	    <div class="clear">&nbsp;</div>
+		</div>
+	</div>
+ 		<div id="cartoonPromos">
+				<img class="hsfilogo" src="http://www.taloussanomat.fi/img/icon_hs_fi_104_52.gif" alt="HS.fi" width="104" height="52"/>
+			<div class="cartoonPromo">
+				<a href="http://www.hs.fi/viivijawagner/">
+					<img src="http://www.taloussanomat.fi/img/icon_wagner_52_52.gif" alt="" width="52" height="52" />
+				</a>
+				<a class="comicTitle" href="http://www.hs.fi/viivijawagner/">Viivi &amp; Wagner</a>
+				<a class="comicDescription" href="http://www.hs.fi/viivijawagner/">Parhaat parisuhteen hoitovinkit sarjakuvana</a>
+				<div class="clear"> </div>
+			</div>		
+			<div class="cartoonPromo">
+				<a href="http://www.hs.fi/fingerpori/">
+					<img src="http://www.taloussanomat.fi/img/icon_fingerpori_52_52.gif" alt="" width="52" height="52" />
+				</a>
+				<a class="comicTitle" href="http://www.hs.fi/fingerpori/">Fingerpori</a>
+				<a class ="comicDescription" href="http://www.hs.fi/fingerpori/">Seuraa Heimo Vesan ja kumppaneiden elämää</a>
+				<div class="clear"> </div>
+			</div>
+			<div class="cartoonPromo">
+				<a href="http://www.hs.fi/wulffmorgenthaler/">
+					<img src="http://www.taloussanomat.fi/img/icon_wulffmorgenthaler_52_52.gif" alt="" width="52" height="52" />
+				</a>
+				<a class="comicTitle" href="http://www.hs.fi/wulffmorgenthaler/">Wulffmorgenthaler</a>
+				<a class="comicDescription" href="http://www.hs.fi/wulffmorgenthaler/">Julkea tanskalaissarjakuva verkossa</a>
+				<div class="clear"> </div>
+			</div>	
+			<div class="clear"> </div>
+		</div> <!-- /#cartoonPromos -->
+
+</div>
+
+                     <div class="clear"></div> 
+		    <!--jb3_980x400-->
+<div id="mb2" class="adAfterNavi728x90 ad">
+	<script type="text/javascript">try { cts.render("middlebanner02"); } catch (err) { cts.log(err); } </script>		
+</div> 
+	            <div class="clear"></div>
+		</div>
+	    <!-- Column 1 ends -->
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div><!-- page ends -->
+	<!-- Column 2 starts -->
+	<div id="col2">	
+		<div id="col2Ad1" class="col2Ad ad">
+
+
+	<script type="text/javascript">try { cts.render("side01"); } catch (err) { cts.log(err); } </script>		
+
+
+</div>
+
+<div id="col2Ad2" class="col2Ad ad">
+
+
+	<script type="text/javascript">try { cts.render("side02"); } catch (err) { cts.log(err); } </script>		
+
+
+</div>
+
+<div id="col2Ad3" class="col2Ad ad">
+</div>
+
+
+<div id="col2Ad4" class="col2Ad ad">
+
+</div>
+
+<div id="col2Ad5" class="col2Ad ad">
+
+</div>
+
+<div id="col2Ad6" class="col2Ad ad">
+
+</div>
+
+<div id="col2Ad7"  class="col2Ad ad">
+
+</div>
+
+<!-- Banner Partners -->
+
+
+
+<!-- /Banner Partners -->
+
+
+
+<div id="fixedSideAd" class="col2Ad ad">
+<!-- Floater ad -->
+
+
+
+</div>
+<!-- /Floater ad -->
+<!-- </div> -->
+ 	</div>
+	<!-- Column 2 ends -->
+	</div> <!-- newContainer ends -->
+	<div class="clear"> </div>
+</div> <!-- /#allWrapper -->
+
+        <!--Pagepeel-->
+
+	    <!-- Contact info starts -->
+<footer>
+    <div id="contactInfoArea">
+        <div id="contactInfo">
+
+            <a href="http://www.taloussanomat.fi/"><img class="logo" src="/img/logo_taloussanomat_150_35.png" alt="Taloussanomat logo" title="Taloussanomat.fi - uutiset, analyysit ja pörssi" width="150" height="35" /></a>
+            <table class="col1">
+                <tr>
+                    <th>Yritys</th>
+                    <td><a href="/yritysesittely/">Sanoma Media Finland Oy / Taloussanomat</a></td>
+                </tr>
+                <tr>
+                    <th>Postiosoite</th>
+                    <td>Taloussanomat PL 45<br />00089 SANOMA</td>
+                </tr>
+                <tr>
+                    <th>Käyntiosoite</th>
+                    <td>Töölönlahdenkatu 2, Helsinki</td>
+                </tr>
+                <tr>
+                    <th>Puhelin</th>
+                    <td>+358 9 1221</td>
+                </tr>
+                <tr>
+                    <th>Sähköposti</th>
+                    <td><a href="mailto:taloussanomat@sanoma.fi">taloussanomat@sanoma.fi</a></td>
+                </tr>
+            </table>
+            <table class="col2">
+                <tr>
+                    <th>Kustantaja, vastaava <br />päätoimittaja</th>
+                    <td><a href="/toimitus/">Tapio Sadeoja</a></td>
+                </tr>
+                <tr>
+                    <th>Esimies</th>
+                    <td><a href="/toimitus/">Heidi Hagelin</a></td>
+                </tr>
+    
+                <tr>
+                    <th><a href="/mediatiedot/">Mediamyynti</a></th>
+                    <td><a href="http://mediatiedot.taloussanomat.fi/index.php/yhteystiedot">Yhteystiedot</a><br /></td>
+                </tr>
+            </table>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- Contact info ends -->
+    <!-- Footer starts -->
+    <div id="footerArea">
+        <div class="footerContainer">
+            <div id="footer">
+                <ul class="footerNav">
+					<li class="item first">&copy; Sanoma Media Finland Oy, a Sanoma company</li>
+                    <li class="item">
+                        <a href="/rekisteriseloste-sivusto">Rekisteriseloste</a>
+                    </li>
+                    <li class="item">
+                        <a href="/kayttoehdot">Käyttöehdot</a>
+                    </li>
+                    <li class="item">
+                        <a href="http://www.sanoma.fi/tietosuojalauseke">Tietosuoja</a>
+                    </li>
+                    <li class="item">
+                        <a href="/sivuston-esittely/">Tietoa sivustosta</a>
+                    </li>
+                </ul><div class="oba"><a href="http://www.youronlinechoices.com/fi/" target="_blank">Käyttäytymiseen perustuva mainonta <img src="/img/oba.png" alt=""></a></div>
+				<div class="clear"> </div>
+            </div>
+			<p>
+			   Market information: Copyright &copy; Sanoma Media Finland Oy, implemented by NFS, powered by <a href="http://www.interactivedata-ms.com" target="_blank">Interactive Data Managed Solutions</a>
+			</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</footer>
+<!-- Footer ends -->
+
+
+
+<script type="text/javascript" src="/js/spring.js">
+</script>
+<script type="text/javascript">
+var sp_e0 = {
+"s":"talsa",
+"cp":"talsa/taloussanomat/etusivu",
+"url":document.location.href
+}
+spring.c(sp_e0);
+</script>
+<noscript><img src="http://talsa.spring-tns.net/j0=,,,;+,,cp=talsa/taloussanomat/etusivu;;;;" alt=""></noscript>
+
+<script type="text/javascript"> 
+// <![CDATA[
+function udm_(a){var b="comScore=",c=document,d=c.cookie,e="",f="indexOf",g="substring",h="length",i=2048,j,k="&ns_",l="&",m,n,o,p,q=window,r=q.encodeURIComponent||escape;if(d[f](b)+1)for(o=0,n=d.split(";"),p=n[h];o<p;o++)m=n[o][f](b),m+1&&(e=l+unescape(n[o][g](m+b[h])));a+=k+"_t="+ +(new Date)+k+"c="+(c.characterSet||c.defaultCharset||"")+"&c8="+r(c.title)+e+"&c7="+r(c.URL)+"&c9="+r(c.referrer),a[h]>i&&a[f](l)>0&&(j=a[g](0,i-8).lastIndexOf(l),a=(a[g](0,j)+k+"cut="+r(a[g](j+1)))[g](0,i)),c.images?(m=new Image,q.ns_p||(ns_p=m),m.src=a):c.write("<","p","><",'img src="',a,'" height="1" width="1" alt="*"',"><","/p",">")}
+udm_('http'+(document.location.href.charAt(4)=='s'?'s://sb':'://b')+'.scorecardresearch.com/b?c1=2&c2=6035634&ns_site=taloussanomat-fi&name=taloussanomat.etusivu.page');
+// ]]>
+</script>
+<noscript><p><img src="http://b.scorecardresearch.com/p?c1=2&c2=6035634&ns_site=taloussanomat-fi&name=taloussanomat.etusivu.page" height="1" width="1" alt="*"></p></noscript> 
+<script type="text/javascript" language="JavaScript1.3" src="http://b.scorecardresearch.com/c2/6035634/cs.js"></script>
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0010/8577.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<!-- Google Analytics -->
+<script>
+<!--
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-705650-6']);
+  _gaq.push(['_setDomainName', 'taloussanomat.fi']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_trackPageLoadTime']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+-->
+</script>
+
+<!-- Insight tags -->
+
+<script>
+<!--    
+  var v_zig = {};
+  if ($.cookie("shogid")) {
+    v_zig["shogid"] = $.cookie("shogid");
+  } else {
+    v_zig["shogid"] = 0;
+  }
+
+-->
+</script>
+
+
+<!-- DOP -->
+<script src="http://static.sanoma.fi/weba/js/ls/zig.js"></script>
+
+<!-- Insight registration tag -->
+<script>
+<!--
+  if (typeof(shogid) !== 'undefined') {
+    sanoma.ajax.track({ shogphase:'registration-sh', shogid: shogid});
+  }
+-->
+</script> 
+
+
+
+	<script type='text/javascript'>
+	    var _sf_async_config={};
+	    /** CONFIGURATION START **/
+	    _sf_async_config.uid = 54060;
+	    _sf_async_config.domain = 'taloussanomat.fi';
+	    _sf_async_config.useCanonical = true;
+	    _sf_async_config.sections = 'xTaloussanomat';
+	    _sf_async_config.authors = '';
+	    /** CONFIGURATION END **/
+	    (function(){
+	      function loadChartbeat() {
+	        window._sf_endpt=(new Date()).getTime();
+	        var e = document.createElement('script');
+	        e.setAttribute('language', 'javascript');
+	        e.setAttribute('type', 'text/javascript');
+	        e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+	        document.body.appendChild(e);
+	      }
+	      var oldonload = window.onload;
+	      window.onload = (typeof window.onload != 'function') ?
+	         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+	    })();
+	</script>
+
+
+
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","beacon-1.newrelic.com","5502d22d93","5576250","MQRXMEtYXEFTBxdQWghOYBZQFkFbRBFNSV0W",0,96,new Date().getTime(),"","","","",""]);</script></body>
+</html>
+<!-- Dynamically created by Navia CMS v3 (c) Naviatech Solutions Oy 2007. http://www.naviatech.fi/ -->

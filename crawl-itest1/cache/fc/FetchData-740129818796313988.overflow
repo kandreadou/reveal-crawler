@@ -1,0 +1,20 @@
+xt/javascript">
+    var radarSettings = {
+        zoneId: '1',
+        customerId: '10372'
+    };
+    (function(d, w) {
+        var onWindowLoaded = function() {
+            var a = document.createElement('script');
+            a.type = 'text/javascript';
+            a.src = "http://radar.cedexis.com/01-10372-radar10.min.js";
+            d.body.appendChild(a);
+        };
+        if (w.location.protocol == 'https:') { return; }
+        if (w.addEventListener) { w.addEventListener('load',
+onWindowLoaded, false); }
+        else if (w.attachEvent) { w.attachEvent('onload', onWindowLoaded ); }
+    })(document, window);
+</script>
+</body>
+</html>

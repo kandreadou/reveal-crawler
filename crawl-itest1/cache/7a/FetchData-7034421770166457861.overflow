@@ -1,0 +1,242 @@
+ange">
+			<li>
+				<span class="pl">&nbsp;</span>
+	            <span class="head">Buy</span>
+	            <span class="head">Sell</span>
+            </li>
+			<li><img src="http://www.phuketgazette.net/resources/images/currency/usa-flag.gif" width="35px" height="25px" alt="" /><span class="txt">US Dollar</span><span class="exm">31.72</span><span class="exm">33.16</span></li><li><img src="http://www.phuketgazette.net/resources/images/currency/europe-flag-1.jpg" width="35px" height="25px" alt="" /><span class="txt">Euro</span><span class="exm">40.13</span><span class="exm">41.16</span></li><li><img src="http://www.phuketgazette.net/resources/images/currency/big_flag_of_japan.jpg" width="35px" height="25px" alt="" /><span class="txt">Yen</span><span class="exm">0.27</span><span class="exm">0.29</span></li><li><img src="http://www.phuketgazette.net/resources/images/currency/flag_of_hong_kong.png" width="35px" height="25px" alt="" /><span class="txt">Hong Kong Dollar</span><span class="exm">4.13</span><span class="exm">4.36</span></li><li><img src="http://www.phuketgazette.net/resources/images/currency/Malaysia-flag-w1280.png" width="35px" height="25px" alt="" /><span class="txt">Malaysian ringgit</span><span class="exm">8.91</span><span class="exm">9.66</span></li><li><img src="http://www.phuketgazette.net/resources/images/currency/singapore-flag.png" width="35px" height="25px" alt="" /><span class="txt">Singapore Dollar</span><span class="exm">24.06</span><span class="exm">24.85</span></li>		</ul>
+	
+		<p align="right"><a href="http://www.phuketgazette.net//currency/currency_all_bot" id="link_view_currency_all" class="more">More<span style="font-size:14px;">&rsaquo;&rsaquo;&rsaquo;</span></a></p>
+
+	</div>
+	
+	
+	
+    <div id="currency-2" class="conttent">
+
+		<form name="currency_form1" id="currency_form1" action="http://www.phuketgazette.net/currency/currency_converter" method="POST">
+			<p align="right">
+				Amount<sup><span style="color:#ff0909">&lowast;</span></sup><br /><input class="input_txt" type="text" name="amount_f" id="amount_f"  /><br />
+			</p>
+			<p align="right">
+			From<sup><span style="color:#ff0909">&lowast;</span></sup>
+			<br />
+			<select name="currency_buy" id="currency_buy" class="form-01">
+			<option value='AUD'>Australian Dollar . AUD</option><option value='BHD'>Bahraini Dinar . BHD</option><option value='BND'>Brunei Dollar . BND</option><option value='CAD'>Canadian Dollar . CAD</option><option value='DKK'>Danish Krone . DKK</option><option value='EUR'>Euro . EUR</option><option value='HKD'>Hong Kong Dollar . HKD</option><option value='INR'>India Rupee . INR</option><option value='IDR'>Indonesian RUPIAH . IDR</option><option value='KRW'>Korean Won . KRW</option><option value='MYR'>Malaysian ringgit . MYR</option><option value='NZD'>New Zealand Dollar . NZD</option><option value='NOK'>Norwegian Krone . NOK</option><option value='OMR'>Omani Rial . OMR</option><option value='PHP'>Philippine Peso . PHP</option><option value='GBP'>Pound Sterling . GBP</option><option value='QAR'>Qatari Rial . QAR</option><option value='SAR'>Saudi Arabian Riyal . SAR</option><option value='SGD'>Singapore Dollar . SGD</option><option value='ZAR'>South Africa Rand . ZAR</option><option value='SEK'>Swedish krona . SEK</option><option value='CHF'>Swiss Franc . CHF</option><option value='TWD'>Taiwan Dollar . TWD</option><option value='THB'>Thai Baht . THB</option><option value='AED'>UAE Dirham . AED</option><option value='USD'>US Dollar . USD</option><option value='JPY'>Yen . JPY</option><option value='CNY'>Yuan Renminbi . CNY</option>			</select>
+			</p>
+			
+			<p align="right">
+			To<sup><span style="color:#ff0909">&lowast;</span></sup>
+			<br />
+			<select name="currency_sell" id="currency_sell" class="form-01">
+			<option value='AUD'>Australian Dollar . AUD</option><option value='BHD'>Bahraini Dinar . BHD</option><option value='BND'>Brunei Dollar . BND</option><option value='CAD'>Canadian Dollar . CAD</option><option value='DKK'>Danish Krone . DKK</option><option value='EUR'>Euro . EUR</option><option value='HKD'>Hong Kong Dollar . HKD</option><option value='INR'>India Rupee . INR</option><option value='IDR'>Indonesian RUPIAH . IDR</option><option value='KRW'>Korean Won . KRW</option><option value='MYR'>Malaysian ringgit . MYR</option><option value='NZD'>New Zealand Dollar . NZD</option><option value='NOK'>Norwegian Krone . NOK</option><option value='OMR'>Omani Rial . OMR</option><option value='PHP'>Philippine Peso . PHP</option><option value='GBP'>Pound Sterling . GBP</option><option value='QAR'>Qatari Rial . QAR</option><option value='SAR'>Saudi Arabian Riyal . SAR</option><option value='SGD'>Singapore Dollar . SGD</option><option value='ZAR'>South Africa Rand . ZAR</option><option value='SEK'>Swedish krona . SEK</option><option value='CHF'>Swiss Franc . CHF</option><option value='TWD'>Taiwan Dollar . TWD</option><option value='THB'>Thai Baht . THB</option><option value='AED'>UAE Dirham . AED</option><option value='USD'>US Dollar . USD</option><option value='JPY'>Yen . JPY</option><option value='CNY'>Yuan Renminbi . CNY</option>			</select>
+			</p>
+		
+			<p align="right"><input  class="clickedimg" type="submit" name="ConvertNow" value="Convert"/></p>
+
+		</form>	
+		<div class="results_txt" ></div>
+		<div class="results_txt2" ></div>
+	</div>
+    <!--<div id="poll-3" class="conttent">Poll 3</div>-->
+</div><div class="rightads">
+  
+       			<!-- Homepage_A8_MediamRectangle_300x250 -->
+			<div id='div-gpt-ad-1403770055126-0' style='width:300px; height:250px;'>
+			<script type='text/javascript'>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1403770055126-0'); });
+			</script>
+			</div>
+		   	 
+       
+	   
+         
+
+      </div>
+    </div>
+</div> 
+<!--Center-->﻿<script type="text/javascript">
+$(document).ready(function() {
+	
+	//$("#more_tide_table").fancybox();
+	$(".more_tide_table").fancybox({
+        	'width' : '1000px',
+         	'height' : '800px',
+         	'autoScale' : false,
+         	'transitionIn' : 'none',
+         	'transitionOut' : 'none',
+         	'type' : 'iframe'
+     	});
+	$(".survey").fancybox({
+        	'width' : '1000px',
+         	'height' : '800px',
+         	'autoScale' : false,
+         	'transitionIn' : 'none',
+         	'transitionOut' : 'none',
+         	'type' : 'iframe'
+     	});	
+	$(".phuket_ticket").fancybox({
+        	'width' : '1100px',
+         	'height' : '800px',
+         	'autoScale' : false,
+         	'transitionIn' : 'none',
+         	'transitionOut' : 'none',
+         	'type' : 'iframe'
+     	});		
+	$(".tv_schedule").fancybox({
+        	'width' : '1000px',
+         	'height' : '800px',
+         	'autoScale' : false,
+         	'transitionIn' : 'none',
+         	'transitionOut' : 'none',
+         	'type' : 'iframe'
+     	});
+	
+});
+</script>
+
+<!--Footter-->
+	<div id="footters">
+    	<div class="footnev">
+        	<div class="nev">
+            	<h3><a href="/news">News</a></h3>
+            	<ul>
+                    <li><a href="http://www.phuketgazette.net/phuket-news">Phuket News</a></li>
+                    <li><a href="http://www.phuketgazette.net/thailand-news">Thailand News</a></li>
+                    <li><a href="http://www.phuketgazette.net/world-news">World News</a></li>
+                    <li><a href="http://www.phuketgazette.net/special-report">Special Report</a></li>
+                    <li><a href="http://www.phuketgazette.net/weird">Queer / Weird</a></li>
+                    <li><a href="http://www.phuketgazette.net/opinion">Opinion</a></li>
+                </ul>
+                    <h3><a href="http://www.phuketgazette.net/phuket-weather">Weather</a></h3>
+					<ul>
+                    <li><a href="http://www.phuketgazette.net/contact-us">Contact Us</a></li>
+					<li><a href="http://www.phuketgazette.net/rss/feed"><span class="rss"></span>Rss Feeds</a></li>
+					<li><a href="http://www.phuketgazette.net/statistics">See Our Stats</a></li>
+					</ul>
+            </div>
+
+            <div class="nev">
+                <h3><a href="http://www.phuketgazette.net/lifestyle">Lifestyle</a></h3>
+                <ul>
+                    <li><a href="http://www.phuketgazette.net/lifestyle">Phuket Lifestyle</a></li>
+                    <li><a href="http://www.phuketgazette.net/phuket-technology">TECH</a></li>
+                    <li><a href="http://www.phuketgazette.net/phuket-dining">Dining</a></li>
+                    <li><a href="http://www.phuketgazette.net/phuket-entertainment">Entertainment</a></li>
+                    <li><a href="http://www.phuketgazette.net/phuket-recreation-travel">Recreation &amp; Travel</a></li>
+                    <li><a href="http://www.phuketgazette.net/phuket-movies">Movies</a></li>
+                    <li><a href="http://www.phuketgazette.net/phuket-people">Phuket People</a></li>
+                </ul>
+            </div>
+        
+       	<div class="nev">
+            	<h3><a href="http://www.phuketgazette.net/business">Business</a></h3>
+            	<ul>
+                	<li><a href="http://www.phuketgazette.net/phuket-business">Phuket Business</a></li>
+                    <li><a href="http://www.phuketgazette.net/thailand-businesses">Thailand Business</a></li>
+                    <li><a href="http://www.phuketgazette.net/world-businesses">World Business</a></li>
+                    <li><a href="http://www.phuketgazette.net/finance">Finance</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/jobs/24/jobs">Jobs</a></li>
+
+                </ul>
+                <h3><a href="http://www.phuketgazette.net/phuket-events">Events</a></h3>
+				<ul>
+				<li><a href="/tickets" class="phuket_ticket">Phuket Tickets</a></li>
+								</ul>
+                <h3><a href="http://www.thephuketforum.net/tides/tidetable.php" class="more_tide_table">Tide Tables</a></h3>
+				<h3><a href="http://www.phuketgazette.net/survey/survey_index" class="survey">Survey</a></h3>
+            </div>
+        
+        	<div class="nev">
+            	<h3><a href="/property">Property</a></h3>
+            	<ul>
+                	<li><a href="http://www.phuketgazette.net/phuket-property">Phuket Property</a></li>
+                    <li><a href="http://www.phuketgazette.net/thailand-property">Thailand Property</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/property-for-sale-rent/11">Property  For Sale</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/property-for-sale-rent/39">Property For Rent</a></li>
+                    <li><a href="http://www.phuketgazette.net/property-legal">Property Legal</a></li>
+                </ul>
+				<h3><a href="/phuket-tv">Phuket TV</a></h3>
+            	<ul>
+                	<li><a href="http://www.phuketgazette.net/tv/Phuket-Lifestyle/1">Phuket Lifestyle</a></li>
+                    <li><a href="http://www.phuketgazette.net/tv/Phuket-Events/1">Phuket Events</a></li>
+                    <li><a href="http://www.phuketgazette.net/tv/PGTV-News/1">PGTV News</a></li>
+					<li><a href="http://www.phuketgazette.net/resources/images/Ad-Showtimes-for-Phuket-Today-5x5-May-03-14-2.jpg" class="tv_schedule">TV Schedule</a></li>
+                </ul>
+            </div>
+
+            
+            <div class="nev">
+            	<h3><a href="http://www.phuketgazette.net/sports">Sports</a></h3>
+            	<ul>
+                	<li><a href="http://www.phuketgazette.net/phuket-sports">Phuket</a></li>
+                    <li><a href="http://www.phuketgazette.net/thailand-sports">Thailand</a></li>
+                    <li><a href="http://www.phuketgazette.net/world-sports">World</a></li>
+                </ul>
+                <h3><a href="#">Digital Gazette</a></h3>
+                <ul>
+                    <li><a href="http://legacy.phuketgazette.net/digitalgazette3/currentissue.asp">Current Issue</a></li>
+                    <li><a href="http://legacy.phuketgazette.net/digitalgazette3/index.asp">Archives</a></li>
+                    <li><a href="http://legacy.phuketgazette.net/digitalgazette3/newsubscription.asp?requestingissue=current&pagesource=currentissue&fromdirect=yes">Subscribe</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="nev">
+                <h3><a href="http://legacy.phuketgazette.net/guide/">Yellow Pages</a></h3>
+                <ul>
+                    <li><a href="http://legacy.phuketgazette.net/guide/">Phuket Businesses</a></li>
+                    <li><a href="http://legacy.phuketgazette.net/guide/index.asp?area=PHA">Phang Nga Businesses</a></li>
+                    <li><a href="http://legacy.phuketgazette.net/guide/index.asp?area=PHI">Krabi Businesses</a></li>
+                    <li><a href="http://legacy.phuketgazette.net/guide/index.asp?area=SAM">Samui Businesses</a></li>
+
+                </ul>
+            </div>
+
+             <div class="nevlast">
+                <h3><a href="http://www.phuketgazette.net/classifieds">Classifieds</a></h3>
+                <ul>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/property-for-sale-rent/11/39/">Property for Sale / Rent</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/jobs/24/job">Jobs</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/wheel-motors/18/">Wheels &amp; Motors</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/boat-marine/15/">Boats &amp; Marine</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/business-opportunity/14/">Business Opportunities</a></li>
+                    <li><a href="http://www.phuketgazette.net/classifieds/category/business-products-services/21/">Business Products &amp; Svcs</a></li>
+                    <li><h3><a href="http://legacy.phuketgazette.net/classifieds/placead.asp">Place Ads</a></h3></ii>
+                </ul>
+            </div>
+   
+        </div>
+        <div class="footadr"> 
+        	<a href="#" class="bottomlogo">
+            <img src="http://www.phuketgazette.net/resources/images/footterlogo.gif" alt="Phuket Gazette" />
+            </a>
+        	<p><strong>The Phuket Gazette Co Ltd </strong><br/>
+            79/94 Moo 4, Thepkrasattri Rd, T. Koh Keaw, A. Muang Phuket 83000, Thailand<br/>
+            Tel: 076-273555 Fax: 076-615240 info@phuketgazette.net<br/>
+            Copyright © 2013  The Phuket Gazette Co Ltd.  All rights reserved.<br/>
+            </p>
+        </div>
+        
+  </div>
+<!--Footter-->
+</div>
+</div>
+<!--google analystics -->
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-8421260-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--google analystics -->
+</body>
+</html>

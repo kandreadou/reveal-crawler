@@ -1,0 +1,2233 @@
+);
+        },
+        log: function log(x) {
+            var n = 0;
+            while (x >= 4096) {
+                n += 12;
+                x /= 4096;
+            }
+            while (x >= 2) {
+                n += 1;
+                x /= 2;
+            }
+            return n;
+        }
+    };
+
+    defineProperties(NumberPrototype, {
+        toFixed: function toFixed(fractionDigits) {
+            var f, x, s, m, e, z, j, k;
+
+            // Test for NaN and round fractionDigits down
+            f = Number(fractionDigits);
+            f = f !== f ? 0 : Math.floor(f);
+
+            if (f < 0 || f > 20) {
+                throw new RangeError('Number.toFixed called with invalid number of decimals');
+            }
+
+            x = Number(this);
+
+            // Test for NaN
+            if (x !== x) {
+                return 'NaN';
+            }
+
+            // If it is too big or small, return the string value of the number
+            if (x <= -1e21 || x >= 1e21) {
+                return String(x);
+            }
+
+            s = '';
+
+            if (x < 0) {
+                s = '-';
+                x = -x;
+            }
+
+            m = '0';
+
+            if (x > 1e-21) {
+                // 1e-21 < x < 1e21
+                // -70 < log2(x) < 70
+                e = toFixedHelpers.log(x * toFixedHelpers.pow(2, 69, 1)) - 69;
+                z = (e < 0 ? x * toFixedHelpers.pow(2, -e, 1) : x / toFixedHelpers.pow(2, e, 1));
+                z *= 0x10000000000000; // Math.pow(2, 52);
+                e = 52 - e;
+
+                // -18 < e < 122
+                // x = z / 2 ^ e
+                if (e > 0) {
+                    toFixedHelpers.multiply(0, z);
+                    j = f;
+
+                    while (j >= 7) {
+                        toFixedHelpers.multiply(1e7, 0);
+                        j -= 7;
+                    }
+
+                    toFixedHelpers.multiply(toFixedHelpers.pow(10, j, 1), 0);
+                    j = e - 1;
+
+                    while (j >= 23) {
+                        toFixedHelpers.divide(1 << 23);
+                        j -= 23;
+                    }
+
+                    toFixedHelpers.divide(1 << j);
+                    toFixedHelpers.multiply(1, 1);
+                    toFixedHelpers.divide(2);
+                    m = toFixedHelpers.numToString();
+                } else {
+                    toFixedHelpers.multiply(0, z);
+                    toFixedHelpers.multiply(1 << (-e), 0);
+                    m = toFixedHelpers.numToString() + '0.00000000000000000000'.slice(2, 2 + f);
+                }
+            }
+
+            if (f > 0) {
+                k = m.length;
+
+                if (k <= f) {
+                    m = s + '0.0000000000000000000'.slice(0, f - k + 2) + m;
+                } else {
+                    m = s + m.slice(0, k - f) + '.' + m.slice(k - f);
+                }
+            } else {
+                m = s + m;
+            }
+
+            return m;
+        }
+    }, hasToFixedBugs);
+
+
+//
+// String
+// ======
+//
+
+// ES5 15.5.4.14
+// http://es5.github.com/#x15.5.4.14
+
+// [bugfix, IE lt 9, firefox 4, Konqueror, Opera, obscure browsers]
+// Many browsers do not split properly with regular expressions or they
+// do not perform the split correctly under obscure conditions.
+// See http://blog.stevenlevithan.com/archives/cross-browser-split
+// I've tested in many browsers and this seems to cover the deviant ones:
+//    'ab'.split(/(?:ab)*/) should be ["", ""], not [""]
+//    '.'.split(/(.?)(.?)/) should be ["", ".", "", ""], not ["", ""]
+//    'tesst'.split(/(s)*/) should be ["t", undefined, "e", "s", "t"], not
+//       [undefined, "t", undefined, "e", ...]
+//    ''.split(/.?/) should be [], not [""]
+//    '.'.split(/()()/) should be ["."], not ["", "", "."]
+
+    var string_split = StringPrototype.split;
+    if (
+        'ab'.split(/(?:ab)*/).length !== 2 ||
+        '.'.split(/(.?)(.?)/).length !== 4 ||
+        'tesst'.split(/(s)*/)[1] === 't' ||
+        'test'.split(/(?:)/, -1).length !== 4 ||
+        ''.split(/.?/).length ||
+        '.'.split(/()()/).length > 1
+    ) {
+        (function () {
+            var compliantExecNpcg = /()??/.exec('')[1] === void 0; // NPCG: nonparticipating capturing group
+
+            StringPrototype.split = function (separator, limit) {
+                var string = this;
+                if (separator === void 0 && limit === 0) {
+                    return [];
+                }
+
+                // If `separator` is not a regex, use native split
+                if (_toString.call(separator) !== '[object RegExp]') {
+                    return string_split.call(this, separator, limit);
+                }
+
+                var output = [],
+                    flags = (separator.ignoreCase ? 'i' : '') +
+                        (separator.multiline  ? 'm' : '') +
+                        (separator.extended   ? 'x' : '') + // Proposed for ES6
+                        (separator.sticky     ? 'y' : ''), // Firefox 3+
+                    lastLastIndex = 0,
+                // Make `global` and avoid `lastIndex` issues by working with a copy
+                    separator2, match, lastIndex, lastLength;
+                separator = new RegExp(separator.source, flags + 'g');
+                string += ''; // Type-convert
+                if (!compliantExecNpcg) {
+                    // Doesn't need flags gy, but they don't hurt
+                    separator2 = new RegExp('^' + separator.source + '$(?!\\s)', flags);
+                }
+                /* Values for `limit`, per the spec:
+                 * If undefined: 4294967295 // Math.pow(2, 32) - 1
+                 * If 0, Infinity, or NaN: 0
+                 * If positive number: limit = Math.floor(limit); if (limit > 4294967295) limit -= 4294967296;
+                 * If negative number: 4294967296 - Math.floor(Math.abs(limit))
+                 * If other: Type-convert, then use the above rules
+                 */
+                limit = limit === void 0 ?
+                -1 >>> 0 : // Math.pow(2, 32) - 1
+                    ToUint32(limit);
+                while (match = separator.exec(string)) {
+                    // `separator.lastIndex` is not reliable cross-browser
+                    lastIndex = match.index + match[0].length;
+                    if (lastIndex > lastLastIndex) {
+                        output.push(string.slice(lastLastIndex, match.index));
+                        // Fix browsers whose `exec` methods don't consistently return `undefined` for
+                        // nonparticipating capturing groups
+                        if (!compliantExecNpcg && match.length > 1) {
+                            match[0].replace(separator2, function () {
+                                for (var i = 1; i < arguments.length - 2; i++) {
+                                    if (arguments[i] === void 0) {
+                                        match[i] = void 0;
+                                    }
+                                }
+                            });
+                        }
+                        if (match.length > 1 && match.index < string.length) {
+                            ArrayPrototype.push.apply(output, match.slice(1));
+                        }
+                        lastLength = match[0].length;
+                        lastLastIndex = lastIndex;
+                        if (output.length >= limit) {
+                            break;
+                        }
+                    }
+                    if (separator.lastIndex === match.index) {
+                        separator.lastIndex++; // Avoid an infinite loop
+                    }
+                }
+                if (lastLastIndex === string.length) {
+                    if (lastLength || !separator.test('')) {
+                        output.push('');
+                    }
+                } else {
+                    output.push(string.slice(lastLastIndex));
+                }
+                return output.length > limit ? output.slice(0, limit) : output;
+            };
+        }());
+
+// [bugfix, chrome]
+// If separator is undefined, then the result array contains just one String,
+// which is the this value (converted to a String). If limit is not undefined,
+// then the output array is truncated so that it contains no more than limit
+// elements.
+// "0".split(undefined, 0) -> []
+    } else if ('0'.split(void 0, 0).length) {
+        StringPrototype.split = function split(separator, limit) {
+            if (separator === void 0 && limit === 0) { return []; }
+            return string_split.call(this, separator, limit);
+        };
+    }
+
+    var str_replace = StringPrototype.replace;
+    var replaceReportsGroupsCorrectly = (function () {
+        var groups = [];
+        'x'.replace(/x(.)?/g, function (match, group) {
+            groups.push(group);
+        });
+        return groups.length === 1 && typeof groups[0] === 'undefined';
+    }());
+
+    if (!replaceReportsGroupsCorrectly) {
+        StringPrototype.replace = function replace(searchValue, replaceValue) {
+            var isFn = isFunction(replaceValue);
+            var hasCapturingGroups = isRegex(searchValue) && (/\)[*?]/).test(searchValue.source);
+            if (!isFn || !hasCapturingGroups) {
+                return str_replace.call(this, searchValue, replaceValue);
+            } else {
+                var wrappedReplaceValue = function (match) {
+                    var length = arguments.length;
+                    var originalLastIndex = searchValue.lastIndex;
+                    searchValue.lastIndex = 0;
+                    var args = searchValue.exec(match) || [];
+                    searchValue.lastIndex = originalLastIndex;
+                    args.push(arguments[length - 2], arguments[length - 1]);
+                    return replaceValue.apply(this, args);
+                };
+                return str_replace.call(this, searchValue, wrappedReplaceValue);
+            }
+        };
+    }
+
+// ECMA-262, 3rd B.2.3
+// Not an ECMAScript standard, although ECMAScript 3rd Edition has a
+// non-normative section suggesting uniform semantics and it should be
+// normalized across all browsers
+// [bugfix, IE lt 9] IE < 9 substr() with negative value not working in IE
+    var string_substr = StringPrototype.substr;
+    var hasNegativeSubstrBug = ''.substr && '0b'.substr(-1) !== 'b';
+    defineProperties(StringPrototype, {
+        substr: function substr(start, length) {
+            return string_substr.call(
+                this,
+                start < 0 ? ((start = this.length + start) < 0 ? 0 : start) : start,
+                length
+            );
+        }
+    }, hasNegativeSubstrBug);
+
+// ES5 15.5.4.20
+// whitespace from: http://es5.github.io/#x15.5.4.20
+    var ws = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
+        '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028' +
+        '\u2029\uFEFF';
+    var zeroWidth = '\u200b';
+    var wsRegexChars = '[' + ws + ']';
+    var trimBeginRegexp = new RegExp('^' + wsRegexChars + wsRegexChars + '*');
+    var trimEndRegexp = new RegExp(wsRegexChars + wsRegexChars + '*$');
+    var hasTrimWhitespaceBug = StringPrototype.trim && (ws.trim() || !zeroWidth.trim());
+    defineProperties(StringPrototype, {
+        // http://blog.stevenlevithan.com/archives/faster-trim-javascript
+        // http://perfectionkills.com/whitespace-deviations/
+        trim: function trim() {
+            if (this === void 0 || this === null) {
+                throw new TypeError("can't convert " + this + ' to object');
+            }
+            return String(this).replace(trimBeginRegexp, '').replace(trimEndRegexp, '');
+        }
+    }, hasTrimWhitespaceBug);
+
+// ES-5 15.1.2.2
+    if (parseInt(ws + '08') !== 8 || parseInt(ws + '0x16') !== 22) {
+        parseInt = (function (origParseInt) {
+            var hexRegex = /^0[xX]/;
+            return function parseIntES5(str, radix) {
+                str = String(str).trim();
+                if (!Number(radix)) {
+                    radix = hexRegex.test(str) ? 16 : 10;
+                }
+                return origParseInt(str, radix);
+            };
+        }(parseInt));
+    }
+
+}));
+</script>
+<![endif]-->
+<header id="fig-header" class="figh figh--loading js-figh--has-reader js-figh-cookie" role="banner">
+<div class="figh__container">
+    <div class="figh-nielsen">
+    <ul class="figh-nielsen__list">
+            <li class="figh-nielsen__item">
+            <a  target="_blank" title="lefigaro.fr" href="http://www.lefigaro.fr" alt="lefigaro.fr">
+                <i class="icon-figh-nielsen-home figh-nielsen__home"></i></a>
+        </li>
+                        <li class="figh-nielsen__item"
+            data-id="4605"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Actu" href="http://www.lefigaro.fr/" >Actu</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4606"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Economie" href="http://www.lefigaro.fr/economie" >Economie</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4607"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Sport24" href="http://sport24.lefigaro.fr/" >Sport24</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4608"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Culture" href="http://www.lefigaro.fr/culture" >Culture</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4609"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Lifestyle" href="http://www.lefigaro.fr/lifestyle/" >Lifestyle</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4610"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Madame" href="http://madame.lefigaro.fr/" >Madame</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4611"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Editions abonn&eacute;s" href="http://www.lefigaro.fr/mon-figaro/" >Editions abonn&eacute;s</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4612"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Editions abonn&eacute;s" href="http://www.lefigaro.fr/mon-figaro/" >Editions abonn&eacute;s</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4613"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Figaro Store" href="http://boutique.lefigaro.fr/#xtor=AD-183" >Figaro Store</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4614"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="FigaroTV" href="http://video.lefigaro.fr/" >FigaroTV</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4615"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Sant&eacute;" href="http://sante.lefigaro.fr/" >Sant&eacute;</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4616"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Etudiant" href="http://etudiant.lefigaro.fr/" >Etudiant</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4637"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Figarochic.cn" href="http://www.figarochic.cn/" >Figarochic.cn</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4617"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Histoire" href="http://www.lefigaro.fr/histoire/" >Histoire</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4618"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Nautisme" href="http://nautisme.lefigaro.fr/" >Nautisme</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4619"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Golf" href="http://golf.lefigaro.fr/" >Golf</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4620"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="TVmag" href="http://tvmag.lefigaro.fr/" >TVmag</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4621"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Scope" href="http://scope.lefigaro.fr" >Scope</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4622"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Voyage" href="http://voyage.lefigaro.fr/" >Voyage</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4623"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Ench&egrave;res" href="http://encheres.lefigaro.fr/" >Ench&egrave;res</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4624"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Vin" href="http://avis-vin.lefigaro.fr/" >Vin</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4625"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Evene" href="http://evene.lefigaro.fr/" >Evene</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4626"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="M&eacute;t&eacute;o consult" href="http://france.meteoconsult.fr/meteo-france/prevision_meteo_france.php" >M&eacute;t&eacute;o consult</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4627"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Le particulier" href="http://www.leparticulier.fr/" >Le particulier</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4628"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Cadremploi" href="http://www.cadremploi.fr/" >Cadremploi</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4629"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="La chaine m&eacute;t&eacute;o" href="http://france.lachainemeteo.com/meteo-france/previsions-meteo-france-0.php" >La chaine m&eacute;t&eacute;o</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4630"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Keljob" href="http://www.keljob.com/" >Keljob</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4631"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Kelformation" href="http://www.kelformation.com/" >Kelformation</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4632"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Explorimmo" href="http://www.explorimmo.com/" >Explorimmo</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4633"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Propri&eacute;t&eacute;s de France" href="http://www.proprietesdefrance.com/" >Propri&eacute;t&eacute;s de France</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4634"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Ticketac" href="http://www.ticketac.com/" >Ticketac</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4635"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Vodeo" href="http://www.vodeo.tv/" >Vodeo</a>
+        </li>
+                            <li class="figh-nielsen__item"
+            data-id="4636"
+            data-track-feature="Nielsen" data-track-action="Click externe" data-track-element="Lien">
+            <a target="_blank" title="Cplussur" href="http://cplussur.lefigaro.fr/" >Cplussur</a>
+        </li>
+                </ul>
+    <div class="figh-nielsen__scroll">
+        <div class="figh-nielsen__scroll-container">
+            <i class="figh-nielsen__button--left icon-figh-nielsen-left js-nielsen-bar-btn js-nielsen-bar-btn-left js-fig-nielsen__button--inactive"></i>
+            <i class="figh-nielsen__button--right icon-figh-nielsen-right figh-nielsen__button--active js-fig-nielsen__button--active js-nielsen-bar-btn-right"></i>
+        </div>
+    </div>
+</div>
+    <div id="social-block" class="js-reader-collapsed js-figh-panel figh-social figh-social--collapsed">
+    <div class="figh-social__container js-figh-social__container">
+        <ul class="figh-social__list js-figh-social__list">
+                            <li class="figh-social__item js-figh-social__item"
+                    data-id="971"
+                    data-track-feature="Suivre"
+                    data-track-element="Link"
+                    data-track-action="Click"
+                    title="Facebook">
+                    <a href="https://www.facebook.com/lefigaro"  target="_blank" title="Facebook">
+                        <i class="figh-social__link-icon fa fa-facebook"
+                           style="background-color: #3b5998"></i>Facebook</a>
+                </li>
+                            <li class="figh-social__item js-figh-social__item"
+                    data-id="969"
+                    data-track-feature="Suivre"
+                    data-track-element="Link"
+                    data-track-action="Click"
+                    title="Twitter">
+                    <a href="https://twitter.com/LeFigaroBourse"  target="_blank" title="Twitter">
+                        <i class="figh-social__link-icon fa fa-twitter"
+                           style="background-color: #55acee"></i>Twitter</a>
+                </li>
+                            <li class="figh-social__item js-figh-social__item"
+                    data-id="970"
+                    data-track-feature="Suivre"
+                    data-track-element="Link"
+                    data-track-action="Click"
+                    title="Newsletter">
+                    <a href="http://plus.lefigaro.fr/newsletter"  target="_blank" title="Newsletter">
+                        <i class="figh-social__link-icon fa fa-envelope"
+                           style="background-color: #000"></i>Newsletter</a>
+                </li>
+                    </ul>
+        <div class="figh-social__scroll js-figh-social__scroll">
+            <div class="figh-social__scroll-container">
+                <i class="figh-social__button--left icon-figh-social-left js-social-bar-btn js-social-bar-btn-left js-fig-social__button--inactive"></i>
+                <i class="figh-social__button--right icon-figh-social-right js-social-bar-btn figh-social__button--active js-fig-social__button--active js-social-bar-btn-right"></i>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="figh-search js-figh-search-block">
+        <form class="figh-search__container js-figh-search__container" action="http://recherche.lefigaro.fr/recherche/recherche.php" role="search"
+              method="GET">
+            <input class="figh-search__input js-figh-search__input" type="text" placeholder="Recherchez parmis les actualit&eacute;s du Figaro"
+                   name="ecrivez"/>
+                        <button class="figh-search__btn js-figh-search__btn" data-track-element="Submit"
+                    data-track-feature="Recherche" data-track-action="Validation">Rechercher
+            </button>
+        </form>
+    </div>
+    <div class="figh__full full">
+        <div class="figh__left-side figh-menu">
+            <a class="figh-menu-item figh-menu-item--nav js-figh-open-close-nav js-figh-btn-nav"
+               title="Voir les rubriques" data-track-feature="Menu" data-track-element="Burger">
+                <span class="figh-menu-item__container figh-menu-item__container--no-border">
+                    <span class="burger">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                                                <span class="figh-reader-icon__count js-figh-reader-icon__global-count figh-reader-icon__count--hide"></span></i>
+                    </span>
+
+                    <br/>Menu</span>
+            </a>
+                            <a class="figh-menu-item js-figh-reader" data-track-element="Bouton" data-track-feature="Reader">
+                    <span class="figh-menu-item__container figh-menu-item__container--no-border">
+                        <i class="figh-icon--big icon-figh-endirect"><span class="figh-reader-icon__count js-figh-reader-icon__global-count figh-reader-icon__count--hide"></span></i>
+                        <br/>En direct</span>
+                </a>
+                                        <a class="figh-menu-item js-figh-menu-item--journal"                    href="http://kiosque.lefigaro.fr/le-figaro" target="_blank"                   data-track-feature="Journal"
+                   data-track-element="Bouton"
+                   data-track-action="Ouverture">
+                    <span class="figh-menu-item__container">
+                        <i class="figh-icon--big icon-figh-journal"></i><br/>Journal</span>
+                </a>
+                    </div>
+        <div class="figh__right-side figh-menu">
+                            <a class="figh-menu-item js-figh-menu-item__social"
+                        data-track-feature="Suivre"
+                        data-track-element="Bouton"
+                        >
+                    <i class="fa fa-angle-up"></i>
+                    <span class="figh-menu-item__container figh-menu-item__container--no-border">
+                        <i class="figh-icon--big icon-figh-suivre"></i><br/>Suivre</span>
+                </a>
+                                        <a class="figh-menu-item js-figh-search" data-track-element="Boutton" data-track-feature="Recherche">
+                    <i class="fa fa-angle-up"></i>
+                    <span class="figh-menu-item__container ">
+                        <i class="figh-icon--big icon-figh-recherche" ></i><br/>Recherche</span>
+                </a>
+            
+                        <a class="figh-menu-item figh-connexion js-figh-signin figh-connexion--connecting"
+                data-track-element="Bouton" data-track-feature="Connexion"
+                >
+                <i class="fa fa-angle-up"></i>
+                <span class="figh-menu-item__container">
+                    <i class="figh-icon--big icon-figh-connexion"></i></span>
+            </a>
+            
+        </div>
+        <div class="figh__middle-side middle_side">
+            <div class="figh-logo" role="main">
+                <a href="http://bourse.lefigaro.fr/">
+                    <img class="figh-logo__desktop"
+                         src="http://a.f1g.fr/h/assets-components/header-footer/bourse-desktop.png"
+                         alt="Bourse"/>
+                    <img class="figh-logo__tablette"
+                         src="http://a.f1g.fr/h/assets-components/header-footer/bourse-tablette.png"
+                         alt="Bourse"/>
+                    <img class="figh-logo__mobile"
+                         src="http://a.f1g.fr/h/assets-components/header-footer/bourse-mobile.png"
+                         alt="Bourse"/>
+                </a>
+            </div>
+            <div class="figh-keyword">
+    <ul class="figh-keyword__list">
+                    <li data-id="1450"
+                data-track-feature="Keyword"
+                data-track-action="Click"
+                data-track-element="Link"
+                class="figh-keyword__item">
+                <a class="figh-keyword__link"
+                   href="http://bourse.lefigaro.fr/expertise"
+                                           title="Expertise">
+                                        Expertise
+                </a>
+            </li>
+                    <li data-id="1451"
+                data-track-feature="Keyword"
+                data-track-action="Click"
+                data-track-element="Link"
+                class="figh-keyword__item">
+                <a class="figh-keyword__link"
+                   href="http://bourse.lefigaro.fr/indices-actions"
+                                           title="Indices &amp; Actions">
+                                        Indices &amp; Actions
+                </a>
+            </li>
+                    <li data-id="1452"
+                data-track-feature="Keyword"
+                data-track-action="Click"
+                data-track-element="Link"
+                class="figh-keyword__item">
+                <a class="figh-keyword__link"
+                   href="http://bourse.lefigaro.fr/fonds-trackers"
+                                           title="Fonds &amp; Trackers">
+                                        Fonds &amp; Trackers
+                </a>
+            </li>
+                    <li data-id="1453"
+                data-track-feature="Keyword"
+                data-track-action="Click"
+                data-track-element="Link"
+                class="figh-keyword__item">
+                <a class="figh-keyword__link"
+                   href="http://bourse.lefigaro.fr/devises-matieres-premieres"
+                                           title="Devises &amp; Mat.1&egrave;res">
+                                        Devises &amp; Mat.1&egrave;res
+                </a>
+            </li>
+                    <li data-id="1454"
+                data-track-feature="Keyword"
+                data-track-action="Click"
+                data-track-element="Link"
+                class="figh-keyword__item">
+                <a class="figh-keyword__link"
+                   href="http://bourse.lefigaro.fr/derives"
+                                           title="D&eacute;riv&eacute;s">
+                                        D&eacute;riv&eacute;s
+                </a>
+            </li>
+                    <li data-id="1455"
+                data-track-feature="Keyword"
+                data-track-action="Click"
+                data-track-element="Link"
+                class="figh-keyword__item">
+                <a class="figh-keyword__link figh-keyword__link--highlighted"
+                   href="http://bourse.lefigaro.fr/offres/abonnement"
+                                           title="Bourse Premium">
+                    <i class="fa fa-star"></i>                     Bourse Premium
+                </a>
+            </li>
+                    <li data-id="1456"
+                data-track-feature="Keyword"
+                data-track-action="Click"
+                data-track-element="Link"
+                class="figh-keyword__item">
+                <a class="figh-keyword__link"
+                   href="http://bourse.lefigaro.fr/membre/mon-figaro"
+                                           title="Mon Compte">
+                                        Mon Compte
+                </a>
+            </li>
+            </ul>
+    <a class="figh-keyword__link figh-keyword__link--more js-figh-open-close-nav" title="Afficher le menu" data-track-feature="Menu" data-track-Element="Bouton plus" >
+        <i class="icon-figh-plus"></i>
+    </a>
+</div>
+        </div>
+    </div>
+</div>
+<div class="collapsed_content">
+    <a class="btn js-figh-open-close-nav figh-collapse__nav-btn">
+        <i class="burger">
+            <i></i>
+            <i></i>
+            <i></i>
+        </i><span>Menu</span>
+    </a>
+    <div class="figh-collapse__logo">
+        <a href="http://bourse.lefigaro.fr/">
+            <img class="figh-logo--collapse"
+                 src="http://a.f1g.fr/h/assets-components/header-footer/bourse-collapse.svg"
+                 alt="Bourse"/>
+        </a>
+    </div>
+</div>
+<div id="left-panel" class="figh-left-panel">
+    <div class="mobile-only js-figh-mobile-menu figh-mobile-menu figh-mobile-menu--collapsed">
+        <a class="figh-mobile-menu__item js-figh-mobileburger figh-mobile-menu__item--4" data-track-feature="Menu"
+           data-track-element="Burger">
+            <span class="figh-mobile-menu__item-container">
+                <i class="burger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </i>
+                <br/>Menu</span>
+        </a>
+                    <a class="figh-mobile-menu__item js-figh-reader figh-mobile-menu__item--4" data-track-element="Bouton"
+               data-track-feature="Reader">
+                <span class="figh-mobile-menu__item-container">
+                    <i class="figh-icon--big icon-figh-endirect"><span
+                                class="figh-reader-icon__count js-figh-reader-icon__global-count figh-reader-icon__count--hide"></span></i>
+                    <br/>En direct</span>
+            </a>
+                            <a class="figh-mobile-menu__item figh-mobile-menu__item--4 js-figh-mobile-journal"            href="http://kiosque.lefigaro.fr/le-figaro" target="_blank">
+                <span class="figh-mobile-menu__item-container">
+                    <i class="figh-icon--big icon-figh-journal"></i><br/>Journal</span>
+            </a>
+                        <a class="figh-mobile-menu__item figh-connexion js-figh-signin figh-connexion--connecting figh-mobile-menu__item--4 "
+            data-track-element="Bouton" data-track-feature="Connexion"
+            >
+             <span class="figh-mobile-menu__item-container figh-menu-item__container--no-border">
+                <i class="figh-icon--big icon-figh-connexion"></i>
+             </span>
+        </a>
+    </div>
+    <div id="left_menu" class="js-nav-collapsed figh-nav figh-nav--collapsed" data-id="1" data-level="0">
+        <div class="mobile-only figh-mobile-search">
+            <form class="figh-search__container js-figh-search__container" action="http://recherche.lefigaro.fr/recherche/recherche.php" role="search"
+                  method="GET">
+                <input class="figh-search__input js-figh-search__input--mobile" type="text"
+                       placeholder="Recherchez parmis les actualit&eacute;s du Figaro"
+                       name="ecrivez"/>
+                
+                <button class="figh-search__btn js-figh-search__btn" data-track-feature="Recherche"
+                        data-track-action="Validation"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <nav class="js-figh-treenode-container figh-treenode-container" role="navigation">
+            <ul class="figh-nav__container">
+            <li data-id="99" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise" class="figh-nav__expander" title="Expertise">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://bourse.lefigaro.fr/expertise" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Expertise</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="100" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/actualites#lefigaro-tabs-1-conseils" class="figh-nav__expander" title="Tous nos conseils">
+                                                            <a href="http://bourse.lefigaro.fr/actualites#lefigaro-tabs-1-conseils" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Tous nos conseils</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="101" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts/" class="figh-nav__expander" title="Nos Portefeuilles Experts">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Nos Portefeuilles Experts</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="102" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts/offensif-positions-ouvertes" class="figh-nav__expander" title="Portefeuille Offensif">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/offensif-positions-ouvertes" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Portefeuille Offensif</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="103" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts/defensif-positions-ouvertes" class="figh-nav__expander" title="Portefeuille D&eacute;fensif">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/defensif-positions-ouvertes" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Portefeuille D&eacute;fensif</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="104" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts/placements-monde-positions-ouvertes" class="figh-nav__expander" title="Portefeuille Placements Monde">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/placements-monde-positions-ouvertes" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Portefeuille Placements Monde</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="105" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions" class="figh-nav__expander" title="Indices &amp; Actions">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://bourse.lefigaro.fr/indices-actions" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Indices &amp; Actions</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="106" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/actu-conseils" class="figh-nav__expander" title="Actu &amp; Conseils">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/actu-conseils" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Actu &amp; Conseils</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="107" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/indices-france" class="figh-nav__expander" title="Indices">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/indices-france" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Indices</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="108" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/futures" class="figh-nav__expander" title="Futures">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/futures" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Futures</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="109" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/palmares/actions-France?marche=SRD&amp;type=MONEY&amp;range=INTRADAY&amp;lignes=100&amp;sort=name&amp;order=ASC&amp;page=0" class="figh-nav__expander" title="Cours de A &agrave; Z">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/palmares/actions-France?marche=SRD&amp;type=MONEY&amp;range=INTRADAY&amp;lignes=100&amp;sort=name&amp;order=ASC&amp;page=0" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Cours de A &agrave; Z</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="110" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/palmares/actions-france" class="figh-nav__expander" title="Palmar&egrave;s France">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/palmares/actions-france" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s France</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="111" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/palmares/actions-international" class="figh-nav__expander" title="Palmar&egrave;s International">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/palmares/actions-international" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s International</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="112" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/palmares/secteur" class="figh-nav__expander" title="Palmar&egrave;s Secteurs">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/palmares/secteur" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Secteurs</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="113" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/palmares/rendements" class="figh-nav__expander" title="Palmar&egrave;s Rendements">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/palmares/rendements" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Rendements</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="114" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/indices-actions/palmares/per-bna" class="figh-nav__expander" title="Palmar&egrave;s PER - BNA">
+                                                            <a href="http://bourse.lefigaro.fr/indices-actions/palmares/per-bna" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s PER - BNA</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="115" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/fonds-trackers" class="figh-nav__expander" title="Fonds &amp; Trackers">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://bourse.lefigaro.fr/fonds-trackers" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Fonds &amp; Trackers</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="116" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/fonds-trackers/actu-conseils" class="figh-nav__expander" title="Actu &amp; Conseils">
+                                                            <a href="http://bourse.lefigaro.fr/fonds-trackers/actu-conseils" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Actu &amp; Conseils</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="117" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/fonds-trackers/actu-conseils#lefigaro-tabs-3-conseils" class="figh-nav__expander" title="Expertise Fonds">
+                                                            <a href="http://bourse.lefigaro.fr/fonds-trackers/actu-conseils#lefigaro-tabs-3-conseils" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Expertise Fonds</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="118" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/fonds-trackers/palmares-fonds" class="figh-nav__expander" title="Palmar&egrave;s - recherche de fonds">
+                                                            <a href="http://bourse.lefigaro.fr/fonds-trackers/palmares-fonds" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s - recherche de fonds</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="119" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/club-des-pros" class="figh-nav__expander" title="Le club des Pros">
+                                                            <a href="http://bourse.lefigaro.fr/club-des-pros" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Le club des Pros</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="120" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/fonds-trackers/actu-conseils#lefigaro-tabs-3-interviews--2" class="figh-nav__expander" title="Interviews">
+                                                            <a href="http://bourse.lefigaro.fr/fonds-trackers/actu-conseils#lefigaro-tabs-3-interviews--2" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Interviews</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="121" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/devises-matieres-premieres" class="figh-nav__expander" title="Devises &amp; Mati&egrave;res premi&egrave;res">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://bourse.lefigaro.fr/devises-matieres-premieres" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Devises &amp; Mati&egrave;res premi&egrave;res</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="122" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/devises-matieres-premieres/actu-conseils" class="figh-nav__expander" title="Actu &amp; Conseils">
+                                                            <a href="http://bourse.lefigaro.fr/devises-matieres-premieres/actu-conseils" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Actu &amp; Conseils</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="123" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/devises-matieres-premieres" class="figh-nav__expander" title="Tableau crois&eacute; des devises">
+                                                            <a href="http://bourse.lefigaro.fr/devises-matieres-premieres" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Tableau crois&eacute; des devises</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="124" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/devises-matieres-premieres/cours-gold-us-dollar-xau-usd" class="figh-nav__expander" title="Or">
+                                                            <a href="http://bourse.lefigaro.fr/devises-matieres-premieres/cours-gold-us-dollar-xau-usd" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Or</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="125" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/devises-matieres-premieres/cours-brent-crude-oil-spot" class="figh-nav__expander" title="P&eacute;trole (Londres)">
+                                                            <a href="http://bourse.lefigaro.fr/devises-matieres-premieres/cours-brent-crude-oil-spot" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">P&eacute;trole (Londres)</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="126" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/devises-matieres-premieres/cours-wti-spot" class="figh-nav__expander" title="P&eacute;trole (New-York)">
+                                                            <a href="http://bourse.lefigaro.fr/devises-matieres-premieres/cours-wti-spot" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">P&eacute;trole (New-York)</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="127" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives" class="figh-nav__expander" title="D&eacute;riv&eacute;s">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://bourse.lefigaro.fr/derives" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">D&eacute;riv&eacute;s</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="128" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives/actu-conseils" class="figh-nav__expander" title="Actu &amp; Conseils">
+                                                            <a href="http://bourse.lefigaro.fr/derives/actu-conseils" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Actu &amp; Conseils</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="697" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives" class="figh-nav__expander" title="Produits les plus &eacute;chang&eacute;s">
+                                                            <a href="http://bourse.lefigaro.fr/derives" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Produits les plus &eacute;chang&eacute;s</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="129" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives/palmares-indexation-pure" class="figh-nav__expander" title="Palmar&egrave;s Indexation pure">
+                                                            <a href="http://bourse.lefigaro.fr/derives/palmares-indexation-pure" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Indexation pure</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="130" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives/palmares-rendement" class="figh-nav__expander" title="Palmar&egrave;s Rendement">
+                                                            <a href="http://bourse.lefigaro.fr/derives/palmares-rendement" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Rendement</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="131" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives/palmares-capital-protege" class="figh-nav__expander" title="Palmar&egrave;s Capital prot&eacute;g&eacute;">
+                                                            <a href="http://bourse.lefigaro.fr/derives/palmares-capital-protege" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Capital prot&eacute;g&eacute;</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="132" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives/palmares-autres-leviers" class="figh-nav__expander" title="Palmar&egrave;s Autres leviers">
+                                                            <a href="http://bourse.lefigaro.fr/derives/palmares-autres-leviers" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Autres leviers</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="133" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives/palmares-turbos" class="figh-nav__expander" title="Palmar&egrave;s Turbos">
+                                                            <a href="http://bourse.lefigaro.fr/derives/palmares-turbos" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Turbos</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="134" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/derives/palmares-warrants" class="figh-nav__expander" title="Palmar&egrave;s Warrants">
+                                                            <a href="http://bourse.lefigaro.fr/derives/palmares-warrants" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Palmar&egrave;s Warrants</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="135" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/offres/abonnement" class="figh-nav__expander" title="Bourse Premium">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://bourse.lefigaro.fr/offres/abonnement" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Bourse Premium</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="139" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise " class="figh-nav__expander" title="Nos conseils">
+                                                            <a href="http://bourse.lefigaro.fr/expertise " class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Nos conseils</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="698" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts" class="figh-nav__expander" title="Les portefeuilles experts">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Les portefeuilles experts</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="699" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts/offensif-positions-ouvertes" class="figh-nav__expander" title="Portefeuille offensif">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/offensif-positions-ouvertes" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Portefeuille offensif</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="700" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts/defensif-positions-ouvertes" class="figh-nav__expander" title="Portefeuille D&eacute;fensif">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/defensif-positions-ouvertes" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Portefeuille D&eacute;fensif</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="701" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/expertise/conseils-experts/placements-monde-positions-ouvertes" class="figh-nav__expander" title="Portefeuille placements Monde">
+                                                            <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/placements-monde-positions-ouvertes" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Portefeuille placements Monde</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="702" class="figh-nav__level--5">
+            <div class="links">
+                <span href=" http://bourse.lefigaro.fr/offres/abonnement" class="figh-nav__expander" title="Je m&#039;abonne">
+                                                            <a href=" http://bourse.lefigaro.fr/offres/abonnement" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Je m&#039;abonne</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+            <li data-id="886" class="figh-nav__level--4">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/membre/mon-figaro" class="figh-nav__expander" title="Mon Compte Bourse">
+                                        <i class="js-arrow-event icon-figh-plus"></i>                    <a href="http://bourse.lefigaro.fr/membre/mon-figaro" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Mon Compte Bourse</a>
+                </span>
+            </div>
+                            <ul class="figh-nav__container">
+            <li data-id="887" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/offres" class="figh-nav__expander" title="Offres Figaro Bourse">
+                                                            <a href="http://bourse.lefigaro.fr/offres" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Offres Figaro Bourse</a>
+                </span>
+            </div>
+                    </li>
+            <li data-id="1184" class="figh-nav__level--5">
+            <div class="links">
+                <span href="http://bourse.lefigaro.fr/membre/mes-listes" class="figh-nav__expander" title="Mes listes de valeurs">
+                                                            <a href="http://bourse.lefigaro.fr/membre/mes-listes" class="" data-track-feature="Menu" data-track-element="Lien" data-track-action="Click lien">Mes listes de valeurs</a>
+                </span>
+            </div>
+                    </li>
+    </ul>                    </li>
+    </ul>        </nav>
+
+    </div>
+            <div id="reader-block" class="js-reader-collapsed figh-reader figh-reader--collapsed">
+    <div class="figh-reader__container">
+    </div>
+</div>        <div id="signin-block" class="figh-sign-in js-figh-signin-block mobile-only">
+        <div class="figh-sign-in__container">
+        </div>
+    </div>
+</div>
+<div id="right-panel" class="figh-right-panel figh-logged figh-logged--collapsed">
+    <div class="figh-logged__container">
+        <ul id="figh-user-menu-liste1" class="figh-logged__list figh-logged__list--bold"></ul>
+        <ul id="figh-user-menu-liste2" class="figh-logged__list"></ul>
+        <ul id="figh-user-menu-liste3" class="figh-logged__list"></ul>
+        <ul id="figh-user-menu-liste4" class="figh-logged__list"></ul>
+    </div>
+</div>
+<div class="header-placeholder"></div>
+<style>
+    #fig-header .figh__full,
+    #fig-header .collapsed_content,
+    .fig-secondary-background {
+        background-color: #81312f;
+    }
+
+    .fig-secondary-color {
+        color: #81312f;
+    }
+
+    #fig-header .figh-keyword__link, #fig-header .figh a {
+        color: #FFFFFF;
+    }
+
+    #fig-header .figh-keyword__link--more {
+        border-color: #FFFFFF;
+    }
+
+    #fig-header .figh-keyword__item--current a {
+        color: #FFFFFF;
+    }
+
+    .figh__not-ios #fig-header .figh-keyword__item--current a:hover,
+    #fig-header .figh-keyword__item--current a:focus,
+    .figh__not-ios #fig-header.figh a:hover, #fig-header.figh a:focus,
+    .figh__not-ios #fig-header .figh-nav__container a:hover {
+        color: #a89993;
+    }
+
+    .figh__not-ios #fig-header .figh-menu-item--nav:hover .burger i {
+        border-color: #a89993;
+    }
+
+    .figh__not-ios #fig-header .figh-keyword__link--more:hover, #fig-header .figh-keyword__link--more:focus {
+        border-color: #a89993;
+    }
+
+    #fig-header .figh-menu-item--nav, #fig-header .figh-collapse__nav-btn {
+        background-color: #81312f;
+    }
+
+    #fig-header .figh-keyword__link--highlighted {
+        background-color: #f3e7e2;
+        color: #81312f;
+    }
+
+    #fig-header .figh-menu-item__container, #fig-header .figh-menu-item__container, #fig-header .figh-keyword__item--current a, #fig-header .figh-keyword__item {
+        border-color: #875b5a;
+    }
+
+    #fig-header .figh-search__btn, #fig-header button.figh-search__btn, #fig-header .figh-sign-in__btn {
+        background-color: #81312f;
+        color: #ffffff;
+    }
+
+    #fig-header .figh-nav__root-node {
+        border-color: #81312f;
+    }
+
+</style>
+                    
+
+</header>
+<script id="fig-header-script">
+    var headerRootNodeId = '98';
+    var headerId = '29';
+    var treeNodeCacheKiller = '1ccd1';
+
+            var headerLogoNoSvg = 'http://a.f1g.fr/h/assets-components/header-footer/bourse-fallback.png';
+                                        
+                    var treenode_html_url = 'http://a.f1g.fr/h/assets-components/header-footer/header-treenode.js';
+    
+    var headerGaVarName = false;
+    var readerUrl = 'http\x3A\x2F\x2Fa.f1g.fr\x2Fh\x2Fassets\x2Dcomponents\x2Fheader\x2Dfooter\x2F29\x2Dreader.js';
+
+    headerOnSetup();
+
+</script><div id="search-chiffres-cles"><div class="panel-display one-column-mini" id="mini-panel-search_chiffres_cles">
+<form action="/" method="post" id="lefigaro-search-block-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-lefigaro-search-keys">
+ <input placeholder="Recherche" type="text" id="edit-lefigaro-search-keys" name="lefigaro_search_keys" value="" size="10" maxlength="255" class="form-text" />
+</div>
+<div class="form-item form-type-select form-item-lefigaro-search-type">
+ <select id="edit-lefigaro-search-type" name="lefigaro_search_type" class="form-select"><option value="idms">Cours</option><option value="articles">Articles</option></select>
+</div>
+<input type="submit" id="edit-submit" name="op" value="Recherche" class="form-submit" /><input type="hidden" name="form_build_id" value="form-jW0HUHSTLrm288USBRoNk7fVlbTD28wP7VfBuzIlbzU" />
+<input type="hidden" name="form_id" value="lefigaro_search_block_form" />
+</div></form><dl><dt class="indice first"><a href="/indices-actions/cours-cac-40-index-px1-fr0003500008">CAC 40</a></dt><dd class="indice first up first"><a href="/indices-actions/cours-cac-40-index-px1-fr0003500008">4274 +0,25%</a></dd><dt class="indice"><a href="/indices-actions/cours-dow-jones-industrial-average-us2605661048">Dow Jones</a></dt><dd class="indice down"><a href="/indices-actions/cours-dow-jones-industrial-average-us2605661048">17801 -0,29%</a></dd><dt class="indice"><a href="/indices-actions/cours-nasdaq-composite-index-xc0009694271">Nasdaq</a></dt><dd class="indice up"><a href="/indices-actions/cours-nasdaq-composite-index-xc0009694271">4766 +0,54%</a></dd><dt class="indice"><a href="/indices-actions/cours-nikkei-225-index-jp9010c00002">Nikkei</a></dt><dd class="indice down"><a href="/indices-actions/cours-nikkei-225-index-jp9010c00002">17412 -2,25%</a></dd><dt class="currency"><a href="/devises-matieres-premieres/conversion/cours-4">1€</a></dt><dd class="currency"><a href="/devises-matieres-premieres/conversion/cours-4">1,2377$</a></dd><dt class="commodity"><a href="/devises-matieres-premieres/cours-brent-crude-oil-spot">Brent</a></dt><dd class="commodity"><a href="/devises-matieres-premieres/cours-brent-crude-oil-spot">66,23$</a></dd><dt class="commodity last"><a href="/devises-matieres-premieres/cours-gold-us-dollar-xau-usd">Or</a></dt><dd class="commodity last  last"><a href="/devises-matieres-premieres/cours-gold-us-dollar-xau-usd">1228$</a></dd></dl></div>
+</div><script type="text/javascript"> if (window.ffw_loadUserDataCookie) ffw_loadUserDataCookie(); </script>  
+  <div id="page-wrapper"><div id="page">
+    <div id="messages">
+          </div>
+    <div id="main-wrapper"><div id="main" class="clearfix">
+
+      <div id="content" class="column"><div class="section">
+        <a id="main-content"></a>
+                                
+                          <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <div class="panel-display home" >
+
+  <aside class="ad-wrapper">
+    <div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18318';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18318/S/1418215211/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18318/S/1418215211/?" border="0" alt="" /></a></noscript>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-2"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18310/S/1418215211/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18310/S/1418215211/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18315';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18315/S/1418215211/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18315/S/1418215211/?" border="0" alt="" /></a></noscript>  </div>
+
+  
+  </div>
+  </aside>
+
+  <nav class="breadcrumb">
+    <div class="panel-pane pane-panels-mini pane-breadcrumb-stock-ticker" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="panel-display one-column-mini" id="mini-panel-breadcrumb_stock_ticker">
+<div class="breadcrumb"><a href="/" class="active">Accueil</a></div><div id="common-stocks-ticker"><ul id="scroller" class="stocks"><li></li><li><a href="/indices-actions/cours-vinci-dg-fr0000125486-par"><span class="short-name-security">Vinci</span><span class="price up">44,74€</span><span class="performance-pct up">+3,42%</span></a></li><li><a href="/indices-actions/cours-alcatel-lucent-alu-fr0000130007-par"><span class="short-name-security">Alcatel Lucent</span><span class="price up">2,76€</span><span class="performance-pct up">+1,58%</span></a></li><li><a href="/indices-actions/cours-solvay-solb-be0003470755-bru"><span class="short-name-security">Solvay</span><span class="price up">112,95€</span><span class="performance-pct up">+1,21%</span></a></li><li><a href="/indices-actions/cours-safran-saf-fr0000073272-par"><span class="short-name-security">SAFRAN</span><span class="price up">52,63€</span><span class="performance-pct up">+1,04%</span></a></li><li><a href="/indices-actions/cours-michelin-cgde-ml-fr0000121261-par"><span class="short-name-security">Michelin (CGDE)</span><span class="price up">74,85€</span><span class="performance-pct up">+0,92%</span></a></li><li><a href="/indices-actions/cours-unibail-rodamco-ul-fr0000124711-ams"><span class="short-name-security">UNIBAIL-RODAMCO</span><span class="price up">206,60€</span><span class="performance-pct up">+0,88%</span></a></li><li><a href="/indices-actions/cours-veolia-environnement-vie-fr0000124141-par"><span class="short-name-security">VEOLIA ENVIRONNEMENT</span><span class="price up">14,52€</span><span class="performance-pct up">+0,83%</span></a></li><li><a href="/indices-actions/cours-l-oreal-or-fr0000120321-par"><span class="short-name-security">L&#039;OREAL</span><span class="price up">136,95€</span><span class="performance-pct up">+0,77%</span></a></li><li><a href="/indices-actions/cours-edf-edf-fr0010242511-par"><span class="short-name-security">EDF</span><span class="price up">23,89€</span><span class="performance-pct up">+0,76%</span></a></li><li><a href="/indices-actions/cours-essilor-intl-ei-fr0000121667-par"><span class="short-name-security">ESSILOR INTL.</span><span class="price up">90,22€</span><span class="performance-pct up">+0,73%</span></a></li><li><a href="/indices-actions/cours-kering-ker-fr0000121485-par"><span class="short-name-security">KERING</span><span class="price up">161,65€</span><span class="performance-pct up">+0,72%</span></a></li><li><a href="/indices-actions/cours-air-liquide-ai-fr0000120073-par"><span class="short-name-security">AIR LIQUIDE</span><span class="price up">100,50€</span><span class="performance-pct up">+0,70%</span></a></li><li><a href="/indices-actions/cours-pernod-ricard-ri-fr0000120693-par"><span class="short-name-security">PERNOD RICARD</span><span class="price up">93,30€</span><span class="performance-pct up">+0,69%</span></a></li><li><a href="/indices-actions/cours-danone-bn-fr0000120644-par"><span class="short-name-security">DANONE</span><span class="price up">56,20€</span><span class="performance-pct up">+0,63%</span></a></li><li><a href="/indices-actions/cours-sanofi-san-fr0000120578-par"><span class="short-name-security">SANOFI</span><span class="price up">74,41€</span><span class="performance-pct up">+0,59%</span></a></li><li><a href="/indices-actions/cours-carrefour-ca-fr0000120172-par"><span class="short-name-security">Carrefour</span><span class="price up">23,83€</span><span class="performance-pct up">+0,53%</span></a></li><li><a href="/indices-actions/cours-accor-ac-fr0000120404-par"><span class="short-name-security">ACCOR</span><span class="price up">36,13€</span><span class="performance-pct up">+0,47%</span></a></li><li><a href="/indices-actions/cours-legrand-lr-fr0010307819-par"><span class="short-name-security">LEGRAND</span><span class="price up">43,12€</span><span class="performance-pct up">+0,38%</span></a></li><li><a href="/indices-actions/cours-gemalto-gto-nl0000400653-ams"><span class="short-name-security">GEMALTO</span><span class="price up">65,37€</span><span class="performance-pct up">+0,38%</span></a></li><li><a href="/indices-actions/cours-gdf-suez-gsz-fr0010208488-par"><span class="short-name-security">GDF SUEZ</span><span class="price up">19,69€</span><span class="performance-pct up">+0,38%</span></a></li><li><a href="/indices-actions/cours-publicis-groupe-pub-fr0000130577-par"><span class="short-name-security">PUBLICIS GROUPE</span><span class="price up">59,39€</span><span class="performance-pct up">+0,34%</span></a></li><li><a href="/indices-actions/cours-axa-cs-fr0000120628-par"><span class="short-name-security">AXA</span><span class="price up">19,14€</span><span class="performance-pct up">+0,29%</span></a></li><li><a href="/indices-actions/cours-valeo-fr-fr0000130338-par"><span class="short-name-security">VALEO</span><span class="price up">98,77€</span><span class="performance-pct up">+0,27%</span></a></li><li><a href="/indices-actions/cours-lvmh-mot-hennessy-l-v-mc-fr0000121014-par"><span class="short-name-security"></span><span class="price up">142,30€</span><span class="performance-pct up">+0,21%</span></a></li><li><a href="/indices-actions/cours-renault-rno-fr0000131906-par"><span class="short-name-security">Renault</span><span class="price up">62,54€</span><span class="performance-pct up">+0,21%</span></a></li><li><a href="/indices-actions/cours-vivendi-viv-fr0000127771-par"><span class="short-name-security">Vivendi</span><span class="price up">20,32€</span><span class="performance-pct up">+0,17%</span></a></li><li><a href="/indices-actions/cours-alstom-alo-fr0010220475-par"><span class="short-name-security">Alstom</span><span class="price up">27,72€</span><span class="performance-pct up">+0,05%</span></a></li><li><a href="/indices-actions/cours-credit-agricole-aca-fr0000045072-par"><span class="short-name-security">CREDIT AGRICOLE</span><span class="price down">10,79€</span><span class="performance-pct down">-0,14%</span></a></li><li><a href="/indices-actions/cours-saint-gobain-sgo-fr0000125007-par"><span class="short-name-security">SAINT GOBAIN</span><span class="price down">33,61€</span><span class="performance-pct down">-0,15%</span></a></li><li><a href="/indices-actions/cours-schneider-electric-su-fr0000121972-par"><span class="short-name-security">Schneider Electric</span><span class="price down">61,83€</span><span class="performance-pct down">-0,19%</span></a></li><li><a href="/indices-actions/cours-bouygues-en-fr0000120503-par"><span class="short-name-security">BOUYGUES</span><span class="price down">29,91€</span><span class="performance-pct down">-0,20%</span></a></li><li><a href="/indices-actions/cours-total-fp-fr0000120271-par"><span class="short-name-security">TOTAL</span><span class="price down">43,13€</span><span class="performance-pct down">-0,24%</span></a></li><li><a href="/indices-actions/cours-bnp-paribas-bnp-fr0000131104-par"><span class="short-name-security">BNP PARIBAS</span><span class="price down">49,79€</span><span class="performance-pct down">-0,39%</span></a></li><li><a href="/indices-actions/cours-airbus-group-air-nl0000235190-par"><span class="short-name-security">AIRBUS GROUP</span><span class="price down">47,99€</span><span class="performance-pct down">-0,43%</span></a></li><li><a href="/indices-actions/cours-arcelormittal-mt-lu0323134006-ams"><span class="short-name-security">ARCELORMITTAL</span><span class="price down">9,45€</span><span class="performance-pct down">-0,61%</span></a></li><li><a href="/indices-actions/cours-cap-gemini-cap-fr0000125338-par"><span class="short-name-security">CAP GEMINI</span><span class="price down">57,62€</span><span class="performance-pct down">-0,67%</span></a></li><li><a href="/indices-actions/cours-technip-tec-fr0000131708-par"><span class="short-name-security">TECHNIP</span><span class="price down">48,26€</span><span class="performance-pct down">-0,70%</span></a></li><li><a href="/indices-actions/cours-orange-sa-ora-fr0000133308-par"><span class="short-name-security">ORANGE SA</span><span class="price down">13,75€</span><span class="performance-pct down">-0,72%</span></a></li><li><a href="/indices-actions/cours-societe-generale-gle-fr0000130809-par"><span class="short-name-security">SOCIETE GENERALE</span><span class="price down">36,87€</span><span class="performance-pct down">-0,97%</span></a></li><li><a href="/indices-actions/cours-lafarge-lg-fr0000120537-par"><span class="short-name-security">LAFARGE</span><span class="price down">56,28€</span><span class="performance-pct down">-1,95%</span></a></li></ul></div></div>
+  </div>
+
+  
+  </div>
+  </nav>
+
+  <section>
+    <div class="row"><div class="one-col first"><div class="panel-pane bloc-normaux pane-bloc-568-infos-en-temps-reel" >
+  
+      <h2 class="pane-title">Infos en temps réel</h2>
+  
+  
+  <div class="pane-content">
+  <div id="highlighted-article"><div class="view view-bloc-568-infos-en-temps-reel view-id-bloc_568_infos_en_temps_reel view-display-id-panel_pane_1 view-dom-id-8a92c51180d4837dae5b71e8c5c1837e">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><a href="/indices-actions/actu-conseils/la-prise-de-controle-du-groupe-suisse-sika-par-saint-gobain-est-en-bonne-voie-3968717"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/280x100/public/medias/PHOdbd6bc86-8049-11e4-acaa-1b5d069212eb-493x178.jpg" width="280" height="100" alt="FRANCE-CONSTRUCTION-COMPANY-GOBAIN" title="FRANCE-CONSTRUCTION-COMPANY-GOBAIN" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/la-prise-de-controle-du-groupe-suisse-sika-par-saint-gobain-est-en-bonne-voie-3968717">La prise de contrôle du groupe suisse Sika par Saint-Gobain est en bonne voie</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <div class="field-content">La holding familiale Schenker Winkler qui détient la majorité des droits de vote de Sika confirme son soutien. Les dirigeants de la société suisse...</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div><div id="article-slideshow"><div class="view view-bloc-568-infos-en-temps-reel view-id-bloc_568_infos_en_temps_reel view-display-id-panel_pane_2 view-dom-id-313dfe408f54a92e8cc74b24d6ccaa89">
+        
+  
+  
+      <div class="view-content">
+      
+<div class="skin-default">
+  
+  <div id="views_slideshow_cycle_main_bloc_568_infos_en_temps_reel-panel_pane_2" class="views_slideshow_cycle_main views_slideshow_main"><div id="views_slideshow_cycle_teaser_section_bloc_568_infos_en_temps_reel-panel_pane_2" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+  <div id="views_slideshow_cycle_div_bloc_568_infos_en_temps_reel-panel_pane_2_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd slideshow-en-temps-reel-row">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><a href="/indices-actions/actu-conseils/groupe-crit-une-fin-d-annee-compliquee-en-france-3968610"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/130x50/public/medias/PHOa6223d70-8050-11e4-9a6e-6f928e44186f-493x178.jpg" width="130" height="50" alt="EMPLOI  ILLUSTRATION" title="EMPLOI  ILLUSTRATION" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/groupe-crit-une-fin-d-annee-compliquee-en-france-3968610">Groupe Crit : une fin d’année compliquée en France</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">Les derniers chiffres concernant le travail temporaire...</span>  </div></div>
+<div class="views-slideshow-cycle-main-frame-row-item views-row views-row-1 views-row-even slideshow-en-temps-reel-row">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img src="/sites/all/themes/lefigaro_bourse/images/no_image_130x50.jpg" width="130" height="50"></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/valneva-recherche-grace-aux-resultats-d-un-vaccin-antituberculeux-3968593">Valneva recherché grâce aux résultats d’un vaccin antituberculeux</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">Un vaccin utilisant un adjuvant conçu par Valneva et...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_568_infos_en_temps_reel-panel_pane_2_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd slideshow-en-temps-reel-row">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><a href="/indices-actions/actu-conseils/le-secteur-des-valeurs-internet-est-peu-valorise-en-france-3968518"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/130x50/public/medias/PHO3e6cbea2-8047-11e4-acaa-1b5d069212eb-493x178.jpg" width="130" height="50" alt="FRANCE-EUROPE-STOCKS-FEATURE" title="FRANCE-EUROPE-STOCKS-FEATURE" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/le-secteur-des-valeurs-internet-est-peu-valorise-en-france-3968518">Le secteur des valeurs internet est peu valorisé en France</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">Les petites et moyennes valeurs du secteur se paient...</span>  </div></div>
+<div class="views-slideshow-cycle-main-frame-row-item views-row views-row-1 views-row-even slideshow-en-temps-reel-row">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img src="/sites/all/themes/lefigaro_bourse/images/no_image_130x50.jpg" width="130" height="50"></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/2014-la-plus-belle-annee-depuis-2010-pour-les-introductions-en-bourse-3968411">2014, la plus belle année depuis 2010 pour les introductions en Bourse</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">Malgré le coup d’arrêt observé au quatrième trimestre...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_568_infos_en_temps_reel-panel_pane_2_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd slideshow-en-temps-reel-row">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><a href="/fonds-trackers/actu-conseils/faut-il-croire-aux-promesses-des-biotechs-3968041"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/130x50/public/medias/PHO8f599082-7fc1-11e4-9d0a-3ea4b60c2dea-493x178.jpg" width="130" height="50" alt="474730189" title="474730189" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/faut-il-croire-aux-promesses-des-biotechs-3968041">Faut-il croire aux promesses des biotechs ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Les cinq plus fortes hausses depuis...</span>  </div></div>
+<div class="views-slideshow-cycle-main-frame-row-item views-row views-row-1 views-row-even slideshow-en-temps-reel-row">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><a href="/indices-actions/actu-conseils/la-bourse-de-new-york-attendue-proche-de-l-equilibre-3968825"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/130x50/public/medias/PHOc97b2d30-8060-11e4-ad27-066f74d5e4d5-493x178.jpg" width="130" height="50" alt="Traders work on the floor of the New York Stock Exchange" title="Traders work on the floor of the New York Stock Exchange" /></a></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/la-bourse-de-new-york-attendue-proche-de-l-equilibre-3968825">La Bourse de New York attendue proche de l’équilibre</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">La prudence devrait rester de mise aujourd’hui sur les...</span>  </div></div>
+</div>
+</div>
+</div>
+      <div class="views-slideshow-controls-bottom clearfix">
+      <div id="views_slideshow_slide_counter_bloc_568_infos_en_temps_reel-panel_pane_2" class="views-slideshow-slide-counter views_slideshow_slide_counter">
+  <span class="num">1</span> / <span class="total">3</span>
+</div><div id="views_slideshow_controls_text_bloc_568_infos_en_temps_reel-panel_pane_2" class="views-slideshow-controls-text views_slideshow_controls_text">
+  <div id="views_slideshow_controls_text_previous_bloc_568_infos_en_temps_reel-panel_pane_2" class="views-slideshow-controls-text-previous views_slideshow_controls_text_previous">
+  <a href="#" class="slideshow-previous-arrow"></a>
+</div>
+  <div id="views_slideshow_controls_text_next_bloc_568_infos_en_temps_reel-panel_pane_2" class="views-slideshow-controls-text-next views_slideshow_controls_text_next">
+  <a href="#" class="slideshow-next-arrow"></a>
+</div>
+</div>
+    </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div><div id="article-tabs"><div id="lefigaro-tabs-1" class="lefigaro-tabs"><div class="item-list"><ul><li class="tout first"><a href="#lefigaro-tabs-1-tout" title="Tout">Tout</a></li>
+<li class="figaro-bourse"><a href="#lefigaro-tabs-1-figaro-bourse" title="Figaro Bourse">Figaro Bourse</a></li>
+<li class="conseils"><a href="#lefigaro-tabs-1-conseils" title="Conseils">Conseils</a></li>
+<li class="figaro-actu last"><a href="#lefigaro-tabs-1-figaro-actu" title="Figaro Actu">Figaro Actu</a></li>
+</ul></div><div class="lefigaro-tabs-panel"id=lefigaro-tabs-1-tout><div class="view view-bloc-03-en-temps-reel view-id-bloc_03_en_temps_reel view-display-id-panel_pane_1 view-dom-id-c64b96863c5aa453430d7044ecc64c31">
+        
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="free source-cercle"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/petrole-regain-de-craintes-sur-la-demande-avec-l-eia-3968834">Pétrole: regain de craintes sur la demande avec l&#039;EIA.</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h27</span></span></li>      
+<li class="free pictogramme picto-point-de-marche source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/la-bourse-de-new-york-attendue-proche-de-l-equilibre-3968825">La Bourse de New York attendue proche de l’équilibre</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;13h18 - &nbsp; </span></span></li>      
+<li class="free source-fidji"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-eco/2014/12/10/97002-20141210FILWWW00200-airbus-repousse-la-livraison-de-l-a350.php">Airbus repousse la livraison de l&#039;A350</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h13</span></span></li>      
+<li class="free pictogramme picto-rumeur source-cercle"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/orange-alken-am-serait-sorti-de-jazztel-3968808">Orange: Alken AM serait sorti de Jazztel.</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h12</span></span></li>      
+<li class="free source-cercle"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/marche-l-euro-dollar-insensible-au-risque-grec-3968809">Marché: l&#039;euro/dollar insensible au risque grec.</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h10</span></span></li>      
+<li class="free source-fidji"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-eco/2014/12/10/97002-20141210FILWWW00193-petrole-demande-en-baisse-en-2015-opep.php">Pétrole: demande en baisse en 2015 (Opep)</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h04</span></span></li>      
+<li class="free source-cercle"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/ekinops-aurige-partners-sous-les-5-3968795">Ekinops: Aurige Partners sous les 5%.</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h01</span></span></li>      
+<li class="free source-cercle"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/bg-group-cession-a-5-milliards-de-dollars-en-australie-3968794">BG Group: cession à 5 milliards de dollars en Australie.</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 12h53</span></span></li>      
+<li class="free source-cercle"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/costco-wholesale-consensus-battu-au-1er-trimestre-3968789">Costco Wholesale: consensus battu au 1er trimestre.</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 12h41</span></span></li>  </ul>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 15084</li>
+<li class="pager-next last"><a title="Aller à la page suivante" href="/bourse?page=1">Suivant ›</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/actualites" title="Voir plus">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-1-figaro-bourse><div class="view view-bloc-03-en-temps-reel view-id-bloc_03_en_temps_reel view-display-id-panel_pane_2 view-dom-id-96c9275cad4737b5a591b00b36d9e25b">
+        
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="free pictogramme picto-point-de-marche source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/la-bourse-de-new-york-attendue-proche-de-l-equilibre-3968825">La Bourse de New York attendue proche de l’équilibre</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;13h18 - &nbsp; </span></span></li>      
+<li class="registered-free pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/la-prise-de-controle-du-groupe-suisse-sika-par-saint-gobain-est-en-bonne-voie-3968717">La prise de contrôle du groupe suisse Sika par Saint-Gobain est en bonne voie</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;11h40 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/groupe-crit-une-fin-d-annee-compliquee-en-france-3968610">Groupe Crit : une fin d’année compliquée en France</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;10h51 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/valneva-recherche-grace-aux-resultats-d-un-vaccin-antituberculeux-3968593">Valneva recherché grâce aux résultats d’un vaccin antituberculeux</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;10h48 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/le-secteur-des-valeurs-internet-est-peu-valorise-en-france-3968518">Le secteur des valeurs internet est peu valorisé en France</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;09h49 - &nbsp; </span></span></li>      
+<li class="free pictogramme picto-point-de-marche source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/timide-rebond-a-la-bourse-de-paris-3968427">Timide rebond à la Bourse de Paris</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;08h42 - &nbsp; </span></span></li>      
+<li class="free source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/2014-la-plus-belle-annee-depuis-2010-pour-les-introductions-en-bourse-3968411">2014, la plus belle année depuis 2010 pour les introductions en Bourse</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;08h37 - &nbsp; </span></span></li>      
+<li class="free pictogramme picto-point-de-marche source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/saisis-par-le-doute-les-marches-broient-du-noir-et-plonge-de-2-55-3968098">Saisis par le doute, les marchés broient du noir et plonge de 2,55%</a> - <span class="picto-datetime"><span class="picto-list-date">09/12/14</span><span class="picto-list-time">&nbsp;17h56 - &nbsp; </span></span></li>      
+<li class="free source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/fonds-trackers/actu-conseils/faut-il-croire-aux-promesses-des-biotechs-3968041">Faut-il croire aux promesses des biotechs ?</a> - <span class="picto-datetime"><span class="picto-list-date">09/12/14</span><span class="picto-list-time">&nbsp;17h44 - &nbsp; </span></span></li>  </ul>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 874</li>
+<li class="pager-next last"><a title="Aller à la page suivante" href="/bourse?page=1">Suivant ›</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/actualites" title="Voir plus">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-1-conseils><div class="view view-bloc-03-en-temps-reel view-id-bloc_03_en_temps_reel view-display-id-panel_pane_3 view-dom-id-1584f801d51199b8256d4638c87dac8d">
+        
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="registered-free pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/la-prise-de-controle-du-groupe-suisse-sika-par-saint-gobain-est-en-bonne-voie-3968717">La prise de contrôle du groupe suisse Sika par Saint-Gobain est en bonne voie</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;11h40 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/groupe-crit-une-fin-d-annee-compliquee-en-france-3968610">Groupe Crit : une fin d’année compliquée en France</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;10h51 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/valneva-recherche-grace-aux-resultats-d-un-vaccin-antituberculeux-3968593">Valneva recherché grâce aux résultats d’un vaccin antituberculeux</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;10h48 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/le-secteur-des-valeurs-internet-est-peu-valorise-en-france-3968518">Le secteur des valeurs internet est peu valorisé en France</a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time">&nbsp;09h49 - &nbsp; </span></span></li>      
+<li class="free pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/une-nouvelle-crise-politique-menace-la-grece-la-bourse-chute-lourdement-3967710">Une nouvelle crise politique menace la Grèce, la Bourse chute lourdement</a> - <span class="picto-datetime"><span class="picto-list-date">09/12/14</span><span class="picto-list-time">&nbsp;11h35 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/rumeurs-autour-d-un-rachat-majeur-pour-jcdecaux-3967608">Rumeurs autour d’un rachat majeur pour JCDecaux</a> - <span class="picto-datetime"><span class="picto-list-date">09/12/14</span><span class="picto-list-time">&nbsp;10h43 - &nbsp; </span></span></li>      
+<li class="registered-free pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/eiffage-et-vinci-sont-de-nouveau-attaques-par-les-deputes-socialistes-3967578">Eiffage et Vinci sont de nouveau attaqués par les députés socialistes</a> - <span class="picto-datetime"><span class="picto-list-date">09/12/14</span><span class="picto-list-time">&nbsp;10h35 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/des-resultats-remarques-pour-erytech-dans-la-leucemie-lymphoblastique-3934636">Des résultats remarqués pour Erytech dans la leucémie lymphoblastique</a> - <span class="picto-datetime"><span class="picto-list-date">08/12/14</span><span class="picto-list-time">&nbsp;16h06 - &nbsp; </span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse source-eidos source-picto source-picto-eidos"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/le-fonds-europeen-de-resolution-coutera-pres-de-15-milliards-d-euros-aux-banques-francaises-3908837">Le fonds européen de résolution coûtera près de 15 milliards d’euros aux banques françaises</a> - <span class="picto-datetime"><span class="picto-list-date">08/12/14</span><span class="picto-list-time">&nbsp;12h31 - &nbsp; </span></span></li>  </ul>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 327</li>
+<li class="pager-next last"><a title="Aller à la page suivante" href="/bourse?page=1">Suivant ›</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/expertise/conseils-experts" title="Voir plus">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-1-figaro-actu><div class="view view-bloc-03-en-temps-reel view-id-bloc_03_en_temps_reel view-display-id-panel_pane_4 view-dom-id-37da1e8b91b3462acba22ea6cff71ce6">
+        
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00206-des-deputes-appellent-au-rachat-des-autoroutes.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00206-des-deputes-appellent-au-rachat-des-autoroutes.php">Des députés appellent au rachat des autoroutes</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h30</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00203-ebolamedecin-italien-legere-amelioration.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00203-ebolamedecin-italien-legere-amelioration.php">Ebola/médecin italien: légère amélioration</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h17</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00196-la-pologne-autorise-a-nouveau-l-abattage-rituel.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00196-la-pologne-autorise-a-nouveau-l-abattage-rituel.php">La Pologne autorise à nouveau l&#039;abattage rituel</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h06</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00194-psa-projet-pour-l-emploi-valide-par-les-syndicats.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00194-psa-projet-pour-l-emploi-valide-par-les-syndicats.php">PSA: projet pour l&#039;emploi validé par les syndicats</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 13h04</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00186-le-qatar-soutient-a-son-tour-l-egypte-de-sissi.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00186-le-qatar-soutient-a-son-tour-l-egypte-de-sissi.php">Le Qatar soutient à son tour l&#039;Egypte de Sissi</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 12h50</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00182-mediterranee-400-migrants-syriens-secourus.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00182-mediterranee-400-migrants-syriens-secourus.php">Méditerranée: 400 migrants syriens secourus</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 12h40</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00171-responsable-palestinien-tue-mahmoud-abbas-denonce-un-acte-barbare.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00171-responsable-palestinien-tue-mahmoud-abbas-denonce-un-acte-barbare.php">Responsable palestinien tué: Mahmoud Abbas dénonce un acte &quot;barbare&quot;</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 12h25</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00169-hongkong-les-manifestants-quittent-admiralty.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00169-hongkong-les-manifestants-quittent-admiralty.php">Hongkong: les manifestants quittent Admiralty</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 12h22</span></span></li>      
+<li class="free"><span class="picto-image"></span><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00166-le-pentorture-indignation-a-l-assemblee.php"><a href="http://www.lefigaro.fr/flash-actu/2014/12/10/97001-20141210FILWWW00166-le-pentorture-indignation-a-l-assemblee.php">Le Pen/torture: indignation à l&#039;Assemblée</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 12h16</span></span></li>  </ul>    </div>
+  
+      <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 9250</li>
+<li class="pager-next last"><a title="Aller à la page suivante" href="/bourse?page=1">Suivant ›</a></li>
+</ul></div>  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/actualites" title="Voir plus">Voir plus</a></div></div></div></div>    </div>
+
+  
+    
+</div>
+</div><div class="two-col last"><div class="panel-pane pane-bloc-454-charte-intraday-home first" >
+  
+        <h2 class="pane-title">Graphique</h2>
+    
+  
+  <div class="pane-content">
+    <div id="lefigaro-tabs-2" class="lefigaro-tabs"><div class="item-list"><ul><li class="cac-40 first"><a href="#lefigaro-tabs-2-cac-40" title="CAC 40">CAC 40</a></li>
+<li class="nasdaq"><a href="#lefigaro-tabs-2-nasdaq" title="Nasdaq">Nasdaq</a></li>
+<li class="dow-jones"><a href="#lefigaro-tabs-2-dow-jones" title="Dow Jones">Dow Jones</a></li>
+<li class="nikkei last"><a href="#lefigaro-tabs-2-nikkei" title="Nikkei">Nikkei</a></li>
+</ul></div><div class="lefigaro-tabs-panel"id=lefigaro-tabs-2-cac-40><a href="http://bourse.lefigaro.fr/indices-actions/cours-cac-40-fr0003500008"><img src="http://bourse.lefigaro.fr/charts/figaro.small.chart?ID_NOTATION=324965&HEIGHT=150&WIDTH=280&SET_BORDER=0&TIME_SPAN=1D" /></a><div class="chart-extra"><div class="price"><span class="point">4 274,42 pts</span> <span class="performance up">(+0,25%)</span></div></div><div class="more-link"><a href="http://bourse.lefigaro.fr/indices-actions/cours-cac-40-fr0003500008" title="Voir plus">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-2-nasdaq><a href="http://bourse.lefigaro.fr/indices-actions/cours-nasdaq-composite-index-xc0009694271"><img src="http://bourse.lefigaro.fr/charts/figaro.small.chart?ID_NOTATION=324985&HEIGHT=150&WIDTH=280&SET_BORDER=0&TIME_SPAN=1D" /></a><div class="chart-extra"><div class="price"><span class="point">4 766,47 pts</span> <span class="performance up">(+0,54%)</span></div></div><div class="more-link"><a href="http://bourse.lefigaro.fr/indices-actions/cours-nasdaq-composite-index-xc0009694271" title="Voir plus">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-2-dow-jones><a href="http://bourse.lefigaro.fr/indices-actions/cours-dow-jones-us2605661048"><img src="http://bourse.lefigaro.fr/charts/figaro.small.chart?ID_NOTATION=324977&HEIGHT=150&WIDTH=280&SET_BORDER=0&TIME_SPAN=1D" /></a><div class="chart-extra"><div class="price"><span class="point">17 801,20 pts</span> <span class="performance down">(-0,29%)</span></div></div><div class="more-link"><a href="http://bourse.lefigaro.fr/indices-actions/cours-dow-jones-us2605661048" title="Voir plus">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-2-nikkei><a href="http://bourse.lefigaro.fr/indices-actions/cours-japan-nikkei-average-index-225-jp9010c00002"><img src="http://bourse.lefigaro.fr/charts/figaro.small.chart?ID_NOTATION=324913&HEIGHT=150&WIDTH=280&SET_BORDER=0&TIME_SPAN=1D" /></a><div class="chart-extra"><div class="price"><span class="point">17 412,58 pts</span> <span class="performance down">(-2,25%)</span></div></div><div class="more-link"><a href="http://bourse.lefigaro.fr/indices-actions/cours-japan-nikkei-average-index-225-jp9010c00002" title="Voir plus">Voir plus</a></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-2-palmares-indices last" >
+  
+        <h2 class="pane-title">Palmarès</h2>
+    
+  
+  <div class="pane-content">
+    <div id="lefigaro-tabs-3" class="lefigaro-tabs"><div class="item-list"><ul><li class="cac-40--2 first"><a href="#lefigaro-tabs-3-cac-40--2" title="CAC 40">CAC 40</a></li>
+<li class="srd"><a href="#lefigaro-tabs-3-srd" title="SRD">SRD</a></li>
+<li class="cac-all-tradable"><a href="#lefigaro-tabs-3-cac-all-tradable" title="CAC All-Tradable">CAC All-Tradable</a></li>
+<li class="ma-liste last"><a href="#lefigaro-tabs-3-ma-liste" title="Ma liste">Ma liste</a></li>
+</ul></div><div class="lefigaro-tabs-panel"id=lefigaro-tabs-3-cac-40--2><table class="bargraph"><tbody><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-vinci-dg-fr0000125486-par">Vinci</a></td><td class="percentage up">+3,43&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 70px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-alcatel-lucent-alu-fr0000130007-par">Alcatel Lucent</a></td><td class="percentage up">+1,58&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 32px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-solvay-solb-be0003470755-bru">Solvay</a></td><td class="percentage up">+1,21&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 24px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-orange-sa-ora-fr0000133308-par">ORANGE SA</a></td><td class="bar-down"><span class="bar-down" style="width: 25px;"></span></td><td class="percentage down">-0,72&nbsp;%</td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-societe-generale-gle-fr0000130809-par">SOCIETE GENERALE</a></td><td class="bar-down"><span class="bar-down" style="width: 35px;"></span></td><td class="percentage down">-0,99&nbsp;%</td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-lafarge-lg-fr0000120537-par">LAFARGE</a></td><td class="bar-down"><span class="bar-down" style="width: 70px;"></span></td><td class="percentage down">-1,95&nbsp;%</td></tr></tbody></table><div class="more-link"><a href="/indices-actions/palmares/actions-France?marche=324965&amp;type=TOP&amp;range=INTRADAY&amp;lignes=30&amp;sort=performance&amp;order&amp;page=0">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-3-srd><table class="bargraph"><tbody><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-stentys-stnt-fr0010949404-par">STENTYS</a></td><td class="percentage up">+11,26&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 70px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-st-dupont-dpt-fr0000054199-par">ST DUPONT</a></td><td class="percentage up">+10,53&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 65px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-mauna-kea-tech-mkea-fr0010609263-par">MAUNA KEA TECHNOLOGIES</a></td><td class="percentage up">+7,67&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 47px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-intle-plant-heveas-siph-fr0000036857-par">INTLE PLANT.HEVEAS</a></td><td class="bar-down"><span class="bar-down" style="width: 30px;"></span></td><td class="percentage down">-3,07&nbsp;%</td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-metabolic-explorer-metex-fr0004177046-par">METABOLIC EXPLORER</a></td><td class="bar-down"><span class="bar-down" style="width: 46px;"></span></td><td class="percentage down">-4,66&nbsp;%</td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-orco-property-group-orc-lu0122624777-par">ORCO PROPERTY GRP</a></td><td class="bar-down"><span class="bar-down" style="width: 70px;"></span></td><td class="percentage down">-6,98&nbsp;%</td></tr></tbody></table><div class="more-link"><a href="/indices-actions/palmares/actions-france?marche=SRD&amp;type=TOP&amp;range=INTRADAY&amp;lignes=30&amp;sort=performance&amp;order&amp;page=0">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-3-cac-all-tradable><table class="bargraph"><tbody><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-stentys-stnt-fr0010949404-par">STENTYS</a></td><td class="percentage up">+13,40 %</td><td class="bar-up"><span class="bar-up" style="width: 56px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-egide-gid-fr0000072373-par">EGIDE</a></td><td class="percentage up">+12,04 %</td><td class="bar-up"><span class="bar-up" style="width: 50px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-st-dupont-dpt-fr0000054199-par">ST DUPONT</a></td><td class="percentage up">+10,53 %</td><td class="bar-up"><span class="bar-up" style="width: 43px;"></span></td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-guillemot-gui-fr0000066722-par">GUILLEMOT</a></td><td class="bar-down"><span class="bar-down" style="width: 20px;"></span></td><td class="percentage down">-6,00 %</td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-sii-sii-fr0000074122-par">SII</a></td><td class="bar-down"><span class="bar-down" style="width: 24px;"></span></td><td class="percentage down">-7,22 %</td></tr><tr class="bargraph-line"><td class="name"><a href="/indices-actions/cours-montaigne-fashion-mfg-fr0004048734-par">MONTAIGNE FASHION</a></td><td class="bar-down"><span class="bar-down" style="width: 56px;"></span></td><td class="percentage down">-16,67 %</td></tr></tbody></table><div class="more-link"><a href="/indices-actions/palmares/actions-France?marche=325014&amp;type=TOP&amp;range=INTRADAY&amp;lignes=30&amp;sort=performance&amp;order&amp;page=0">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-3-ma-liste><esi:include src="http://bourse.lefigaro.fr/esi/lefigaro_esi/lfcl_user_list%3A/TTL%3D180/CACHE%3DUSER" /></div></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-panels-mini pane-bloc-12-pub-icone-1-2-3-4-bourse two-col" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="panel-display pub-icone" id="mini-panel-bloc_12_pub_icone_1_2_3_4_bourse">
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-4"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18485/S/1418215212/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18485/S/1418215212/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-5"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18487/S/1418215212/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18487/S/1418215212/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-6"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18488/S/1418215212/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18488/S/1418215212/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-7"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18489/S/1418215212/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18489/S/1418215212/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+<div class="panel-pane bloc-normaux pane-panels-mini pane-bloc-455-conseils-expertise-hp two-col allow-overflow" >
+  
+      <h2 class="pane-title">Conseils &amp; Expertise </h2>
+  
+  
+  <div class="pane-content">
+  <div class="panel-display panel-2col clearfix" id="mini-panel-bloc_455_conseils_expertise_hp">
+  <div class="panel-panel panel-col-first">
+    <div class="inside"><div class="panel-pane pane-views-panes pane-bloc-455-conseils-expertise-panel-pane-1" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="view view-bloc-455-conseils-expertise view-id-bloc_455_conseils_expertise view-display-id-panel_pane_1 view-dom-id-83f03cd6d45e16748f934c5ccf29be59">
+            <div class="view-header">
+      <h3>Valeur du jour</h3>
+    </div>
+  
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="paid pictogramme picto-conseil-bourse"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/groupe-crit-une-fin-d-annee-compliquee-en-france-3968610"><a href="/indices-actions/actu-conseils/groupe-crit-une-fin-d-annee-compliquee-en-france-3968610">Groupe Crit : une fin d’année compliquée en France</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 10h51</span></span></li>  </ul>    </div>
+  
+  
+      <div class="attachment attachment-after">
+      <div class="view view-bloc-455-conseils-expertise view-id-bloc_455_conseils_expertise view-display-id-attachment_1">
+            <div class="view-header">
+      <h3>Dernières idées d’investissements</h3>
+    </div>
+  
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="registered-free pictogramme picto-conseil-bourse"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/la-prise-de-controle-du-groupe-suisse-sika-par-saint-gobain-est-en-bonne-voie-3968717"><a href="/indices-actions/actu-conseils/la-prise-de-controle-du-groupe-suisse-sika-par-saint-gobain-est-en-bonne-voie-3968717">La prise de contrôle du groupe suisse Sika par Saint-Gobain est en bonne voie</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 11h40</span></span></li>      
+<li class="paid pictogramme picto-conseil-bourse"><span class="picto-image"></span><a href="/indices-actions/actu-conseils/valneva-recherche-grace-aux-resultats-d-un-vaccin-antituberculeux-3968593"><a href="/indices-actions/actu-conseils/valneva-recherche-grace-aux-resultats-d-un-vaccin-antituberculeux-3968593">Valneva recherché grâce aux résultats d’un vaccin antituberculeux</a></a> - <span class="picto-datetime"><span class="picto-list-date">10/12/14</span><span class="picto-list-time"> 10h48</span></span></li>  </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div><div class="view view-bloc-455-conseils-expertise view-id-bloc_455_conseils_expertise view-display-id-attachment_2">
+            <div class="view-header">
+      <h3>Dernier conseil dérivés</h3>
+    </div>
+  
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="free pictogramme picto-conseil-bourse"><span class="picto-image"></span><a href="/derives/actu-conseils/un-point-d-inflexion-pour-volkswagen-en-bourse-3793989"><a href="/derives/actu-conseils/un-point-d-inflexion-pour-volkswagen-en-bourse-3793989">Un point d’inflexion pour Volkswagen en Bourse ?</a></a> - <span class="picto-datetime"><span class="picto-list-date">02/12/14</span><span class="picto-list-time"> 09h20</span></span></li>  </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div><div class="view view-bloc-455-conseils-expertise view-id-bloc_455_conseils_expertise view-display-id-attachment_3">
+            <div class="view-header">
+      <h3>Expertise Fonds</h3>
+    </div>
+  
+  
+  
+      <div class="view-content">
+      
+<ul class="lefigaro-list">      
+<li class="free pictogramme picto-conseil-bourse"><span class="picto-image"></span><a href="/fonds-trackers/actu-conseils/les-obligations-a-haut-rendement-sont-sous-pression-2937361"><a href="/fonds-trackers/actu-conseils/les-obligations-a-haut-rendement-sont-sous-pression-2937361">Les obligations à haut rendement sont sous pression</a></a> - <span class="picto-datetime"><span class="picto-list-date">03/11/14</span><span class="picto-list-time"> 17h04</span></span></li>  </ul>    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+  
+  
+      <div class="view-footer">
+      <div class="more-link"><a href="actualites#lefigaro-tabs-1-conseils">Voir plus de conseils</a></div>
+    </div>
+  
+  
+</div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panels-custom-title-tag-pane panel-pane  pane-bloc-37-portefeuilles-experts" id="1">
+  
+      <h3 class="pane-title">Portefeuilles Experts</h3>
+  
+  
+  <div class="pane-content">
+    <div class="portefeuilles-position"><a href="/expertise/conseils-experts/offensif-positions-ouvertes">Offensif</a> <span class="up">+62,29%</span>
+            </div><div class="portefeuilles-position"><a href="/expertise/conseils-experts/defensif-positions-ouvertes">Défensif</a> <span class="up">+70,59%</span>
+            </div><div class="portefeuilles-position"><a href="/expertise/conseils-experts/placements-monde-positions-ouvertes">Monde</a> <span class="up">+21,40%</span>
+            </div><div class="portefeuilles-cac40"><a href="/indices-actions/cours-cac-40-fr0003500008">CAC 40</a> <span class="up">+36,24%</span>
+            </div><div class='performance'>(Depuis le 09/01/2012) </div><div class="dernieres-positions">Dernières positions : <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/offensif-positions-ouvertes">Lyxor ETF CAC 40 Daily Double Short A/I</a>, <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/offensif-positions-ouvertes">Apple</a>, <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/defensif-positions-ouvertes">INGENICO</a> et <a href="http://bourse.lefigaro.fr/expertise/conseils-experts/placements-monde-positions-ouvertes">MAM Entreprises Familiales C</a></div><div class="more-link"><a href="/expertise/conseils-experts" title="Découvrir nos portefeuilles">Découvrir nos portefeuilles</a></div>  </div>
+
+  
+  </div>
+</div>
+  </div>
+
+  <div class="panel-panel panel-col-last">
+    <div class="inside"><div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-8"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18317/S/1418215212/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18317/S/1418215212/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panels-custom-title-tag-pane panel-pane  pane-bloc-7-videos-dossiers-int" id="2">
+  
+      <h3 class="pane-title">A ne pas manquer</h3>
+  
+  
+  <div class="pane-content">
+    <div id="lefigaro-tabs-4" class="tabbed-slideshows lefigaro-tabs"><div class="item-list"><ul><li class="tout--2 first"><a href="#lefigaro-tabs-4-tout--2" title="Tout">Tout</a></li>
+<li class="le-club-des-pros"><a href="#lefigaro-tabs-4-le-club-des-pros" title="Le Club des Pros">Le Club des Pros</a></li>
+<li class="vidos"><a href="#lefigaro-tabs-4-vidos" title="Vidéos">Vidéos</a></li>
+<li class="interviews last"><a href="#lefigaro-tabs-4-interviews" title="Interviews">Interviews</a></li>
+</ul></div><div class="lefigaro-tabs-panel"id=lefigaro-tabs-4-tout--2><div class="view view-bloc-07-videos-dossiers-int view-id-bloc_07_videos_dossiers_int view-display-id-panel_pane_1 view-dom-id-d9bcddf00677191f84f1eda881c57b7c">
+        
+  
+  
+      <div class="view-content">
+      
+<div class="skin-default">
+  
+  <div id="views_slideshow_cycle_main_bloc_07_videos_dossiers_int-panel_pane_1" class="views_slideshow_cycle_main views_slideshow_main"><div id="views_slideshow_cycle_teaser_section_bloc_07_videos_dossiers_int-panel_pane_1" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+  <div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_1_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO8f599082-7fc1-11e4-9d0a-3ea4b60c2dea-178x178.jpg" width="100" height="100" alt="474730189" title="474730189" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/faut-il-croire-aux-promesses-des-biotechs-3968041">Faut-il croire aux promesses des biotechs ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Les cinq plus fortes hausses depuis le début de l’année reviennent à des sociétés de biotechnologies...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_1_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO0f7d1b12-6e6a-11e4-b1b8-baa1865d3adc-178x178.jpg" width="100" height="100" alt="Oil Prices Environment" title="Oil Prices Environment" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/jusqu-ou-peut-aller-la-baisse-du-petrole-3492741">Jusqu’où peut aller la baisse du pétrole ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Un ajustement du marché pétrolier est à l’oeuvre face à l’évolution de la stucture de l’offre,...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_1_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHOf06234ca-6d87-11e4-adf6-ac48dbde52fc-178x178.jpg" width="100" height="100" alt="-" title="-" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/apple-microsoft-les-entreprises-technologiques-dominent-wall-street-3342884">Apple, Microsoft : les entreprises technologiques dominent Wall Street</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">Depuis la nomination de Satya Nadella au poste de directeur général, Microsoft connaît une flambée boursière et devance...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_1_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHOae42a1c6-455d-11e4-9e30-4ab701b126c4-178x178.jpg" width="100" height="100" alt="A passenger waits at check-in counter during a second week of the strike by Air France pilots at Marseille airport" title="A passenger waits at check-in counter during a second week of the strike by Air France pilots at Marseille airport" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/air-france-klm-la-greve-de-14-jours-a-fait-chuter-l-action-de-12-2053756">Air France KLM : la grève de 14 jours a fait chuter l’action de 12%</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">La compagnie a perdu des sommes colossales et un temps précieux pour son développement avec la grève des pilotes....</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_1_4" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-5 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHOe5a12c16-3fe8-11e4-ab30-9cea3f9dcafe-178x178.jpg" width="100" height="100" alt="FRANCE-BOURSE-EXCHANGE" title="FRANCE-BOURSE-EXCHANGE" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/bourse-dorval-finance-confiant-pour-la-fin-de-l-annee-2048365">Bourse : Dorval Finance confiant pour la fin de l’année</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDÉO - La mise en place par la BCE d’un ambitieux plan de relance, la dépréciation de l’euro et le projet d’union...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_1_5" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-6 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO0c49c4c6-3d83-11e4-8e6d-ab3eccc07340-178x178.jpg" width="100" height="100" alt="Numbers And Finance" title="Numbers And Finance" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/quelles-perspectives-en-bourse-pour-la-fin-de-l-annee-1867977">Quelles perspectives en Bourse pour la fin de l’année ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Nos spécialistes font part de leurs pistes d’investissement pour la fin de l’année, tandis qu’une...</span>  </div></div>
+</div>
+</div>
+</div>
+      <div class="views-slideshow-controls-bottom clearfix">
+      <div id="views_slideshow_slide_counter_bloc_07_videos_dossiers_int-panel_pane_1" class="views-slideshow-slide-counter views_slideshow_slide_counter">
+  <span class="num">1</span> / <span class="total">6</span>
+</div><div id="views_slideshow_controls_text_bloc_07_videos_dossiers_int-panel_pane_1" class="views-slideshow-controls-text views_slideshow_controls_text">
+  <div id="views_slideshow_controls_text_previous_bloc_07_videos_dossiers_int-panel_pane_1" class="views-slideshow-controls-text-previous views_slideshow_controls_text_previous">
+  <a href="#" class="slideshow-previous-arrow"></a>
+</div>
+  <div id="views_slideshow_controls_text_next_bloc_07_videos_dossiers_int-panel_pane_1" class="views-slideshow-controls-text-next views_slideshow_controls_text_next">
+  <a href="#" class="slideshow-next-arrow"></a>
+</div>
+</div>
+    </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/actualites" title="toute l&#039;actu">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-4-le-club-des-pros><div class="view view-bloc-07-videos-dossiers-int view-id-bloc_07_videos_dossiers_int view-display-id-panel_pane_2 view-dom-id-51413d836dd473a21dc9588d4cf79cd9">
+        
+  
+  
+      <div class="view-content">
+      
+<div class="skin-default">
+  
+  <div id="views_slideshow_cycle_main_bloc_07_videos_dossiers_int-panel_pane_2" class="views_slideshow_cycle_main views_slideshow_main"><div id="views_slideshow_cycle_teaser_section_bloc_07_videos_dossiers_int-panel_pane_2" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+  <div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_2_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO8f599082-7fc1-11e4-9d0a-3ea4b60c2dea-178x178.jpg" width="100" height="100" alt="474730189" title="474730189" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/faut-il-croire-aux-promesses-des-biotechs-3968041">Faut-il croire aux promesses des biotechs ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Les cinq plus fortes hausses depuis le début de l’année reviennent à des sociétés de biotechnologies...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_2_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO0f7d1b12-6e6a-11e4-b1b8-baa1865d3adc-178x178.jpg" width="100" height="100" alt="Oil Prices Environment" title="Oil Prices Environment" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/jusqu-ou-peut-aller-la-baisse-du-petrole-3492741">Jusqu’où peut aller la baisse du pétrole ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Un ajustement du marché pétrolier est à l’oeuvre face à l’évolution de la stucture de l’offre,...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_2_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO0c49c4c6-3d83-11e4-8e6d-ab3eccc07340-178x178.jpg" width="100" height="100" alt="Numbers And Finance" title="Numbers And Finance" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/quelles-perspectives-en-bourse-pour-la-fin-de-l-annee-1867977">Quelles perspectives en Bourse pour la fin de l’année ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Nos spécialistes font part de leurs pistes d’investissement pour la fin de l’année, tandis qu’une...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_2_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO2d0a5fe8-dab6-11e3-8042-c9d4ce61f26f-178x178.jpg" width="100" height="100" alt="Alstom Chairman and Chief Executive Kron speaks during the company&#039;s annual results presentation at the company headquarters in Levallois-Perret" title="Alstom Chairman and Chief Executive Kron speaks during the company&#039;s annual results presentation at the company headquarters in Levallois-Perret" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/faut-il-s-attendre-a-une-vague-d-opa-sur-les-societes-du-cac-40-1061967">Faut-il s’attendre à une vague d’OPA sur les sociétés du CAC 40 ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Pour nos spécialistes des marchés financiers, la Bourse de Paris ne pourra pas échapper à une...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_2_4" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-5 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHOdbfa0294-a477-11e3-8c2b-6155a8f58744-178x178.jpg" width="100" height="100" alt="UKRAINE-RUSSIA-UNREST-POLITICS-CRIMEA" title="UKRAINE-RUSSIA-UNREST-POLITICS-CRIMEA" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/la-crise-ukrainienne-peut-elle-destabiliser-durablement-les-marches-1001987">La crise ukrainienne peut-elle déstabiliser durablement les marchés ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - L’entrée des troupes russes en Crimée le week-end dernier alimente la volatilité en Bourse depuis le...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_2_5" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-6 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO6f221ece-93e0-11e3-bd62-74b857e68c31-178x178.jpg" width="100" height="100" alt="" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/faut-il-craindre-un-derapage-des-profits-annuels-981255">Faut-il craindre un dérapage des profits annuels ?</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">LE CLUB DES PROS - Les saison des publications annuelles n’est pas exempte de son lot de déceptions. La progression...</span>  </div></div>
+</div>
+</div>
+</div>
+      <div class="views-slideshow-controls-bottom clearfix">
+      <div id="views_slideshow_slide_counter_bloc_07_videos_dossiers_int-panel_pane_2" class="views-slideshow-slide-counter views_slideshow_slide_counter">
+  <span class="num">1</span> / <span class="total">6</span>
+</div><div id="views_slideshow_controls_text_bloc_07_videos_dossiers_int-panel_pane_2" class="views-slideshow-controls-text views_slideshow_controls_text">
+  <div id="views_slideshow_controls_text_previous_bloc_07_videos_dossiers_int-panel_pane_2" class="views-slideshow-controls-text-previous views_slideshow_controls_text_previous">
+  <a href="#" class="slideshow-previous-arrow"></a>
+</div>
+  <div id="views_slideshow_controls_text_next_bloc_07_videos_dossiers_int-panel_pane_2" class="views-slideshow-controls-text-next views_slideshow_controls_text_next">
+  <a href="#" class="slideshow-next-arrow"></a>
+</div>
+</div>
+    </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/actualites" title="toute l&#039;actu">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-4-vidos><div class="view view-bloc-07-videos-dossiers-int view-id-bloc_07_videos_dossiers_int view-display-id-panel_pane_3 view-dom-id-8e15c011437b848efc7c4973aded13ec">
+        
+  
+  
+      <div class="view-content">
+      
+<div class="skin-default">
+  
+  <div id="views_slideshow_cycle_main_bloc_07_videos_dossiers_int-panel_pane_3" class="views_slideshow_cycle_main views_slideshow_main"><div id="views_slideshow_cycle_teaser_section_bloc_07_videos_dossiers_int-panel_pane_3" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+  <div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_3_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHOe5a12c16-3fe8-11e4-ab30-9cea3f9dcafe-178x178.jpg" width="100" height="100" alt="FRANCE-BOURSE-EXCHANGE" title="FRANCE-BOURSE-EXCHANGE" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/bourse-dorval-finance-confiant-pour-la-fin-de-l-annee-2048365">Bourse : Dorval Finance confiant pour la fin de l’année</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDÉO - La mise en place par la BCE d’un ambitieux plan de relance, la dépréciation de l’euro et le projet d’union...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_3_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img src="/sites/all/themes/lefigaro_bourse/images/no_image_100x100.jpg" width="100" height="100"></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/il-faut-regarder-les-marches-emergents-pays-par-pays-1341101">«Il faut regarder les marchés émergents pays par pays»</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDEO - Les pays de l’est de l’Union européenne notamment profitent de la sortie de crise de la zone euro et des...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_3_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img src="/sites/all/themes/lefigaro_bourse/images/no_image_100x100.jpg" width="100" height="100"></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/au-sein-des-marches-d-actions-nous-preferons-toujours-l-europe-1307358">«Au sein des marchés d’actions, nous préférons toujours l’Europe»</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDEO - L’ensemble des ratios de valorisation des entreprises du vieux continent révèle encore une décote de 15 à 20 %...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_3_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/0228d4dc-2510-11e3-8899-928ff90bbb9f-178x178.jpg" width="100" height="100" alt="Altran, siege social" title="Altran, siege social" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/altran-a-un-sommet-de-plus-de-trois-mois-en-bourse-501159">Altran à un sommet de plus de trois mois en Bourse</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDEO - L’action s’est rapidement remise de la déception provoquée par la publication des résultats du premier semestre...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_3_4" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-5 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/d4b61002-24f9-11e3-8899-928ff90bbb9f-178x178.jpg" width="100" height="100" alt="TOTAL :  ASSEMBLEE GENERALE" title="TOTAL :  ASSEMBLEE GENERALE" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/total-anticipe-une-acceleration-des-cash-flows-501021">Total anticipe une accélération des cash-flows</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDEO - L’action du géant pétrolier connaît un bon début de semaine, alors que la direction a annoncé une augmentation...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_3_5" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-6 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/824ec508-21f1-11e3-96e4-d1e70545c461-178x178.jpg" width="100" height="100" alt="Models present creations from the Adidas by Stella McCartney Spring/Summer 2014 collection during London Fashion Week" title="Models present creations from the Adidas by Stella McCartney Spring/Summer 2014 collection during London Fashion Week" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/adidas-decroche-en-bourse-apres-son-avertissement-499533">Adidas décroche en Bourse après son avertissement</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDEO - L’action qui avait atteint cet été des sommets historiques abandonnait près de 4 % vendredi. La direction a...</span>  </div></div>
+</div>
+</div>
+</div>
+      <div class="views-slideshow-controls-bottom clearfix">
+      <div id="views_slideshow_slide_counter_bloc_07_videos_dossiers_int-panel_pane_3" class="views-slideshow-slide-counter views_slideshow_slide_counter">
+  <span class="num">1</span> / <span class="total">6</span>
+</div><div id="views_slideshow_controls_text_bloc_07_videos_dossiers_int-panel_pane_3" class="views-slideshow-controls-text views_slideshow_controls_text">
+  <div id="views_slideshow_controls_text_previous_bloc_07_videos_dossiers_int-panel_pane_3" class="views-slideshow-controls-text-previous views_slideshow_controls_text_previous">
+  <a href="#" class="slideshow-previous-arrow"></a>
+</div>
+  <div id="views_slideshow_controls_text_next_bloc_07_videos_dossiers_int-panel_pane_3" class="views-slideshow-controls-text-next views_slideshow_controls_text_next">
+  <a href="#" class="slideshow-next-arrow"></a>
+</div>
+</div>
+    </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/actualites" title="toute l&#039;actu">Voir plus</a></div></div><div class="ui-tabs-hide" id=lefigaro-tabs-4-interviews><div class="view view-bloc-07-videos-dossiers-int view-id-bloc_07_videos_dossiers_int view-display-id-panel_pane_4 view-dom-id-3f41014efbc6345249bb9c41788b7085">
+        
+  
+  
+      <div class="view-content">
+      
+<div class="skin-default">
+  
+  <div id="views_slideshow_cycle_main_bloc_07_videos_dossiers_int-panel_pane_4" class="views_slideshow_cycle_main views_slideshow_main"><div id="views_slideshow_cycle_teaser_section_bloc_07_videos_dossiers_int-panel_pane_4" class="views-slideshow-cycle-main-frame views_slideshow_cycle_teaser_section">
+  <div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_4_0" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-1 views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO293ce902-2fa3-11e4-85a1-f7f4ae422908-178x178.jpg" width="100" height="100" alt="FRANCE-STOCKS-EUROPE-ILLUSTRATIONS" title="FRANCE-STOCKS-EUROPE-ILLUSTRATIONS" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/indices-actions/actu-conseils/le-cac-40-signe-une-troisieme-semaine-de-progression-1853564">Le CAC 40 signe une troisième semaine de progression</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">En hausse de 0,34 % vendredi, l’indice CAC 40 a gagné 3,02 % cette semaine.</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_4_1" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-2 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHOc398d6ee-23b6-11e4-bf70-d922f9e07e09-178x178.jpg" width="100" height="100" alt="LA BOURSE DE PARIS" title="LA BOURSE DE PARIS" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/des-emplettes-a-realiser-a-la-bourse-de-paris-apres-la-baisse-du-marche-1500287">Des emplettes à réaliser à la Bourse de Paris après la baisse du marché</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">Xavier de Buhren chez Mirabaud AM détecte quelques pistes d’investissement sur le marché parisien après la baisse des...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_4_2" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-3 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img src="/sites/all/themes/lefigaro_bourse/images/no_image_100x100.jpg" width="100" height="100"></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/il-faut-regarder-les-marches-emergents-pays-par-pays-1341101">«Il faut regarder les marchés émergents pays par pays»</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDEO - Les pays de l’est de l’Union européenne notamment profitent de la sortie de crise de la zone euro et des...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_4_3" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-4 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHO12f6587c-05e1-11e4-908c-260d4a29e2c8-178x178.jpg" width="100" height="100" alt="Dow Jones Passes 17,000 For The First Time" title="Dow Jones Passes 17,000 For The First Time" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/la-macro-passe-les-fondamentaux-restent-1314892">«La macro passe, les fondamentaux restent !»</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">Tandis que beaucoup de sociétés apparaissent aujourd’hui pleinement valorisées en Bourse, le contexte actuel est plutôt...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_4_4" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-5 views_slideshow_cycle_hidden views-row-odd">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/100x100/public/medias/PHOd35a3d38-0297-11e4-946e-5ec0c35b1ef1-178x178.jpg" width="100" height="100" alt="World Markets Wall Street" title="World Markets Wall Street" /></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/avec-wall-street-au-plus-haut-l-heure-des-stock-pickers-est-venue-1311243">Avec Wall Street au plus haut, l’heure des stock-pickers est venue</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">INTERVIEW - Au niveau atteint par le marché américain il ne faut plus compter sur une simple revalorisation par les...</span>  </div></div>
+</div>
+<div id="views_slideshow_cycle_div_bloc_07_videos_dossiers_int-panel_pane_4_5" class="views-slideshow-cycle-main-frame-row views_slideshow_cycle_slide views_slideshow_slide views-row-6 views_slideshow_cycle_hidden views-row-even">
+  <div class="views-slideshow-cycle-main-frame-row-item views-row views-row-0 views-row-first views-row-odd">
+    
+  <div class="views-field views-field-field-article-ventre">        <div class="field-content"><img src="/sites/all/themes/lefigaro_bourse/images/no_image_100x100.jpg" width="100" height="100"></div>  </div>  
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="/fonds-trackers/actu-conseils/au-sein-des-marches-d-actions-nous-preferons-toujours-l-europe-1307358">«Au sein des marchés d’actions, nous préférons toujours l’Europe»</a></h3>  </div>  
+  <div class="views-field views-field-field-standfirst">        <span class="field-content">VIDEO - L’ensemble des ratios de valorisation des entreprises du vieux continent révèle encore une décote de 15 à 20 %...</span>  </div></div>
+</div>
+</div>
+</div>
+      <div class="views-slideshow-controls-bottom clearfix">
+      <div id="views_slideshow_slide_counter_bloc_07_videos_dossiers_int-panel_pane_4" class="views-slideshow-slide-counter views_slideshow_slide_counter">
+  <span class="num">1</span> / <span class="total">6</span>
+</div><div id="views_slideshow_controls_text_bloc_07_videos_dossiers_int-panel_pane_4" class="views-slideshow-controls-text views_slideshow_controls_text">
+  <div id="views_slideshow_controls_text_previous_bloc_07_videos_dossiers_int-panel_pane_4" class="views-slideshow-controls-text-previous views_slideshow_controls_text_previous">
+  <a href="#" class="slideshow-previous-arrow"></a>
+</div>
+  <div id="views_slideshow_controls_text_next_bloc_07_videos_dossiers_int-panel_pane_4" class="views-slideshow-controls-text-next views_slideshow_controls_text_next">
+  <a href="#" class="slideshow-next-arrow"></a>
+</div>
+</div>
+    </div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div><div class="more-link"><a href="/actualites" title="toute l&#039;actu">Voir plus</a></div></div></div>  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+    <div class="clearfix"></div>
+    </div>
+
+  
+    
+</div>
+</div></div>        <div class="row"><div class="one-col first"><div class="panel-pane bloc-normaux pane-bloc-430-promo-services" >
+  
+      <h2 class="pane-title">Newsletter</h2>
+  
+  
+  <div class="pane-content">
+  <form method="get" action="http://www.lefigaro.fr/ml/figaro/inscription.php">
+<label class="element-invisible">newsletter</label>
+<input type="text" placeholder="Votre email" name="email" id="rech-foot2" class="rech">
+<button value="OK" name="go-foot2" id="go-foot2" class="go" type="submit">OK</button>
+</form>    </div>
+
+  
+    
+</div>
+<div class="panel-separator"></div><div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-9"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18316/S/1418215212/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18316/S/1418215212/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane bloc-normaux pane-views pane-bloc-421-agenda-financier" >
+  
+      <h2 class="pane-title">Agenda Financier</h2>
+  
+  
+  <div class="pane-content">
+  <div class="view view-bloc-421-agenda-financier view-id-bloc_421_agenda_financier view-display-id-default view-dom-id-2ffc4ee5760c6799e5207f618fd74d4b">
+        
+  
+  
+      <div class="view-content">
+      <div class="lefigaro-list">    <ul>          <li class="views-row views-row-1 views-row-odd views-row-first">  
+          <a href="/indices-actions/cours-darty-plc-gb0033040113-par">DARTY PLC:</a>    
+          Résultats du 1er semestre -    
+          <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-12-10T01:00:00+01:00">10/12/2014</span>  </li>
+          <li class="views-row views-row-2 views-row-even">  
+          <a href="/indices-actions/cours-darty-plc-gb0033040113-par">DARTY PLC:</a>    
+          Résultats du 1er semestre -    
+          <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-12-10T01:00:00+01:00">10/12/2014</span>  </li>
+          <li class="views-row views-row-3 views-row-odd">  
+          <a href="/indices-actions/cours-stagecoach-group-sagkf-gb00b6ytls95-pnk">STAGECOACH GROUP PLC.:</a>    
+          Résultats du 1er semestre -    
+          <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-12-10T01:00:00+01:00">10/12/2014</span>  </li>
+          <li class="views-row views-row-4 views-row-even">  
+          <a href="/indices-actions/cours-carillion-cioif-gb0007365546-pnk">CARILLION PLC:</a>    
+          Chiffre d&#039;affaires 4ème trimestre -    
+          <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-12-10T01:00:00+01:00">10/12/2014</span>  </li>
+          <li class="views-row views-row-5 views-row-odd">  
+          <a href="/indices-actions/cours-bpost-bpost-be0974268972-bru">BPOST:</a>    
+          Acompte Dividendes -    
+          <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-12-10T01:00:00+01:00">10/12/2014</span>  </li>
+          <li class="views-row views-row-6 views-row-even views-row-last">  
+          <a href="/indices-actions/cours-darty-plc-gb0033040113-par">DARTY PLC:</a>    
+          Résultats du 1er semestre -    
+          <span class="date-display-single" property="dc:date" datatype="xsd:dateTime" content="2014-12-10T01:00:00+01:00">10/12/2014</span>  </li>
+      </ul></div>    </div>
+  
+  
+  
+  
+  
+  
+</div>    </div>
+
+  
+    
+</div>
+</div><div class="two-col last"><div class="panel-pane pane-bloc-456-palmares first" >
+  
+        <h2 class="pane-title">Palmarès Secteurs</h2>
+    
+  
+  <div class="pane-content">
+    <div id="lefigaro-tabs-5" class="lefigaro-tabs"><div class="item-list"><ul><li class="europe first last"><a href="#lefigaro-tabs-5-europe" title="Europe">Europe</a></li>
+</ul></div><div class="lefigaro-tabs-panel"id=lefigaro-tabs-5-europe><table class="bargraph"><tbody><tr class="bargraph-line"><td class="name">BÂTIMENTS ET MATÉRIAUX DE CONSTRUCTION</td><td class="percentage up">+1,12&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 26px;"></span></td></tr><tr class="bargraph-line"><td class="name">CHIMIE</td><td class="percentage up">+0,93&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 21px;"></span></td></tr><tr class="bargraph-line"><td class="name">TECHNOLOGIE</td><td class="percentage up">+0,92&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 20px;"></span></td></tr><tr class="bargraph-line"><td class="name">SERVICES FINANCIERS</td><td class="percentage up">+0,78&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 18px;"></span></td></tr><tr class="bargraph-line"><td class="name">AUTOMOBILE ET EQUIPEMENTIERS</td><td class="percentage up">+0,70&nbsp;%</td><td class="bar-up"><span class="bar-up" style="width: 16px;"></span></td></tr><tr class="bargraph-line"><td class="name">TÉLÉCOMMUNICATIONS</td><td class="bar-down"><span class="bar-down" style="width: 18px;"></span></td><td class="percentage down">-0,78&nbsp;%</td></tr><tr class="bargraph-line"><td class="name">BIENS DE CONSOMMATION</td><td class="bar-down"><span class="bar-down" style="width: 45px;"></span></td><td class="percentage down">-1,98&nbsp;%</td></tr><tr class="bargraph-line"><td class="name">MATÉRIAUX DE BASES</td><td class="bar-down"><span class="bar-down" style="width: 53px;"></span></td><td class="percentage down">-2,30&nbsp;%</td></tr><tr class="bargraph-line"><td class="name">SERVICES AUX CONSOMMATEURS</td><td class="bar-down"><span class="bar-down" style="width: 55px;"></span></td><td class="percentage down">-2,37&nbsp;%</td></tr><tr class="bargraph-line"><td class="name">SOCIÉTÉS FINANCIÈRES</td><td class="bar-down"><span class="bar-down" style="width: 70px;"></span></td><td class="percentage down">-3,01&nbsp;%</td></tr></tbody></table><div class="more-link"><a href="/indices-actions/indices-stoxx">Voir plus</a></div></div></div>  </div>
+
+  
+  </div>
+<div class="panel-separator"></div><div class="panel-pane pane-bloc-457-outils-prospectifs last" >
+  
+        <h2 class="pane-title">Les plus citées sur le web</h2>
+    
+  
+  <div class="pane-content">
+    <img class="combourse-457-V2" typeof="foaf:Image" src="http://bourse.lefigaro.fr/sites/default/files/styles/310x427/public/combourse/Combourse_Palmares_Societe_Homepage_V2.png" width="310" height="427" alt="Analyse de plus de 50 sites media sur les dernieres 72h." /><div id="combourse-attrib">EN PARTENARIAT AVEC <a target="_blank" title="Analyse de plus de 50 sites media sur les dernieres 72h." href="http://www.combourse.com">COMBOURSE.COM</a></div>  </div>
+
+  
+  </div>
+</div></div>          </section>
+
+</div>
+  </div>
+</div>
+  </div>
+      </div></div> <!-- /.section, /#content -->
+
+    </div></div> <!-- /#main, /#main-wrapper -->
+
+  </div></div> <!-- /#page, /#page-wrapper -->
+    <div class="region region-page-bottom">
+    
+<!-- Tracking code -->
+<script src='http://www.google-analytics.com/urchin.js' type='text/javascript'></script>
+<script type='text/javascript'>
+_uacct = "UA-716671-12";
+urchinTracker();
+</script><script type='text/javascript'>
+if (!window.xtcustom) xtcustom = {};
+xtsite='411548';
+xtcustom.bourse = 'bourse';
+xtcustom.isChargeable = '0';
+xtcustom.isClosed = '0';
+</script>
+<script type='text/javascript' src='http://www.lefigaro.fr/scripts/figarotrack.js?v=2014121013'></script>
+<noscript><img width='1' height='1' alt='' src='http://logc111.xiti.com/hit.xiti?s=411548&stc=%7B%22bourse%22%3A%22bourse%22%2C%22isChargeable%22%3A%220%22%2C%22isClosed%22%3A%220%22%7D'> </noscript>  </div>
+  <footer><div class="panel-display one-column-mini" id="mini-panel-blocs_545_458_544">
+<div class="panel-pane pane-panels-mini pane-bloc-544 three-col" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="panel-display pub-icone" id="mini-panel-bloc_544">
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-10"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18490/S/1418215213/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18490/S/1418215213/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-11"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18491/S/1418215213/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18491/S/1418215213/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-12"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18492/S/1418215213/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18492/S/1418215213/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-13"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18493/S/1418215213/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18493/S/1418215213/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-14"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18494/S/1418215213/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18494/S/1418215213/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+<div class="panel-pane pane-bloc-ad" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-15"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18486/S/1418215213/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18486/S/1418215213/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+</div>
+  </div>
+
+  
+  </div>
+<nav><ul class="links"><li class="0 first"><a href="http://www.lefigaro.fr/indexes/actualites-lefigaro-fr" class="footer-link">Index</a></li>
+<li class="1"><a href="http://www.lefigaro.fr/monfigaro/cgv-cgu.html" class="footer-link">CGU-CGV</a></li>
+<li class="2"><a href="http://www.lefigaro.fr/divers/2007/10/29/06-20071029ARTWWW00234-mentions-legales-et-droits.php" class="footer-link">Mentions légales</a></li>
+<li class="3"><a href="/eidos/rss/all/all" class="footer-link">RSS</a></li>
+<li class="4"><a href="http://www.lefigaro.fr/contact/contact.php" class="footer-link">Contact</a></li>
+<li class="5 last"><span class="mention">Cotations fournies par Interactive Data</span></li>
+</ul></nav><div class="panel-pane pane-bloc-ad mega-basse" >
+  
+      
+  
+  <div class="pane-content">
+    <div class="ad-placeholder" id="ad-block-16"><noscript><a href="http://www.smartadserver.com/call/pubjumpi/42296/287723/18311/S/1418215213/?" target="_blank"><img src="http://www.smartadserver.com/call/pubjumpi/287723/18311/S/1418215213/?" border="0" alt="" /></a></noscript></div>  </div>
+
+  
+  </div>
+</div>
+</footer><div class="ad-realbanner" data-id="ad-block-2"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18310';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-4"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18485';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-5"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18487';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-6"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18488';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-7"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18489';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-8"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18317';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-9"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18316';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-10"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18490';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-11"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18491';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-12"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18492';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-13"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18493';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-14"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18494';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-15"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18486';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div>
+<div class="ad-realbanner" data-id="ad-block-16"><script language="javascript"><!--
+sas_pageid='42296/287723';sas_formatid='18311';sas_target="key=key1;key=key2;key=key3;key=key4;key=key5;key=key6;key=key7;key=key8;key=key9;key=key10;";SmartAdServer(sas_pageid,sas_formatid,sas_target);
+//--></script></div><script>
+(function ($) {
+Drupal.lefigaro_ads_fix_size = function() {
+  $('.ad-realbanner').each(function() {
+    var banner = $(this);
+    var placeholder = $('#' + banner.attr('data-id'));
+    if (banner.width() == 0 || banner.height() == 0) {
+      return;
+    }
+    banner.css('position', 'absolute').css(placeholder.offset());
+    placeholder.css({'margin': 'auto', 'width': banner.width(), 'height': banner.height()});
+  });
+}
+Drupal.lefigaro_ads_fix_size();
+$(window).resize(function() {
+  Drupal.lefigaro_ads_fix_size();
+});
+setInterval('Drupal.lefigaro_ads_fix_size();', 1000);
+})(jQuery);
+</script>  </body>
+<!-- Page generated: 13:40:13 12/10/2014 --></html>

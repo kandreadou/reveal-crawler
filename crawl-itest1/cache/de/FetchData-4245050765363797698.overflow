@@ -1,0 +1,2329 @@
+ "<a class='xp_link_hp' href='" + detailLink + "'>" + customName + "</a>"
+						+ datiStr
+						+ "</h3>"
+						+ "<p class='" + classe + "'>" + segno + variazione + "</p>"
+						;
+
+						return retVal;
+
+}
+
+
+			$.ajax({
+				url: noCache('/feed/finanza/FinanzaMercatiUser/dati_JSON_dotcom.json'),
+				success: function(data) {
+							var detailLink = "http://finanza-mercati.ilsole24ore.com/quotazioni.php?QUOTE=EUR83.IND";
+				
+					$('#itemDataBox-EurUsd').html(genHtmlForItem(findItemByQuote('EURUS.FX', data), 'http://finanza-mercati.ilsole24ore.com/quotazioni.php?QUOTE=EURUS.FX', 'Euro/USD'));
+					$('#itemDataBox-Euribor3m').html(genHtmlForItem(findItemByQuote('!EUR83.IND', data), 'http://finanza-mercati.ilsole24ore.com/reddito-fisso-e-tassi/tassi/euribor/euribor.php', 'Euribor 3M'));
+					$('#itemDataBox-Brent').html(genHtmlForItem(findItemByName('Brent', data), 'http://finanza-mercati.ilsole24ore.com/quotazione-petrolio-brent-wti/prezzo.php', 'Brent'));
+					$('#itemDataBox-Gold').html(genHtmlForItem(findItemByQuote('GLD', data), 'http://finanza-mercati.ilsole24ore.com/quotazioni/valore-oro-oggi/main.php', 'Oro'));
+				},
+				dataType:"json",
+				error: function (xhr, status, error) {
+					console.log ( status + " " + error );
+				}
+			});
+					
+			
+			/**
+			 * effettua la ricerca con o senza il "!"
+			 */
+			function findItemByQuote(quote, jsonData) {
+				for (var i=0;i < jsonData.ITEM.length; i++) {
+					var curItem = jsonData.ITEM[i];
+					//NAME contiene il quote
+					if (curItem.NAME == quote || curItem.NAME == "!"+quote) {
+						return curItem;
+					}
+				}
+				return null;
+			}
+
+			/**
+			 * effettua la ricerca con il criterio starts-with
+			 */
+			function findItemByName(name, jsonData) {
+				for (var i=0;i < jsonData.ITEM.length; i++) {
+					var curItem = jsonData.ITEM[i];
+					for (var j=0;j < curItem.DATA.length; j++) {
+						var curField = curItem.DATA[j];
+						if (curField.FIELDID == "10011") {
+							//starts-with
+							if (curField.VALUE.indexOf(name) == 0) {
+								return curItem;
+							}
+						}
+					}
+				}
+				return null;
+			}
+				</script>					
+			<div class="indici"><div class="euro-usd grid-2" onclick="javascript:location.href = 'http://finanza-mercati.ilsole24ore.com/quotazioni.php?QUOTE=EURUS.FX'" id="itemDataBox-EurUsd"></div><div class="euro-usd grid-2" onclick="javascript:location.href = 'http://finanza-mercati.ilsole24ore.com/reddito-fisso-e-tassi/tassi/euribor/euribor.php'" id="itemDataBox-Euribor3m"></div><div class="euro-usd grid-2" onclick="javascript:location.href = 'http://finanza-mercati.ilsole24ore.com/quotazione-petrolio-brent-wti/prezzo.php'" id="itemDataBox-Brent"></div><div class="euro-usd grid-2 last" onclick="javascript:location.href = 'http://finanza-mercati.ilsole24ore.com/quotazioni/valore-oro-oggi/main.php'" id="itemDataBox-Gold"></div></div>
+
+		
+			
+
+			<div class="box box-economia spread cf"><h3><a href="http://finanza-mercati.ilsole24ore.com/spread.php?QUOTE=spread-btp">Spread</a></h3><table class="tit_stato" border="0" cellspacing="0" cellpadding="0"><tr><td class="notrat"><div class="st_subtit">Dati vs BUND </div><div class="tit_name">&nbsp;</div><div class="tit_rend">Rend.</div><div class="tit_spread">Spread</div><div class="tit_var"><p>Var %</p></div></td></tr><tr><td><a class="st_link" href="http://finanza-mercati.ilsole24ore.com/spread.php?QUOTE=spread-btp"><div class="cont_name"><p class="ita">BTP 10A&nbsp;<span class="orario">10/12 ore 13:39</span></p></div><div class="cont_rend"><p>2.09</p></div><div class="cont_spread"><p>140.11</p></div><div class="cont_var"><p class="rossa">+6.56</p></div></a></td></tr><tr><td><a class="st_link" href="http://finanza-mercati.ilsole24ore.com/spread.php?QUOTE=spread-bonos"><div class="cont_name"><p class="spa">BONOS 10A&nbsp;<span class="orario">10/12 ore 13:39</span></p></div><div class="cont_rend"><p>1.89</p></div><div class="cont_spread"><p>119.95</p></div><div class="cont_var"><p class="rossa">+7.43</p></div></a></td></tr><tr><td><a class="st_link" href="http://finanza-mercati.ilsole24ore.com/spread.php?QUOTE=spread-oat"><div class="cont_name"><p class="fra">OAT 10A&nbsp;<span class="orario">10/12 ore 13:39</span></p></div><div class="cont_rend"><p>0.98</p></div><div class="cont_spread"><p>28.77</p></div><div class="cont_var"><p class="rossa">+5.73</p></div></a></td></tr><tr>
+	<td class="notrat">
+		<table style="margin:0; border:0;">
+		 <tr style="border: 0;">
+			<td style="border: 0;">
+					<p style="text-align: left;padding-left:0px;">Dati forniti da MTS</p>
+			</td>
+			<!-- empty -->
+		</tr>
+		</table>
+	</td>
+</tr>
+</table></div>
+		
+
+		<div class="box infodatablog">
+	<h3><a href="http://www.infodata.ilsole24ore.com/">Info Data Blog</a></h3>
+	<ul class="item_list">
+				<li class="cf ">
+			<a href="http://www.infodata.ilsole24ore.com/2014/12/10/landamento-delle-principali-piazze-finanziarie-il-crollo-di-atene-e-shanghai/">
+				<img width="71" height="71" src="http://blog02.ilsole24ore.com/opendatablog/wp-content/uploads/sites/82/2014/12/borsa-atene.png">
+			</a>
+			<div class="right">
+				<strong>
+					<a href="javascript:void(0)">Infografica</a>
+				</strong>
+				<h5>
+					<a href="http://www.infodata.ilsole24ore.com/2014/12/10/landamento-delle-principali-piazze-finanziarie-il-crollo-di-atene-e-shanghai/">L&#8217;andamento delle principali piazze finanziarie: il crollo di Atene e Shanghai</a>
+				</h5>
+			</div>
+		</li>
+		<li class="cf ">
+			<a href="http://www.infodata.ilsole24ore.com/2014/12/10/big-data-in-azienda-cresce-il-mercato-in-italia-ma-solo-il-13-delle-imprese-ha-uno-scienziato-dei-dati/">
+				<img width="71" height="71" src="http://blog02.ilsole24ore.com/opendatablog/wp-content/uploads/sites/82/2014/12/data.png">
+			</a>
+			<div class="right">
+				<strong>
+					<a href="javascript:void(0)">Tecnologia</a>
+				</strong>
+				<h5>
+					<a href="http://www.infodata.ilsole24ore.com/2014/12/10/big-data-in-azienda-cresce-il-mercato-in-italia-ma-solo-il-13-delle-imprese-ha-uno-scienziato-dei-dati/">Big data in azienda? Cresce il mercato in Italia ma solo il 13% delle imprese ha uno scienziato dei dati</a>
+				</h5>
+			</div>
+		</li>
+
+	</ul>
+</div>
+
+
+		
+			
+
+			<div class="box ultimeradio cf"><h3><a title="" href="http://finanza-mercati.ilsole24ore.com/azioni/analisi-e-news/tutte-le-news/news-radiocor/main.php">
+						Ultime Notizie Radiocor
+						</a></h3><ul><li><strong class="ico_time">13:03</strong>&nbsp;<a href="http://finanza-mercati.ilsole24ore.com/azioni/analisi-e-news/tutte-le-news/news-radiocor/news-radiocor.php?PNAC=nRC_10.12.2014_13.03_33630910" name="&amp;lid=nRC_10.12.2014_13.03_33630910&amp;lpos=ultime_radiocor" title="">*** Eni: Descalzi, 90-100 mln impatto su utile da calo un dollaro petrolio</a></li><li><strong class="ico_time">12:58</strong>&nbsp;<a href="http://finanza-mercati.ilsole24ore.com/azioni/analisi-e-news/tutte-le-news/news-radiocor/news-radiocor.php?PNAC=nRC_10.12.2014_12.58_33029908" name="&amp;lid=nRC_10.12.2014_12.58_33029908&amp;lpos=ultime_radiocor" title="">Eni: Descalzi, anche con questi prezzi petrolio dividendo prioritario (RCO)</a></li><li><strong class="ico_time">12:17</strong>&nbsp;<a href="http://finanza-mercati.ilsole24ore.com/azioni/analisi-e-news/tutte-le-news/news-radiocor/news-radiocor.php?PNAC=nRC_10.12.2014_12.17_28827892" name="&amp;lid=nRC_10.12.2014_12.17_28827892&amp;lpos=ultime_radiocor" title="">Borse Asia: forte rimbalzo a Shanghai (+2,93%) e Shenzhen (+3,5%)</a></li><li><strong class="ico_time">12:17</strong>&nbsp;<a href="http://finanza-mercati.ilsole24ore.com/azioni/analisi-e-news/tutte-le-news/news-radiocor/news-radiocor.php?PNAC=nRC_10.12.2014_12.17_288" name="&amp;lid=nRC_10.12.2014_12.17_288&amp;lpos=ultime_radiocor" title="">Borse Asia: forte rimbalzo a Shanghai (+2,93%) e Shenzhen (+3,5%)</a></li><li><strong class="ico_time">11:43</strong>&nbsp;<a href="http://finanza-mercati.ilsole24ore.com/azioni/analisi-e-news/tutte-le-news/news-radiocor/news-radiocor.php?PNAC=nRC_10.12.2014_11.43_25821879" name="&amp;lid=nRC_10.12.2014_11.43_25821879&amp;lpos=ultime_radiocor" title="">Gtech: risolto contratto tra controllata Northstar e Illinois per lotteria</a></li></ul></div>
+		
+	
+
+	<div class="box cf converti">
+	<h3><a href="http://finanza-mercati.ilsole24ore.com/strumenti/converti-valuta/converti-valuta.php">Converti valute</a></h3>
+</div>
+<!-- box prezzi benzina -->
+<div class="box cf benzina">
+	<h3>
+		<a href="http://www.ilsole24ore.com/art/impresa-e-territori/confronta-prezzi.shtml">Benzina e Diesel, trova il prezzo </a>
+		<span>in collaborazione con <a href="http://www.youpetrol.it/" rel="nofollow">You Petrol</a></span>
+	</h3>
+</div>
+
+
+
+	
+
+
+<!-- .box .talk -->
+<div class="box talk24 cf">
+    <h3>Talk24</h3>
+
+    <div class="tabs">
+        <ul class="tabs_voci cf">
+            
+            <li><a href="#talk-tabs-1" class="active">TWEET</a></li>
+            <li><a href="#talk-tabs-2">COMMENTI</a></li>
+            <li><a href="#talk-tabs-3">I PIU' CONDIVISI</a></li>
+        </ul>
+        <div class="contents">
+            
+
+            <!-- talk-tabs-1 -->
+            <div id="talk-tabs-1" class="tab">
+				
+		<div class="twtr-widget js_detect-twitterBoxToUpdate">
+			<div class="twtr-tweets">
+			
+				<div class="twtr-tweet">
+					<div class="twtr-avatar">
+						<a target="_blank" href="https://twitter.com/intent/user?screen_name=Radio24_news" rel="nofollow"><img alt="Radio24_news profilo" src="http://pbs.twimg.com/profile_images/378800000561319108/e37a3d0e1e5fb7735114f2f55ae99a2c_normal.jpeg"></a>
+					</div>
+					<div class="twtr-tweet-text">
+						<p>	<a target="_blank" href="https://twitter.com/intent/user?screen_name=Radio24_news" class="twtr-user" rel="nofollow">Radio24_news</a> 
+								A <a href="http://twitter.com/Mix24_r24" target="_blank" rel="nofollow">@Mix24_r24</a> ospite <a href="http://twitter.com/Tarak_Ben_Ammar" target="_blank" rel="nofollow">@Tarak_Ben_Ammar</a>: "Condivido il messaggio del Papa a <a href="http://twitter.com/search?q=%23Erdogan&src=hash" target="_blank" rel="nofollow">#Erdogan</a>, non si va in quella direzione" <a href="http://t.co/KxIgmKlDtS" target="_blank" rel="nofollow">http://t.co/KxIgmKlDtS</a>
+								
+								<em><a target="_blank" class="twtr-timestamp" time="Wed Dec 10 12:25:14 +0000 2014" href="https://twitter.com/Radio24_news/status/542656282126065664" rel="nofollow">14 minuti fa</a> . <a target="_blank" class="twtr-reply" href="https://twitter.com/intent/tweet?in_reply_to=542656282126065664" rel="nofollow">risposta</a> . <a target="_blank" class="twtr-rt" href="https://twitter.com/intent/retweet?tweet_id=542656282126065664" rel="nofollow">retweet</a> . <a target="_blank" class="twtr-fav" href="https://twitter.com/intent/favorite?tweet_id=542656282126065664" rel="nofollow">preferiti</a></em>
+						</p>
+					</div>
+				</div>
+				
+				<div class="twtr-tweet">
+					<div class="twtr-avatar">
+						<a target="_blank" href="https://twitter.com/intent/user?screen_name=Radio24_news" rel="nofollow"><img alt="Radio24_news profilo" src="http://pbs.twimg.com/profile_images/542273301725192192/S_-ljRlE_normal.png"></a>
+					</div>
+					<div class="twtr-tweet-text">
+						<p>	<a target="_blank" href="https://twitter.com/intent/user?screen_name=Radio24_news" class="twtr-user" rel="nofollow">Radio24_news</a> 
+								RT <a href="http://twitter.com/EuranetplusR24" target="_blank" rel="nofollow">@EuranetplusR24</a>: Europa 24 Mattino con <a href="http://twitter.com/EuranetPlus" target="_blank" rel="nofollow">@EuranetPlus</a> - <a href="http://twitter.com/Lagarde" target="_blank" rel="nofollow">@Lagarde</a>: bene la <a href="http://twitter.com/search?q=%23Bce&src=hash" target="_blank" rel="nofollow">#Bce</a>, ma l'Europa dica sì alla flessibilità <a href="http://t.co/sC7atFcr" target="_blank" rel="nofollow">http://t.co/sC7atFcr</a>&#8230;
+								<span class="retweeted-cnt"><i class="badge-retweeted"></i><span>Ritwittato da <a href="http://twitter.com/Radio24_news" target="_blank" rel="nofollow"><b>Radio24_news</b></a></span></span>
+								<em><a target="_blank" class="twtr-timestamp" time="Wed Dec 10 12:09:08 +0000 2014" href="https://twitter.com/Radio24_news/status/542652231611584512" rel="nofollow">30 minuti fa</a> . <a target="_blank" class="twtr-reply" href="https://twitter.com/intent/tweet?in_reply_to=542652231611584512" rel="nofollow">risposta</a> . <a target="_blank" class="twtr-rt" href="https://twitter.com/intent/retweet?tweet_id=542652231611584512" rel="nofollow">retweet</a> . <a target="_blank" class="twtr-fav" href="https://twitter.com/intent/favorite?tweet_id=542652231611584512" rel="nofollow">preferiti</a></em>
+						</p>
+					</div>
+				</div>
+				
+				<div class="twtr-tweet">
+					<div class="twtr-avatar">
+						<a target="_blank" href="https://twitter.com/intent/user?screen_name=24ImpresaTerr" rel="nofollow"><img alt="24ImpresaTerr profilo" src="http://pbs.twimg.com/profile_images/3382355721/2d2dba6407e57c42791e00d489fa454f_normal.jpeg"></a>
+					</div>
+					<div class="twtr-tweet-text">
+						<p>	<a target="_blank" href="https://twitter.com/intent/user?screen_name=24ImpresaTerr" class="twtr-user" rel="nofollow">24ImpresaTerr</a> 
+								La Liuc coordina gli atenei europei sul &#8220;fai-da-te&#8221; digitale <a href="http://t.co/m8gSXmaBNS" target="_blank" rel="nofollow">http://t.co/m8gSXmaBNS</a>
+								
+								<em><a target="_blank" class="twtr-timestamp" time="Wed Dec 10 12:07:43 +0000 2014" href="https://twitter.com/24ImpresaTerr/status/542651875263537152" rel="nofollow">32 minuti fa</a> . <a target="_blank" class="twtr-reply" href="https://twitter.com/intent/tweet?in_reply_to=542651875263537152" rel="nofollow">risposta</a> . <a target="_blank" class="twtr-rt" href="https://twitter.com/intent/retweet?tweet_id=542651875263537152" rel="nofollow">retweet</a> . <a target="_blank" class="twtr-fav" href="https://twitter.com/intent/favorite?tweet_id=542651875263537152" rel="nofollow">preferiti</a></em>
+						</p>
+					</div>
+				</div>
+				
+			</div>
+		<div class="twtr-ft">
+			<a target="_blank" href="https://twitter.com" rel="nofollow"><img alt="" src="http://widgets.twimg.com/i/widget-bird.png"></a> <span><a target="_blank" class="twtr-join-conv" href="https://twitter.com/24backstage/il-sole-24ore-talk24" rel="nofollow">Partecipa alla conversazione</a></span>
+		</div>
+	</div>
+	
+				<!--include virtual="/includes2013/twitter_reader/diretta_2013-11-21.shtml" -->
+            </div>
+            <!-- /talk-tabs-1 -->
+            <!-- talk-tabs-2 -->
+            <div id="talk-tabs-2" class="tab">
+                
+		<a
+			href="http://www.ilsole24ore.com/art/notizie/2014-12-10/juncker-senza-riforme-conseguenze-spiacevoli-italia-e-francia-114434.shtml#comments#comments">
+			<strong>lucianoant</strong>
+			<p>ma pensiamo veramente che l'Europa serva...</p>
+			<p class="fonte">in "Juncker: senza riforme conseguenze spiac..."</p>
+		</a>
+
+		<a
+			href="http://www.ilsole24ore.com/art/notizie/2014-12-10/juncker-senza-riforme-conseguenze-spiacevoli-italia-e-francia-114434.shtml#comments#comments">
+			<strong>Friz73</strong>
+			<p>evidentemente 'L'ANNUNCITE' galoppante d...</p>
+			<p class="fonte">in "Juncker: senza riforme conseguenze spiac..."</p>
+		</a>
+
+		<a
+			href="http://www.ilsole24ore.com/art/finanza-e-mercati/2014-12-09/grecia-ecco-perche-il-piccolo-tsipras-fa-tanto-paura-grande-europa-e-borse-205143.shtml#comments#comments">
+			<strong>pandoli7</strong>
+			<p>Quando anche noi avremo un Tsipras?
+In ...</p>
+			<p class="fonte">in "Grecia, ecco perché???il piccolo Tsipras..."</p>
+		</a>
+
+            </div>
+            <!-- /talk-tab-2 -->
+
+            <!-- talk-tabs-3 -->
+            <div id="talk-tabs-3" class="tab">
+            	<ul>
+                	<li><a href="http://www.ilsole24ore.com/art/notizie/2014-12-03/mafia-romana-business-centri-accoglienza--121834.shtml?uuid=ABNP7OLC">&laquo;Mafia romana&raquo;, il business&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/notizie/2014-12-05/doccia-fredda-standard-poor-s-sull-italia-tagliato-rating-bbb-un-gradino-livello-spazzatura-192035.shtml?uuid=ABIKUqMC">&laquo;Aumento del debito e crescita&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/notizie/2014-12-05/pubblica-amministrazione-addio-incarichi-e-consulenze-i-pensionati-131821.shtml?uuid=ABYrEdMC">Pubblica amministrazione, addio a&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/norme-e-tributi/2014-12-04/imu-terreni-arriva-rinvio-080639.shtml?uuid=ABcw8vLC">Imu dei terreni, arriva il rinvio - Il&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/notizie/2014-12-05/ecco-l-italia-2014-incerta-ed-egoista-otto-milioni-inattivi-capitale-dissipato-famiglie-a-consumo-zero-085806.shtml?uuid=ABk9ZXMC">Ecco l%u2019Italia 2014, incerta ed&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/notizie/2014-12-02/arresti-e-perquisizioni-uffici-enti-locali-roma-associazione-delinquere-stampo-mafioso-105720.shtml?uuid=ABWgwmKC">Mafia Capitale, 37 arresti a Roma. Tra&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/notizie/2014-12-04/renzi-commissaria-pd-roma-nell-inchiesta-manca-solo-jack-squartatore-072030.shtml?uuid=ABLlevLC">Renzi commissaria Pd di Roma:&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/norme-e-tributi/2014-11-30/conti-correnti-e-depositi-2015-cambiano-controlli-chi-evade-e-sull-isee-181440.shtml?uuid=AB74X3JC">Conti correnti e depositi, dal 2015&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/notizie/2014-12-07/merkel-insufficienti-riforme-italia-e-francia-100640.shtml?uuid=AB4EMPNC">Merkel: in Italia riforme insufficienti.&nbsp;...</a></li><li><a href="http://www.ilsole24ore.com/art/tecnologie/2014-12-03/accordo-luxottica-intel-2015-saranno-vendita-primi-occhiali-20-131640.shtml?uuid=ABJYOQLC">Intesa Luxottica-Intel: nel 2015 saranno&nbsp;...</a></li>
+                </ul>
+            </div>
+            <!-- /talk-tab-3 -->
+
+        </div>
+    </div>
+</div>
+<!-- /.talk -->
+
+
+<div class="box direttore">
+		<img src="http://i.res.24o.it/img2013/direttore.png?v1.000" />
+		<h3><a href="http://www.ilsole24ore.com/commenti-e-idee/pagina-del-direttore.shtml">IL DIRETTORE</a></h3>
+		<ul>
+			<li class="cf">
+					<p>
+						<a href="/art/cultura/2014-12-07/piacenza-incantesimo-spezzato-e-segreto-bassa-151641.shtml?uuid=AB9rdRNC">MEMORANDUM</a>
+					</p>
+					<h5>
+						<a href="/art/cultura/2014-12-07/piacenza-incantesimo-spezzato-e-segreto-bassa-151641.shtml?uuid=AB9rdRNC">Piacenza, l'incantesimo spezzato e il segreto della Bassa</a>
+					</h5>
+				</li>
+				<li class="cf">
+					<p>
+						<a href="/art/commenti-e-idee/2014-12-01/un-segreto-custodire-072010.shtml?uuid=AB6zCAKC">GLI EDITORIALI</a>
+					</p>
+					<h5>
+						<a href="/art/commenti-e-idee/2014-12-01/un-segreto-custodire-072010.shtml?uuid=AB6zCAKC">Un segreto da custodire</a>
+					</h5>
+				</li>
+				<li class="cf">
+					<p>
+						<a href="/art/cultura/2014-11-30/la-commedia-italiana-e-numeri-vanzina-non-usciti--133205.shtml?uuid=ABs4L0JC">MEMORANDUM</a>
+					</p>
+					<h5>
+						<a href="/art/cultura/2014-11-30/la-commedia-italiana-e-numeri-vanzina-non-usciti--133205.shtml?uuid=ABs4L0JC">La commedia all'italiana e i numeri di Vanzina non usciti</a>
+					</h5>
+				</li>
+				</ul>
+	</div>
+
+
+<div class="box firme" data-vr-zone="box-le-nostre-firme">
+				<h3><a href="http://www.ilsole24ore.com/commenti-e-idee.shtml">Le nostre firme</a></h3>
+				<ul>
+					<li class="cf">
+<a href="http://argomenti.ilsole24ore.com/adriana-cerretelli.html"><img width="45" height="45" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/ImmaginiFisse/Firme/adriana-cerretelli.jpg"></a>
+<div class="right">
+<p>
+<a href="http://argomenti.ilsole24ore.com/adriana-cerretelli.html">Adriana Cerretelli</a>
+</p>
+<h5>
+<a href="/art/commenti-e-idee/2014-12-10/perche-cresce-fronte-anti-tedesco-073327.shtml?uuid=AB0uIbOC" name="&amp;lid=AB0uIbOC&amp;lpos=firme_1">Perché cresce il fronte anti-tedesco</a>
+</h5>
+</div>
+</li>
+<li class="cf">
+<p>
+<a href="http://argomenti.ilsole24ore.com/morya-longo.html">Morya Longo</a>
+</p>
+<h5>
+<a href="/art/commenti-e-idee/2014-12-10/anche-prudenza-ha-sue-ragioni-073733.shtml?uuid=ABT4IbOC" name="&amp;lid=ABT4IbOC&amp;lpos=firme_2">Anche la prudenza ha le sue ragioni</a>
+</h5>
+</li>
+<li class="cf">
+<a href="http://argomenti.ilsole24ore.com/isabella-bufacchi.html"><img width="45" height="45" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/ImmaginiFisse/Firme/isabella-bufacchi.jpg"></a>
+<div class="right">
+<p>
+<a href="http://argomenti.ilsole24ore.com/isabella-bufacchi.html">Isabella Bufacchi</a>
+</p>
+<h5>
+<a href="/art/commenti-e-idee/2014-12-10/il-danno-affidabilita-che-spaventa-investitori-074222.shtml?uuid=ABRASbOC" name="&amp;lid=ABRASbOC&amp;lpos=firme_3">Il danno all'affidabilità che spaventa gli investitori</a>
+</h5>
+</div>
+</li>
+</ul>
+			</div>
+		
+
+
+						</div>
+						<!-- /.rightCol -->
+					
+					</div>
+					<!-- /.main -->
+				
+					<!-- === .sidebar === -->
+					<div class="sidebar right cf">
+						
+	<!-- BANNER 300x250 -->
+<div class="sidebar-ad">
+    <script type="text/javascript">OAS_RICH('VideoBox');</script>
+</div>
+<script type="text/javascript">
+    /* BAD HACK to catch a tall videobox returned from ADV 
+    var height = $('.sidebar-ad object').attr('height');
+    if (height === undefined) {
+        //may returned an image if flash not supported
+        height = $('.sidebar-ad img').attr('height');
+    }
+    if (height === '600' || height === 600) $('body').addClass('tallVideoBoxAdv');*/
+		if(parseInt($(".sidebar-ad").height()) >= 600) $("body").addClass("tallVideoBoxAdv");
+</script>
+
+
+
+<div style="margin-bottom:10px"><a href="http://www.ilsole24ore.com/temi-ed-eventi/qdv2014/" ><img src="http://i.res.24o.it/img2013/manchette/qv_300x100.png?v1.002" /></a></div>
+
+<!--[if lt IE 9]>
+<style>
+.mediacenter .tabs .tab_content ul li img.stream24_ico{margin-right:120px !important;}
+.mediacenter .tabs .tab_content#tab_rubriche ul li img.stream24_ico {margin-left: -48px !important;margin-top: 86px !important;}
+</style>
+<![endif]-->
+<!--[if IE 9]>
+<style>
+.mediacenter .tabs .tab_content ul li img.stream24_ico{margin-left:120px !important;}
+</style>
+<![endif]-->
+<div class="mediacenter">
+	<h3><a href="http://stream24.ilsole24ore.com/">Stream<span>24</span></a></h3>
+	<div class="tabs">
+		<ul class="menu">
+			<li class="li_tutto"><a href="#tab_tutto" title="tutto" class="active"><span></span>TUTTO</a></li>
+			<li class="li_video"><a href="#tab_video" title="video"><span></span>VIDEO</a></li>
+			<li class="li_foto"><a href="#tab_foto" title="foto"><span></span>FOTO</a></li>
+			<li class="li_grafica"><a href="#tab_grafica" title="grafici"><span></span>24ORE.TV</a></li>
+		</ul>
+		<div class="contents"  style="overflow: hidden;width:300px">
+			<div class="tab_content" id="tab_tutto">
+		<div class="box_dirette_hp"></div>
+			
+		<div class="video_top">
+<img src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/MediaCenter/Video/2014/12/lo-conte-kzOI--324x266@IlSole24Ore-Web.jpg" width="300"><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-lo-conte-10-dic/Soldi.php" class="play" name="&amp;lid=ABRkOJOC&amp;lpos=mediacenter"></a>
+<div class="dida">
+<a class="soldi-vostri-title" href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-lo-conte-10-dic/Soldi.php"><img src="/img2013/soldiVostri_spalla.png"></a>
+<h5>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-lo-conte-10-dic/Soldi.php" name="&amp;lid=ABRkOJOC&amp;lpos=mediacenter">Come «e quando è opportuno» cambiare banca</a> </h5>
+<p class="durata durata-soldiVostri">
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-lo-conte-10-dic/Soldi.php">Video: 07:13</a>
+</p>
+</div>
+</div>
+<div id="strip" style="float:left;width:600px">
+			<div id="strip_page" style="width:300px;float:left;">
+			<ul class="cf"><li>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Norme e Tributi/Diritto/2014/diretta-giornata-europea-avvocati/giornata-europea-avvocati-diretta.php" name="&amp;lid=ABbdG9NC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/MediaCenter/Video/Norme%20e%20Tributi/Diritto/2014/diretta-giornata-europea-avvocati/giornata-europea-avvocati-153-110.jpg"></a>
+<div>
+<h5>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Norme e Tributi/Diritto/2014/diretta-giornata-europea-avvocati/giornata-europea-avvocati-diretta.php" name="&amp;lid=ABbdG9NC&amp;lpos=mediacenter">Diretta /&thinsp;Giornata europea degli avvocati</a> </h5>
+</div>
+</li>
+<li>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/renzi-9-dic/renzi-9-dic.php" name="&amp;lid=AB9QfJOC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/MediaCenter/Video/2014/12/Senza-titolo-2-U10175679851woB--153x110@IlSole24Ore-Web.jpg"></a>
+<div>
+<h5>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/renzi-9-dic/renzi-9-dic.php" name="&amp;lid=AB9QfJOC&amp;lpos=mediacenter">Il video-messaggio di Matteo Renzi sulla corruzione</a> </h5>
+</div>
+</li>
+</ul><ul class="cf"><li>
+<a href="http://www.ilsole24ore.com/st/speciale-natale-2014/tech.html" class="streamtappo" name="&amp;lid=ABUTd8NC&amp;lpos=mediacenter"><img width="90" src="http://i.res.24o.it/art/online/2014-12-09/tecnologia-stili-vita-20-120540/images/fotohome4.jpg?v1.20141210130044"></a>
+<div>
+<h5>
+<a href="http://www.ilsole24ore.com/st/speciale-natale-2014/tech.html" name="&amp;lid=ABUTd8NC&amp;lpos=mediacenter">Tecnologia: stili di vita 2.0</a> </h5>
+</div>
+</li>
+<li>
+<a href="http://www.motori24.ilsole24ore.com/MediaCenter/Gallery/Auto-Novita/2014/auto-modelli-arrivo-2015/auto-modelli-arrivo-2015_fotogallery.php" class="streamtappo" name="&amp;lid=ABe7y4NC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://i.res.24o.it/art/online/2014-12-09/auto-modelli-arrivo-2015-090328/images/fotohome4.jpg?v1.20141210130044"></a>
+<div>
+<h5>
+<a href="http://www.motori24.ilsole24ore.com/MediaCenter/Gallery/Auto-Novita/2014/auto-modelli-arrivo-2015/auto-modelli-arrivo-2015_fotogallery.php" name="&amp;lid=ABe7y4NC&amp;lpos=mediacenter">Auto, i modelli in arrivo nel 2015</a> </h5>
+</div>
+</li>
+</ul><ul class="cf"><li>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/aggiungi-un-posto-Atac/aggiungi-un-posto-atac.php" name="&amp;lid=ABjFFSOC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/MediaCenter/Video/2014/12/Carra-Dorelli-kZDH--153x110@IlSole24Ore-Web.jpg"></a>
+<div>
+<h5>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/aggiungi-un-posto-Atac/aggiungi-un-posto-atac.php" name="&amp;lid=ABjFFSOC&amp;lpos=mediacenter">«Aggiungi un posto all&rsquo;Atac», la satira di Sora Cesira (del 2011)</a> </h5>
+</div>
+</li>
+<li>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/kabuki/kabukiza.php" name="&amp;lid=AB6x7bOC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/MediaCenter/Video/Notizie/Asia%20e%20Oceania/PIANETA-GIAPPONE/2014/12/kabuki/kabuki-153.jpg"></a>
+<div style="float:left;">
+<p class="rubrica">
+<a href="http://stream24.ilsole24ore.com/programmi/pianeta-giappone/">PIANETA GIAPPONE</a>
+</p>
+<h5>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/kabuki/kabukiza.php" name="&amp;lid=AB6x7bOC&amp;lpos=mediacenter">Kabuki: come l'attore si trasforma per i ruoli femminili</a> </h5>
+</div>
+</li>
+</ul><ul class="cf"><li>
+<a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_18223854/00027074-punizione-al-bacio-prima-rete-indiana-per-del-piero.php" name="&amp;lid=ABhflNOC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/TMNews/2014/20141209_video_18223854/thumb-20141209_video_18223854.jpg"></a>
+<div>
+<h5>
+<a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_18223854/00027074-punizione-al-bacio-prima-rete-indiana-per-del-piero.php" name="&amp;lid=ABhflNOC&amp;lpos=mediacenter">Punizione al bacio: prima rete 'indiana' per Del Piero</a> </h5>
+</div>
+</li>
+<li>
+<a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_15592683/00027082-marathon-man-luomo-che-corre-una-maratona-al-giorno.php" name="&amp;lid=ABYipZOC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/TMNews/2014/20141209_video_15592683/thumb-20141209_video_15592683.jpg"></a>
+<div>
+<h5>
+<a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_15592683/00027082-marathon-man-luomo-che-corre-una-maratona-al-giorno.php" name="&amp;lid=ABYipZOC&amp;lpos=mediacenter">"Marathon man", l'uomo che corre una maratona al giorno</a> </h5>
+</div>
+</li>
+</ul></div>
+			<div id="strip_page" style="width:300px;float:left;display:none;">
+			<ul class="cf"><li>
+<a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_14503324/00027057-lagarde-promuove-il-jobs-act-ma-ora-tagliare-il-cuneo-fiscale.php" name="&amp;lid=ABDrZAOC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/TMNews/2014/20141209_video_14503324/thumb-20141209_video_14503324.jpg"></a>
+<div>
+<h5>
+<a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_14503324/00027057-lagarde-promuove-il-jobs-act-ma-ora-tagliare-il-cuneo-fiscale.php">Lagarde promuove il Jobs Act: "Ma ora ...
+			</a>
+</h5>
+</div>
+</li>
+<li>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/PARLAMENTO-24/2014/12/parlamento24-08dic2014/parlamento24-08dic2014.php" name="&amp;lid=AB34NbNC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/MediaCenter/Video/Notizie/Italia/PARLAMENTO-24/2014/12/parlamento24-08dic2014/thumb_154x110/parlamento24-08dic2014-thumb_fotohome3-4.jpg"></a>
+<div style="float:left;">
+<p class="rubrica">
+<a href="http://stream24.ilsole24ore.com/programmi/Parlamento24/">PARLAMENTO24</a>
+</p>
+<h5>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/PARLAMENTO-24/2014/12/parlamento24-08dic2014/parlamento24-08dic2014.php">PARLAMENTO 24 / Prescrizione, riforma più ...
+			</a>
+</h5>
+</div>
+</li>
+</ul><ul class="cf"><li>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/USA/2014/benedizione-animali/benedizione-animali_fotogallery.php" name="&amp;lid=ABjMgpNC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Notizie/USA/2014/benedizione-animali/img_benedizione-animali/2014-12-08T002226Z_1396423445_GM1EAC80MQH01_RTRMADP_3_USA-ANIMALS_153-110.jpg"></a>
+<div>
+<h5>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/USA/2014/benedizione-animali/benedizione-animali_fotogallery.php">New York, la benedizione degli animali in ...
+			</a>
+</h5>
+</div>
+</li>
+<li>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-reggio-8-dicembre/Soldi_Vostri_Reggio_8_12_2014.php" name="&amp;lid=AB7pkhMC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/MediaCenter/Video/2014/12/reggio-153-kJ1H--153x110@IlSole24Ore-Web.jpg"></a>
+<div style="float:left;">
+<p class="rubrica">
+<a href="http://stream24.ilsole24ore.com/programmi/soldi-vostri/">SOLDI VOSTRI</a>
+</p>
+<h5>
+<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-reggio-8-dicembre/Soldi_Vostri_Reggio_8_12_2014.php">Imu sui terreni agricoli: le nuove regole ...
+			</a>
+</h5>
+</div>
+</li>
+</ul><ul class="cf"><li>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/Italia/2014/ambrogini/ambrogini_fotogallery.php" name="&amp;lid=AB902RNC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Notizie/Italia/2014/ambrogini/img_ambrogini/03-space24_153-110.jpg"></a>
+<div>
+<h5>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/Italia/2014/ambrogini/ambrogini_fotogallery.php">Sant&rsquo;Ambrogio: Pisapia premia Galliani e ...
+			</a>
+</h5>
+</div>
+</li>
+<li>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Arte/2014/alberi-Natale-mondo/alberi-Natale-mondo_fotogallery.php" name="&amp;lid=AB7qPTNC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Cultura/Arte/2014/alberi-Natale-mondo/img_alberi-Natale-mondo/rio-de-janeiro-olycom_153-110.jpg"></a>
+<div>
+<h5>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Arte/2014/alberi-Natale-mondo/alberi-Natale-mondo_fotogallery.php">Alberi di Natale nel mondo ...
+			</a>
+</h5>
+</div>
+</li>
+</ul><ul class="cf"><li>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Tecnologie/Social Media/2014/foto-istagram-mondo/foto-istagram-mondo_fotogallery.php" name="&amp;lid=ABuvPvMC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Tecnologie/Social%20Media/2014/foto-istagram-mondo/img_foto-istagram-mondo/01_153-110.jpg"></a>
+<div>
+<h5>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Tecnologie/Social Media/2014/foto-istagram-mondo/foto-istagram-mondo_fotogallery.php">Le trenta foto più popolari su Instagram nel ...
+			</a>
+</h5>
+</div>
+</li>
+<li>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Tecnologie/Scienza/2014/orion-lancio/orion-lancio_fotogallery.php" name="&amp;lid=ABpuTfMC&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Tecnologie/Scienza/2014/orion-lancio/img_orion-lancio/05-AP_153-110.jpg"></a>
+<div>
+<h5>
+<a href="http://foto.ilsole24ore.com/SoleOnLine5/Tecnologie/Scienza/2014/orion-lancio/orion-lancio_fotogallery.php">Il lancio di Orion ...
+			</a>
+</h5>
+</div>
+</li>
+</ul></div>
+		</div>
+	</div>
+
+			<div class="tab_content" id="tab_video">
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/boldrini-ebola/boldrini-ebola.php" name="&amp;lid=c8293af6-7fb8-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/senza-titolo-kwTF--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/boldrini-ebola/boldrini-ebola.php" name="&amp;lid=c8293af6-7fb8-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Boldrini: Ue faccia di più contro Ebola</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Tecnologie/Innovazione/2014/speciale-natale-tech/speciale-natale-tech.php" name="&amp;lid=38b41646-7f92-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/speciale-natale-tech_324-kLcF--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Tecnologie/Innovazione/2014/speciale-natale-tech/speciale-natale-tech.php" name="&amp;lid=38b41646-7f92-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Tecnologia: stili di vita 2.0</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/gestione-Novartis/gestione-Novartis.php" name="&amp;lid=70c35c76-7f70-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/gestione-Novartis_480-kETG--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<p class="rubrica"><a href="http://stream24.ilsole24ore.com/programmi/pianeta-giappone/">PIANETA GIAPPONE</a></p>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/gestione-Novartis/gestione-Novartis.php" name="&amp;lid=70c35c76-7f70-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Italiani all'estero: gestire la finanza per la svizzera Novartis</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/giappone-pil-borsa/recessioneono.php" name="&amp;lid=748af2a6-7ebc-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/giappone-kJZB--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<p class="rubrica"><a href="http://stream24.ilsole24ore.com/programmi/pianeta-giappone/">PIANETA GIAPPONE</a></p>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/giappone-pil-borsa/recessioneono.php" name="&amp;lid=748af2a6-7ebc-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter">Giappone: Pil rivisto al ribasso, l'euro forte sulla soglia dei 150 yen</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/robot-umanoidi/pepper.php" name="&amp;lid=62ea6232-7d29-11e4-914a-5b3ec4ca20ed&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/frame-robot-umanoidi-rosso-480-360-U10175679851wNG--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<p class="rubrica"><a href="http://stream24.ilsole24ore.com/programmi/pianeta-giappone/">PIANETA GIAPPONE</a></p>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/robot-umanoidi/pepper.php" name="&amp;lid=62ea6232-7d29-11e4-914a-5b3ec4ca20ed&amp;lpos=mediacenter">Nao e Pepper: robot umanoidi strenne natalizie</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/Intervista_Recchi/Intervista_Recchi.php" name="&amp;lid=8685a86a-7c7e-11e4-a7cc-22971a6880f8&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/vid-480-kCdG--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/Intervista_Recchi/Intervista_Recchi.php" name="&amp;lid=8685a86a-7c7e-11e4-a7cc-22971a6880f8&amp;lpos=mediacenter">Giuseppe Recchi: ?Investiamo 3 miliardi all'anno per sviluppare la rete del futuro?</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_18412180/00027089-elefanti-a-rischio-in-cina-commercio-davorio-fuori-controllo.php" name="&amp;lid=20141209_video_18412180&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/TMNews/2014/20141209_video_18412180/thumb-20141209_video_18412180.jpg" /></a>
+			<div style="float:left;">
+				<p class="rubrica"><a href="http://video.ilsole24ore.com/TMNews">TMNEWS</a></p>
+				<h5><a href="http://video.ilsole24ore.com/TMNews/2014/20141209_video_18412180/00027089-elefanti-a-rischio-in-cina-commercio-davorio-fuori-controllo.php" name="&amp;lid=20141209_video_18412180&amp;lpos=mediacenter">Elefanti a rischio, in Cina commercio d&#39;avorio fuori controllo</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/Ansa/2014/a201412101303/00006992-the-last-ship-sting-torna-sul-palco.php" name="&amp;lid=a201412101303&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-video.png"><img width="90" src="http://video.ilsole24ore.com/Ansa/2014/a201412101303/thumb-a201412101303.jpg" /></a>
+			<div style="float:left;">
+				<p class="rubrica"><a href="http://video.ilsole24ore.com/Ansa">ANSA</a></p>
+				<h5><a href="http://video.ilsole24ore.com/Ansa/2014/a201412101303/00006992-the-last-ship-sting-torna-sul-palco.php" name="&amp;lid=a201412101303&amp;lpos=mediacenter">&#34;The Last Ship&#34;, Sting torna sul palco</a></h5>
+			</div>
+		</li>
+	</ul>
+</div>
+
+			<div class="tab_content" id="tab_foto">
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://foto.ilsole24ore.com/Moda/Retail-Web/2014/fendi-kraler/fendi-kraler_fotogallery.php" name="&amp;lid=720cb02c-8057-11e4-b479-59034d5b83a6&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/MODA24/Online/Retail-Web/2014/fendi-kraler/img_fendi-kraler/01_153-110.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/Moda/Retail-Web/2014/fendi-kraler/fendi-kraler_fotogallery.php" name="&amp;lid=720cb02c-8057-11e4-b479-59034d5b83a6&amp;lpos=mediacenter">Fendi da Franz Kraler a Cortina</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Cinema/2014/cinecitta-star-hollywood/cinecitta-star-hollywood_fotogallery.php" name="&amp;lid=dfa6290e-7fd7-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/2014/12/42-58894789_590-490-kjPB--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Cinema/2014/cinecitta-star-hollywood/cinecitta-star-hollywood_fotogallery.php" name="&amp;lid=dfa6290e-7fd7-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Le star di Hollywood in arrivo a Roma</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://foto.ilsole24ore.com/Moda/Stili-Tendenze/2014/idee-regalo-natale/idee-regalo-natale_fotogallery.php" name="&amp;lid=7edffbf2-7fc5-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/MODA24/Online/Stili-Tendenze/2014/idee-regalo-natale/img_idee-regalo-natale/29_590-490-ktLD--153x110@Moda24-Web.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/Moda/Stili-Tendenze/2014/idee-regalo-natale/idee-regalo-natale_fotogallery.php" name="&amp;lid=7edffbf2-7fc5-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Sessanta idee (da meno di 10 a più di mille euro) per un Natale alla moda</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Arte/2014/aste-novembre/aste-novembre_fotogallery.php" name="&amp;lid=605e4de6-7fac-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/2014/12/05 Pandolfini Orologio violoncello cassa-k5cD--153x110@IlSole24Ore-Web.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Arte/2014/aste-novembre/aste-novembre_fotogallery.php" name="&amp;lid=605e4de6-7fac-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Gioielli d'artista e orologi da taschino riscoperti in Italia</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/USA/2014/benedizione-animali/benedizione-animali_fotogallery.php" name="&amp;lid=a46efabe-7f00-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Notizie/USA/2014/benedizione-animali/img_benedizione-animali/2014-12-08T002226Z_1396423445_GM1EAC80MQH01_RTRMADP_3_USA-ANIMALS_153-110.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/USA/2014/benedizione-animali/benedizione-animali_fotogallery.php" name="&amp;lid=a46efabe-7f00-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter">New York, la benedizione degli animali in chiesa</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://foto.ilsole24ore.com/SoleOnLine5/Finanza e Mercati/Plus24/2014/art-economy-bella-principessa/art-economy-bella-principessa_fotogallery.php" name="&amp;lid=8c90129c-7ecf-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Finanza e Mercati/Plus24/2014/art-economy-bella-principessa/img_art-economy-bella-principessa/01_153-110.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/SoleOnLine5/Finanza e Mercati/Plus24/2014/art-economy-bella-principessa/art-economy-bella-principessa_fotogallery.php" name="&amp;lid=8c90129c-7ecf-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter"></a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<li>
+			<a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Cinema/2014/courmayer-nero-festival/courmayer-nero-festival_fotogallery.php" name="&amp;lid=e5b61bb6-7ebe-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Cultura/Cinema/2014/courmayer-nero-festival/img_courmayer-nero-festival/01_153-110.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Cinema/2014/courmayer-nero-festival/courmayer-nero-festival_fotogallery.php" name="&amp;lid=e5b61bb6-7ebe-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter">Dario Argento, Jeffery Deaver e «Big Hero 6» protagonisti a Courmayeur</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/Asia e Oceania/2014/tifone-hagupit/tifone-hagupit_fotogallery.php" name="&amp;lid=ece4de08-7eba-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter"><img class="stream24_ico" width="25" src="/img2013/ico-foto.png"><img width="90" src="http://foto.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Notizie/Asia e Oceania/2014/tifone-hagupit/img_tifone-hagupit/01_153-110.jpg" /></a>
+			<div style="float:left;">
+				<h5><a href="http://foto.ilsole24ore.com/SoleOnLine5/Notizie/Asia e Oceania/2014/tifone-hagupit/tifone-hagupit_fotogallery.php" name="&amp;lid=ece4de08-7eba-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter">Filippine tifone Hagupit causa oltre 20 morti</a></h5>
+			</div>
+		</li>
+	</ul>
+</div>
+
+			<div class="tab_content" id="tab_rubriche">
+	<ul class="cf" style="width:100%">
+		<a class="pianeta-giappone-title" href="http://stream24.ilsole24ore.com/programmi/pianeta-giappone/"><img src="/img2013/pianeta-giappone_spalla.png" ></a>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/kabuki/kabukiza.php" name="&amp;lid=26547da2-8040-11e4-b479-59034d5b83a6&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/kabuki/kabuki-153.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/kabuki/kabukiza.php" name="&amp;lid=26547da2-8040-11e4-b479-59034d5b83a6&amp;lpos=mediacenter">Kabuki: come l'attore si trasforma per i ruoli femminili</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/fasotec-stampanti-3d-organi-umani/Stampanti-3D.php" name="&amp;lid=199580f8-7f81-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/fasotec-stampanti-3d-organi-umani/thumb_154x110/Stampanti-3D-thumb_fotohome3-1.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Asia e Oceania/PIANETA-GIAPPONE/2014/12/fasotec-stampanti-3d-organi-umani/Stampanti-3D.php" name="&amp;lid=199580f8-7f81-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Stampare in 3D organi umani e feti: il caso Fasotec</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<a class="soldi-vostri-title" href="http://stream24.ilsole24ore.com/programmi/soldi-vostri/"><img src="/img2013/soldi-vostri_spalla.png" ></a>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-lo-conte-10-dic/Soldi.php" name="&amp;lid=5d347620-7fc7-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/lo-conte-kzOI--153x110@IlSole24Ore-Web.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-lo-conte-10-dic/Soldi.php" name="&amp;lid=5d347620-7fc7-11e4-bb9a-dd177d5b589a&amp;lpos=mediacenter">Come «e quando è opportuno» cambiare banca</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-reggio-8-dicembre/Soldi_Vostri_Reggio_8_12_2014.php" name="&amp;lid=dec948ca-7c8c-11e4-a7cc-22971a6880f8&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/reggio-153-kJ1H--153x110@IlSole24Ore-Web.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/SOLDI-VOSTRI/2014/12/soldi-vostri-reggio-8-dicembre/Soldi_Vostri_Reggio_8_12_2014.php" name="&amp;lid=dec948ca-7c8c-11e4-a7cc-22971a6880f8&amp;lpos=mediacenter">Imu sui terreni agricoli: le nuove regole</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<a class="parlamento24-title" href="http://stream24.ilsole24ore.com/programmi/parlamento24/"><img src="/img2013/parlamento24_spalla.png" ></a>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/PARLAMENTO-24/2014/12/parlamento24-08dic2014/parlamento24-08dic2014.php" name="&amp;lid=070063c8-7ea9-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Video/Notizie/Italia/PARLAMENTO-24/2014/12/parlamento24-08dic2014/thumb_154x110/parlamento24-08dic2014-thumb_fotohome3-4.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/PARLAMENTO-24/2014/12/parlamento24-08dic2014/parlamento24-08dic2014.php" name="&amp;lid=070063c8-7ea9-11e4-9fd8-bbde84de430e&amp;lpos=mediacenter">PARLAMENTO 24 / Prescrizione, riforma più vicina</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/paralamento24-puntata-1-dic/P24_puntatata-44.php" name="&amp;lid=78a6cc2a-78c7-11e4-92c8-536c2255d7d1&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/11/frame-P24-puntata-44-k9yB--153x110@IlSole24Ore-Web.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/2014/paralamento24-puntata-1-dic/P24_puntatata-44.php" name="&amp;lid=78a6cc2a-78c7-11e4-92c8-536c2255d7d1&amp;lpos=mediacenter">PARLAMENTO24 / Il Jobs act alla volata finale</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<a class="focus24-title" href="http://stream24.ilsole24ore.com/programmi/focus24/"><img src="/img2013/focus24_spalla.png" ></a>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/FOCUS-24/2014/12/focus-4-dicembre-job-act/focus24-online40.php" name="&amp;lid=4c4a57ce-7b23-11e4-ae28-898e8ceb0d37&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Video/Sequenza 01.Immagine007.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/FOCUS-24/2014/12/focus-4-dicembre-job-act/focus24-online40.php" name="&amp;lid=4c4a57ce-7b23-11e4-ae28-898e8ceb0d37&amp;lpos=mediacenter">Jobs act: come cambiano le regole del lavoro</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="" name="&amp;lid=b904ee5e-7611-11e4-9fe0-8320ce784bd1&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/11/frame-focus24-k03B--153x110@IlSole24Ore-Web.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="" name="&amp;lid=b904ee5e-7611-11e4-9fe0-8320ce784bd1&amp;lpos=mediacenter">Il futuro del canone Rai: in bolletta o con l'Irpef?</a></h5>
+			</div>
+		</li>
+	</ul>
+	<ul class="cf" style="width:100%">
+		<a class="la-bussola-del-risparmio-title" href="http://stream24.ilsole24ore.com/programmi/la-bussola-del-risparmio/"><img src="/img2013/la-bussola-del-risparmio_spalla.png" ></a>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/BUSSOLA-24/2014/12/bussola-2-dicembre/Bussola-puntata-9.php" name="&amp;lid=fff340f4-798b-11e4-b4c5-6f5ac960f346&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/12/bussola-kVTC--153x110@IlSole24Ore-Web.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/BUSSOLA-24/2014/12/bussola-2-dicembre/Bussola-puntata-9.php" name="&amp;lid=fff340f4-798b-11e4-b4c5-6f5ac960f346&amp;lpos=mediacenter">Calcola la tua pensione: ecco il tutorial della «busta arancione» online</a></h5>
+			</div>
+		</li>
+		<li>
+			<a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/BUSSOLA-24/2014/11/bussola-25-novembre/Bussola_Puntata_8.php" name="&amp;lid=9c0a022c-7403-11e4-b57f-76299e246b20&amp;lpos=mediacenter"><img src="http://video.ilsole24ore.com/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Video/2014/11/lo-conte-kO7C--153x110@IlSole24Ore-Web.jpg" /><img class="stream24_ico" width="25" src="/img2013/ico-tv.png"></a>
+			<div>
+				<h5><a href="http://video.ilsole24ore.com/SoleOnLine5/Video/Notizie/Italia/BUSSOLA-24/2014/11/bussola-25-novembre/Bussola_Puntata_8.php" name="&amp;lid=9c0a022c-7403-11e4-b57f-76299e246b20&amp;lpos=mediacenter">Investire con il BTp (vicino) al 2%</a></h5>
+			</div>
+		</li>
+	</ul>
+</div>
+
+			<p class="clear" style="height:1px!important;margin:0px;padding:0px;display:block;"></p>
+		</div>
+		<div id="controls">
+		<span class="arrow prev">&nbsp;</span>
+		<div class="bullets">
+			<ul>
+			</ul>
+	</div>
+<span class="arrow next">&nbsp;</span>
+</div>
+</div>
+</div>
+
+<div class="radio newbox">
+	<h3><a target="_blank" href="http://www.radio24.ilsole24ore.com/">radio<span>24</span></a></h3>
+
+	<ul>			<li data-vr-contentbox="" class="row">
+				<ul class="cont-left">
+					<li><a target="_blank" href="http://www.radio24.ilsole24ore.com/programma/effettogiorno/index.php" class="bg"><img src="http://www.radio24.ilsole24ore.com/images2013/Radio24/_Immagini/Conduttori/spetia_258x258.png" /></a></li>
+					<li><a class="audio" onclick="window.open( 'http://www.radio24.ilsole24ore.com/player.php?channel=1', 'r24popup','location=no,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,toolbar=no,width=1000,height=600');" href="javascript:void(0)">Ascolta</a></li>
+				</ul>
+	
+				<div class="cont-right">
+					<h4 class="news_cat"><a target="_blank" href="http://www.radio24.ilsole24ore.com/programma/effettogiorno/index.php">Effetto giorno</a></h4>
+					<h2 class="title"><a target="_blank" href=""></a></h2>
+					<p class="by-line">Condotto da Simone Spetia</p>
+				</div>
+			</li>		<li data-vr-contentbox="" class="row">
+			<ul class="cont-left">
+				<li><a target="_blank" href="http://www.radio24.ilsole24ore.com/notizie/mix24/2014-12-10/tarak-ammar-condivido-messaggio-130204.php"><img src="http://www.radio24.ilsole24ore.com/images2013/notizie/mix24/2014-12-10/tarak-ammar-condivido-messaggio-130204/images/fotohome17.jpg" width="100" height="50" /></a></li>				<li><a target="_blank" class="audio" href="http://www.radio24.ilsole24ore.com/notizie/mix24/2014-12-10/tarak-ammar-condivido-messaggio-130204.php">Ascolta</a></li>			</ul>
+
+			<div class="cont-right">
+				<h4 class="news_cat"><a target="_blank" href="http://www.radio24.ilsole24ore.com/programma/mix24/index.php">Mix 24</a></h4>
+				<h2 class="title"><a target="_blank" href="http://www.radio24.ilsole24ore.com/notizie/mix24/2014-12-10/tarak-ammar-condivido-messaggio-130204.php">Tarak Ben Ammar, Mix 24: "Condivido il messaggio del&nbsp;...</a></h2>
+			</div>
+		</li>		<li data-vr-contentbox="" class="row">
+			<ul class="cont-left">
+				<li><a target="_blank" href="http://www2.radio24.ilsole24ore.com/natale/"><img src="http://www.radio24.ilsole24ore.com/images2013/notizie/2014-12-03/investire-informati-200553/images/fotohome17.jpg" width="100" height="50" /></a></li>				<li><a target="_blank" class="audio" href="http://www2.radio24.ilsole24ore.com/natale/">Ascolta</a></li>			</ul>
+
+			<div class="cont-right">
+				<h4 class="news_cat"><a target="_blank" href="http://www.radio24.ilsole24ore.com/programma/mix24/index.php">Radio 24</a></h4>
+				<h2 class="title"><a target="_blank" href="http://www2.radio24.ilsole24ore.com/natale/">Che Radio 24 vorresti trovare sotto l'albero?</a></h2>
+			</div>
+		</li>		<li>
+			<ul class="btn-link">
+				<li>
+					<h5>
+						<a onclick="window.open( 'http://www.radio24.ilsole24ore.com/player.php?channel=4&amp;channelgr=1', 'r24popup','location=no,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,toolbar=no,width=1000,height=600');" href="javascript:void(0)">Borse in diretta</a>
+					</h5>
+				</li>
+				<li>
+					<h5>
+						<a onclick="window.open( 'http://www.radio24.ilsole24ore.com/player.php?channel=4&amp;channelgr=2', 'r24popup','location=no,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,toolbar=no,width=1000,height=600');" href="javascript:void(0)">Tempo in Diretta</a>
+					</h5>
+				</li>
+				<li>
+					<h5>
+						<a onclick="window.open( 'http://www.radio24.ilsole24ore.com/player.php?channel=4&amp;channelgr=4', 'r24popup','location=no,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,toolbar=no,width=1000,height=600');" href="javascript:void(0)">Rassegna Stampa</a>
+					</h5>
+				</li>
+				<li>
+					<h5>
+						<a onclick="window.open( 'http://www.radio24.ilsole24ore.com/player.php?channel=4&amp;channelgr=3', 'r24popup','location=no,menubar=no,resizable=no,scrollbars=no,status=no,titlebar=no,toolbar=no,width=1000,height=600');" href="javascript:void(0)">Strade in Diretta</a>
+					</h5>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<!-- BrandConnect -->
+<script type="text/javascript">OAS_RICH('Right1');</script>
+
+<!-- contenuti riservati -->
+<div class="box reserved ">
+	<h3><span class="ico_chiave"></span> Contenuti Riservati</h3>
+	<ul>
+		<li class="cf ">
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/autonomi_mini-imprese/index.shtml"><img height="71" width="71" alt=" " title=" " src="http://i.res.24o.it/art/norme-e-tributi/2014-10-29/autonomi-e-mini-imprese-165118/images/fotohome3.jpg?v1.20141206120632"></a>
+<div class="right">
+<p>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/autonomi_mini-imprese/index.shtml"><span>approfondimenti</span> Norme &amp; Tributi</a>
+</p>
+<h5>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/autonomi_mini-imprese/index.shtml" name=""><span class="ico_chiave"></span>Autonomi e mini-imprese</a>
+</h5>
+</div>
+</li>
+<li class="cf ">
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/energie-rinnovabili/index.shtml"><img height="71" width="71" alt=" " title=" " src="http://i.res.24o.it/art/norme-e-tributi/2014-10-15/le-energie-rinnovabili-162212/images/fotohome3.jpg?v1.20141206120632"></a>
+<div class="right">
+<p>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/energie-rinnovabili/index.shtml"><span>approfondimenti</span> Norme &amp; Tributi</a>
+</p>
+<h5>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/energie-rinnovabili/index.shtml" name=""><span class="ico_chiave"></span>Le energie rinnovabili</a>
+</h5>
+</div>
+</li>
+<li class="cf ">
+<a href="http://www.ilsole24ore.com/dossier/norme-e-tributi/2014/dossier-tasi/"><img height="71" width="71" alt=" (FER737NG - Fotolia)" title=" (FER737NG - Fotolia)" src="http://i.res.24o.it/art/norme-e-tributi/2014-09-30/sos-tasi-tutte-delibere-comuni-calcolatore-documenti-163025/images/fotohome3.jpg?v1.20141206120632"></a>
+<div class="right">
+<p>
+<a href="http://www.ilsole24ore.com/dossier/norme-e-tributi/2014/dossier-tasi/"><span>approfondimenti</span> Norme &amp; Tributi</a>
+</p>
+<h5>
+<a href="http://www.ilsole24ore.com/dossier/norme-e-tributi/2014/dossier-tasi/" name=""><span class="ico_chiave"></span>Dossier Imu-Tasi: tutte le regole per pagare </a>
+</h5>
+</div>
+</li>
+<li class="cf ">
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/imu-tasi/index.shtml"><img height="71" width="71" alt=" " title=" " src="http://i.res.24o.it/art/norme-e-tributi/2014-09-25/tasi-regole-pagare-100209/images/fotohome3.jpg?v1.20141206120632"></a>
+<div class="right">
+<p>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/imu-tasi/index.shtml"><span>approfondimenti</span> Norme &amp; Tributi</a>
+</p>
+<h5>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/imu-tasi/index.shtml" name=""><span class="ico_chiave"></span>Come pagare l'Imu e la Tasi</a>
+</h5>
+</div>
+</li>
+<li class="cf last">
+<a href="http://www.ilsole24ore.com/dossier/norme-e-tributi/2014/divorzi-separazioni/index.shtml"><img height="71" width="71" alt=" (© Image Source/Corbis)" title=" (© Image Source/Corbis)" src="http://i.res.24o.it/art/norme-e-tributi/2014-09-30/il-divorzio-senza-giudice-162457/images/fotohome3.jpg?v1.20141206120632"></a>
+<div class="right">
+<p>
+<a href="http://www.ilsole24ore.com/dossier/norme-e-tributi/2014/divorzi-separazioni/index.shtml"><span>approfondimenti</span> </a>
+</p>
+<h5>
+<a href="http://www.ilsole24ore.com/dossier/norme-e-tributi/2014/divorzi-separazioni/index.shtml" name=""><span class="ico_chiave"></span>Il divorzio senza giudice</a>
+</h5>
+</div>
+</li>
+</ul>
+</div>
+
+
+<!-- === .sidebar === -->
+<div class="sidebar right cf">
+	<a href="http://www.italy24.ilsole24ore.com/" target="_blank"><img src="http://i.res.24o.it/img2013/box-quotidiani/box-italy24.jpg" width="300" height="36"></a> 
+	<a href="http://www.quotidianoentilocali.ilsole24ore.com/" target="_blank"><img src="http://i.res.24o.it/img2013/box-quotidiani/box-enti-locali-pa2.jpg" width="300" height="36"></a>
+	<a href="http://www.quotidianolavoro.ilsole24ore.com/" target="_blank"><img src="http://i.res.24o.it/img2013/box-quotidiani/box-lavoro.jpg" width="300" height="36"></a>
+	<a href="http://www.scuola24.ilsole24ore.com/" target="_blank"><img src="http://i.res.24o.it/img2013/box-quotidiani/scuola24_artboard.jpg" width="300" height="36"></a>
+	<a href="http://www.quotidianodiritto.ilsole24ore.com/" target="_blank"><img src="http://i.res.24o.it/img2013/box-quotidiani/QdD_290x68.jpg" width="300" height="36"></a>
+	<a href="http://www.quotidianofisco.ilsole24ore.com/" target="_blank"><img src="http://i.res.24o.it/img2013/box-quotidiani/box-fisco.jpg" width="300" height="36"></a>
+	<a href="http://www.casaeterritorio.ilsole24ore.com/" target="_blank"><img src="http://i.res.24o.it/img2013/box-quotidiani/box-casa.jpg" width="300" height="36"></a>
+	<a href="http://finanza24.ilsole24ore.com/" target="_blank" class="last"><img src="http://i.res.24o.it/img2013/box-quotidiani/box-finanza24.jpg" width="300" height="36"></a>
+</div>
+
+					</div>
+					<!-- /.sidebar -->
+				
+				</div>
+				<!--  ======= /.page  ======= -->
+				
+				
+					
+					<div id="canali24" class="cf">
+<div class="ul_wrapper">
+	<ul>
+		<!-- zoneName =Motori24 -->
+			<li>
+<h2>
+<a href="http://www.motori24.ilsole24ore.com/">Motori<span>24</span></a>
+</h2>
+<a href="http://www.motori24.ilsole24ore.com/Auto-Novita/2014/12/mercedes-gle.php"><img width="154" height="81" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Magazine/2014/12/gle-154-81.jpg?uuid=36a4e3a2-8056-11e4-b479-59034d5b83a6"></a>
+<h3>
+<a href="http://www.motori24.ilsole24ore.com/Auto-Novita/2014/12/mercedes-gle.php">Mercedes GLE Coupé, la stella a tre punte sfida Bmw X6</a>
+</h3>
+<a class="read_more" href="http://www.motori24.ilsole24ore.com/">Tutto Motori24</a>
+</li>
+<!-- zoneName =Moda -->
+			<li>
+<h2>
+<a href="http://www.moda24.ilsole24ore.com">Moda<span>24</span></a>
+</h2>
+<a href="http://foto.ilsole24ore.com/Moda/Stili-Tendenze/2014/idee-regalo-natale/idee-regalo-natale_fotogallery.php"><img width="154" height="81" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Magazine/2012/02/q-U1084244199ilD-U26146597734kMG-154x81@IlSole24Ore-Web.jpg?uuid=8a987fc8-8065-11e4-b479-59034d5b83a6"></a>
+<h3>
+<a href="http://foto.ilsole24ore.com/Moda/Stili-Tendenze/2014/idee-regalo-natale/idee-regalo-natale_fotogallery.php">Sessanta idee per un Natale alla moda</a>
+</h3>
+<a class="read_more" href="http://www.moda24.ilsole24ore.com">Tutto Moda24</a>
+</li>
+<!-- zoneName =Viaggi24 -->
+			<li>
+<h2>
+<a href="http://www.viaggi24.ilsole24ore.com/">Viaggi<span>24</span></a>
+</h2><a href="http://www.viaggi24.ilsole24ore.com/WeekEnd/Capitali/2014/12/stoccolma-sata-lucia.php"><img width="154" height="81" src="http://i.res.24o.it/viaggi24/IMMAGINI/Originali/WeekEnd/Capitali/2014/12/zz-svez_154x81.jpg"></a>
+<h3>
+<a href="http://www.viaggi24.ilsole24ore.com/WeekEnd/Capitali/2014/12/stoccolma-sata-lucia.php">Tra luci e canti Stoccolma celebra Santa Lucia</a>
+</h3>
+<a class="read_more" href="http://www.viaggi24.ilsole24ore.com/">Tutto Viaggi24</a>
+</li>
+<!-- zoneName =Job24 -->
+			<li>
+<h2>
+<a href="http://job24.ilsole24ore.com/">Job<span>24</span></a>
+</h2>
+<a href="http://job24.ilsole24ore.com/news/Articoli/2014/12/Alumni-cafoscari-video.php?uuid=dc7eb1bc-7c97-11e4-b335-4b48fd4ae078&amp;DocRulesView=Libero"><img width="154" height="81" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Magazine/2014/12/job-cafoscari-154x81.jpg?uuid=2d23422c-7c98-11e4-a7cc-22971a6880f8"></a>
+<h3>
+<a href="http://job24.ilsole24ore.com/news/Articoli/2014/12/Alumni-cafoscari-video.php?uuid=dc7eb1bc-7c97-11e4-b335-4b48fd4ae078&amp;DocRulesView=Libero">CafoscariMi : la community dei laureati di Venezia a Milano</a>
+</h3>
+<a class="read_more" href="http://job24.ilsole24ore.com/">Tutto Job24</a>
+</li>
+<!-- zoneName =Casa24 -->
+			<li>
+<h2>
+<a href="http://www.casa24.ilsole24ore.com/">Casa<span>24</span>Plus</a>
+</h2>
+<a href="http://foto.ilsole24ore.com/Casa24/mercato-immobiliare/2014/azienda-iniesta/azienda-iniesta_fotogallery.php"><img width="154" height="81" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Magazine/2010/07/sedia-U1084244199s2G-U271474981734b4D-154x81@IlSole24Ore-Web.jpg?uuid=f6e69e8a-7d2c-11e4-914a-5b3ec4ca20ed"></a>
+<h3>
+<a href="http://foto.ilsole24ore.com/Casa24/mercato-immobiliare/2014/azienda-iniesta/azienda-iniesta_fotogallery.php">La sedia del futuro artigianale e hi-tech </a>
+</h3>
+<a class="read_more" href="http://www.casa24.ilsole24ore.com/">Tutto Casa24Plus</a>
+</li>
+<!-- zoneName =Luxury24 -->
+			<li>
+<h2>
+<a href="http://www.luxury24.ilsole24ore.com/">Luxury<span>24</span></a>
+</h2>
+<a href="http://www.luxury24.ilsole24ore.com/GustoMete/2014/11/hotel-gallery_1.php"><img width="154" height="81" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Magazine/2010/06/01-sisley-U108424419902G--154x81@IlSole24Ore-Web.jpg?uuid=796aafea-7170-11e4-967c-a12e06ee4814"></a>
+<h3>
+<a href="http://www.luxury24.ilsole24ore.com/GustoMete/2014/11/hotel-gallery_1.php">Nuove spa &ldquo;griffate&rdquo; negli hotel di Milano</a>
+</h3>
+<a class="read_more" href="http://www.luxury24.ilsole24ore.com/">Tutto Luxury24</a>
+</li>
+<!-- zoneName =Salute24 -->
+			<li>
+<h2>
+<a href="http://salute24.ilsole24ore.com/">Salute<span>24</span></a>
+</h2>
+<a href="http://salute24.ilsole24ore.com/farmaceutica/sperimentazioni/5837_Staminali_embrionali:prima_sperimentazionesu_un_uomo_negli_Usa.php"><img width="154" height="81" src="http://i.res.24o.it/images2010/Migrazione/IlSole24Ore-Web/_Immagini/Notizie/Italia/2010/10/cellule-staminali-ricerca-fotogramma-672--154x81.jpg?uuid=802d6154-d5ef-11df-80a6-c404d7510f9a"></a>
+<h3>
+<a href="http://salute24.ilsole24ore.com/farmaceutica/sperimentazioni/5837_Staminali_embrionali:prima_sperimentazionesu_un_uomo_negli_Usa.php">Staminali embrionali: prima sperimentazione su un uomo negli Usa</a>
+</h3>
+<a class="read_more" href="http://salute24.ilsole24ore.com/">Tutto Salute24</a>
+</li><!--zoneName =Food24-->
+<li>
+<h2>
+<a href="http://food24.ilsole24ore.com">Food<span>24</span></a>
+</h2><a href="http://food24.ilsole24ore.com/2014/12/spasso-con-il-bomber-vuoi-dormire-nella-tenuta-di-iniesta-basta-scrivere-su-airbnb/">
+<img width="154" height="81" src="http://i.res.24o.it/food24/wp-content/uploads/2014/12/b3015e8d-0ffe-4bd5-85f7-437763f3b8f5-620x372-154x81.jpeg"></a>
+<h3>
+<a href="http://food24.ilsole24ore.com/2014/12/spasso-con-il-bomber-vuoi-dormire-nella-tenuta-di-iniesta-basta-scrivere-su-airbnb/">A spasso con il campione. Vuoi dormire nella tenuta di Iniesta? Basta scrivere su AirBnb</a>
+</h3>
+</li><!--zoneName =nova-->
+<li>
+<h2>
+<a href="http://nova.ilsole24ore.com">Nova</a>
+</h2><a href="http://nova.ilsole24ore.com/esperienze/il-video-di-youtube-piu-cliccato-del-2014-suor-cristina" /><img width="154" height="81" src="http://i.res.24o.it/feed/strip-channels/nova/images/The-Voice-IT-Serie-2-Blind-2-Suor-Cristina-Scuccia-TEAMJ-AX-YouTube_154x81.png"></a><h3><a href="http://nova.ilsole24ore.com/esperienze/il-video-di-youtube-piu-cliccato-del-2014-suor-cristina">Il video di Youtube piÃ¹ cliccato del 2014? Suor Cristina </a></h3></li>
+<!-- zoneName =Arteconomy24 -->
+			<li>
+<h2>
+<a href="http://www.arteconomy24.ilsole24ore.com/">Arteconomy<span>24</span></a>
+</h2>
+<a href="http://www.arteconomy24.ilsole24ore.com/art/cultura-tempo-libero/2014-11-28/york-asta-anni-arte-120032.php"><img width="154" height="81" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Immagini/Magazine/2014/11/Botero-154x81.jpg?uuid=d035ef52-76f6-11e4-82eb-32e58029ab57"></a>
+<h3>
+<a href="http://www.arteconomy24.ilsole24ore.com/art/cultura-tempo-libero/2014-11-28/york-asta-anni-arte-120032.php">New York, all'asta 300 anni di arte latino-americana</a>
+</h3>
+<a class="read_more" href="http://www.arteconomy24.ilsole24ore.com/">Tutto Arteconomy24</a>
+</li>
+<!-- zoneName =Diritto24 -->
+			<li>
+<h2>
+<a href="http://www.diritto24.ilsole24ore.com">Diritto<span>24</span></a>
+</h2><a href="http://www.diritto24.ilsole24ore.com/art/dirittoCivile/2014-06-19/processo-civile-telematico-giugno-175600.php">
+<img width="154" height="81" src="/feed/professionisti/diritto24_copertina154x81.jpg"></a>
+<h3>
+<a href="http://www.diritto24.ilsole24ore.com/art/dirittoCivile/2014-06-19/processo-civile-telematico-giugno-175600.php">Processo civile telematico al via il 30 giugno, Lex24 potenzia i contenuti</a>
+</h3></li>
+</ul>
+	</div>
+	<p class="nav prev"><a href="#">prev</a></p>
+	<p class="nav next"><a href="#">next</a></p>
+</div>
+
+				
+					<!-- ======= .page_middle (.main + .sidebar) ====== -->
+					<div class="page_middle cf">
+					
+						<!-- === .main (.leftCol + .rightCol) === -->
+						<div class="main left cf">
+							<!-- .leftCol  -->
+							<div class="leftCol left cf">
+							<div class="news_lanci_wrapper">
+		<div class="news cf">
+<h4 class="news_cat">
+<a href="/art/norme-e-tributi/2014-12-09/pressione-fiscale-leggera-discesa-italia-ocse-rivedere-applicazione-iva-224638.shtml?uuid=ABdS6UOC">il rapporto </a>
+</h4>
+<h2>
+<a href="/art/norme-e-tributi/2014-12-09/pressione-fiscale-leggera-discesa-italia-ocse-rivedere-applicazione-iva-224638.shtml?uuid=ABdS6UOC" class="multi-link esploso" name="&amp;lid=ABdS6UOC&amp;lpos=principali_11">Pressione fiscale in leggera discesa in Italia. Ocse: rivedere applicazione Iva -</a> <a class="multi-link" name="&amp;lpos=principali_11" href="http://www.infodata.ilsole24ore.com/2014/12/10/in-italia-pressione-fiscale-al-426-nel-2013-il-confronto-con-leuropa/?uuid=NmDHap9A">Scopri la pressione fiscale nei Paesi europei</a> </h2>
+<p class="news_meta"> dal nostro corrispondente <a href="http://argomenti.ilsole24ore.com/marco-moussanet.html">Marco Moussanet</a><span class="sep">|</span>07:08<span class="sep">|</span> <a href="javascript:void(0)" class="share-elements">Condividi</a>
+		<div class="share-tooltipBox">
+			<div class="share-tooltipBoxBG">
+				<iframe class="share-iframe" src="" data-url="%2Fart%2Fnorme-e-tributi%2F2014-12-09%2Fpressione-fiscale-leggera-discesa-italia-ocse-rivedere-applicazione-iva-224638.shtml%3Fuuid%3DABdS6UOC" data-title="Pressione fiscale in leggera discesa in Italia. Ocse: rivedere applicazione Iva" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+			</div>
+			<img class="tooltipRightBorder" src="/img2010/home2011/fumetto/bg_right.png" width="11" height="100" />
+		</div>
+</p>
+<a href="/art/norme-e-tributi/2014-12-09/pressione-fiscale-leggera-discesa-italia-ocse-rivedere-applicazione-iva-224638.shtml?uuid=ABdS6UOC"><img width="90" height="90" alt=" " title=" " src="http://i.res.24o.it/art/norme-e-tributi/2014-12-09/pressione-fiscale-leggera-discesa-italia-ocse-rivedere-applicazione-iva-224638/images/fotohome15.jpg?v1.20141210132531"></a>
+<div class="right">
+<h3>Il nostro Paese ora è sesto per carico fiscale tra i Paesi Ocse</h3>
+</div>
+</div><div class="news_related">
+			<span class="ico_articoli">ARTICOLI</span>
+							
+			
+	<a href="http://www.infodata.ilsole24ore.com/2014/12/10/in-italia-pressione-fiscale-al-426-nel-2013-il-confronto-con-leuropa/?uuid=NmDHap9A">In Italia pressione fiscale al 42,6% nel 2013. Il confronto con l'Europa</a>
+
+								</div>
+	
+<div class="news cf">
+<h4 class="news_cat">
+<a href="/art/notizie/2014-12-10/su-impresa-mensile-management-sole-24-ore-cloud-entra-azienda-131252.shtml?uuid=ABIGRgOC">in edicola da oggi</a>
+</h4>
+<h2>
+<a href="/art/notizie/2014-12-10/su-impresa-mensile-management-sole-24-ore-cloud-entra-azienda-131252.shtml?uuid=ABIGRgOC" class="esploso" name="&amp;lid=ABIGRgOC&amp;lpos=principali_12">Su L'Impresa, il mensile di management del Sole 24 Ore: il cloud entra in azienda</a>
+</h2>
+<p class="news_meta">13:22<span class="sep">|</span> <a href="javascript:void(0)" class="share-elements">Condividi</a>
+		<div class="share-tooltipBox">
+			<div class="share-tooltipBoxBG">
+				<iframe class="share-iframe" src="" data-url="%2Fart%2Fnotizie%2F2014-12-10%2Fsu-impresa-mensile-management-sole-24-ore-cloud-entra-azienda-131252.shtml%3Fuuid%3DABIGRgOC" data-title="Su L&#039;Impresa, il mensile di management del Sole 24 Ore: il cloud entra in azienda" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+			</div>
+			<img class="tooltipRightBorder" src="/img2010/home2011/fumetto/bg_right.png" width="11" height="100" />
+		</div>
+</p>
+<a href="/art/notizie/2014-12-10/su-impresa-mensile-management-sole-24-ore-cloud-entra-azienda-131252.shtml?uuid=ABIGRgOC"><img width="90" height="90" alt=" " title=" " src="http://i.res.24o.it/art/notizie/2014-12-10/su-impresa-mensile-management-sole-24-ore-cloud-entra-azienda-131252/images/fotohome15.jpg?v1.20141210132531"></a>
+<div class="right">
+<h3>Come affrontare la rivoluzione cloud computing senza rischiare di trovarsi impreparati</h3>
+</div>
+</div><!-- empty -->
+<div class="news cf">
+<h4 class="news_cat">
+<a href="/art/notizie/2014-12-09/dal-remake-ben-hur-nuovo-007-cinecitta-torna-dolce-vita-193022.shtml?uuid=ABh9PEOC">industria cinematografica</a>
+</h4>
+<h2>
+<a href="/art/notizie/2014-12-09/dal-remake-ben-hur-nuovo-007-cinecitta-torna-dolce-vita-193022.shtml?uuid=ABh9PEOC" class="multi-link esploso" name="&amp;lid=ABh9PEOC&amp;lpos=principali_13">Dal remake di Ben Hur al nuovo 007: Cinecittà torna alla dolce vita? -</a> <a class="multi-link" name="&amp;lpos=principali_13" href="http://foto.ilsole24ore.com/SoleOnLine5/Cultura/Cinema/2014/cinecitta-star-hollywood/cinecitta-star-hollywood_fotogallery.php" target="_blank">Le star di Hollywood in arrivo in Italia</a> </h2>
+<p class="news_meta">di <a href="http://argomenti.ilsole24ore.com/enrico-marro.html">Enrico Marro</a><span class="sep">|</span>07:24<span class="sep">|</span> <a href="javascript:void(0)" class="share-elements">Condividi</a>
+		<div class="share-tooltipBox">
+			<div class="share-tooltipBoxBG">
+				<iframe class="share-iframe" src="" data-url="%2Fart%2Fnotizie%2F2014-12-09%2Fdal-remake-ben-hur-nuovo-007-cinecitta-torna-dolce-vita-193022.shtml%3Fuuid%3DABh9PEOC" data-title="Dal remake di Ben Hur al nuovo 007: Cinecittà torna alla dolce vita?" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+			</div>
+			<img class="tooltipRightBorder" src="/img2010/home2011/fumetto/bg_right.png" width="11" height="100" />
+		</div>
+</p>
+<a href="/art/notizie/2014-12-09/dal-remake-ben-hur-nuovo-007-cinecitta-torna-dolce-vita-193022.shtml?uuid=ABh9PEOC"><img width="90" height="90" alt=" " title=" " src="http://i.res.24o.it/art/notizie/2014-12-09/dal-remake-ben-hur-nuovo-007-cinecitta-torna-dolce-vita-193022/images/fotohome15.jpg?v1.20141210132531"></a>
+<div class="right">
+<h3>Mentre l'economia nazionale stagna, l'industria cinematografica italiana «is booming», come scrive il Wall Street Journal. Merito degli incentivi fiscali</h3>
+</div>
+</div><div class="news_related">
+			<span class="ico_foto">FOTO</span>
+							
+			
+		<a href="/art/notizie/2014-12-09/dal-remake-ben-hur-nuovo-007-cinecitta-torna-dolce-vita-193022.shtml?foto&amp;uuid=ABh9PEOC&amp;mccorr=ABO5ZPOC">Le star di Hollywood in arrivo a Roma</a>
+
+							</div>
+	
+<div class="news cf">
+<h4 class="news_cat">
+<a href="http://www.motori24.ilsole24ore.com/Auto-Novita/2014/12/mercedes-gle.php">motori24</a>
+</h4>
+<h2>
+<a href="http://www.motori24.ilsole24ore.com/Auto-Novita/2014/12/mercedes-gle.php" class="multi-link esploso" name="&amp;lid=ABTESfOC&amp;lpos=principali_14">Mercedes GLE Coupé, la stella a tre punte sfida Bmw X6 -</a> <a class="multi-link" name="&amp;lpos=principali_14" href="http://www.motori24.ilsole24ore.com/MediaCenter/Gallery/Auto-Novita/2014/mercedes-gle/mercedes-gle_fotogallery.php">Foto</a> </h2>
+<p class="news_meta">di Corrado Canali<span class="sep">|</span>11:25</p>
+<a href="http://www.motori24.ilsole24ore.com/Auto-Novita/2014/12/mercedes-gle.php"><img width="90" height="90" alt=" " title=" " src="http://i.res.24o.it/art/impresa-e-territori/2014-12-10/mercedes-gle-coupe-stella-tre-punte-sfida-bmw-x6--foto-112209/images/fotohome15.jpg?v1.20141210132531"></a>
+<div class="right">
+<h3>Eccolo il nuovo Suv Coupé Mercedes che fonde lo stile di due vetture profondamente diverse tra loro, dando vita alla GLE Coupé, dove i tratti sportivi tipici di un Coupé prevalgono sulle caratteristiche distintive di un Suv</h3>
+</div>
+</div>
+<p class="correlated">
+</p>
+<div class="news cf">
+<h4 class="news_cat">
+<a href="http://www.scuola24.ilsole24ore.com/art/universita-e-ricerca/2014-12-09/GIANNINI-195906.php?uuid=AB9VMNOC">scuola24</a>
+</h4>
+<h2>
+<a href="http://www.scuola24.ilsole24ore.com/art/universita-e-ricerca/2014-12-09/GIANNINI-195906.php?uuid=AB9VMNOC" class="multi-link esploso" name="&amp;lid=ABJIdbOC&amp;lpos=principali_15">Giannini: test di Medicina, subito orientamento nelle scuole e riforma dal 2016 -</a> <a class="multi-link" name="&amp;lpos=principali_15" href="http://www.scuola24.ilsole24ore.com/art/universita-e-ricerca/2014-12-09/GIANNINI-195906.php?uuid=AB9VMNOC">Leggi Scuola 24</a> </h2>
+<p class="news_meta">di  Marzio Bartoloni<span class="sep">|</span>08:09</p>
+<a href="http://www.scuola24.ilsole24ore.com/art/universita-e-ricerca/2014-12-09/GIANNINI-195906.php?uuid=AB9VMNOC"><img width="90" height="90" alt=" " title=" " src="http://i.res.24o.it/art/notizie/2014-12-10/giannini-test-medicina-subito-orientamento-scuole-e-riforma-2016-sbloccati-decreti-ffo-e-costi-standard--leggi-scuola-24--080705/images/fotohome15.jpg?v1.20141210132531"></a>
+<div class="right">
+<h3>Chi sogna di fare il medico il prossimo anno dovrebbe vedersela ancora con una «prova selettiva» per iscriversi a Medicina, anche se rivista rispetto alla lotteria dei quiz del passato e preceduta da massicce dosi di orientamento dalle scuole superiori</h3>
+</div>
+</div>
+<p class="correlated">
+</p>
+<div class="news cf">
+<h4 class="news_cat">
+<a href="/art/notizie/2014-12-10/manager-korean-air-lines-lascia-compagnia-papa-rinvia-decollo-dell-airbus-uno-snack-troppo-104854.shtml?uuid=ABESRdOC">mica noccioline</a>
+</h4>
+<h2>
+<a href="/art/notizie/2014-12-10/manager-korean-air-lines-lascia-compagnia-papa-rinvia-decollo-dell-airbus-uno-snack-troppo-104854.shtml?uuid=ABESRdOC" class="esploso" name="&amp;lid=ABESRdOC&amp;lpos=principali_16">Manager della Korean Air lascia la compagnia di papà: rinvia il  decollo dell&rsquo;Airbus per uno snack di troppo</a>
+</h2>
+<p class="news_meta">di <a href="http://argomenti.ilsole24ore.com/angela-manganaro.html">Angela Manganaro</a><span class="sep">|</span>12:59<span class="sep">|</span> <a href="javascript:void(0)" class="share-elements">Condividi</a>
+		<div class="share-tooltipBox">
+			<div class="share-tooltipBoxBG">
+				<iframe class="share-iframe" src="" data-url="%2Fart%2Fnotizie%2F2014-12-10%2Fmanager-korean-air-lines-lascia-compagnia-papa-rinvia-decollo-dell-airbus-uno-snack-troppo-104854.shtml%3Fuuid%3DABESRdOC" data-title="Manager della Korean Air lascia la compagnia di papà: rinvia il decollo dell?Airbus per uno snack di troppo" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+			</div>
+			<img class="tooltipRightBorder" src="/img2010/home2011/fumetto/bg_right.png" width="11" height="100" />
+		</div>
+</p>
+<a href="/art/notizie/2014-12-10/manager-korean-air-lines-lascia-compagnia-papa-rinvia-decollo-dell-airbus-uno-snack-troppo-104854.shtml?uuid=ABESRdOC"><img width="90" height="90" alt=" " title=" " src="http://i.res.24o.it/art/notizie/2014-12-10/manager-korean-air-lines-lascia-compagnia-papa-rinvia-decollo-dell-airbus-uno-snack-troppo-104854/images/fotohome15.jpg?v1.20141210132531"></a>
+<div class="right">
+<h3>Eccesso di zelo incrociato, scandalo e dimissioni lampo: il tutto nel giro di cinque giorni </h3>
+</div>
+</div><!-- empty -->
+<div class="news cf">
+<h4 class="news_cat">
+<a href="/art/notizie/2014-12-10/tokyo-oggi-vigore-severissima-legge-segreti-stato-091600.shtml?uuid=ABSMzcOC">giappone</a>
+</h4>
+<h2>
+<a href="/art/notizie/2014-12-10/tokyo-oggi-vigore-severissima-legge-segreti-stato-091600.shtml?uuid=ABSMzcOC" class="esploso" name="&amp;lid=ABSMzcOC&amp;lpos=principali_17">Tokyo, da oggi in vigore una severissima legge sui segreti di Stato</a>
+</h2>
+<p class="news_meta">Dal nostro corrispondente <a href="http://argomenti.ilsole24ore.com/stefano-carrer.html">Stefano Carrer</a><span class="sep">|</span>09:20<span class="sep">|</span> <a href="javascript:void(0)" class="share-elements">Condividi</a>
+		<div class="share-tooltipBox">
+			<div class="share-tooltipBoxBG">
+				<iframe class="share-iframe" src="" data-url="%2Fart%2Fnotizie%2F2014-12-10%2Ftokyo-oggi-vigore-severissima-legge-segreti-stato-091600.shtml%3Fuuid%3DABSMzcOC" data-title="Tokyo, da oggi in vigore una severissima legge sui segreti di Stato" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+			</div>
+			<img class="tooltipRightBorder" src="/img2010/home2011/fumetto/bg_right.png" width="11" height="100" />
+		</div>
+</p>
+<a href="/art/notizie/2014-12-10/tokyo-oggi-vigore-severissima-legge-segreti-stato-091600.shtml?uuid=ABSMzcOC"><img width="90" height="90" alt=" " title=" " src="http://i.res.24o.it/art/notizie/2014-12-10/tokyo-oggi-vigore-severissima-legge-segreti-stato-091600/images/fotohome15.jpg?v1.20141210132531"></a>
+<div class="right">
+<h3>Proteste in Giappone e all'estero per i rischi sulla libertà di espressione</h3>
+</div>
+</div><!-- empty -->
+</div>
+
+							</div>
+							<!-- /.leftCol -->
+							<!-- .rightCol  -->
+							<div class="rightCol right cf">
+								        <!-- .box .dalblog -->
+        <div class="box dalblog">
+				
+            <h3><a href="http://www.ilsole24ore.com/feed/agora/agora.shtml">Blog</a></h3>
+						<div class="tabs">
+						 <ul class="tabs_voci cf">
+            
+            <li><a class="active " href="#blog-tabs-1">Agora</a></li>
+            <li><a href="#talk-tabs-2">Nova100</a></li>
+            
+        </ul>
+				<div class="contents">
+				<div class="tab" id="blog-tabs-1">
+										<ul class="item_list">
+								<li class="cf">
+										<a href="http://africa.blog.ilsole24ore.com"><img src="http://imagesdotcom.ilsole24ore.com/img2010/foto_agora/barlaam_71.jpg" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://africa.blog.ilsole24ore.com
+            ">AFRICA</a></strong>
+												<span class="by-line"><a href="http://africa.blog.ilsole24ore.com/chi-sono.html">di Riccardo Barlaam</a></span>
+												<h5><a href="http://africa.blog.ilsole24ore.com">Lo sviluppo delle Borse&#8230; in Africa</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://barbaraganz.blog.ilsole24ore.com/2014/12/10/uber-sbarca-a-padova-e-recluta-autisti-arriva-un-migliaio-di-candidature-a-settimana/"><img src="http://i.res.24o.it/img2010/foto_agora/ganz_71.jpg" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://barbaraganz.blog.ilsole24ore.com
+            ">IL CIELO SOPRA SAN MARCO</a></strong>
+												<span class="by-line"><a href="http://barbaraganz.blog.ilsole24ore.com/chi-sono.html">di Barbara Ganz</a></span>
+												<h5><a href="http://barbaraganz.blog.ilsole24ore.com/2014/12/10/uber-sbarca-a-padova-e-recluta-autisti-arriva-un-migliaio-di-candidature-a-settimana/">Uber sbarca a Padova, e recluta autisti (arriva un migliaio di candidature a settimana)</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://robertogalullo.blog.ilsole24ore.com/2014/12/10/mafia-capitale5-buzzi-braccio-destro-del-cecato-carminati-ce-la-finanza-fai-sparire-le-chiavi-butta-tutto/"><img src="http://imagesdotcom.ilsole24ore.com/img2010/foto_agora/galullo_71.jpg" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://robertogalullo.blog.ilsole24ore.com
+            ">GUARDIE O LADRI</a></strong>
+												<span class="by-line"><a href="http://robertogalullo.blog.ilsole24ore.com/chi-sono.html">di Roberto Galullo</a></span>
+												<h5><a href="http://robertogalullo.blog.ilsole24ore.com/2014/12/10/mafia-capitale5-buzzi-braccio-destro-del-cecato-carminati-ce-la-finanza-fai-sparire-le-chiavi-butta-tutto/">Mafia Capitale/5: Buzzi, braccio destro del &quot;cecato&quot; Carminati: &laquo;C'&egrave; la Finanza, fai sparire le chiavi, butta tutto&raquo;</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://carlofesta.blog.ilsole24ore.com/2014/12/10/da-intesa-sanpaolo-a-unicredit-ecco-i-piani-azionari-per-i-bancari-dipendenti/"><img src="http://i.res.24o.it/img2010/foto_agora/festa_71.jpg" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://carlofesta.blog.ilsole24ore.com/
+            ">INSIDER</a></strong>
+												<span class="by-line"><a href="http://carlofesta.blog.ilsole24ore.com/chi-sono.html">di Carlo Festa</a></span>
+												<h5><a href="http://carlofesta.blog.ilsole24ore.com/2014/12/10/da-intesa-sanpaolo-a-unicredit-ecco-i-piani-azionari-per-i-bancari-dipendenti/">Da Intesa Sanpaolo a Unicredit, ecco i piani azionari per i bancari dipendenti</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://marcobellinazzo.blog.ilsole24ore.com/2014/12/10/la-steaua-bucarest-perde-nome-e-simboli-potra-utilizzarli-solo-in-europa-league/"><img src="http://i.res.24o.it/img2010/foto_agora/bellinazzo_71.jpg" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://marcobellinazzo.blog.ilsole24ore.com
+            ">CALCIO & BUSINESS</a></strong>
+												<span class="by-line"><a href="http://marcobellinazzo.blog.ilsole24ore.com/calcio-business/chi-sono.html">di Marco Bellinazzo</a></span>
+												<h5><a href="http://marcobellinazzo.blog.ilsole24ore.com/2014/12/10/la-steaua-bucarest-perde-nome-e-simboli-potra-utilizzarli-solo-in-europa-league/">La Steaua Bucarest perde nome e simboli: potr&agrave; utilizzarli solo in Europa League</a></h5>
+										</div>
+								</li>
+						</ul>
+
+
+				</div>
+				<div class="tab" id="blog-tabs-2" style="display:none"> 
+										<ul class="item_list">
+								<li class="cf">
+										<a href="http://gabrielecaramellino.nova100.ilsole24ore.com/2014/12/09/qualche-consiglio-di-lettura-non-solo-per-natale/"><img src="http://i.res.24o.it/img2013/novabloggers/gabrielecaramellino.png" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://gabrielecaramellino.nova100.ilsole24ore.com/2014/12/09/qualche-consiglio-di-lettura-non-solo-per-natale/">In cerca di idee</a></strong>
+												<span class="by-line">di Gabriele Caramellino</span>
+												<h5><a href="http://gabrielecaramellino.nova100.ilsole24ore.com/2014/12/09/qualche-consiglio-di-lettura-non-solo-per-natale/">Qualche consiglio di lettura, non solo per Natale</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://guidovetere.nova100.ilsole24ore.com/2014/12/07/cosa-succede-nel-mondo-di-mezzo/"><img src="http://i.res.24o.it/img2013/novabloggers/guidovetere.png" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://guidovetere.nova100.ilsole24ore.com/2014/12/07/cosa-succede-nel-mondo-di-mezzo/">Cervelli nella vasca del web</a></strong>
+												<span class="by-line">di Guido Vetere</span>
+												<h5><a href="http://guidovetere.nova100.ilsole24ore.com/2014/12/07/cosa-succede-nel-mondo-di-mezzo/">Cosa succede nel mondo di mezzo</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://massimochiriatti.nova100.ilsole24ore.com/2014/12/07/le-macchine-ci-programmano/"><img src="http://i.res.24o.it/img2013/novabloggers/massimochiriatti.png" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://massimochiriatti.nova100.ilsole24ore.com/2014/12/07/le-macchine-ci-programmano/">Tit for Tat</a></strong>
+												<span class="by-line">di Massimo Chiriatti</span>
+												<h5><a href="http://massimochiriatti.nova100.ilsole24ore.com/2014/12/07/le-macchine-ci-programmano/">Le macchine ci programmano</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://matteopavesi.nova100.ilsole24ore.com/2014/12/05/marte-acquario-terra-acqua/"><img src="http://i.res.24o.it/img2013/novabloggers/matteopavesi.png" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://matteopavesi.nova100.ilsole24ore.com/2014/12/05/marte-acquario-terra-acqua/">Astro Ecologia</a></strong>
+												<span class="by-line">di Matteo Pavesi</span>
+												<h5><a href="http://matteopavesi.nova100.ilsole24ore.com/2014/12/05/marte-acquario-terra-acqua/">MARTE ACQUARIO &#8211; TERRA ACQUA</a></h5>
+										</div>
+								</li>
+								<li class="cf">
+										<a href="http://lucaboschi.nova100.ilsole24ore.com/2014/12/03/jack-davis-ha-90-anni/"><img src="http://i.res.24o.it/img2013/novabloggers/lucaboschi.png" alt="" width="70" height="70" class="left"/></a>
+
+										<div class="right">
+												<strong><a href="http://lucaboschi.nova100.ilsole24ore.com/2014/12/03/jack-davis-ha-90-anni/">Cartoonist globale</a></strong>
+												<span class="by-line">di Luca Boschi</span>
+												<h5><a href="http://lucaboschi.nova100.ilsole24ore.com/2014/12/03/jack-davis-ha-90-anni/">JACK DAVIS HA 90 ANNI (e due giorni)!</a></h5>
+										</div>
+								</li>
+						</ul>
+
+
+				</div>
+				</div>
+						</div>
+          </div>
+        <!-- /.dalblog -->
+								<div class="box english_version" data-vr-zone="box-english-version">
+				<h3><span><a href="/english-version/front-page.shtml">English Version</a></span></h3>
+					<ul class="item_list">
+						<li>
+<h5>
+<a href="/art/english-version/2014-10-21/europe-should-resist-dogmatic-drift-065805.shtml?uuid=ABCzrB5B" name="&amp;lid=ABCzrB5B&amp;lpos=english_1">Europe Should Resist a &lsquo;Dogmatic&rsquo; Drift</a>
+</h5>
+<p class="autore">Alberto Quadrio Curzio</p>
+</li>
+<li>
+<h5>
+<a href="/art/english-version/2014-10-21/-the-ecb-vs-market-match-065803.shtml?uuid=AB1wrB5B" name="&amp;lid=AB1wrB5B&amp;lpos=english_2"> The ECB vs. Market Match</a>
+</h5>
+<p class="autore">Isabella Bufacchi</p>
+</li>
+<li>
+<h5>
+<a href="/art/english-version/2014-10-21/when-berlin-asked-paris-for-help-065802.shtml?uuid=ABgyx94B" name="&amp;lid=ABgyx94B&amp;lpos=english_3">When Berlin Asked Paris for Help</a>
+</h5>
+<p class="autore">Gianni Toniolo</p>
+</li>
+</ul>
+				</div>
+		
+								<div class="box temi" data-vr-zone="temi-del-sole">
+			<h3>I Temi</h3>
+			<ul class="item_list">
+				<li>
+<h5 data-vr-contentbox="">
+<a href="http://www.ilsole24ore.com/speciali/2013/redditometro/v3/index.shtml">fisco</a>
+</h5>
+<h4 data-vr-contentbox="">
+<a href="http://www.ilsole24ore.com/speciali/2013/redditometro/v3/index.shtml" name="&amp;lid=Ab2Ix6ZI&amp;lpos=temi_1">Il tuo redditometro</a>
+</h4>
+</li>
+<li>
+<h5 data-vr-contentbox="">
+<a href="http://www.ilsole24ore.com/finanza-e-mercati/plus24.shtml">plus24</a>
+</h5>
+<h4 data-vr-contentbox="">
+<a href="http://www.ilsole24ore.com/finanza-e-mercati/plus24.shtml" name="&amp;lid=AbRhgbAI&amp;lpos=temi_2">Risparmio</a>
+</h4>
+</li>
+<li>
+<h5 data-vr-contentbox="">
+<a href="http://www.ilsole24ore.com/dossier/Economia%20e%20Lavoro/osservatorio-economia/">economia</a>
+</h5>
+<h4 data-vr-contentbox="">
+<a href="http://www.ilsole24ore.com/dossier/Economia%20e%20Lavoro/osservatorio-economia/" name="&amp;lid=AbhlgbAI&amp;lpos=temi_3">Osservatorio economia</a>
+</h4>
+</li>
+<li>
+						<h5>Tutti i temi del Sole</h5>
+						<p>
+							<a href="http://www.ilsole24ore.com/dossier/Economia%20e%20Lavoro/osservatorio-economia/">OSSERVATORIO DELL'ECONOMIA</a><span>&nbsp;•&nbsp;</span>
+<a href="http://www.ilsole24ore.com/finanza-e-mercati/indici-e-numeri.shtml">INDICI &amp; NUMERI</a><span>&nbsp;•&nbsp;</span>
+<a href="http://www.ilsole24ore.com/finanza-e-mercati/plus24.shtml">PLUS24</a><span>&nbsp;•&nbsp;</span>
+<a href="http://www.ilsole24ore.com/finanza-e-mercati/materie-prime.shtml">MATERIE PRIME</a><span>&nbsp;•&nbsp;</span>
+<a href="http://www.casa24.ilsole24ore.com/">CASA24</a><span>&nbsp;•&nbsp;</span>
+<a href="http://www.moda24.ilsole24ore.com/">MODA24</a><span>&nbsp;•&nbsp;</span>
+<a href="http://www.ilsole24ore.com/art/norme-e-tributi/pensionometro.shtml">IL PENSIONOMETRO</a><span>&nbsp;•&nbsp;</span>
+<a href="http://meteo24.ilsole24ore.com/">METEO24</a>
+</p>
+					</li>
+				</ul>
+		</div>
+	
+								<!-- box rapporti 24 -->
+<!--include virtual="/sez2013/homepage/rapporti24-impresa.shtml" -->
+<!--include virtual="/sez2013/homepage/rapporti24-territori.shtml" -->
+<div class="box rapporti24">
+		<h3><a href="/impresa-e-territori/rapporti24.shtml">Rapporti 24</a></h3>
+		<ul class="item_list">
+			<li class="cf ">
+					<a href="http://www.motori24.ilsole24ore.com/Dossier/rapporto-auto-bilancio-2014/" name="&amp;lid=ABJaA6NC&amp;lpos=rapporti24impresa"><img height="71" width="71" alt=" " title=" " src="http://i.res.24o.it/art/impresa-e-territori/2014-12-09/motori-quale-differenza-auto-e-mobilita-101507/images/fotohome3.jpg?v1.20141209110339"></a>
+<div class="right">
+<strong><a href="http://www.motori24.ilsole24ore.com/Dossier/rapporto-auto-bilancio-2014/" name="&amp;lid=ABJaA6NC&amp;lpos=rapporti24impresa">RAPPORTI24/ IMPRESA</a></strong>
+<h5>
+<a href="http://www.motori24.ilsole24ore.com/Dossier/rapporto-auto-bilancio-2014/" name="&amp;lid=ABJaA6NC&amp;lpos=rapporti24impresa">Motori / Quale differenza tra auto e mobilità</a>
+</h5>
+</div>
+</li>
+				<li class="cf ">
+					<a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-orologi-2-dicembre/index.shtml" name="&amp;lid=ABhHdpKC&amp;lpos=rapporti24impresa"><img height="71" width="71" alt=" " title=" " src="http://i.res.24o.it/art/impresa-e-territori/2014-12-02/orologi-corsa-lusso-ha-perso-velocita-121645/images/fotohome3.jpg?v1.20141209110339"></a>
+<div class="right">
+<strong><a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-orologi-2-dicembre/index.shtml" name="&amp;lid=ABhHdpKC&amp;lpos=rapporti24impresa">RAPPORTI24/ IMPRESA</a></strong>
+<h5>
+<a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-orologi-2-dicembre/index.shtml" name="&amp;lid=ABhHdpKC&amp;lpos=rapporti24impresa">Orologi / La corsa al lusso ha perso velocità</a>
+</h5>
+</div>
+</li>
+				<li class="cf ">
+					<a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-export-25-nov/index.shtml" name="&amp;lid=ABGGaqHC&amp;lpos=rapporti24impresa"><img height="71" width="71" alt="Corbis " title="Corbis " src="http://i.res.24o.it/art/impresa-e-territori/2014-11-25/rapporto-export-spazi-esplorare-mercati-esteri-111434/images/fotohome3.jpg?v1.20141209110339"></a>
+<div class="right">
+<strong><a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-export-25-nov/index.shtml" name="&amp;lid=ABGGaqHC&amp;lpos=rapporti24impresa">RAPPORTI24/ IMPRESA</a></strong>
+<h5>
+<a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-export-25-nov/index.shtml" name="&amp;lid=ABGGaqHC&amp;lpos=rapporti24impresa">Export / Spazi da esplorare sui mercati esteri</a>
+</h5>
+</div>
+</li>
+				<li class="cf last">
+					<a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-private-banking-18-nov/index.shtml" name="&amp;lid=ABTD0DFC&amp;lpos=rapporti24impresa"><img height="71" width="71" alt=" " title=" " src="http://i.res.24o.it/art/impresa-e-territori/2014-11-18/private-banking-ripensare-consulenza-clientela-123225/images/fotohome3.jpg?v1.20141209110339"></a>
+<div class="right">
+<strong><a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-private-banking-18-nov/index.shtml" name="&amp;lid=ABTD0DFC&amp;lpos=rapporti24impresa">RAPPORTI24/ IMPRESA</a></strong>
+<h5>
+<a href="http://www.ilsole24ore.com/dossier/impresa-e-territori/2014/rapporti-24-private-banking-18-nov/index.shtml" name="&amp;lid=ABTD0DFC&amp;lpos=rapporti24impresa">Private banking / Ripensare la consulenza alla clientela</a>
+</h5>
+</div>
+</li>
+				</ul>
+	</div>
+
+							</div>
+							<!-- /.rightCol -->
+						</div>
+						<!-- /.main -->
+						
+						<!-- === .sidebar === -->
+						<div class="sidebar right cf">
+								<!-- #cur_links -->
+<div id="cur_links" class="cf">
+	<div class="link_expand">
+		<h3>Qui Impresa</h3>
+		<ul>
+			<li>
+				<div class="item"><script type="text/javascript">OAS_RICH('CoBrand_01');</script></div>
+				<div class="item"><script type="text/javascript">OAS_RICH('CoBrand_02');</script></div>
+				<div class="item"><script type="text/javascript">OAS_RICH('CoBrand_03');</script></div>
+                <div class="item"><script type="text/javascript">OAS_RICH('CoBrand_04');</script></div>
+				<div class="item last"><script type="text/javascript">OAS_RICH('CoBrand_05');</script></div>
+			</li>
+			<li>
+				<div class="item"><script type="text/javascript">OAS_RICH('CoBrand_06');</script></div>
+                <div class="item last"><script type="text/javascript">OAS_RICH('Cobrand_Triplo');</script></div>
+			</li>
+		</ul>
+	</div>
+</div>
+    <!-- /#cur_links -->
+								<!-- fabbrica 24 -->
+
+<div  class="cf fabbrica24">
+		<h3>Business class</h3>
+		<ul>
+			<li>
+				<div class="item">
+					<a href="http://www.plusplus24fisco.ilsole24ore.com/"><img src="http://i.res.24o.it/img2013/fabbrica24/158x75-03.fisco.png" /></a>
+					<h3><a href="http://www.plusplus24fisco.ilsole24ore.com/">PLUS PLUS 24 FISCO</a></h3>
+					<p>Tutti i contenuti del Gruppo 24 ORE in un unico ed esclusivo nuovo servizio, riservato ai professionisti del Fisco</p>
+				</div>
+				<div class="item">
+					<a href="http://www.ilsole24ore.com/landingAbbonamenti/bccasa/landingbccasa.shtml"><img src="http://i.res.24o.it/img2013/fabbrica24/158x75_BC_CasaEdiliziaTerritorio.jpg" /></a>
+					<h3><a href="http://www.ilsole24ore.com/landingAbbonamenti/bccasa/landingbccasa.shtml">BUSINESS CLASS CASA, EDILIZIA E TERRITORIO</a></h3>
+					<p>Il meglio del Sole 24 Ore in un unico abbonamento</p>
+				</div>
+				<div class="item">
+					<a href="http://www.ilsole24ore.com/landingAbbonamenti/bcdiritto/"><img src="http://i.res.24o.it/img2013/fabbrica24/158x75_BC_Diritto.jpg" /></a>
+					<h3><a href="http://www.ilsole24ore.com/landingAbbonamenti/bcdiritto/">BUSINESS CLASS DIRITTO</a></h3>
+					<p>Il meglio del Sole 24 Ore in un unico abbonamento</p>
+				</div>
+				<div class="item">
+					<a href="http://finanza24.ilsole24ore.com/"><img src="http://i.res.24o.it/img2013/fabbrica24/158x75_finanza.png?v1.001" /></a>
+					<h3><a href="http://finanza24.ilsole24ore.com/">Finanza24</a></h3>
+					<p>Il nuovo strumento di informazione sulle societ&agrave; quotate a Piazza Affari</p>
+				</div>
+			</li>
+		</ul>
+	
+</div>
+<!-- fabbrica 24 - end -->
+						</div>
+						<!-- /.sidebar -->
+					
+					</div>
+					<!--  ======= /.page_middle  ======= -->
+					
+					<!-- BEGIN BANNER MAXTICKER 1 -->
+					<script type="text/javascript">OAS_RICH('MaxTicker_02');</script>
+					<!-- END BANNER MAXTICKER 1 -->
+					
+					<div id="strumenti" class="cf">
+		<h3>STRUMENTI DI LAVORO</h3>
+		<div class="strumenti_box" id="strumenti_dossier">
+			<h4>
+</h4>
+<div class="story">
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/semplificazioni-tributarie/index.shtml"><img height="55" width="55" src="http://i.res.24o.it/art/norme-e-tributi/2013-06-07/novita-132522/images/fotohome3.jpg?v1.20141114170919?20141114170919"></a>
+<h4 class="news_cat">
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/semplificazioni-tributarie/index.shtml">EBook</a>
+</h4>
+<h5>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/semplificazioni-tributarie/index.shtml" name="&amp;lid=ABelNTq&amp;lpos=strumenti_di_lavoro">Semplificazioni tributarie</a>
+</h5>
+<p>Pubblicato: 2014-11-12</p>
+</div>
+<div class="story">
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/indagini_difensive/index.shtml"><img height="55" width="55" src="http://i.res.24o.it/art/norme-e-tributi/2013-06-07/riforma-condominio-132938/images/fotohome3.jpg?v1.20141114170919?20141114170919"></a>
+<h4 class="news_cat">
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/indagini_difensive/index.shtml">EBOOK</a>
+</h4>
+<h5>
+<a href="http://www.ilsole24ore.com/ebook/norme-e-tributi/2014/indagini_difensive/index.shtml" name="&amp;lid=AB4jNTq&amp;lpos=strumenti_di_lavoro">Le indagini difensive</a>
+</h5>
+<p>Pubblicato: 2014-11-05</p>
+</div>
+<span class="see_all"><a href="http://www.ilsole24ore.com/strumenti-di-lavoro/tutti-i-dossier.shtml">Vedi tutti</a></span>
+			</div>
+		<div class="strumenti_box" id="strumenti_documenti">
+			<h4>DOCUMENTI</h4>
+<ul>
+				<li class="cf">
+<h5>
+<a href="/pdf2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/_Oggetti_Correlati/Documenti/Notizie/2014/12/rapporto-usa-cia.pdf?uuid=ABm20OOC" name="&amp;lid=ABm20OOC&amp;lpos=strumenti_di_lavoro">Il rapporto del Senato Usa sulla Cia</a>
+</h5>
+<p>Pubblicato: 2014-12-09</p>
+</li>
+<li class="cf">
+<h5>
+<a href="/pdf2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/_Oggetti_Correlati/Documenti/Notizie/2014/12/Migrazioni della popolazione residente - Testo integrale.pdf?uuid=AB26E8NC" name="&amp;lid=AB26E8NC&amp;lpos=strumenti_di_lavoro">Report Istat</a>
+</h5>
+<p>Pubblicato: 2014-12-09</p>
+</li>
+</ul>
+			<span class="see_all"><a href="http://www.ilsole24ore.com/norme-e-tributi/documenti.shtml">Vedi tutti</a></span>
+		</div>
+		<div class="strumenti_box" id="strumenti_esperto">
+<h4>
+<a href="http://www.espertorisponde.ilsole24ore.com/">L&#8217;ESPERTO RISPONDE</a>
+</h4>
+<p class="cit">
+<a name="&amp;lid=problema&amp;lpos=strumenti_di_lavoro" href="http://www.espertorisponde.ilsole24ore.com/approfondimenti/2014-12-09/silenzioassenso-condono-mesi.php">Silenzio-assenso sul condono dopo 24 mesi</a>
+</p>
+<p>Pubblicato: 2014-12-09</p>
+<p class="summary">Qualche giorno fa a mia madre è arrivata una raccomandata da parte del Comune di residenza, che la invita a integrare, con molteplici documenti, la domanda di condono...</p>
+<span class="see_all"><a href="http://www.espertorisponde.ilsole24ore.com/">Vedi tutti</a></span>
+</div>
+
+		<div class="other_tools">
+	<ul>
+		<li><span>altri strumenti:</span></li>
+		<li><a href="http://www.ilsole24ore.com/norme-e-tributi/calcolo-mini-imu.shtml">Calcola la mini-Imu</a></li>
+		<li><a href="http://finanza-mercati.ilsole24ore.com/strumenti/converti-valuta/converti-valuta.php">Convertitore valuta</a></li>
+		<li><a href="http://du.ilsole24ore.com/du/login.aspx?rurl=http%3A%2F%2Ffinanza-mercati.ilsole24ore.com%2Fstrumenti%2Flistino-personale%2Flistino-personale.php&sitecode=CO">Listino personale</a></li>
+		<li><a href="http://epheso.24oreborsaonline.ilsole24ore.com/PrevIntLightSole24Ore/EphEasyPens_Sole24Ore.aspx?ID=Sole24Ore">Calcola la pensione</a></li>
+		<li><a href="http://epheso.24oreborsaonline.ilsole24ore.com/PrevIntLightSole24Ore/Calcola1_Sole24Ore.aspx?ID=Sole24Ore">Previdenza integrativa</a></li>
+	</ul>
+</div>
+	</div>
+
+										
+					<!-- ======= .page_bottom (.box + #vetrina) ====== -->
+					<div class="page_bottom cf">
+					
+						<div class="container3col cf">
+		<!-- dwcTemplateName= Singolo -->
+					<!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Norme e Tributi/Pagine/BOX/Norme e Tributi.dwp -->
+	<div class="box" data-vr-zone="box-sezione-norme-e-tributi">
+				<h3><a href="/norme-e-tributi.shtml" title="">Norme e Tributi</a></h3><div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="/art/norme-e-tributi/2014-12-07/imu-tasi-chi-deve-pagare-abitazioni-principali-143834.shtml?uuid=ABdm4QNC&amp;nmll=2707"><img width="298" height="156" alt=" (Sergiogen - Fotolia)" title=" (Sergiogen - Fotolia)" src="http://i.res.24o.it/articlegallery/norme-e-tributi/2014/imu-tasi-chi-deve-pagare/images/fotohome6.jpg?v1.20141210132531"></a>
+<p class="cat">Possibile usare un solo F24 </p>
+<h2>
+<a href="/art/norme-e-tributi/2014-12-07/imu-tasi-chi-deve-pagare-abitazioni-principali-143834.shtml?uuid=ABdm4QNC&amp;nmll=2707" class="esploso">Imu-Tasi, ecco chi deve pagare, e quanto, entro il 16 </a>
+</h2>
+<a class="more" href="/norme-e-tributi.shtml" title="">Tutti gli articoli di Norme e Tributi</a></div></div><!-- end grid -->
+		<!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Finanza e Mercati/Pagine/BOX/Finanza_single.dwp -->
+	<div class="box" data-vr-zone="box-sezione-finanza">
+				<h3><a href="/finanza-e-mercati.shtml" title="">Finanza</a></h3><div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="/art/finanza-e-mercati/2014-12-10/oro-nero-e-oro-giallo-gemelli-diversi-074853.shtml?uuid=ABJOTbOC"><img width="298" height="156" alt=" " title=" " src="http://i.res.24o.it/art/finanza-e-mercati/2014-12-10/oro-nero-e-oro-giallo-gemelli-diversi-074853/images/fotohome6.jpg?v1.20141210132531"></a>
+<p class="cat">materie prime</p>
+<h2>
+<a href="/art/finanza-e-mercati/2014-12-10/oro-nero-e-oro-giallo-gemelli-diversi-074853.shtml?uuid=ABJOTbOC" class="esploso">Petrolio e oro, che cosa prevedono gli analisti per il 2015</a>
+</h2>
+<a class="more" href="/finanza-e-mercati.shtml" title="">Tutti gli articoli di Finanza</a></div></div><!-- end grid -->
+		<!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Economia/Pagine/BOX/Gli economisti.dwp -->
+	<div class="box last" data-vr-zone="box-sezione-gli-economisti">
+				<h3><a href="/economia/gli-economisti.shtml" title="">Gli economisti</a></h3><div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="/art/economia/2014-12-05/l-austerita-calorica-185503.shtml?uuid=AB3rOpMC"><img width="298" height="156" alt=" " title=" " src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/2014/12/06/Commenti%20e%20inchieste/ImmaginiWeb/Ritagli/dieta-mediterranea-corbis-672-kKWH--298x156@IlSole24Ore-Web.jpg?v1.20141210132531"></a>
+<p class="cat">gli economisti</p>
+<h2>
+<a href="/art/economia/2014-12-05/l-austerita-calorica-185503.shtml?uuid=AB3rOpMC" class="esploso">Krugman: austerità calorica? Meglio vino rosso e pastasciutta</a>
+</h2>
+<a class="more" href="/economia/gli-economisti.shtml" title="">Tutti gli articoli di Gli economisti</a></div></div><!-- end grid -->
+		<!-- dwcTemplateName= SingoloConBannerCX -->
+					<!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Impresa e Territori/Pagine/BOX/Impresa e Territori.dwp -->
+	<div class="box clear" data-vr-zone="box-sezione-impresa-e-territori">
+				<h3>
+<a href="http://www.ilsole24ore.com/impresa-e-territori.shtml">Impresa&amp;Territori</a>
+</h3>
+<div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="/art/impresa-e-territori/2014-12-09/la-liuc-coordina-atenei-europei-fai-da-te-digitale-225523.shtml?uuid=ABNLXWOC"><img width="298" height="156" alt=" " title=" " src="http://i.res.24o.it/art/impresa-e-territori/2014-12-09/la-liuc-coordina-atenei-europei-fai-da-te-digitale-225523/images/fotohome6.jpg?v1.20141210132532"></a>
+<p class="cat">INNOVAZIONE</p>
+<h2>
+<a href="/art/impresa-e-territori/2014-12-09/la-liuc-coordina-atenei-europei-fai-da-te-digitale-225523.shtml?uuid=ABNLXWOC" class="esploso">La Liuc coordina gli atenei europei sul &ldquo;fai-da-te&rdquo; digitale</a>
+</h2>
+<a class="more" href="http://www.ilsole24ore.com/impresa-e-territori.shtml">Tutti gli articoli di Impresa&amp;Territori</a>
+</div></div><!-- end grid -->
+		<div class="box box_adv">
+	        <!-- BEGIN BANNER VIDEOBOX 2 -->
+        <script type="text/javascript">OAS_RICH('VideoBox_2');</script>
+        <!-- END BANNER VIDEOBOX 2 -->
+		<p class="ad-sotto-annuncio">
+<a href="http://concorso-cinema.ilsole24ore.com/concorso/"><img height="100" width="300" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Z_Metabox/marketing/Z_Immagini/CC_ragazzoinvisibile_300x100_st.jpg?uuid=908eac62-8048-11e4-b479-59034d5b83a6"></a>
+</p>
+
+
+</div><!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Tecnologie/Pagine/BOX/Tecnologie.dwp -->
+	<div class="box last" data-vr-zone="box-sezione-tecnologie">
+				<h3><a href="/tecnologie.shtml" title="">Tecnologie</a></h3><div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="http://www.infodata.ilsole24ore.com/2014/12/10/big-data-in-azienda-cresce-il-mercato-in-italia-ma-solo-il-13-delle-imprese-ha-uno-scienziato-dei-dati/?uuid=ggEFJ9aT"><img width="298" height="156" alt=" " title=" " src="http://i.res.24o.it/art/tecnologie/2014-12-10/big-data-azienda-cresce-mercato-italia-ma-solo-13percento-imprese-ha-scienziato-dati-123751/images/fotohome6.jpg?v1.20141210132532"></a>
+<p class="cat">INFO DATA BLOG</p>
+<h2>
+<a href="http://www.infodata.ilsole24ore.com/2014/12/10/big-data-in-azienda-cresce-il-mercato-in-italia-ma-solo-il-13-delle-imprese-ha-uno-scienziato-dei-dati/?uuid=ggEFJ9aT" class="esploso">Big data in azienda? Cresce il mercato in Italia ma solo il 13% delle imprese ha uno scienziato dei dati</a>
+</h2>
+<a class="more" href="/tecnologie.shtml" title="">Tutti gli articoli di Tecnologie</a></div></div><!-- end grid -->
+		</div>
+
+						
+						<!-- ##### Shopping24 SOLE ##### -->
+<div id="shopping24" class="cf" name="lpos=shopping24">
+    <div class="group strip">
+        <div class="sh24_tabs">
+            <h2 class="current">
+                <a id="sh24tab" href="http://www.shopping24.ilsole24ore.com/" title="Shopping24">Shopping<em>24</em></a>
+            </h2>
+            <!-- temporaneamente ripristinato in sviluppo -->
+            <span class="divisore"> | </span>
+
+            <h2><a href="#" title="inEdicola" id="inedicola">In Edicola</a></h2>
+            <!-- fine temporaneamente ripristinato in sviluppo -->
+        </div>
+
+        <ul class="tabs shopping">
+        </ul>
+
+        <div class="tab-container shopping" id="shopping2">
+            <img src="http://i.res.24o.it/img2013/loading_sh.gif" class="loading"/>
+            <a class="left grid-1 first prev"></a>
+
+            <div class="scroller-5 grid-10 slower">
+                <div class="scroller" style="visibility:hidden;">
+                    <div class="item grid-2 empty">
+                        <div class="sh24_item">
+                            <a class="shopping-image" href="#">
+                                <img src="http://i.res.24o.it/img2013/loading_sh.gif" alt=""/>
+                            </a>
+
+                            <p class="price">
+                                <span class="percent"></span>
+                                <a href="#" class="buy"></a>
+                                <span class="iva">Iva Inc.</span>
+                            </p>
+                        </div>
+                        <p><a href="#"><span class="red title"></span> <span class="description"></span></a></p>
+                    </div>
+                </div>
+            </div>
+            <a class="right grid-1 last next"></a>
+
+            <div class="paginazione"></div>
+        </div>
+    </div>
+</div>
+<!-- ##### /Shopping24 SOLE ##### -->
+						<div id="da-non-perdere" class="group strip">
+						<h2><!--<a href="#">-->Da non perdere<!--</a>--></h2>
+<ul class="tabs" id="article-lower-strip-ul">
+	<li rel="0"></li>
+	<li rel="1"></li>
+	<li rel="2"></li>
+	<li rel="3"></li>
+	<li rel="4"></li>
+	<li rel="5"></li>
+</ul>
+
+<div class="tab-container"id="article-lower-strip">
+	<img src="http://i.res.24o.it/img2010/loading_sh.gif" class="loading">
+	<a class="left grid-1 first"></a>
+		<div class="scroller-5 grid-10">
+				<div class="scroller">
+					<div class="seo-friendly">
+
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/commenti-e-idee/2014-12-10/perche-cresce-fronte-anti-tedesco-073327.shtml?uuid=AB0uIbOC">Perché cresce il fronte anti-tedesco</a> </h3>
+<p class="by-line">di Adriana Cerretelli</p>
+<p>«La verità è che oggi la Germania non sa bene che cosa fare con la Francia. Per questo la legge di</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/commenti-e-idee/2014-12-10/anche-prudenza-ha-sue-ragioni-073733.shtml?uuid=ABT4IbOC">Anche la prudenza ha le sue ragioni</a> </h3>
+<p class="by-line">di  Morya Longo</p>
+<p>La Bce comprerà titoli di Stato. La Fed alzerà un po' i tassi, ma senza strappi. La locomotiva Usa</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/commenti-e-idee/2014-12-10/il-danno-affidabilita-che-spaventa-investitori-074222.shtml?uuid=ABRASbOC">Il danno all'affidabilità che spaventa gli investitori</a> </h3>
+<p class="by-line">di  Isabella Bufacchi</p>
+<p>La capitale è il biglietto da visita di un Paese, è a sua immagine e somiglianza. È crocevia di</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/commenti-e-idee/2014-12-10/il-sole-24-ore-consolida-2-posto-e-primato-digitale-074905.shtml?uuid=ABqSVbOC">Il Sole 24 Ore consolida 2° posto e primato digitale</a> </h3>
+<p class="by-line">di  Andrea Biondi</p>
+<p>La marcia verso il basso dell'editoria quotidiana è proseguita anche nel mese di ottobre. La</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/commenti-e-idee/2014-12-10/come-vincere-sfida-terza-generazione-075420.shtml?uuid=ABCYXbOC">Come vincere la sfida della terza generazione</a> </h3>
+<p class="by-line">di  Bernardo Bertoldi</p>
+<p>I dati presentati dall'Osservatorio Aub sulle aziende familiari italiane promosso dalla cattedra</p>
+</div>
+
+			</div>
+<div class="seo-friendly">
+	
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/finanza-e-mercati/2013-02-04/ecco-come-ottenere-sospensione-093115.shtml?uuid=AbkyqzQH">Ecco come sospendere le rate se il mutuo pesa troppo sul reddito</a> </h3>
+<p class="by-line">di Vito Lops</p>
+<p>Può capitare che il mutuo vada in testacoda. Ovvero che la rata diventi un peso troppo forte da</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/notizie/2013-02-04/f138-stagione-verra-ferrari-132943.shtml?uuid=AbZ4D5QH">La F138 e la stagione che verrà. Ferrari si prepara a un anno di transizione e incassa uno sponsor cinese</a> </h3>
+<p class="by-line">di Alex D'Agosta</p>
+<p>«Spero sia un missile», ha affermato senza mezzi termini Luca Cordero di Montezemolo al termine di</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="http://foto.ilsole24ore.com/Moda/Stili-Tendenze/2014/idee-regalo-natale/idee-regalo-natale_fotogallery.php">Sessanta idee per un Natale alla moda</a>
+</h3>
+<p>
+</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/notizie/2013-02-02/parte-corsa-obbligata-vera-121442.shtml?uuid=AbV51YQH">Parte la corsa, obbligata, alla "vera" certificazione energetica delle case</a> </h3>
+<p class="by-line">di Federico Rendina</p>
+<p>Via alla vera e inderogabile certificazione energetica degli edifici. L'obbligo diventa una cosa</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="/art/norme-e-tributi/2013-02-02/affitti-flop-cedolare-secca-154829.shtml?uuid=AbHNAdQH">Affitti: il flop della cedolare secca. La Cgia conferma l'allarme lanciato dal Sole</a> </h3>
+<p class="by-line">di Biagio Simonetta</p>
+<p>La cedolare secca non funziona. I conti non tornano, il gettito fiscale è largamente inferiore</p>
+</div>
+
+			</div>
+<div class="seo-friendly">
+	
+			
+	<div class="story grid-2">
+<h3>
+<a href="http://ugotramballi.blog.ilsole24ore.com/2014/09/16/alla-fine-che-guerra-faremo-al-califfo-2/">Alla fine, che guerra faremo al califfo?</a>
+</h3>
+<p class="by-line">di Ugo Tramballi</p>
+<p>
+</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="http://chiarabeghelli.blog.ilsole24ore.com/2014/09/11/lapple-watch-e-una-minaccia-per-rolex-cartier-co/">L'Apple Watch e' una minaccia per Rolex, Cartier &amp; co.?</a>
+</h3>
+<p class="by-line">di Chiara Beghelli</p>
+<p>
+</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="http://danielebellasio.blog.ilsole24ore.com/2014/09/17/la-tv-cambia-ancora-canale/">La tv cambia ancora canale</a>
+</h3>
+<p class="by-line">di Daniele Bellasio</p>
+<p>
+</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="http://africa.blog.ilsole24ore.com/2014/09/17/obama-fuori-tempo-massimo/">Obama fuori tempo massimo</a>
+</h3>
+<p class="by-line">di Riccardo Barlaam</p>
+<p>
+</p>
+</div>
+
+			
+			
+	<div class="story grid-2">
+<h3>
+<a href="http://giuliacrivelli.blog.ilsole24ore.com/2014/09/12/anna-wintour-in-73-domande-uno-spasso-davvero/">Anna Wintour in 73 domande, uno spasso (davvero!)</a>
+</h3>
+<p class="by-line">di Giulia Crivelli</p>
+<p>
+</p>
+</div>
+
+			</div>
+</div>
+		</div>
+	<a class="right grid-1 last"></a>
+	<script type="text/javascript">
+		//load tabs
+		
+		tab_exists["article-lower-strip"] = ["idee", "piuvisti", "piuvistifoto", "piuletti", "meglioblog"];
+		var use_hp = {"idee": true, "meglioblog":true};</script>
+</div>
+
+						</div>
+						<div class="container3col cf">
+		<!-- dwcTemplateName= Singolo -->
+<!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Cultura/Pagine/BOX/Cultura_single.dwp -->
+	<div class="box" data-vr-zone="box-sezione-cultura">
+				<h3><a href="/cultura.shtml" title="">Cultura</a></h3><div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="http://www.arteconomy24.ilsole24ore.com/art/cultura-tempo-libero/2014-12-10/partita-rivoluzione-franceschini-mibact-081059.php"><img width="298" height="156" alt=" (13705)" title=" (13705)" src="http://i.res.24o.it/art/notizie/2014-12-10/e-partita-rivoluzione-franceschini-mibact-seleziona-nuovi-direttori-generali-ecco-quanto-guadagneranno-direttori-musei-081737/images/fotohome6.jpg?v1.20141210132532"></a>
+<p class="cat">arteconomy</p>
+<h2>
+<a href="http://www.arteconomy24.ilsole24ore.com/art/cultura-tempo-libero/2014-12-10/partita-rivoluzione-franceschini-mibact-081059.php" class="esploso">Il Mibact seleziona i nuovi direttori generali. Ecco quanto guadagneranno</a>
+</h2>
+<a class="more" href="/cultura.shtml" title="">Tutti gli articoli di Cultura</a></div></div><!-- end grid -->
+		<!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Pagine/BOX/box_dossier_manuale.dwp -->
+	<div class="box" data-vr-zone="box-sezione-box_dossier_manuale">
+				<h3>
+<a href="http://www.ilsole24ore.com/strumenti-di-lavoro/tutti-i-dossier.shtml">Dossier</a>
+</h3>
+<div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="http://www.ilsole24ore.com/dossier/tecnologie/2014/innovazione-nuove-tecnologie-servizio-aziende/index.shtml"><img width="298" height="156" alt=" " title=" " src="http://i.res.24o.it/art/tecnologie/2014-11-17/innovazione-e-nuove-tecnologie-servizio-aziende-151605/images/fotohome6.jpg?v1.20141210132532"></a>
+<p class="cat">dossier</p>
+<h2>
+<a href="http://www.ilsole24ore.com/dossier/tecnologie/2014/innovazione-nuove-tecnologie-servizio-aziende/index.shtml" class="esploso">Innovazione e nuove tecnologie al servizio delle aziende</a>
+</h2>
+<a class="more" href="http://www.ilsole24ore.com/strumenti-di-lavoro/tutti-i-dossier.shtml">Tutti gli articoli di Dossier</a>
+</div></div><!-- end grid -->
+		<!-- /Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/WebPages/Notizie/Pagine/BOX/Sport.dwp -->
+	<div class="box last" data-vr-zone="box-sezione-sport">
+				<h3><a href="/notizie/sport.shtml" title="">Sport</a></h3><div class="boxCont">
+<!-- templateName=boxSingolo -->
+	<a href="/art/notizie/2014-12-10/juventus-avanti-piano-ma-non-parliamo-biscotto-questa-sera-la-roma-sara-come-finale-074409.shtml?uuid=AB32SbOC"><img width="298" height="156" alt=" (AP)" title=" (AP)" src="http://i.res.24o.it/art/notizie/2014-12-10/juventus-avanti-piano-ma-non-parliamo-biscotto-questa-sera-la-roma-sara-come-finale-074409/images/fotohome6.jpg?v1.20141210132532"></a>
+<p class="cat">contropiede</p>
+<h2>
+<a href="/art/notizie/2014-12-10/juventus-avanti-piano-ma-non-parliamo-biscotto-questa-sera-la-roma-sara-come-finale-074409.shtml?uuid=AB32SbOC" class="esploso">Juventus avanti piano, ma non parliamo di «biscotto». Questa sera per la Roma sarà come una finale</a>
+</h2>
+<a class="more" href="/notizie/sport.shtml" title="">Tutti gli articoli di Sport</a></div></div><!-- end grid -->
+		</div>
+
+						
+					</div>
+					<!-- ======= /.page_bottom  ====== -->
+					
+					<!-- === #annunci === -->
+<div id="annunci" class="cf">
+    <h3>ANNUNCI</h3>
+
+    <div class="annunciCont cf">
+
+        <script type="text/javascript">OAS_RICH('SpotLight_01');</script>
+
+
+        <script type="text/javascript">OAS_RICH('TextBox_01');</script>
+
+
+        <script type="text/javascript">OAS_RICH('TextBox_04');</script>
+
+
+        <script type="text/javascript">OAS_RICH('LittleBox_01');</script>
+
+
+        <script type="text/javascript">OAS_RICH('SpotLight_02');</script>
+
+
+        <script type="text/javascript">OAS_RICH('TextBox_02');</script>
+
+
+        <script type="text/javascript">OAS_RICH('TextBox_05');</script>
+
+
+        <script type="text/javascript">OAS_RICH('LittleBox_02');</script>
+
+
+        <script type="text/javascript">OAS_RICH('SpotLight_03');</script>
+
+
+        <script type="text/javascript">OAS_RICH('TextBox_03');</script>
+
+
+        <script type="text/javascript">OAS_RICH('TextBox_06');</script>
+
+
+        <script type="text/javascript">OAS_RICH('LittleBox_03');</script>
+
+    </div>
+
+</div>
+<!-- /#annunci -->
+					
+					<!-- ======= .servizi (.main (SERVIZI) + .sidebar (ADV) ) ====== -->
+					<div class="servizi cf">
+					
+						<!-- === .main (.slider_hp + .leftCol + .rightCol) === -->
+						<div class="main left cf">
+							<!-- stylesheet tabs frame-content -->
+
+<div class="module first-module">
+	<h2><a href="http://www.ilsole24ore.com/st/servizi24/servizi.shtml" title="">Servizi</a></h2>
+	<div class="servizi-list">
+		<div class="group">
+			<a class="servizi-item" id="arte" href="javascript:void(0)" title="Arteconomy">
+				<img src="http://i.res.24o.it/img2010/box_servizi/arteconomy24.gif" height="50" width="50" alt="" />
+				Arteconomy
+			</a>
+			<a class="servizi-item" id="avvocati" href="javascript:void(0)" title="Cerca Avvocato">
+				<img src="http://i.res.24o.it/img2010/box_servizi/BestLawyer.gif" height="50" width="50" alt="" />
+				Cerca avvocato
+			</a>
+			<a class="servizi-item last" id="casa" href="javascript:void(0)" title="Casa24plus">
+				<img src="http://i.res.24o.it/img2010/box_servizi/casa24.gif" height="50" width="50" alt="" />
+				Casa24plus
+			</a>
+		</div>
+		<div class="group">
+			<a class="servizi-item" id="finanza" href="javascript:void(0)" title="Money Controller">
+				<img src="http://i.res.24o.it/img2010/box_servizi/money_controller.gif" height="50" width="50" alt="" />
+				Money Controller
+			</a>
+			<a class="servizi-item" id="giochi" href="javascript:void(0)" title="Giochi">
+				<img src="http://i.res.24o.it/img2010/box_servizi/giochi24.gif" height="50" width="50" alt="" />
+				Giochi
+			</a>
+			<a class="servizi-item last" id="mappe" href="javascript:void(0)" title="Mappe">
+				<img src="http://i.res.24o.it/img2010/box_servizi/mappe24.gif" height="50" width="50" alt="" />
+				Mappe
+			</a>
+		</div>
+		<div class="group">
+			<a class="servizi-item" id="meteo" href="javascript:void(0)" title="Meteo">
+				<img src="http://i.res.24o.it/img2010/box_servizi/meteo24.gif" height="50" width="50" alt="" />
+				Meteo
+			</a>
+			<a class="servizi-item" id="motori" href="javascript:void(0)" title="Motori24">
+				<img src="http://i.res.24o.it/img2010/box_servizi/motori24.gif" height="50" width="50" alt="" />
+				Motori24
+			</a>
+			<a class="servizi-item last" id="travel" href="javascript:void(0)" title="Viaggi24">
+				<img src="http://i.res.24o.it/img2010/box_servizi/viaggi24.gif" height="50" width="50" alt="" />
+				Viaggi24
+			</a>
+		</div>
+		<div class="group">
+			<a class="servizi-item" id="job" href="javascript:void(0)" title="Job24">
+				<img src="http://i.res.24o.it/img2010/box_servizi/job24.gif" height="50" width="50" alt="" />
+				Job24
+			</a>
+			<a class="servizi-item last" id="sport" href="javascript:void(0)" title="Sport">
+				<img src="http://i.res.24o.it/img2010/box_servizi/sport.gif" height="50" width="50" alt="" />
+				Sport
+			</a>
+		</div>
+	</div>
+	<div class="grid-5 last servizi-frame">
+		<img class="frame-icon" height="30" width="50" alt="" />
+		<h3>Motori24</h3>
+		<ul class="tabs"></ul>
+		<div class="frame-content"></div>
+	</div>
+</div>
+
+						</div>
+						<!-- /.main -->
+						
+						<!-- === .sidebar === -->
+						<div class="sidebar right cf">
+						
+						    <!-- BANNER 300x250 -->
+						    <div class="sidebar-ad">
+						        <!-- BEGIN BANNER VIDEOBOX 3 -->
+						        <script type="text/javascript">OAS_RICH('VideoBox_3');</script>
+						        <!-- END BANNER VIDEOBOX 3 -->
+								<p class="ad-sotto-annuncio">
+<a href="http://www.ilsole24ore.com/st/vitanova/"><img height="100" width="300" src="http://i.res.24o.it/images2010/Editrice/ILSOLE24ORE/ILSOLE24ORE/Online/Z_Metabox/marketing/Z_Immagini/LaVitaNova_300x100.jpg?uuid=0682f80a-53bd-11e4-b75b-48a09c14c78d"></a>
+</p>
+
+						    </div>
+						
+						</div>
+						<!-- /.sidebar -->
+					
+					</div>
+					<!--  ======= /.servizi  ======= -->
+
+				
+			</div>
+			<!-- /wrapper -->
+
+		</div>
+		<!-- /#wrapperFullWidth -->
+		  <script type="text/javascript" src="http://j.res.24o.it/js2013/jquery.cookie.js"></script>
+  <script language="JavaScript" type="text/javascript">
+    $(document).ready(function() {
+      var fixedFooterStatus;
+      if (fixedFooterStatus = $.cookie('fixed-footer-status')) {
+        if (fixedFooterStatus === 'hide') {
+          $('#fixed-footer').addClass('hide');
+        }
+      }
+      $('#js-close-ff').on('click', function(e){
+        $('#fixed-footer').addClass('hide');
+        $.cookie('fixed-footer-status', 'hide');
+        e.preventDefault();
+      });
+    });
+  </script>
+  <div id="fixed-footer">
+    <a class="link-ff" target="_blank" href="http://www.italy24.ilsole24ore.com/">
+      <span class="container-ff">
+        <img class="abs-ff devices-ff" src="http://www.ilsole24ore.com/st/newsletter/Italy24/device.png"  />
+        <img class="abs-ff logo-ff" src="http://www.ilsole24ore.com/st/newsletter/Italy24/logo_Italy24.png" height="132" width="636" alt="" />
+		<div class="abs-ff messaggio-ff">
+			<h2>|&ensp;L&rsquo;Italia raccontata al mondo in lingua inglese</h2>
+		</div>
+		<div class="abs-ff btn-abbonati">
+            <img src="http://www.ilsole24ore.com/st/newsletter/Italy24/abbonati-bianco.png" alt="">
+		</div>
+         <img id="js-close-ff" class="abs-ff close-ff" src="http://www.ilsole24ore.com/st/newsletter/Italy24/close.png" height="12" width="12" alt="Close" />
+      </span>
+    </a>
+  </div>
+
+		<!-- #footerWrap 100% blu -->
+<div id="footerWrap" class="cf">
+	<div id="footer" class="cf">
+		<div class="ft_top cf">
+			<div class="logosole"><a href="http://www.ilsole24ore.com/" title="Il Sole 24 ORE: quotidiano di economia, finanza e cronaca">Il Sole 24 Ore</a></div>
+				<div class="ft_text">
+					<p>Quotidiano politico economico e finanziario &#164; Fondato nel 1865</p>
+				</div>
+				
+					<div class="social">
+				
+					<h3>segui su:</h3>
+						<ul>
+							<li class="facebook"><a href="http://www.facebook.com/ilsole24ore" title="facebook" rel="nofollow">facebook</a></li>
+							<li class="twitter"><a href="http://www.ilsole24ore.com/twitter/" title="twitter" rel="nofollow">twitter</a></li>
+							<li class="google"><a href="https://plus.google.com/112308895348159615070" rel="publisher">google plus</a></li>
+							<li class="rss"><a href="http://www.ilsole24ore.com/st/extra/rss.shtml" title="rss">rss</a></li>
+						</ul>
+					</div>
+					
+						<div class="search-box">
+					
+							<h3>cerca</h3>
+							<form action="#" class="form-ricerca">
+								<p class="search-field">
+									<input placeholder="Keywords" value="" name="keyWords" class="r24query" autocomplete="off" type="text"/>
+								</p>
+								<p class="search-button">
+									<input aria-disabled="false" role="button" class="ui-button ui-widget ui-state-default ui-corner-all" name="submit" value="Cerca" type="submit"/>
+								</p>
+								<input name="cmd" value="static" type="hidden"/>
+								<input type="hidden" name="chId" value="30"/>
+								<input type="hidden" name="path" value="/search/search_engine.jsp"/>
+								<input type="hidden" name="field" value="Titolo|Testo" />
+								<input type="hidden" name="orderBy" value="score desc" />
+							</form>
+						</div>
+					</div>
+					<div class="ft_links cf">
+						<div class="links">
+							<h3>GRUPPO24ORE</h3>
+							<ul>
+								<li><a href="http://www.gruppo24ore.ilsole24ore.com/" rel="nofollow">Sito corporate</a></li>
+								<li><a href="http://www.gruppo24ore.ilsole24ore.com/it-it/institutional/contatti" rel="nofollow">Contatti</a></li>
+								<li><a href="http://www.ilsole24ore.com/redazione/news24.shtml" rel="nofollow">Redazione online</a></li>
+								<li><a href="http://www.professioni-imprese24.ilsole24ore.com/" rel="nofollow">Professioni e Imprese 24</a></li>
+								<li><a href="http://www.formazione.ilsole24ore.com/" rel="nofollow">Formazione e eventi</a></li>
+								<li><a href="http://www.radio24.ilsole24ore.com/" rel="nofollow">Radio 24</a></li>
+								<li><a href="http://finanza.ilsole24ore.com/" rel="nofollow">Il Sole 24ORE Finanza</a></li>
+								<li><a href="http://www.radiocor.ilsole24ore.com/" rel="nofollow">Il Sole 24ORE P.A.</a></li>
+								<li><a href="http://www.radiocor.ilsole24ore.com/" rel="nofollow">Radiocor&nbsp;</a></li>
+								<li><a href="http://www.24oremottacultura.com/" rel="nofollow">24 ORE Cultura</a></li>
+								<li><a href="http://eventiquattro.ilsole24ore.com/" rel="nofollow">Eventiquattro</a></li>
+								<li><a href="http://system24.ilsole24ore.com/" rel="nofollow">System24 Pubblicit&agrave;</a></li>
+								<li><a href="http://backtowork.ilsole24ore.com/" rel="nofollow">Back To Work 24</a></li>
+							</ul>
+						</div>
+						<div class="links">
+							<h3>SEZIONI</h3>
+							<ul>
+								<li><a href="http://www.ilsole24ore.com/notizie.shtml">Italia&amp;Mondo</a></li>
+								<li><a href="http://www.ilsole24ore.com/norme-e-tributi.shtml">Norme&amp;Tributi</a></li>
+								<li><a href="http://www.ilsole24ore.com/finanza-e-mercati.shtml">Finanza&amp;Mercati</a></li>
+								<li><a href="http://www.ilsole24ore.com/impresa-e-territori.shtml">Impresa&amp;Territori</a></li>
+								<li><a href="http://www.ilsole24ore.com/tecnologie.shtml">Nova24 Tech</a></li>
+								<li><a href="http://www.ilsole24ore.com/finanza-e-mercati/plus24.shtml">Plus24 Risparmi</a></li>
+								<li><a href="http://www.ilsole24ore.com/commenti-e-idee.shtml">Commenti&amp;Inchieste</a></li>
+								<li><a href="http://www.ilsole24ore.com/strumenti-di-lavoro.shtml">Strumenti di Lavoro</a></li>
+							</ul>
+						</div>
+						<div class="links">
+							<h3>CANALI</h3>
+							<ul>
+								<li><a href="http://www.moda24.ilsole24ore.com/" title="Moda24" rel="nofollow">Moda24</a></li>
+								<li><a href="http://www.motori24.ilsole24ore.com/" rel="nofollow">Motori24</a></li>
+								<li><a href="http://www.luxury24.ilsole24ore.com/" rel="nofollow">Luxury24</a></li>
+								<li><a href="http://www.viaggi24.ilsole24ore.com/" rel="nofollow">Viaggi24</a></li>
+								<li><a href="http://www.casa24.ilsole24ore.com/" rel="nofollow">Casa24plus</a></li>
+								<li><a href="http://salute24.ilsole24ore.com/" rel="nofollow">Salute24</a></li>
+								<li><a href="http://www.arteconomy24.ilsole24ore.com/" rel="nofollow">ArtEconomy24</a></li>
+								<li><a href="http://job24.ilsole24ore.com/" rel="nofollow">Job24</a></li>
+								<li><a href="http://www.shopping24.ilsole24ore.com/" rel="nofollow">Shopping24</a></li>
+								<li><a href="http://america24.com/" rel="nofollow">America24</a></li>
+								<li><a href="http://www.diritto24.ilsole24ore.com/" rel="nofollow">Diritto24</a></li>
+								<li><a href="http://www.ediliziaeterritorio.ilsole24ore.com/" rel="nofollow">Edilizia&amp;Territorio</a></li>
+								<li><a href="http://www.sanita.ilsole24ore.com/" rel="nofollow">Sanit&agrave;</a></li>
+							</ul>
+						</div>
+						<div class="links">
+							<h3>STRUMENTI</h3>
+							<ul>
+								<li><a href="http://stream24.ilsole24ore.com/video/" rel="nofollow">Stream24</a></li>
+								<li><a href="http://www.ilsole24ore.com/feed/agora/agora.shtml">Blog</a></li>
+								<li><a href="http://www.espertorisponde.ilsole24ore.com/" rel="nofollow">L'Esperto Risponde</a></li>
+							</ul>
+						</div>
+						<div class="links">
+							<h3>SERVIZI</h3>
+							<ul>
+								<li><a href="http://argomenti.ilsole24ore.com/" rel="nofollow">Argomenti del Sole</a></li>
+								<li><a href="http://www.quotidiano.ilsole24ore.com/" rel="nofollow">Versione digitale</a></li>
+								<li><a href="http://www.banchedati.ilsole24ore.com/" rel="nofollow">Banche Dati</a></li>
+								<li><a href="http://newsletters.ilsole24ore.com/" rel="nofollow">Newsletter</a></li>
+								<li><a href="http://www.ilsole24ore.com/st/extra/rss.shtml">RSS</a></li>
+								<li><a href="http://www.ilsole24ore.com/Meteo/">Meteo</a></li>
+								<li><a href="http://www.ilsole24ore.com/ipad">iPad</a></li>
+								<li><a href="http://www.ilsole24ore.com/ipadfinanza/">Finanza &amp; Mercati per iPad</a></li>
+								<li><a href="http://www.ilsole24ore.com/lavitanova/">La Vita N&ograve;va</a></li>
+								<li><a href="http://www.ilsole24ore.com/landingAbbonamenti/landing.shtml">Abbonamenti</a></li>
+								<li><a href="http://www.assicurazione.it/" rel="nofollow">Assicurazione.it</a></li>
+								<li><a href="http://www.experteer.it/" rel="nofollow">Offerte di lavoro</a></li>
+								<li><a href="http://www.ilsole24ore.com/st/servizi24/servizi.shtml">Tutti i servizi</a></li>
+								<li><a href="http://www.system24.ilsole24ore.com/legale" rel="nofollow">Pubblicit&agrave; Tribunali e P.A.</a></li>
+							</ul>
+						</div>
+						<div class="links last">
+							<h3><strong>LINK UTILI</strong></h3>
+							<ul>
+								
+								<li><a href="http://www.immobiliare.it/" rel="nofollow">Case e Appartamenti</a></li>
+								
+								<li><a href="http://www.africa-times-news.com/" rel="nofollow">AfricaTimesNews</a></li>
+								<li><a href="http://www.gastronauta.it/" rel="nofollow">Il Gastronauta</a></li>
+								<li><a href="http://www.agichina24.it/" rel="nofollow">AGI China24</a></li>
+								<li><a href="http://guidaffari.ilsole24ore.com/" rel="nofollow">Guida Affari</a></li>
+								<li><a href="http://paginegialle.ilsole24ore.com/pgolfe/action?msez=10" rel="nofollow">Pagine Gialle</a></li>
+								<li><a href="http://paginebianche.ilsole24ore.com/execute.cgi?tl=2&amp;cb=19" rel="nofollow">Pagine Bianche</a></li>
+								<li><a href="http://tuttocitta.ilsole24ore.com/tc/index_ilsole24ore.html" rel="nofollow">Tutto Citt&agrave;</a></li>
+								<li><a href="http://www.audiweb.it/" rel="nofollow">Audiweb</a></li>
+								<li><a href="http://www.opa-europe.org/" rel="nofollow">OPA</a></li>
+								<li><a href="http://www.eleconomista.es/" rel="nofollow">El Economista</a></li>
+								<li><a href="http://www.experteer.it/headhunter/search" rel="nofollow">Head Hunter Experteer</a></li>
+								<li><a href="http://tariffe.finanza-mercati.ilsole24ore.com/" rel="nofollow">SOS Tariffe</a></li>
+								<li><a href="http://www.confrontaconti.it/" rel="nofollow">Confronta conti</a></li>
+								<li><a href="http://www.genertel.it/" rel="nofollow">Assicurazioni Auto Genertel</a></li>
+								<li><a href="http://www.nuvolaitaliana.it/" rel="nofollow">La Nuvola Italiana</a></li>
+								<li><a href="http://www.retimpresa.it/" rel="nofollow">RetImpresa</a></li>
+							</ul>
+						</div>
+					</div>
+					
+						<div class="fascia">
+					
+							<div class="sx">
+								P.I. 00777910159 - 
+								<a href="http://www.gruppo24ore.ilsole24ore.com/Public/IT/002_Footer/020_Dati_Societari/020_Dati_Societari_1_1_0_0_0.htm" rel="nofollow">Dati societari</a>
+								- &copy; Copyright Il Sole 24 Ore - Tutti i diritti riservati
+								<a href="http://du.ilsole24ore.com/DU/privacyfiles/privacy_policy.html" rel="nofollow">Privacy Policy</a>
+							</div>
+							<div class="mx">
+								Per la tua pubblicit&agrave; sul sito:
+								<a href="http://websystem.ilsole24ore.com/" rel="nofollow"><strong>Websystem</strong></a>
+							</div>
+							<div class="dx"><a href="#" onclick="setHomePage(location.href)">Fai di questa pagina la tua homepage</a></div>
+						</div>
+					</div>
+				</div>
+<!-- /#footerWrap -->
+
+<script language="JavaScript" type="text/javascript"><!--
+OAS_RICH('PopUp');
+OAS_RICH('PopUnder');
+//--></script>
+
+
+		<script type="text/javascript">
+		$(window).load(function(){
+			var img = document.createElement('img');
+			img.src = 'http://www.ilsole24ore.com/img2007/finepagina.gif';
+			document.body.appendChild(img);
+		})
+		</script>
+		
+	    
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+<!-- SiteCatalyst code version: H.20.3.
+Copyright 1996-2010 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="http://j.res.24o.it/js2010/IlSole24Ore_News_Prod_s_code.js?v1.008"></script>
+<script language="JavaScript" type="text/javascript"><!--
+
+/* You may give each page an identifying name, server, and channel on the next lines. */
+
+	/* Traffic Variables */
+	s.pageName="N24:home:home"
+	s.channel="N24:home"
+	s.prop1="N24:home:home"
+	s.prop2="N24:home:home"
+	s.prop3="N24:home:home"
+	s.prop4="N24:home:home"
+	s.prop9="N24:home"
+
+	/* Hierarchy Variables */
+	s.hier1="N24,home"
+	
+ 
+
+s.prop15=(typeof(isAuthenticated) != "undefined" && isAuthenticated) ? "Logged in" : "Not logged in"
+		
+
+
+
+
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><a href="http://www.omniture.com" title="Web Analytics"><img
+src="http://metrics.ilsole24ore.com/b/ss/s24onewsprod,s24oglobal/1/H.20.3--NS/0"
+height="1" width="1" border="0" alt="" /></a></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.20.3. -->
+	
+	    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40827900-1', 'ilsole24ore.com');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- START Nielsen Online SiteCensus V5.3 -->
+<!-- COPYRIGHT 2010 Nielsen Online -->
+<script type="text/javascript">
+	var _rsCI="ilsole-it";
+	var _rsCG="0";
+	var _rsDN="//secure-it.imrworldwide.com/";
+	var _rsCC=0;
+	var _rsIP=1;
+	var _rsPLfl=0;
+</script>
+<script type="text/javascript" src="//secure-it.imrworldwide.com/v53.js"></script>
+<noscript>
+	<div><img src="//secure-it.imrworldwide.com/cgi-bin/m?ci=ilsole-it&amp;cg=0" style="visibility:hidden;position:absolute;left:0px;top:0px;z-index:-1" alt=""/></div>
+</noscript>
+<!-- END Nielsen Online SiteCensus V5.3 -->
+	</body>
+
+	
+</html>

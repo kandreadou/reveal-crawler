@@ -1,0 +1,97 @@
+//code.jquery.com/jquery-1.9.1.min.js',
+			'/_themes/hs-vertigo/js/jquery.cookie.js',
+			'/_themes/hs-vertigo/js/jquery.mousewheel.js',
+			'/_themes/hs-vertigo/js/jquery.scrollbar.min.js',
+			'/_themes/hs-vertigo/js/jquery.cycle.lite.js',
+			'/_themes/hs-vertigo/js/base.min.js',
+			'/_themes/hs-vertigo/js/waypoints.min.js',
+			'/_themes/hs-vertigo/js/sticky.min.js',
+			,'/_themes/hs-vertigo/js/noselect.js'						,'/_themes/hs-vertigo/js/jquery.currency.js'												,'/_themes/hs-vertigo/js/system.js',
+
+		],
+
+
+
+		complete : function(){  
+		      
+			$(function(){  
+				$.getScript('http://platform.twitter.com/widgets.js');
+				$.getScript('http://www.google-analytics.com/ga.js');
+																
+
+				if (typeof (FB) != 'undefined') {
+					FB.init({ status: true, cookie: true, xfbml: true });
+				} else {
+					$.getScript("http://connect.facebook.net/tr_TR/all.js#xfbml=1", function () {
+						FB.init({ status: true, cookie: true, xfbml: true });
+					});
+				}
+
+				if (typeof (gapi) != 'undefined') {
+					gbuttons.each(function () {
+						gapi.plusone.render($(this).get(0));
+					});
+				} else {
+					$.getScript('https://apis.google.com/js/plusone.js');
+				}
+
+
+
+
+
+
+			});
+			
+
+
+			$.getJSON(site_url + 'cache/twitter_followers.json',function(data) { 
+				$('a#followers').html(data);
+			});
+
+			var graph_url = 'https://graph.facebook.com/'+facebook_user;
+			$.getJSON(graph_url, function(data) {
+			  $('a#likes').html(data.likes);
+			});
+
+
+			
+
+			$('.sticky-menu').waypoint('sticky', {
+				wrapper: '<div class="sticky-wrapper" />',
+				stuckClass: 'stuck'
+			});
+
+			
+
+			
+
+
+			
+
+
+
+			
+
+			
+
+			
+
+   
+		 }  
+
+
+
+
+	});
+
+</script>
+
+           
+
+
+    <div id="fb-root"></div>
+    
+
+
+  </body>
+</html>

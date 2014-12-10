@@ -1,0 +1,1605 @@
+">Magú</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/fisgon-c.jpg" /></a>
+                        <div id="idDivCartoonsAuthor" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Nuestro peso</span>
+                            <br /><br /><span class="carton_author">Fisgón</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/helguera-c.jpg" /></a>
+                        <div id="idDivCartoonsAuthor" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Pa'cabar pronto</span>
+                            <br /><br /><span class="carton_author">Helguera</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/rocha-c.jpg" /></a>
+                        <div id="idDivCartoonsAuthor" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Nuevo estamento</span>
+                            <br /><br /><span class="carton_author">Rocha</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/hernandez-c.jpg" /></a>
+                        <div id="idDivCartoonsAuthor" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Gobierno sensible</span>
+                            <br /><br /><span class="carton_author">Hernández</span>
+                        </div>
+                    </li>
+                </ul><div id="idDivPagCartoons" class="clDivPagCartoons">
+                <span class="arrowPrev_c">
+                    <a href="javascript:;">
+                        <img alt="Anterior" title="Anterior" border="0" src="http://www.jornada.unam.mx/ultimas/++resource++lajornada.portal.theme/imagenes/fecha_izquierda.png" /></a>
+                </span>
+                <span class="arrowNext_c">
+                    <a href="javascript:;">
+                        <img alt="Siguiente" title="Siguiente" border="0" src="http://www.jornada.unam.mx/ultimas/++resource++lajornada.portal.theme/imagenes/flecha_derecha.png" /></a>
+                </span>
+            </div>
+            </div>
+            <div class="paginador_c" style="display:none"></div>
+
+        </div>
+        <!-- CARTONES TAMAÃ‘O COMPLETO-->
+
+        <div class="la-jornada-pop-page" id="la-jornada-carton-page" style="display:none; overflow:scroll;" align="center">
+        <div id="la-jornada-pop-carton-page" align="center" style="z-index:12">
+
+            <div id="idDivCartoonsPop" class="clDivCartoons" style="width:1115px !important; margin-top:50px; margin-bottom:20px !important;z-index:15;">
+                 <table width="1115px"><tr><td>
+            <img src="++resource++lajornada.portal.theme/imagenes/cartones_img_header.png" /><span class="carton_title" style="padding-left:10px">CARTONES</span></td>
+      <td align="right"><span id="la-jornada-close-pop-carton" class="carton_title" style="padding-right:10px;cursor:pointer">Cerrar</span></td></tr><tr><td colspan="2"> </td></tr></table><ul id="idUlCartoonsPop" class="clUlCartoons"><li>
+                        <a href="javascript:;" onclick="pop_carton('1','la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/magu.jpg" /></a>
+                        <div id="idDivCartoonsAuthorPop" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Salvando al peso</span>
+                            <br /><br /><span class="carton_author">Magú</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('1','la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/fisgon.jpg" /></a>
+                        <div id="idDivCartoonsAuthorPop" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Nuestro peso</span>
+                            <br /><br /><span class="carton_author">Fisgón</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('1','la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/helguera.jpg" /></a>
+                        <div id="idDivCartoonsAuthorPop" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Pa'cabar pronto</span>
+                            <br /><br /><span class="carton_author">Helguera</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('1','la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/rocha.jpg" /></a>
+                        <div id="idDivCartoonsAuthorPop" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Nuevo estamento</span>
+                            <br /><br /><span class="carton_author">Rocha</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" onclick="pop_carton('1','la-jornada-carton-page');">
+                        <img src="http://www.jornada.unam.mx/2014/12/10/cartones/hernandez.jpg" /></a>
+                        <div id="idDivCartoonsAuthorPop" class="clDivCartoonsAuthor">
+                            <span class="carton_description">Gobierno sensible</span>
+                            <br /><br /><span class="carton_author">Hernández</span>
+                        </div>
+                    </li>
+                </ul><div id="idDivPagCartoonsPop" class="clDivPagCartoons">
+                <span class="arrowPrev_c">
+                    <a href="javascript:;">
+                        <img alt="Anterior" title="Anterior" border="0" src="http://www.jornada.unam.mx/ultimas/++resource++lajornada.portal.theme/imagenes/fecha_izquierda.png" /></a>
+                </span>
+                <span class="arrowNext_c">
+                    <a href="javascript:;">
+                        <img alt="Siguiente" title="Siguiente" border="0" src="http://www.jornada.unam.mx/ultimas/++resource++lajornada.portal.theme/imagenes/flecha_derecha.png" /></a>
+                </span>
+            </div>
+            </div>
+            <div class="paginador_cPop" style="display:none"></div>
+
+        </div>
+
+        </div>
+
+        <!-- -->
+
+    </div>
+    </div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.lasmas/d533d16d7a6f497e9e74ef0bb3320176" id="d533d16d7a6f497e9e74ef0bb3320176">   
+
+
+      
+  <div>
+
+
+
+    <table class="lajornada-lasmas-content" border="0"><tr><td class="lajornada-lasmas-vistas" style="padding-top:5px">
+                <div id="lajornada-lasmas-vistas-button">
+                  <table border="0"><tr><td>
+                    <img id="lajornada-lasmas-vistas-img" style="vertical-align:10%" src="++resource++lajornada.portal.theme/imagenes/cruz_roja.png" /></td>
+                      <td>
+                    <strong class="lasmas-font-l">MÁS</strong> <br /><br />LEÍDO
+                      </td>
+                    </tr></table></div>
+              </td>
+              <td class="lajornada-lasmas-comentadas" style="padding-top:5px">
+                <div id="lajornada-lasmas-comentadas-button">
+                  <table border="0"><tr><td>
+                  <img id="lajornada-lasmas-comentadas-img" style="vertical-align:10%" src="++resource++lajornada.portal.theme/imagenes/cruz_gris.png" /></td>
+                      <td>
+                  <strong class="lasmas-font-l">MÁS</strong> <br /><br /> COMENTADO
+                    </td>
+                    </tr></table></div>  
+                </td><td>
+                </td></tr><tr><td colspan="2">
+
+              <div id="lajornada-lasmas-vistas-result">
+                  <ul style="list-style:none;text-decoration:none;list-style-image:url('++resource++lajornada.portal.theme/imagenes/minijornada.png');"><li style="margin:7px;">
+              <a class="lajornada-lasmas-link" href=" http://www.jornada.unam.mx/2014/12/10/ciencias/a02n1cie" target="_blank">
+              <span>El Sol entró en un proceso de hibernación que durará todo el siglo</span>
+              </a>
+            </li>
+                    <li style="margin:7px;">
+              <a class="lajornada-lasmas-link" href=" http://www.jornada.unam.mx/2014/12/10/politica/010o1pol" target="_blank">
+              <span>Astillero</span>
+              </a>
+            </li>
+                    <li style="margin:7px;">
+              <a class="lajornada-lasmas-link" href=" http://www.jornada.unam.mx/2014/12/10/espectaculos/a10n1esp" target="_blank">
+              <span>&amp;#8220;El tamaño de los tacones de la mujer, con poderoso efecto en el comportamiento masculino&amp;#8221;</span>
+              </a>
+            </li>
+                    <li style="margin:7px;">
+              <a class="lajornada-lasmas-link" href=" http://www.jornada.unam.mx/2014/12/10/politica/007n1pol" target="_blank">
+              <span>“Ya no tenemos miedo; la lucha será más fuerte”, advierten padres de normalistas</span>
+              </a>
+            </li>
+                    <li style="margin:7px;">
+              <a class="lajornada-lasmas-link" href=" http://www.jornada.unam.mx/2014/12/10/ciencias/a03a1cie" target="_blank">
+              <span>El ADN de Ayotzinapa</span>
+              </a>
+            </li>
+          </ul></div>
+
+                      <div id="lajornada-lasmas-comentadas-result" style="display:none">
+                  <ul style="list-style:none;text-decoration:none;list-style-image:url('++resource++lajornada.portal.theme/imagenes/minijornada.png');"><li style="margin:7px;">
+              <a class="lajornada-lasmas-link" target="_blank">
+              <span></span>
+              </a>
+            </li>
+          </ul></div>
+
+
+
+
+                  </td>
+                </tr></table></div>     
+    </div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@collective.cover.embed/f96ba9461cba41c0bc87668837a5dbeb" id="f96ba9461cba41c0bc87668837a5dbeb">
+  
+
+  <div class="tile-content">
+    
+      
+        <!-- FIXME -->
+        <a class="twitter-timeline" height="350px" width="250px" href="https://twitter.com/lajornadaonline" data-widget-id="447174734149476352">Tweets por @lajornadaonline</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><div class="visualClear"><!-- --></div>
+      
+    
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.subjects/a8e4c53d5d144870b7b2137511a35c58" id="a8e4c53d5d144870b7b2137511a35c58">
+    
+
+
+      <div class="la-jornada-temadia-content">
+        <div style="padding-left:1px;padding-top:1px;">
+                         <table width="470px"><tr><td width="50px"><img src="++resource++lajornada.portal.theme/imagenes/temas_dias_img_header.png" /></td><td style="padding-left:10px"><span class="la-jornada-temadia-title">TEMAS DEL DÍA</span></td></tr></table></div>
+
+
+            <ul style="list-style-type: none; margin-left:10px !important;"></ul></div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@collective.cover.embed/d2a30e40098f4e75af5ffc5f5dfa9d07" id="d2a30e40098f4e75af5ffc5f5dfa9d07">
+  
+
+  <div class="tile-content">
+    
+      
+        <!-- FIXME -->
+        <div style="background-color:#1E6FAE;width:256px;height:32px">
+ <img src="&#13;&#10;https://www.facebook.com/images/fb_icon_325x325.png" border="0" height="30px" style="margin-left:10px;" /></div>
+<iframe scrolling="no" frameborder="0" allowtransparency="true" style="margin-left: 0px; margin-top: 0px; background-color: white; border-left:1px dotted #3B5998;border-right:1px dotted #3B5998;border-bottom:1px dotted #3B5998; overflow:hidden; width:254px; height:290px;" src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Ffacebook.com%2Flajornadaonline&amp;width=250&amp;colorscheme=light&amp;show_faces=false&amp;border_color=ffffff&amp;stream=true&amp;header=false&amp;height=290"></iframe>
+      
+
+      
+
+      
+
+      
+        <div class="visualClear"><!-- --></div>
+      
+    
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.suplements/b29f96cd7f234bfc81387b470d5552b5" id="b29f96cd7f234bfc81387b470d5552b5">
+
+
+  
+  <div>
+
+
+
+        <div class="tile-content">
+
+            <div id="idDivSuplements" class="clDivSuplements">
+
+                 <table width="255px"><tr><td>
+            <img src="++resource++lajornada.portal.theme/imagenes/suplementos_img_header.png" /></td>
+        <td><span class="carton_title">SUPLEMENTOS</span>
+        </td>
+        </tr><tr><td colspan="2"> </td></tr></table><ul id="idUlSuplements" class="clUlSuplements"><li>
+                        <a href="http://www.jornada.unam.mx/2014/11/08/ojaportada.html" target="_blank">
+                            <img src="http://www.jornada.unam.mx/2014/11/08/ojarasca.png" /></a>
+                        <div id="idDivSuplementsTitle" class="clDivSuplementsTitle">
+                            <a href="http://www.jornada.unam.mx/2014/11/08/ojaportada.html" target="_blank">
+                                <span class="suplemento_description">Ojarasca</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.jornada.unam.mx/suplementos/semanal.php" target="_blank">
+                            <img src="http://www.jornada.unam.mx/2014/12/07/semanal.png" /></a>
+                        <div id="idDivSuplementsTitle" class="clDivSuplementsTitle">
+                            <a href="http://www.jornada.unam.mx/suplementos/semanal.php" target="_blank">
+                                <span class="suplemento_description">La Jornada Semanal</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.jornada.unam.mx/2014/12/04/ls-cara.html" target="_blank">
+                            <img src="http://www.jornada.unam.mx/2014/12/04/letra.png" /></a>
+                        <div id="idDivSuplementsTitle" class="clDivSuplementsTitle">
+                            <a href="http://www.jornada.unam.mx/2014/12/04/ls-cara.html" target="_blank">
+                                <span class="suplemento_description">Letra S</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.jornada.unam.mx/2014/12/01/eco-cara.html" target="_blank">
+                            <img src="http://www.jornada.unam.mx/2014/12/01/ecologica.png" /></a>
+                        <div id="idDivSuplementsTitle" class="clDivSuplementsTitle">
+                            <a href="http://www.jornada.unam.mx/2014/12/01/eco-cara.html" target="_blank">
+                                <span class="suplemento_description">La Jornada Ecológica</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="http://www.jornada.unam.mx/2014/11/15/delcampo.html" target="_blank">
+                            <img src="http://www.jornada.unam.mx/2014/11/15/delcampo.png" /></a>
+                        <div id="idDivSuplementsTitle" class="clDivSuplementsTitle">
+                            <a href="http://www.jornada.unam.mx/2014/11/15/delcampo.html" target="_blank">
+                                <span class="suplemento_description">La Jornada del Campo</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul><div id="idDivPagSuplements" class="clDivPagSuplements">
+                <span class="arrowPrev_s">
+                    <a href="javascript:;">
+                        <img alt="Anterior" title="Anterior" border="0" src="http://www.jornada.unam.mx/ultimas/++resource++lajornada.portal.theme/imagenes/fecha_izquierda.png" /></a>
+                </span>
+                <span class="arrowNext_s">
+                    <a href="javascript:;">
+                        <img alt="Siguiente" title="Siguiente" border="0" src="http://www.jornada.unam.mx/ultimas/++resource++lajornada.portal.theme/imagenes/flecha_derecha.png" /></a>
+                </span>    
+            </div>
+            </div>
+            <div class="paginador_s" style="display:none"></div>
+
+
+        </div>
+
+
+       </div> 
+    </div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.ad_rightfive_cover/f27161bd3f94421585c992b4fb4cfc62" id="f27161bd3f94421585c992b4fb4cfc62"><div class="ad-logout-border-right-five">
+	
+	    <div class="iab rectangle" style="text-align:center;">
+			<script type="text/javascript">
+				OAS.ad ('Middle')
+			</script></div>
+	
+</div></div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+
+            </div>
+            
+        
+    
+
+
+
+            
+            
+                
+
+
+    
+        
+            
+            
+            <div class="cell width-5 position-11 " data-panel="">
+
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.recent_videos/b6150b1cc35a4983b366fb990e04d0c7" id="b6150b1cc35a4983b366fb990e04d0c7">
+<a href="/ultimas/videos"><div class="clDivHeadVideos"></div></a>
+<div class="tile-content tile-video-data" id="video_player" style="width:350px">
+    <div class="tile_video_content" id="iframe_player">
+         <iframe allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" allowtransparency="true" src="" id="current_video" width="330px" height="192px" style="background-color:#585858; padding-top: 15px; padding-left:15px;">
+         </iframe>
+         <div class="tile-video-description" id="current_description"></div>
+    </div>
+</div>
+
+<div id="idDivVideosThumb" class="clDivVideosThumb">
+    <ul class="clUlVideosThumb"><li class="clLiVideosThumb">
+                
+                <script>
+                    $(document).ready(function(){
+                        var link = "http://video.jornada.com.mx/player/iframe/?slug=es-aberrante-que-nos-entreguen-un-pedazo-de-alexander-familiares-de-normalistas";
+                        var description ="El Pericón, Guerrero, 8 de diciembre de 2014. Estudiantes y familiares de los normalistas desaparecidos viajaron a la casa de Alexander Mora, luego de que expertos forenses austriacos identificaron restos humanos como pertenecientes a ese joven.";
+                        var orden ="0";
+                        $('#es-aberrante-que-nos-entreguen-un-pedazo-de-alexander-familiares-de-normalistas').click(
+                              function(){
+                                  getDataIframe(link,description,orden);
+                              }
+                         );
+                         if(orden == "0"){
+                             getDataIframe(link,description,orden);
+                         }
+                    })
+                 
+                </script><span style="display: block;width: 100px; height: 10px;" id="0"></span>
+                <img src="http://video.jornada.com.mx/media/thumbnails/9d/f3/9df36e4fa64322fe85cd68eb5f65c0de.jpg" width="100px" height="75px" style="margin:10px;border: 1px outset transparent" id="es-aberrante-que-nos-entreguen-un-pedazo-de-alexander-familiares-de-normalistas" /></li>
+        
+        
+            <li class="clLiVideosThumb">
+                
+                <script>
+                    $(document).ready(function(){
+                        var link = "http://video.jornada.com.mx/player/iframe/?slug=gobierno-uruguayo-espera-que-seis-presos-de-guantanamo-traigan-sus-familias";
+                        var description ="Montevideo, 8 de diciembre de 2014. El gobierno uruguayo espera que los seis presos detenidos durante 12 años en la base estadounidense de Guantánamo, Cuba, que llegaron el domingo a Uruguay se instalen aquí con sus familias.";
+                        var orden ="1";
+                        $('#gobierno-uruguayo-espera-que-seis-presos-de-guantanamo-traigan-sus-familias').click(
+                              function(){
+                                  getDataIframe(link,description,orden);
+                              }
+                         );
+                         if(orden == "0"){
+                             getDataIframe(link,description,orden);
+                         }
+                    })
+                 
+                </script><span style="display: block;width: 100px; height: 10px;" id="1"></span>
+                <img src="http://video.jornada.com.mx/media/thumbnails/fc/96/fc96754a9d15aabe9b9cfcb0f98404cb.jpg" width="100px" height="75px" style="margin:10px;border: 1px outset transparent" id="gobierno-uruguayo-espera-que-seis-presos-de-guantanamo-traigan-sus-familias" /></li>
+        
+        
+            <li class="clLiVideosThumb">
+                
+                <script>
+                    $(document).ready(function(){
+                        var link = "http://video.jornada.com.mx/player/iframe/?slug=el-tifon-en-filipinas-se-debilita-deja-21-muertos";
+                        var description ="Legazpi, Filipinas, 8 de diciembre de 2014. El tifón Hagupit se convirtió el lunes en tormenta tropical, tras dejar al menos 21 muertos en Filipinas y obligar a más de un millón de personas a refugiarse en albergues.";
+                        var orden ="2";
+                        $('#el-tifon-en-filipinas-se-debilita-deja-21-muertos').click(
+                              function(){
+                                  getDataIframe(link,description,orden);
+                              }
+                         );
+                         if(orden == "0"){
+                             getDataIframe(link,description,orden);
+                         }
+                    })
+                 
+                </script><span style="display: block;width: 100px; height: 10px;" id="2"></span>
+                <img src="http://video.jornada.com.mx/media/thumbnails/fd/88/fd885f37bd8a90ffeb46dc140635df3f.jpg" width="100px" height="75px" style="margin:10px;border: 1px outset transparent" id="el-tifon-en-filipinas-se-debilita-deja-21-muertos" /></li>
+        
+    </ul><div align="right" style="margin-right:20px; display:none;">
+        <a href="http://www.youtube.com/channel/UCWXOegeUI7sWXji5oD4iRVA" target="_blank">
+            <span class="contenido_nota">Más videos, visita nuestro canal</span>
+            <img src="http://www.jornada.unam.mx/ultimas/++resource++lajornada.portal.theme/imagenes/icon_youtube.png" /></a>
+    </div>
+
+</div>
+
+<script>
+    function getDataIframe(player_url,description,orden) {
+        var width = 315;
+        var link = player_url;
+        var custom_link = link+'&width='+width;
+        var h_player = $("#iframe_player").height();   
+        $('#current_video').attr('src',custom_link);
+        $('#current_description').html(description);
+        $('span#'+orden).addClass('active-video');
+        if (active_video == '') {
+            active_video = orden;
+        } else if(active_video == orden) {
+            active_video = orden;
+        } else {
+            $('span#'+active_video).removeClass('active-video');
+            active_video = orden;
+        }
+    }
+</script></div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/ac87824a555d40afb677f0060eb56bb4" id="ac87824a555d40afb677f0060eb56bb4">
+    <div class="sortable-tile tile-content lajornada-nitf-secondary">
+        <div class="lajornada-nitf-secondary-item" data-uid="5d83b6da411643acb60f1e4f9459df93" id="5d83b6da411643acb60f1e4f9459df93">
+
+          <div class="lajornada-nitf-secondary-section-content">
+            
+            <span style="text-transform:uppercase;" class="lajornada-nitf-secondary-section-cultura">Cultura</span>
+            
+            
+          </div>
+          
+          <div>
+
+            <div class="secondary-title">
+                  <h4>
+                        <a href="http://www.jornada.unam.mx/ultimas/2014/12/10/201cmexico-me-hizo-revolucionario201d-afirma-el-poeta-ernesto-cardenal-5479.html">“México me hizo revolucionario”, afirma el poeta Ernesto Cardenal</a>
+                  </h4>
+            </div>
+
+          </div>
+
+
+     <div class="lajornada-nitf-secondary-items">
+
+      <div style="height: auto; padding-top: 20px; width:auto;">
+
+        
+
+      </div>
+
+          <div class="lajornada-nitf-secondary-image">
+
+            <div class="lajornada-nitf-secondary-image-container">
+
+              
+                <a href="http://www.jornada.unam.mx/ultimas/2014/12/10/201cmexico-me-hizo-revolucionario201d-afirma-el-poeta-ernesto-cardenal-5479.html" title="Ernesto Cardenal. Foto Cortesía Conaculta">
+                <img class="lazy" alt="CardenalFotoConaculta2.JPG" src="++resource++lajornada.portal.theme/imagenes/blank.gif" width="170" height="113" data-original="http://www.jornada.unam.mx/ultimas/2014/12/10/201cmexico-me-hizo-revolucionario201d-afirma-el-poeta-ernesto-cardenal-5479.html/cardenalfotoconaculta2.jpg-6499.html/@@images/babdf933-8806-43dd-8bb1-6148020edc3f.jpeg" /></a>
+              
+              
+              <div class="lajornada-image-title" style="width:200px;">Ernesto Cardenal. Foto Cortesía Conaculta</div>
+           </div>
+         </div>
+
+          
+          <div class="lajornada-nitf-secondary-data">
+
+                
+
+                <div class="lajornada-nitf-secondary-description">El próximo sábado 13 de diciembre se rendirá un homenaje al escritor nicaragüense en el Palacio de Bellas Artes.</div>
+                
+         </div>
+
+         
+
+         
+
+      </div>
+            
+
+                
+
+
+    </div>
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/f02aff6e08624764bdd5e6b9cbac3847" id="f02aff6e08624764bdd5e6b9cbac3847">
+    <div class="sortable-tile tile-content lajornada-nitf-secondary">
+        <div class="lajornada-nitf-secondary-item" data-uid="b7bc250733314a9e989d9d0e8bd7f0dd" id="b7bc250733314a9e989d9d0e8bd7f0dd">
+
+          <div class="lajornada-nitf-secondary-section-content">
+            
+            <span style="text-transform:uppercase;" class="lajornada-nitf-secondary-section-deportes">Deportes</span>
+            
+            
+          </div>
+          
+          <div>
+
+            <div class="secondary-title">
+                  <h4>
+                        <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/america-sube-los-precios-para-el-partido-de-vuelta-de-la-final-7810.html">América sube los precios para el partido de vuelta de la final</a>
+                  </h4>
+            </div>
+
+          </div>
+
+
+     <div class="lajornada-nitf-secondary-items">
+
+      <div style="height: auto; padding-top: 20px; width:auto;">
+
+        
+
+      </div>
+
+          <div class="lajornada-nitf-secondary-image">
+
+            <div class="lajornada-nitf-secondary-image-container">
+
+              
+                <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/america-sube-los-precios-para-el-partido-de-vuelta-de-la-final-7810.html" title="Oribe Peralta, del América, disputa el balón ante un jugador del Monterrey durante el partido de vuelta de la semifinal del Apertura 2014, el pasado 7 de diciembre. Foto Víctor Camacho">
+                <img class="lazy" alt="Oribe.jpg" src="++resource++lajornada.portal.theme/imagenes/blank.gif" width="170" height="113" data-original="http://www.jornada.unam.mx/ultimas/2014/12/09/america-sube-los-precios-para-el-partido-de-vuelta-de-la-final-7810.html/oribe.jpg-8130.html/@@images/2a2901ce-dec9-4ef6-9bae-9a2c29483af7.jpeg" /></a>
+              
+              
+              <div class="lajornada-image-title" style="width:200px;">Oribe Peralta, del América, disputa el balón ante un jugador del Monterrey durante el partido de vuelta de la semifinal del Apertura 2014, el pasado 7 de diciembre. Foto Víctor Camacho</div>
+           </div>
+         </div>
+
+          
+          <div class="lajornada-nitf-secondary-data">
+
+                
+
+                <div class="lajornada-nitf-secondary-description">Los costos de boletos de entrada van desde los 500 hasta los 2 mil 700 pesos.</div>
+                
+         </div>
+
+         
+
+         
+
+      </div>
+            
+
+                
+
+
+    </div>
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.ad_middle_cover/da4ca7c823384fc6a89449000c4bfa4c" id="da4ca7c823384fc6a89449000c4bfa4c"><div class="ad-logout-border-middle">
+	
+	    <div class="iab medium-rectangle" style="text-align:center;">
+			<script type="text/javascript">
+				OAS.ad ('Right6')
+			</script></div>
+	
+</div></div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/bbc61280ca0c4a55a87790e07137e27d" id="bbc61280ca0c4a55a87790e07137e27d">
+    <div class="sortable-tile tile-content lajornada-nitf-secondary">
+        <div class="lajornada-nitf-secondary-item" data-uid="f7bc9fb714d74bbe8dea662214b2fe87" id="f7bc9fb714d74bbe8dea662214b2fe87">
+
+          <div class="lajornada-nitf-secondary-section-content">
+            
+            <span style="text-transform:uppercase;" class="lajornada-nitf-secondary-section-cultura">Cultura</span>
+            
+            
+          </div>
+          
+          <div>
+
+            <div class="secondary-title">
+                  <h4>
+                        <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/la-academia-no-puede-prostituirse-asegura-perez-reverte-782.html">Pérez-Reverte denuncia abandono institucional de la Academia Española</a>
+                  </h4>
+            </div>
+
+          </div>
+
+
+     <div class="lajornada-nitf-secondary-items">
+
+      <div style="height: auto; padding-top: 20px; width:auto;">
+
+        
+
+      </div>
+
+          <div class="lajornada-nitf-secondary-image">
+
+            <div class="lajornada-nitf-secondary-image-container">
+
+              
+                <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/la-academia-no-puede-prostituirse-asegura-perez-reverte-782.html" title="El escritor español, Arturo Pérez-Reverte, en la Feria Internacional del Libro en Guadalajara el 3 de diciembre. Foto Ap">
+                <img class="lazy" alt="perez-reverte.jpg" src="++resource++lajornada.portal.theme/imagenes/blank.gif" width="170" height="116" data-original="http://www.jornada.unam.mx/ultimas/2014/12/09/la-academia-no-puede-prostituirse-asegura-perez-reverte-782.html/perez-reverte.jpg-1289.html/@@images/eb08d60e-53f1-43cc-bfa4-603fa102b357.jpeg" /></a>
+              
+              
+              <div class="lajornada-image-title" style="width:200px;">El escritor español, Arturo Pérez-Reverte, en la Feria Internacional del Libro en Guadalajara el 3 de diciembre. Foto Ap</div>
+           </div>
+         </div>
+
+          
+          <div class="lajornada-nitf-secondary-data">
+
+                
+
+                <div class="lajornada-nitf-secondary-description">El escritor dijo que la Academia no son cuatro tipos haciendo un diccionario y que el presidente Mariano Rajoy no la ha visitado en los más de tres años de su gobierno.</div>
+                
+         </div>
+
+         
+
+         
+
+      </div>
+            
+
+                
+
+
+    </div>
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/b63c72151b184f1b9cba8815a346e147" id="b63c72151b184f1b9cba8815a346e147">
+    <div class="sortable-tile tile-content lajornada-nitf-secondary">
+        <div class="lajornada-nitf-secondary-item" data-uid="801aff0fb29540ffafd2e5c542098153" id="801aff0fb29540ffafd2e5c542098153">
+
+          <div class="lajornada-nitf-secondary-section-content">
+            
+            <span style="text-transform:uppercase;" class="lajornada-nitf-secondary-section-deportes">Deportes</span>
+            
+            
+          </div>
+          
+          <div>
+
+            <div class="secondary-title">
+                  <h4>
+                        <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/dan-de-alta-a-pele-tras-permanecer-hospitalizado-15-dias-por-complicacion-renal-9539.html">Dan de alta a Pelé tras 15 días hospitalizado; “no tuve miedo de morir”</a>
+                  </h4>
+            </div>
+
+          </div>
+
+
+     <div class="lajornada-nitf-secondary-items">
+
+      <div style="height: auto; padding-top: 20px; width:auto;">
+
+        
+
+      </div>
+
+          <div class="lajornada-nitf-secondary-image">
+
+            <div class="lajornada-nitf-secondary-image-container">
+
+              
+                <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/dan-de-alta-a-pele-tras-permanecer-hospitalizado-15-dias-por-complicacion-renal-9539.html" title="El astro del futbol brasileño, Pelé, durante una conferencia de prensa en el Hospital Albert Einstein de Sao Paulo, Brasil, este martes. Foto Ap">
+                <img class="lazy" alt="Brasil 01.jpg" src="++resource++lajornada.portal.theme/imagenes/blank.gif" width="170" height="118" data-original="http://www.jornada.unam.mx/ultimas/2014/12/09/dan-de-alta-a-pele-tras-permanecer-hospitalizado-15-dias-por-complicacion-renal-9539.html/brasil-01.jpg-416.html/@@images/ec3f479d-aa9d-4326-a2a4-cb4f6710d743.jpeg" /></a>
+              
+              
+              <div class="lajornada-image-title" style="width:200px;">El astro del futbol brasileño, Pelé, durante una conferencia de prensa en el Hospital Albert Einstein de Sao Paulo, Brasil, este martes. Foto Ap</div>
+           </div>
+         </div>
+
+          
+          <div class="lajornada-nitf-secondary-data">
+
+                
+
+                <div class="lajornada-nitf-secondary-description">"Estoy preparándome para las Olimpiadas" de Río 2016, bromeó. En el equipo olímpico de futbol "pueden jugar tres profesionales, yo soy uno de esos tres".</div>
+                
+         </div>
+
+         
+
+         
+
+      </div>
+            
+
+                
+
+
+    </div>
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.galerias/c20e13fe3f11463e956786827790f32a" id="c20e13fe3f11463e956786827790f32a">          
+<div class="lajornada-galeria-content tile-content">
+  <div style="padding-left:5px">
+
+
+<table><tr><td style="padding-top:5px;"><img id="lajornada-lasmas-vistas-img" style="vertical-align:top; padding-right:5px" src="++resource++lajornada.portal.theme/imagenes/camara_galeria_roja.png" /></td>
+              <td class="lajornada-galeria-title">
+                <a href="/ultimas/galerias">GALERÍA FOTOGRÁFICA</a>
+              </td>
+            </tr><tr><td></td>
+            </tr></table><div>
+                        <div class="lajornada-galeria-foto">
+                            <a href="http://www.jornada.unam.mx/ultimas/2014/12/08/un-gran-incendio-corta-autopistas-en-los-angeles">
+                                <img class="lazy" src="http://www.jornada.unam.mx/ultimas/2014/12/08/un-gran-incendio-corta-autopistas-en-los-angeles/01_incendio_.jpg/@@images/e73bf70d-3037-40e4-83c4-152d84f97d36.jpeg" alt="Un gran incendio corta autopistas en Los Ángeles" data-original="http://www.jornada.unam.mx/ultimas/2014/12/08/un-gran-incendio-corta-autopistas-en-los-angeles/01_incendio_.jpg/@@images/e73bf70d-3037-40e4-83c4-152d84f97d36.jpeg" /></a>
+                        </div>
+                        <div class="lajornada-galeria-data">
+                            <div class="lajornada-galeria-description">Un gran incendio corta autopistas en Los Ángeles</div>
+                        </div>
+                    </div>
+  
+          </div>
+</div>
+    </div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/fb83fa0bbdc1421ca8e996d18fa5e67c" id="fb83fa0bbdc1421ca8e996d18fa5e67c">
+    <div class="sortable-tile tile-content lajornada-nitf-secondary">
+        <div class="lajornada-nitf-secondary-item" data-uid="a62d1a97795f40a39f7f512fb5ad1774" id="a62d1a97795f40a39f7f512fb5ad1774">
+
+          <div class="lajornada-nitf-secondary-section-content">
+            
+            <span style="text-transform:uppercase;" class="lajornada-nitf-secondary-section-ciencias">Ciencias</span>
+            
+            
+          </div>
+          
+          <div>
+
+            <div class="secondary-title">
+                  <h4>
+                        <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/estudio-vincula-pre-eclampsia-en-el-embarazo-con-ninos-autistas-2739.html">Estudio vincula pre-eclampsia en el embarazo con niños autistas</a>
+                  </h4>
+            </div>
+
+          </div>
+
+
+     <div class="lajornada-nitf-secondary-items">
+
+      <div style="height: auto; padding-top: 20px; width:auto;">
+
+        
+
+      </div>
+
+          <div class="lajornada-nitf-secondary-image">
+
+            <div class="lajornada-nitf-secondary-image-container">
+
+              
+                <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/estudio-vincula-pre-eclampsia-en-el-embarazo-con-ninos-autistas-2739.html" title="Campaña para promover la lactancia materna en el Distrito Federal. Foto Roberto García / Archivo">
+                <img class="lazy" alt="lactancia.jpg" src="++resource++lajornada.portal.theme/imagenes/blank.gif" width="170" height="115" data-original="http://www.jornada.unam.mx/ultimas/2014/12/09/estudio-vincula-pre-eclampsia-en-el-embarazo-con-ninos-autistas-2739.html/lactancia.jpg-8715.html/@@images/93607cff-fc76-4112-9f2e-42971efce06f.jpeg" /></a>
+              
+              
+              <div class="lajornada-image-title" style="width:200px;">Campaña para promover la lactancia materna en el Distrito Federal. Foto Roberto García / Archivo</div>
+           </div>
+         </div>
+
+          
+          <div class="lajornada-nitf-secondary-data">
+
+                
+
+                <div class="lajornada-nitf-secondary-description">La pre-eclampsia puede afectar el desarrollo del cerebro probablemente debido a las limitaciones de nutrientes y de oxígeno resultantes de esta patología maternal, según un estudio de la Universidad de California en Davis.</div>
+                
+         </div>
+
+         
+
+         
+
+      </div>
+            
+
+                
+
+
+    </div>
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/ccd19f4dee6d4271853cb2407952614e" id="ccd19f4dee6d4271853cb2407952614e">
+    <div class="sortable-tile tile-content lajornada-nitf-secondary">
+        <div class="lajornada-nitf-secondary-item" data-uid="71b6f31c3ac34064b8d25b4fd5de085b" id="71b6f31c3ac34064b8d25b4fd5de085b">
+
+          <div class="lajornada-nitf-secondary-section-content">
+            
+            <span style="text-transform:uppercase;" class="lajornada-nitf-secondary-section-espectaculos">Espectáculos</span>
+            
+            
+          </div>
+          
+          <div>
+
+            <div class="secondary-title">
+                  <h4>
+                        <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/se-estrena-la-cinta-milagro-en-praga-primera-coproduccion-entre-mexico-y-republica-checa-6191.html">Estrenan la primera coproducción fílmica entre México y República Checa</a>
+                  </h4>
+            </div>
+
+          </div>
+
+
+     <div class="lajornada-nitf-secondary-items">
+
+      <div style="height: auto; padding-top: 20px; width:auto;">
+
+        
+
+      </div>
+
+          <div class="lajornada-nitf-secondary-image">
+
+            <div class="lajornada-nitf-secondary-image-container">
+
+              
+                <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/se-estrena-la-cinta-milagro-en-praga-primera-coproduccion-entre-mexico-y-republica-checa-6191.html" title="El productor mexicano Edher Campos. Foto Notimex.">
+                <img class="lazy" alt="eder campos.JPG" src="++resource++lajornada.portal.theme/imagenes/blank.gif" width="85" height="128" data-original="http://www.jornada.unam.mx/ultimas/2014/12/09/se-estrena-la-cinta-milagro-en-praga-primera-coproduccion-entre-mexico-y-republica-checa-6191.html/eder-campos.jpg-2005.html/@@images/176c7466-6941-4ec9-b954-8ce8ac34af97.jpeg" /></a>
+              
+              
+              <div class="lajornada-image-title" style="width:200px;">El productor mexicano Edher Campos. Foto Notimex.</div>
+           </div>
+         </div>
+
+          
+          <div class="lajornada-nitf-secondary-data">
+
+                
+
+                <div class="lajornada-nitf-secondary-description">El filme 'Milagro en Praga' cuenta cinco historias unidas a través de la aparición de un bebé en una iglesia que venera al Niño Jesús de Praga.</div>
+                
+         </div>
+
+         
+
+         
+
+      </div>
+            
+
+                
+
+
+    </div>
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/b28adbddb0684d98be8bd0c901da33ae" id="b28adbddb0684d98be8bd0c901da33ae">
+    <div class="sortable-tile tile-content lajornada-nitf-secondary">
+        <div class="lajornada-nitf-secondary-item" data-uid="6a6f72156f2844a98557cf8b598f50a8" id="6a6f72156f2844a98557cf8b598f50a8">
+
+          <div class="lajornada-nitf-secondary-section-content">
+            
+            <span style="text-transform:uppercase;" class="lajornada-nitf-secondary-section-espectaculos">Espectáculos</span>
+            
+            
+          </div>
+          
+          <div>
+
+            <div class="secondary-title">
+                  <h4>
+                        <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/el-tamano-de-los-tacones-de-la-mujer-con-poderoso-efecto-en-el-comportamiento-masculino-6617.html">El poder de los tacones</a>
+                  </h4>
+            </div>
+
+          </div>
+
+
+     <div class="lajornada-nitf-secondary-items">
+
+      <div style="height: auto; padding-top: 20px; width:auto;">
+
+        
+
+      </div>
+
+          <div class="lajornada-nitf-secondary-image">
+
+            <div class="lajornada-nitf-secondary-image-container">
+
+              
+                <a href="http://www.jornada.unam.mx/ultimas/2014/12/09/el-tamano-de-los-tacones-de-la-mujer-con-poderoso-efecto-en-el-comportamiento-masculino-6617.html" title="“En una relación de seducción, los hombres se sienten muy atraídos por una mujer en tacones porque luce más alta, con una silueta más alta en que se le destacan los glúteos”: sociólogo. Foto Ap">
+                <img class="lazy" alt="Tacones.jpg" src="++resource++lajornada.portal.theme/imagenes/blank.gif" width="170" height="113" data-original="http://www.jornada.unam.mx/ultimas/2014/12/09/el-tamano-de-los-tacones-de-la-mujer-con-poderoso-efecto-en-el-comportamiento-masculino-6617.html/tacones.jpg-4249.html/@@images/22bff608-d05e-45a1-807b-8acd19522f32.jpeg" /></a>
+              
+              
+              <div class="lajornada-image-title" style="width:200px;">“En una relación de seducción, los hombres se sienten muy atraídos por una mujer en tacones porque luce más alta, con una silueta más alta en que se le destacan los glúteos”: sociólogo. Foto Ap</div>
+           </div>
+         </div>
+
+          
+          <div class="lajornada-nitf-secondary-data">
+
+                
+
+                <div class="lajornada-nitf-secondary-description">Las mujeres que los usan esperan menos tiempo a que un hombre se les acerque, dice un estudio. "El tamaño de los tacones tiene un efecto poderoso en el comportamiento masculino".</div>
+                
+         </div>
+
+         
+
+         
+
+      </div>
+            
+
+                
+
+
+    </div>
+  </div>
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/c6b8494870e040a0a9205a2461fd627d" id="c6b8494870e040a0a9205a2461fd627d">
+    
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/e4a090e815434aa58b7eebdb6448c928" id="e4a090e815434aa58b7eebdb6448c928">
+    
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.nitf.secondary/c136e53b6c734893adca548d7ad11c74" id="c136e53b6c734893adca548d7ad11c74">
+    
+</div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+
+            </div>
+            
+        
+    
+
+
+
+            
+
+        </div>
+    
+
+
+
+
+
+        
+        
+            
+
+
+    
+        <div class="row" data-layout-type="row">
+
+            
+                
+
+
+    
+        
+            
+            
+            <div class="cell width-16 position-0 " data-panel="">
+
+                
+                    
+
+
+    
+        
+        <div>
+            
+
+            <div class="tile tile-default" data-tile="@@lajornada.tile.list_bitacoras/c41d79162cff4cb181cabda3a0cce6d5" id="c41d79162cff4cb181cabda3a0cce6d5">           
+      <div id="idMain-photogalleries" class="clMain-photogalleries">
+
+        <div id="idTitlePhotogallery" class="clTitlePhotogallery">
+
+          <div>
+            <div id="idBulletPhotogallery" class="clBulletPhotogallery"></div>
+            <div id="idTextTitlePhotogallery" class="clTextTitlePhotogallery">
+                <a href="ultimas/bitacoras">BITÁCORA DE FOTOS</a>
+            </div>
+          </div>
+
+          <div style="margin-top:48px;">
+            <div style="margin-top:45px;display:table-row;">
+              <div style="display:table-cell;padding-right:40px">
+                <div>
+                  <a target="_blank" href="http://www.jornada.unam.mx/ultimas/2014/12/06/las-imagenes-de-la-semana-del-30-de-noviembre-al-5-de-diciembre">
+                     <img width="350" class="lazy" height="250" src="http://www.jornada.unam.mx/ultimas/++theme++lajornada.portal.theme/imagenes/blank.gif" alt="Las imágenes de la semana del 30 de noviembre al 5 de diciembre" data-original="http://www.jornada.unam.mx/ultimas/2014/12/06/las-imagenes-de-la-semana-del-30-de-noviembre-al-5-de-diciembre/1.jpg/@@images/f71dbaff-77e9-4b53-a8ba-c3b3633d0663.jpeg" /></a>
+                  <div style="color:#FFFFFF; font:18px roboto_condensedregular; font-style:oblique; text-transform:uppercase; text-align: center; margin-top: 10px; width:350px;">
+                    Las imágenes de la semana del 30 de noviembre al 5 de diciembre
+                  </div>
+                </div>
+              </div>
+              <div style="display:table-cell;padding-right:40px">
+                <div>
+                  <a target="_blank" href="http://www.jornada.unam.mx/ultimas/2014/12/02/jornada-de-multitudinarias-movilizaciones-por-el-1dmx">
+                     <img width="350" class="lazy" height="250" src="http://www.jornada.unam.mx/ultimas/++theme++lajornada.portal.theme/imagenes/blank.gif" alt="Jornada de multitudinarias movilizaciones por el 1DMX" data-original="http://www.jornada.unam.mx/ultimas/2014/12/02/jornada-de-multitudinarias-movilizaciones-por-el-1dmx/02_bitacora_1dmx__.jpg/@@images/bfb01cc4-1d95-4af7-87d2-336528052ee3.jpeg" /></a>
+                  <div style="color:#FFFFFF; font:18px roboto_condensedregular; font-style:oblique; text-transform:uppercase; text-align: center; margin-top: 10px; width:350px;">
+                    Jornada de multitudinarias movilizaciones por el 1DMX
+                  </div>
+                </div>
+              </div>
+              <div style="display:table-cell;padding-right:40px">
+                <div>
+                  <a target="_blank" href="http://www.jornada.unam.mx/ultimas/2014/11/22/cuarta-accion-global-por-ayotzinapa-en-el-df">
+                     <img width="350" class="lazy" height="250" src="http://www.jornada.unam.mx/ultimas/++theme++lajornada.portal.theme/imagenes/blank.gif" alt="Cuarta Acción Global por Ayotzinapa en el DF" data-original="http://www.jornada.unam.mx/ultimas/2014/11/22/cuarta-accion-global-por-ayotzinapa-en-el-df/02_bitacora_20novmx.jpg/@@images/fd40d35f-6e62-4461-9914-8c7c92324d87.jpeg" /></a>
+                  <div style="color:#FFFFFF; font:18px roboto_condensedregular; font-style:oblique; text-transform:uppercase; text-align: center; margin-top: 10px; width:350px;">
+                    Cuarta Acción Global por Ayotzinapa en el DF
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+        </div>
+        
+        
+        
+    
+
+
+
+
+                
+
+            </div>
+            
+        
+    
+
+
+
+            
+
+        </div>
+    
+
+
+
+
+
+        
+    
+
+
+
+
+
+
+                        </div>
+                    
+
+                    
+                </div>
+            
+
+            <div id="viewlet-below-content">
+
+
+
+
+</div>
+        </div>
+
+        
+        
+
+        
+        
+    </div>
+      <!-- End Portal Columns -->
+
+  	<!-- Advertising bottom-->
+   	<div id="adv_bottom">
+			<script type="text/javascript">
+				OAS.ad ('Bottom')
+			</script></div>
+    </div><!-- End advertising top--><!-- Portal Footer  --><div id="portal-footer-wrapper" class="clMain-footer">
+	<div id="footer-col1">
+	  <div id="footer-title" class="tableblock spritefooter title">La Jornada</div>
+	  <div id="footer-redessociales" class="tableblock redessociales">
+	    <div id="footer-title-redessociales" class="footertitleredessociales">
+	      Síguenos en nuestras redes sociales
+            </div>
+	    <div>
+	     <a href="http://www.facebook.com/lajornadaonline">
+	      <div id="rs-facebook" class="tableblock spritefooter rs facebook">
+		facebook
+	      </div>
+	  	 </a>
+	  	 <a href="http://www.twitter.com/lajornadaonline">
+	      <div id="rs-twitter" class="tableblock spritefooter rs twitter">
+		twitter
+	      </div>
+	  	 </a>
+	  	 <a href="http://www.youtube.com/user/lajornadatv">
+	      <div id="rs-youtube" class="tableblock spritefooter rs youtube">
+		youtube
+	      </div>
+	  	 </a>
+	  	 <a href="https://es.foursquare.com/lajornadaonline">
+	      <div id="rs-foursquare" class="tableblock spritefooter rs foursquare">
+		foursquare
+	      </div>
+	  	 </a>
+	  	 <a href="http://lajornada.tumblr.com/">
+	      <div id="rs-thumblr" class="tableblock spritefooter rs thumblr">
+		thumblr
+	      </div>
+	  	 </a>
+	    </div>
+	  </div>
+	</div>       
+	<div id="footer-col2" class="newColumn">
+	  <div id="footer-c2r1" class="c2r1 tableblock clMain-footer-font-01">
+	    <div><a href="http://www.jornada.unam.mx/info/">¿quiénes somos?</a></div>
+	    <div><a href="http://www.jornada.unam.mx/contacto/">contacto</a></div>
+	    <div><a href="https://libreria.jornada.com.mx/suscripciones.php">suscripciones</a></div>
+	    <div><a href="http://www.jornada.unam.mx/tarifas/">publicidad</a></div>
+	    <div><a href="http://www.jornada.unam.mx/aviso.php">aviso legal</a></div>
+	    <div><a href="http://www.jornada.unam.mx/avisodeprivacidad">aviso de privacidad</a></div>
+	    <div><a href="https://libreria.jornada.com.mx/">librería</a></div>
+	  </div>
+	  <div id="footer-c2r2" class="tableblock clMain-footer-font-01">
+	    <div class="footertittlecol">Apps para móvil</div>
+	    <div class="footerlist clMain-footer-font-02">
+	      <a href="http://movil.jornada.com.mx/movil/mac.html"><div class="spritefooter footer-apps iphone">Apple</div></a>
+	      <a href="http://movil.jornada.com.mx/movil/android.html"><div class="spritefooter footer-apps android">Android</div></a>
+	      <a href="http://movil.jornada.com.mx/movil/black.html"><div class="spritefooter footer-apps blackberry">Black Berry</div></a>
+	      <a href="http://movil.jornada.com.mx/movil/"><div class="spritefooter footer-apps symbian">Symbian</div></a>
+	    </div>
+	  </div>
+	  <div id="footer-c2r3" class="tableblock clMain-footer-font-01">
+	    <div class="footertittlecol">Periódicos</div>
+	    <div class="footerlist clMain-footer-font-02">
+	      <div><a href="http://www.lja.mx/">Aguascalientes</a></div>
+	      <div><a href="http://www.lajornadaguerrero.com.mx">Guerrero</a></div>
+	      <div><a href="http://www.lajornadajalisco.com.mx">Jalisco</a></div>
+	      <div><a href="http://www.lajornadamichoacan.com.mx">Michoacán</a></div>
+	      <div><a href="http://www.jornadamorelos.com">Morelos</a></div>
+	      <div><a href="http://www.lajornadadeoriente.com.mx">Oriente</a></div>
+	      <div><a href="http://www.lajornadasanluis.com.mx">San Luis</a></div>
+	      <div><a href="http://www.jornadaveracruz.com.mx">Veracruz</a></div>
+	      <div><a href="http://www.ljz.mx/">Zacatecas</a></div>
+	    </div>
+	  </div>
+	  <div id="footer-c2r4" class="tableblock clMain-footer-font-01">
+	    <div class="footertittlecol">Medios asociados</div>
+	    <div id="asociados" class="tableblock">
+	     <a href="http://www.publico.es/">
+	      <div id="ma-publico" class="spritefooter footer-ma publico">
+		público
+	      </div>
+	  	 </a>
+	  	 <a href="http://www.cartamaior.com.br">
+	      <div id="ma-publico" class="spritefooter footer-ma cartamaior">
+		Carta Maior
+	      </div>
+	  	 </a>
+	  	 <a href="http://www.elclarin.cl/">
+	      <div id="ma-publico" class="spritefooter footer-ma clarin">
+		Clarin
+	      </div>
+	     </a>
+	     <a href="http://www.pagina12.com.ar/">
+	      <div id="ma-publico" class="spritefooter footer-ma pagina12">
+		Página 12
+	      </div>
+	  	 </a>
+	    </div>
+	    <div id="asociados" class="tableblock">
+	     <a href="http://www.informarn.nl/">
+	      <div id="ma-publico" class="spritefooter footer-ma rnw">
+		RNW
+	      </div>
+	     </a>
+	     <a href="http://news.bbc.co.uk/hi/spanish/news/">
+	      <div id="ma-publico" class="spritefooter footer-ma bbc">
+		BBC
+	      </div>
+	  	 </a>
+	  	 <a href="http://radiobilingue.org/">
+	      <div id="ma-publico" class="spritefooter footer-ma radiobilingue">
+		Radio bilingüe
+	      </div>
+	     </a>
+	     <a href="http://gara.net/">
+	      <div id="ma-publico" class="spritefooter footer-ma gara">
+		Gara
+	      </div>
+	  	 </a>
+	    </div>
+	  </div>
+
+	  <div id="footer-c2r5" class="tableblock clMain-footer-font-01">
+	    <div class="footertittlecol">Micrositios</div>
+	    <div class="footerlist clMain-footer-font-02">
+	      <div><a href="http://indignados.jornada.com.mx/">Indignados</a></div>
+	      <div><a href="http://ciencias.jornada.com.mx/">Ciencias</a></div>
+	      <div><a href="http://migracion.jornada.com.mx/">Migración</a></div>
+	      <div><a href="http://wikileaks.jornada.com.mx/">Wikileaks</a></div>
+	    </div>
+	  </div>
+
+
+	</div>
+
+	<div id="footer-col3" class="newColumn">	  
+          <div id="idCopyright" class="clMain-footer-font-02" style="padding-top:20px;padding-left:20px;">
+	    <p>
+	      Esta página se visualiza mejor con una resolución de 1280 x 1024, usando Firefox 4, Internet Explorer 8 o superior.
+	    </p>
+	    <p>
+	      Copyright © 1996-2014 DEMOS, Desarrollo de Medios, S.A. de C.V.<br />
+	      Todos los Derechos Reservados.<br />
+	      Derechos de Autor 04-2005-011817321500-203.
+	    </p>
+	  </div>
+	</div>
+	
+      </div><!-- termina footer --></body></html>

@@ -1,0 +1,178 @@
+class="coop_tab">
+              <li><a href="">도서</a></li>
+              <!-- li><a href="http://danmee.chosun.com/franchise?business">창업</a></li -->
+              <li><a href="http://shopping.dizzo.com/">쇼핑</a></li>
+        </ul>
+        <dl>
+              <dd class="thumb"><a href="http://www.yes24.com/campaign/00_corp/2014boy/2014Book.aspx?pid=106710" target="cs_new"><img src="http://image.chosun.com/sitedata/www/section_image/20141127142221573.jpg" alt=""></a></dd>
+<dt><a href="http://www.yes24.com/campaign/00_corp/2014boy/2014Book.aspx?pid=106710" target="cs_new">독자가 직접 선정하는 '2014 올해의 책' 투표</a></dt>
+
+              <!-- ##coop_txt01 part s --><dd class="rel"><a href="http://www.yes24.com/Mall/YesCalendar?pid=106710" target="cs_new">'YES캘린더'로 매일 즐거운 소식 받으세요 </a></dd>
+
+<dd class="rel"><a href="http://www.yes24.com/campaign/00_corp/2014/1121newservice.aspx?pid=106710" target="cs_new">새롭게 준비한 예스24의 4가지 서비스</a></dd>
+
+<dd class="logo"><a href="http://www.yes24.com/?pid=106710" target="cs_new" class="logo"><img src="http://image.chosun.com/main/201003/sample_yes24.gif" alt=""></a></dd>
+<!-- ##coop_txt01 part e -->
+        </dl>
+        <!-- dl>
+              <dd class="thumb"><a href="http://danmee.chosun.com/site/data/html_dir/2013/06/10/2013061002173.html" target="cs_new"><img src="http://image.chosun.com/sitedata/www/section_image/20130722131207504.jpg" alt=""></a></dd>
+<dt><a href="http://danmee.chosun.com/site/data/html_dir/2013/06/10/2013061002173.html" target="cs_new">우리 매장선 소규모 커피 브랜드 제품도 판매</a></dt>
+
+              <dd class="rel"><a href="http://danmee.chosun.com/site/data/html_dir/2013/07/17/2013071700767.html" target="cs_new"> 할리스커피, 창립 15주년 브랜드 리뉴얼 
+ </a></dd>
+<dd class="rel"><a href="http://danmee.chosun.com/site/data/html_dir/2013/07/17/2013071700700.html" target="cs_new"> 스시로, 7월 22일 패밀리데이 가족고객 할인
+ </a></dd>
+
+        </dl -->
+        <dl>
+              <dd class="thumb"><a href="http://shopping.dizzo.com/site/data/html_dir/2014/11/24/2014112402753.html" target="cs_new"><img src="http://image.chosun.com/sitedata/www/section_image/20141124220341819.jpg" alt=""></a></dd>
+<dt><a href="http://shopping.dizzo.com/site/data/html_dir/2014/11/24/2014112402753.html" target="cs_new">‘입호흡’이 부정교합 원인? 내 아이는?</a></dt>
+
+              <!-- ##coop_txt03 part s --><dd class="rel"><a href="http://shopping.dizzo.com/site/data/html_dir/2014/12/05/2014120501383.html" target="_blank">
+스스로 음주측정 할 수 있는 휴대용 음주측정기</a></dd>
+
+<dd class="rel"><a href="http://shopping.dizzo.com/site/data/html_dir/2014/12/09/2014120902344.html" target="_blank">
+안전성과 친환경을 모두 갖춘 탄소모직히터</a></dd>
+
+<!-- ##coop_txt03 part e -->
+        </dl>
+
+        <script type="text/javascript">
+          $(function() {
+              $("ul.coop_tab").tabs("div.coop > dl", {event: 'mouseover', tabs:'li'});
+          });
+        </script> 
+      </div>
+          <!-- .coop_tab -->
+          
+        <ul class="fun">
+        <!-- ##funTab1 part s --><li><em><a href="http://app.chosun.com/site/data/html_dir/2014/11/06/2014110601077.html?fun" target="cs_new">어플앤</a></em> | <a href="http://app.chosun.com/site/data/html_dir/2014/11/06/2014110601077.html?fun" target="cs_new"> 인테리어앱 모음</a></li>
+<!-- ##funTab1 part e -->
+        <li><em><a href="http://premium.chosun.com/svc/news/nlist.html?catid=36" target="cs_new" title="(새창)">이슈</a></em> |  <a href="http://news.chosun.com/site/data/html_dir/2014/09/19/2014091901062.html" target="cs_new"> 뇌에 대한 궁금증</a></li>
+
+        <li><em><a href="http://promurim.chosun.com/Book/List/1000253" target="cs_new" title="(새창)">무협</a></em> |  <a href="http://promurim.chosun.com/Book/Detail/125821" target="cs_new">절대쌍웅 - 군옥당</a></li>
+
+        <li><em><a href="http://promurim.chosun.com/Book/List/1000257" target="cs_new" title="(새창)">판타지</a></em> |  <a href="http://promurim.chosun.com/Book/Detail/151099" target="cs_new">폭풍을 뚫고 - 임송학</a></li>
+
+        <li><em><a href="http://redbook.chosun.com/?fun" target="cs_new" title="(새창)">성인문학관</a></em> | <a href="http://redbook.chosun.com/adultFrm/premium.asp" target="cs_new">[신작] 고독천년</a></li>
+
+        <li><em><a href="http://www.gamechosun.co.kr/" target="cs_new" title="(새창)">게임조선</a></em> |  <a href="http://ps2.gamechosun.co.kr/" target="cs_new">플래닛사이드2</a></li>
+
+        <li class="ad_text"><!-- 텍스트 광고 -->
+        	<iframe src="http://cad.chosun.com/RealMedia/ads/adstream_sx.ads/www.chosun.com/index@Bottom" frameborder="0" width="360" height="25" scrolling="no" marginwidth="0" marginheight="0" title="텍스트광고"></iframe>
+        </li>
+      </ul>
+</div><!-- sec_notice_links_center end --> 
+
+<div class="sec_notice_links_right">     
+          
+          <h4>조선매거진</h4>
+         <p class="cs_magazine">
+          <a href="http://weekly.chosun.com/?csmedia" target="cs_new">주간조선</a> | <a href="http://monthly.chosun.com/" target="cs_new">월간조선</a> |
+<a href="http://woman.chosun.com/" target="cs_new">여성조선</a> <br> <a href="http://san.chosun.com/?csmedia" target="cs_new">월간산</a> | 
+<a href="http://topclass.chosun.com/" target="cs_new">톱클래스</a> | <a href="http://style.chosun.com/magazine/index.html?csmedia" target="cs_new">스타일조선</a><br>
+ <a href="http://kid.chosun.com/?csmedia" target="cs_new">소년조선일보</a> | <a href="http://health.chosun.com/magazine/index.jsp?csmedia" target="cs_new">월간헬스조선</a><br>
+<a href="http://economyplus.chosun.com/" target="cs_new">이코노미조선</a>
+
+         </p>
+          <!-- .cs_magazine -->
+          
+          
+          <h4><a href="http://sports.chosun.com/index.htm?csmedia" target="cs_new" title="(새창)">스포츠조선</a></h4>
+          <p class="sport_cs">
+          <!-- ##link_cssports part s --><a href="http://sports.chosun.com/cartoon/viewer/viewer2014.htm?title=41_01_01" target="cs_new">공포의불가사의</a> | <a href="http://sports.chosun.com/cartoon/viewer/viewer2014.htm?title=42_01_01" target="cs_new">깜빵범털</a>
+<br> <a href="http://sports.chosun.com/cartoon/content.htm?title=change" target="cs_new">체인지가이</a>  | <a href="http://sports.chosun.com/cartoon/content.htm?title=kangho" target="cs_new">강호패도기</a> | <a href="http://sports.chosun.com/cartoon/content.htm?title=sangtoon" target="cs_new">쌩툰</a>
+<!-- ##link_cssports part e -->
+          </p>
+          <!-- .sport_cs --> 
+</div><!-- sec_notice_links_right end -->
+</section>
+  </div>
+      <!-- #csContent -->
+      
+            <footer>
+      	<script type="text/javascript" src="http://news.chosun.com/test_2010/_b3_/top/js/copyright_main_2013.js"></script>
+        <script type="text/javascript">
+        /* 닷컴 서비스 */
+document.getElementById("cs_service_h4").onclick = function() {
+	if(document.getElementById("footCont").style.display == "none" || document.getElementById("footCont").style.display == ""){
+		document.getElementById("footCont").style.display = "block";
+		document.getElementById("cs_service_h4").innerHTML = '서비스 전체 닫기 <img src="http://image.chosun.com/main/201305/icon_service_open.gif" alt="닫기" class="cs_service">';
+	}else{
+		document.getElementById("footCont").style.display = "none";
+		document.getElementById("cs_service_h4").innerHTML = '서비스 전체 보기 <img src="http://image.chosun.com/main/201305/icon_service_open.gif" alt="열기" class="cs_service">';
+	}
+	return false;
+};
+        </script>
+      </footer>
+    </div>
+<!-- #wrap --> 
+<script type="text/javascript" src="http://news.chosun.com/svc/code/BreakNews_list.html?date=130520094244"></script> 
+<script type="text/javascript">
+// 속보
+var sokbo_num = 0;
+var sokbo_time;
+function scrollSokbo(){
+	if(sokbo_num >= BreakNews_data.length) sokbo_num = 0;
+	var str = "<b>속보</b><a href='" + BreakNews_data[sokbo_num][0] + "' onmouseover='stopSokbo()' onmouseout='startSokbo()' onclick='startSokbo()'>" + BreakNews_data[sokbo_num][1] + "</a>";
+	document.getElementById("b_news").innerHTML = str;
+	startSokbo();
+	sokbo_num = sokbo_num + 1;
+}
+function startSokbo(){
+	sokbo_time = setTimeout("scrollSokbo() ", 4000);  
+}
+function stopSokbo(){
+	clearTimeout(sokbo_time);  
+}
+if(document.getElementById("b_news") != null){
+	scrollSokbo();
+}
+</script> 
+
+<!--[if lt IE 8]>
+<script type="text/javascript" src="http://news.chosun.com/dhtm/js/browser_update.js"></script>
+<![endif]-->
+
+<!-- 트래킹체크 -->
+<IFRAME WIDTH="1" height="1" NORESIZE SCROLLING="No" FRAMEBORDER="0" MARGINHEIGHT="0" MARGINWIDTH="0" SRC="http://cad.chosun.com/RealMedia/ads/adstream_sx.ads/www.chosun.com/index@x66" title="트래킹체크"></IFRAME>
+ 
+<script type="text/javascript"> 
+	if(isIPad == false){
+		/* TI 배너 */
+		adURL = "http://cad.chosun.com/RealMedia/ads/adstream_jx.ads/www.chosun.com/index.html@x02";
+		adURL = adURL.replace(/@/, "/1" + ((String)(Math.random())).substring (2, 11) + "@");
+		document.write ("<SCR" + "IPT LANG" + "UAGE='JAVAS" + "CRIPT1.1' SRC='" + adURL + "'> </SCR" + "IPT>");
+	}
+</script>
+
+<!-- GNB 우측 배너 -->
+<div style="position: absolute; line-height:0; font-size:0; left: 50%; top: 188px; width: 120px; height: 600px; margin-left: 490px;">
+  <script type="text/javascript" src="http://cad.chosun.com/RealMedia/ads/adstream_jx.ads/www.chosun.com/index@x10"></script>
+</div>
+<!-- GNB 우측 배너 -->
+
+<!-- big mov 배너 -->
+<div style="width:120px; height:380px; position:absolute; top:470px; left:50%; margin-left:-620px;">
+<script type="text/javascript" src="http://cad.chosun.com/RealMedia/ads/adstream_jx.ads/www.chosun.com/index@x27"></script>
+</div>
+<!-- big mov 배너 -->
+
+<script type="text/javascript">
+// for CMS editor
+if(location.href.indexOf("EditView") > -1) {
+	$(".cms_tab_hide").addClass("cms_tab_show");
+	$(".ad_wing_left, .ad_wing_right, #GrandBox").addClass("hide");
+};
+if(location.href.indexOf("dz_hitlog") > -1) {
+	$(".cms_tab_hide").addClass("cms_tab_show");
+	$(".ad_wing_left, .ad_wing_right").addClass("hide");
+};
+</script>
+
+
+<script type="text/javascript" src="http://news.chosun.com/test_2010/_b3_/top/js/go_mobile.js?v2"></script>
+
+</body>
+</html>
