@@ -1,0 +1,267 @@
+inner-layout">
+<aside class="wrapper">
+  <div class="panel-pane pane-node wrapper" >
+  
+        <h3 class="aside header pane-title">Ugens etiske dilemma</h3>
+    
+  
+      <div class="pane-content">
+      <div class="content">
+			<p>Kan du altid skelne journalistisk stof fra annoncer i et magasin eller en avis?</p>
+				<form class="ajax-poll  ajax-vote" action="/" method="post" id="poll-view-voting--2" accept-charset="UTF-8"><div><div class="poll">
+  <div class="vote-form">
+    <div class="choices">
+            <div class="form-item form-type-radios form-item-choice">
+  <label class="element-invisible" for="edit-choice--2">Valgmuligheder </label>
+ <div id="edit-choice--2" class="form-radios"><div class="form-item form-type-radio form-item-choice">
+ <input type="radio" id="edit-choice-4270" name="choice" value="4270" class="form-radio" />  <label class="option" for="edit-choice-4270">Ja </label>
+
+</div>
+<div class="form-item form-type-radio form-item-choice">
+ <input type="radio" id="edit-choice-4271" name="choice" value="4271" class="form-radio" />  <label class="option" for="edit-choice-4271">Nej </label>
+
+</div>
+<div class="form-item form-type-radio form-item-choice">
+ <input type="radio" id="edit-choice-4272" name="choice" value="4272" class="form-radio" />  <label class="option" for="edit-choice-4272">Ved ikke </label>
+
+</div>
+</div>
+</div>
+    </div>
+    <input class="success button form-submit" type="submit" id="edit-vote--2" name="op" value="Stem »" />  </div>
+    <input type="hidden" name="form_build_id" value="form-MgS_spBsKX_ktZk9ayGEBnAXYCefaXYsBcMUaVpMdIg" />
+<input type="hidden" name="form_id" value="poll_view_voting" />
+<input type="hidden" name="ajax_url" value="/poll/ajax/vote/655209/0/0" />
+<input type="hidden" name="ajax_text" value="Stemmer..." />
+</div>
+</div></form></div>
+    </div>
+  
+  
+  </div>
+</aside>
+
+
+
+
+</div><div  class="twelve columns inner-layout"><form id="subscribe" action="http://4ug.kristeligt-dagblad.dk/Landingpages/Landingpage2012/2012_default.aspx" method="get" target="_blank">
+<input type="hidden" name="Kode" value="1213" /><h2>Prøv Kristeligt Dagblad 4 uger gratis!</h2>
+                        <p>Indtast dit telefonnummer herunder og klik 'Næste'. Tilbudet er uforpligtende og dine personlige oplysninger behandles fortroligt.</p>
+                        <!-- Postfix action -->
+                        <div class="row collapse">
+                            <div class="eight columns centered hide-for-small">
+                                <div class="row">
+                                    <div class="eight columns">
+                                        <input type="text" name="tlf" placeholder="Indtast telefon/mobilnr." /></div>
+                                    <div class="three columns">
+                                        <button class="success button extend">Næste</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row show-for-small">
+
+                            <div class="mobile-four">
+                                <button class="success button" style="width: 100%;">Næste</button>
+                            </div>
+
+                        </div>
+
+                    </form></div></div></div><div  class="four columns hide-for-small"><div id="ajax_pane:views_panes:nodequeues-panel_pane_10:a3b865454ea47f61598ffbab11a294f3" class="ajax-pane" src="/ajax-pane/get-pane/ajax_pane%3Aviews_panes%3Anodequeues-panel_pane_10%3Aa3b865454ea47f61598ffbab11a294f3/0">&nbsp;</div><div class="panel-separator"></div>
+<aside class="wrapper">
+  <div class="panel-pane pane-ad wrapper" >
+  
+      
+  
+      <div class="pane-content">
+      <div  id="adserving_e4cd39aa1322ed95">
+            <script type="text/javascript">					
+            var ads_devices = 'desktop';
+            if(ads_devices.indexOf(ads_device) != -1) {
+            if(!window.ba_adspaces)
+              window.ba_adspaces=[];window.ba_adspaces.push({'id':104,'target':'adserving_e4cd39aa1322ed95','keyword':'%2Ckrd','searchword':''});}</script></div>
+          <noscript>
+            <iframe src="http://kristeligtdagblad.adservinginternational.com/iframe.php?adspaceid=104&amp;keywords=,krd" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250" scrolling="no" style="width:300px; height:250px; margin:0px;"></iframe>
+          </noscript>
+              </div>
+  
+  
+  </div>
+</aside>
+
+
+
+
+<div class="panel-separator"></div><div class="panel-pane pane-custom pane-1 wrapper" >
+  
+      
+  
+      <div class="pane-content">
+      <iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 379px;" tabindex="0" vspace="0" width="100%" id="I0_1391521769886" name="I0_1391521769886" src="https://apis.google.com/u/0/_/widget/render/page?usegapi=1&amp;bsv=o&amp;href=%2F%2Fplus.google.com%2F110555412451384995590&amp;rel=publisher&amp;hl=da&amp;origin=http%3A%2F%2Fwww.kristeligt-dagblad.dk&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.da.c5dMPRNWwzs.O%2Fm%3D__features__%2Fam%3DIQ%2Frt%3Dj%2Fd%3D1%2Ft%3Dzcms%2Frs%3DAItRSTORHO8h2MHX-6gPFAnN6tdOtl9Xcg#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1391521769886&amp;parent=http%3A%2F%2Fwww.kristeligt-dagblad.dk&amp;pfname=&amp;rpctoken=38880776" data-gapiattached="true" title="+Badge"></iframe>    </div>
+  
+  
+  </div>
+</div></section><section class="category row" id="galleries"><div  class="eight columns"><div id="ajax_pane:views_panes:latest_news-panel_pane_15:fe4452cfde7a8d0682b472c03ea0ee49" class="ajax-pane" src="/ajax-pane/get-pane/ajax_pane%3Aviews_panes%3Alatest_news-panel_pane_15%3Afe4452cfde7a8d0682b472c03ea0ee49/0">&nbsp;</div><div class="panel-separator"></div><div id="ajax_pane:views_panes:latest_news-panel_pane_3:8939068b0d1d2f53aad01cf501802949" class="ajax-pane" src="/ajax-pane/get-pane/ajax_pane%3Aviews_panes%3Alatest_news-panel_pane_3%3A8939068b0d1d2f53aad01cf501802949/0">&nbsp;</div></div><div  class="four columns"><div class="panel-pane pane-ad wrapper" >
+  
+      
+  
+      <div class="pane-content">
+      <div  id="adserving_4f4af71026cee815">
+            <script type="text/javascript">					
+            var ads_devices = 'mobile';
+            if(ads_devices.indexOf(ads_device) != -1) {
+            if(!window.ba_adspaces)
+              window.ba_adspaces=[];window.ba_adspaces.push({'id':5,'target':'adserving_4f4af71026cee815','keyword':'%2Ckrd','searchword':''});}</script></div>
+          <noscript>
+            <iframe src="http://kristeligtdagblad.adservinginternational.com/iframe.php?adspaceid=5&amp;keywords=,krd" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250" scrolling="no" style="width:300px; height:250px; margin:0px;"></iframe>
+          </noscript>
+              </div>
+  
+  
+  </div>
+<div class="panel-separator"></div><div id="ajax_pane:panels_mini:right_now_on:24c15ce1a6877c3d72b0a138a495832a" class="ajax-pane" src="/ajax-pane/get-pane/ajax_pane%3Apanels_mini%3Aright_now_on%3A24c15ce1a6877c3d72b0a138a495832a/0">&nbsp;</div></div></section><section class=" row"><div  class="twelve columns"><div class="panel-pane pane-custom pane-2 wrapper" >
+  
+      
+  
+      <div class="pane-content">
+      <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- Drupal_responsiv --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7676711604457432" data-ad-slot="6515034331" data-ad-format="auto"></ins>
+<script>
+<!--//--><![CDATA[// ><!--
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+//--><!]]>
+</script>    </div>
+  
+  
+  </div>
+</div></section>    </div>
+  
+  
+  </div>
+</div>
+
+
+<div id="ajax_pane:menu:menu:ac6e48d6f3acd6e1f36ddeb53eda3fba" class="ajax-pane" src="/ajax-pane/get-pane/ajax_pane%3Amenu%3Amenu%3Aac6e48d6f3acd6e1f36ddeb53eda3fba/0">&nbsp;</div><footer><div  class="blue-bar"><div class="row"><div  class="nine columns"><a class="electronic-version" href="/bestil">
+  Få fuld adgang som <strong>digital abonnent</strong>
+</a></div><div  class="three columns"><div class="panel-pane pane-kdsearch-form wrapper" >
+  
+      
+  
+      <div class="pane-content">
+      <div id="bottom-site-search" class="right"><form action="/" method="post" id="kdsearch-search-form" accept-charset="UTF-8"><div><input type="hidden" name="kdsearch_redirect" value="search" />
+<input type="text" name="query" placeholder="søg..."><input class="search-submit form-submit" type="submit" id="edit-submit--3" name="op" value="Søg" /><input type="hidden" name="form_build_id" value="form-q_vkAmzVUK26GZ4GFO9jxTIlZi58sfkUryRYObJGA6I" />
+<input type="hidden" name="form_id" value="kdsearch_search_form" />
+</div></form></div>    </div>
+  
+  
+  </div>
+</div><div  class="nine columns"><div class="row">
+  <div class="twelve columns tablet-one mobile-two">
+    <div class="footer-links">
+      <h4>Om os</h4>
+      <ul class="inline-list"><li><a href="http://www.kristeligt-dagblad.dk/kontakt">Kontakt os</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/medarbejdere">Medarbejdere</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/kristeligt-dagblads-historie">Fakta om avisen og dens historie</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/etiske-retningslinjer">Etiske retningslinier</a></li>
+      </ul></div>
+  </div>
+
+  <div class="twelve columns hide-for-small">
+    <div class="footer-links">
+      <h4>Nyheder</h4>
+      <ul class="inline-list"><li><a href="/">Forsiden</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/liv">Liv &amp; Sjæl</a></li>
+        <li><a href="http://www.etik.dk/">Etik</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/kirke">Kirke &amp; Tro</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/debat">Debat</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/kultur">Kultur</a></li>
+      </ul></div>
+  </div>
+
+  <div class="twelve columns tablet-one mobile-two">
+    <div class="footer-links">
+      <h4>Tjenester</h4>
+      <ul class="inline-list"><li><a href="http://www.kristeligt-dagblad.dk/e-avis">E-avisen</a></li>
+        <li><a href="/arkiv">Artikelarkiv</a></li>
+        <li><a href="http://shop.k.dk">Netbutikken</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/apps">Apps til iOS og Android</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/job">Jobmarked</a></li>
+      </ul></div>
+  </div>
+
+  <div class="twelve columns tablet-one mobile-two clear-on-mobile">
+    <div class="footer-links">
+      <h4>Kundeservice</h4>
+      <ul class="inline-list"><li><a href="http://www.kristeligt-dagblad.dk/bestil">Bestil abonnement</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/abonnementsvilk%C3%A5r">Abonnementsvilkår</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/selvbetjening/login/ferie">Ferieflytning</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/selvbetjening/login/reklamation">Reklamation</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/selvbetjening/betalingsservice">Tilmeld PBS</a></li>
+      </ul></div>
+  </div>
+
+  <div class="twelve columns tablet-one mobile-two">
+    <div class="footer-links">
+      <h4>Følg os</h4>
+      <ul class="inline-list"><li><a href="http://www.kristeligt-dagblad.dk/nyhedsbrev">Få vores gratis nyhedsbrev</a></li>
+        <li><a href="http://www.facebook.com/kristeligt">Facebook</a></li>
+        <li><a href="http://twitter.com/kristeligt">Twitter</a></li>
+        <li><a href="http://plus.google.com/+kristeligt">Google+</a></li>
+        <li><a href="http://instagram.com/kristeligt">Instagram</a></li>
+        <li><a href="http://www.kristeligt-dagblad.dk/rss">RSS</a></li>
+      </ul></div>
+  </div>
+</div></div><div  class="three columns"><h4>Få nyhederne i din indbakke</h4>
+<p>Ja tak, send mig dagens vigtigste historier på e-mail</p>
+<div id="newsletter-subscribe-feedback"></div>
+<form action="/" method="post" id="kdnewsletter-any-subscription-form" accept-charset="UTF-8"><div><div class="form-item form-type-emailfield form-item-email">
+ <input placeholder="Indtast e-mail adresse" type="email" id="edit-email--2" name="email" value="" size="60" maxlength="128" class="form-text form-email" />
+</div>
+<input class="button form-submit" type="submit" id="edit-kdnewsletter-submit" name="op" value="Abonnér" /><input type="hidden" name="form_build_id" value="form-TkbeuB4FkzVe6-g5iEsv7jVZWcEwkf_cbtlEfsk44Jg" />
+<input type="hidden" name="form_id" value="kdnewsletter_any_subscription_form" />
+</div></form></div><div  class="twelve columns" id="copyright"><div  class="nine columns">                        <p>
+                            © 2014 Kristeligt Dagblad, Vimmelskaftet 47, 1161 København K  <span class="vertical divider"></span> Telefon: 33 48 05 00<br />
+                            Abonnement: 33 48 05 05 <span class="vertical divider"></span> Annoncer: 33 48 05 00  <span class="vertical divider"></span> Læs mere om <a href="http://www.kristeligt-dagblad.dk/ophavsret">ophavsret</a> og <a href="http://www.kristeligt-dagblad.dk/privacy">persondatapolitik</a>
+                        </p><div class="panel-separator"></div><img src="https://track.adform.net/Serving/TrackPoint/?pm=41969&amp;lid=4994913" width="1" height="1" alt="" /><div class="panel-separator"></div><!-- (c) 2014 Gemius SA / gemiusHeatMap / kristeligt-dagblad.dk -->
+<script type="text/javascript">
+<!--//--><![CDATA[// ><!--
+
+var ghmxy_type = 'percent';
+var ghmxy_identifier = 'd7.r4sNryO_edFxX8S3rLfTXnO9F30vOGJJVfbgPvSb.B7';
+var ghmxy_hitcollector = 'gadk.hit.gemius.pl';
+
+//--><!]]>
+</script><script type="text/javascript" src="http://gadk.hit.gemius.pl/hmapxy.js"></script></div><div  class="three columns"><div class="footer-logo">
+                            <img src="/sites/all/themes/kdzurb/img/identity/footer-logo-mobile.png" width="172" height="28" /></div></div></div></div></div></footer></div>
+  <script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var pp_gemius_identifier = 'nSc66Dcp52CAG5r8dzLojabjDfyIbCeA8Rr4S6cNifb._7';
+  (function(d,t) {
+      var ex; try {
+        var gt=d.createElement(t),s=d.getElementsByTagName(t)[0],l='http'+((location.protocol=='https:')?'s':'');
+        gt.async='true'; 
+        gt.src=l+'://gadk.hit.gemius.pl/xlgemius.js';
+        s.parentNode.insertBefore(gt,s);
+      } catch (ex) {}
+    }(document,'script')); 
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://js.cdn.k.dk/sites/all/modules/contrib/eu-cookie-compliance/js/eu_cookie_compliance.js?ng29xz"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.post(Drupal.settings.basePath + 'jstats.php', {"path":"kdk_forside"});
+//--><!]]>
+</script>
+<script type="text/javascript" src="http://js.cdn.k.dk/sites/all/modules/custom/kdstats/js/chartbeat.js?ng29xz"></script>
+
+      <noscript><style type="text/css" media="all">img[data-src] { display: none; }</style></noscript>
+      <script type="text/javascript">
+        jQuery(function($){          
+         $("img[data-src]").lazyloader({distance: 300, icon: "/sites/all/modules/contrib/lazyloader/loader/loader-8.gif" });
+        });
+      </script>	<div id="myModal" class="reveal-modal" style="top: 100px; opacity: 1;"></div>
+</body>
+</html>

@@ -1,0 +1,537 @@
+
+        
+
+                  <!--more news-->
+          <div class="b-tabs">
+              <div class="b-tabs-name"><strong>Новости</strong>:</div>
+              <ul id="lastnews-tabs">
+                  
+                  <li onclick="showTab('lastnews', this)" class="active"><a href="javascript:;"><strong>Последние</strong></a></li>
+                  <li onclick="showTab('lastnews', this)"><a href="javascript:;"><strong>Украина</strong></a></li>
+                  <li onclick="showTab('lastnews', this)"><a href="javascript:;"><strong>Мир</strong></a></li>
+
+              </ul>
+          </div>
+          <div class="b-more-news" id="lastnews-tab-1">
+              <div class="h-more-news">
+                  <div class="b-more-list">
+                      <ul>
+<li><h2><a href="/culture/2014/12/10/1006781.html">Установку &quot;Ока Саурона&quot; в Москве отменили </a></h2> <span> | 13:11</span></li><li><h2><a href="/power/2014/12/10/1006780.html" class="hot">Копач не верит в искренность Путина по урегулированию в Украине </a></h2> <span> | 13:10</span></li><li><h2><a href="/accidents/2014/12/10/1006777.html">Тайфун на Ф╕л╕пп╕нах залишив 2,5 млн постраждалих &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:56</span></li><li><h2><a href="/power/2014/12/10/1006772.html">Укра╖на пос╕ла 13 м╕сце у списку м╕л╕тар╕зованих кра╖н &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:54</span></li><li><h2><a href="/criminal/2014/12/10/1006768.html">Укра╖нець хот╕в вивезти до Рос╕╖ м╕льйон долар╕в &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:49</span></li><li><h2><a href="/power/2014/12/10/1006779.html" class="hot">Мэр Запорожья Син подал в отставку </a></h2> <span> | 12:37</span></li><li><h2><a href="/power/2014/12/10/1006758.html">ЦРУ брехало Обам╕ про тортури у тюрьмах &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:35</span></li><li><h2><a href="/criminal/2014/12/10/1006769.html">М╕л╕ц╕я Запор╕жжя накрила порностуд╕ю з╕ студентками &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:35</span></li><li><h2><a href="/accidents/2014/12/10/1006778.html" class="hot">Ад остался под контролем армии России (карта) </a></h2> <span> | 12:35</span></li><li><h2><a href="/accidents/2014/12/10/1006776.html">Оф╕с волонтер╕в в Одес╕ п╕д╕рвали рад╕окерованою бомбою &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:32</span></li><li><h2><a href="/society/2014/12/10/1006775.html" class="hot">Семья комбата Юлдашева осталась без средств к существованию (фото) </a></h2> <span> | 12:29</span></li><li><h2><a href="/power/2014/12/10/1006767.html">Байден закликав Укра╖ну не втратити шанс на свободу &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:28</span></li><li><h2><a href="/economy/2014/12/10/1006774.html" class="hot">У Порошенко хотят продать &quot;Нафтогаз&quot; </a></h2> <span> | 12:08</span></li><li><h2><a href="/power/2014/12/10/1006754.html">Яценюк спод╕ва╓ться на затвердження Радою програми Кабм╕ну &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:04</span></li><li><h2><a href="/accidents/2014/12/10/1006771.html" class="hot">Луганскую область обстреливают танками и минометами </a></h2> <span> | 12:01</span></li><li><h2><a href="/society/2014/12/10/1006762.html">На Ейфелев╕й веж╕ в╕дкрили каток &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:00</span></li><li><h2><a href="/analytics/2014/12/10/1006770.html" class="hot">День тишины: обстрелы и раненые жители Донбасса </a></h2> <span> | 11:59</span></li><li><h2><a href="/society/2014/12/10/1006760.html">В ╤тал╕╖ в&#39;язн╕ готують вип╕чку до Р╕здва &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:56</span></li><li><h2><a href="/economy/2014/12/10/1006757.html">╢вросоюз надумав будувати св╕й П╕вденний пот╕к &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:51</span></li><li><h2><a href="/criminal/2014/12/10/1006752.html">М╕лц╕я опиту╓ св╕дк╕в вибуху в Одес╕ &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:41</span></li>                      </ul>
+                  </div>
+                  <div class="b-news-links"><span>Все: <a href="/news/allnews/2014/12/10/">за сегодня</a>&nbsp;&nbsp;<a href="/news/allnews/2014/12/09/">за вчера</a></span><a href="/rss/" class="rss">RSS</a></div>
+                  <div class="clr"></div>
+              </div>
+          </div>
+          <div class="b-more-news" id="lastnews-tab-2" style="display: none">
+              <div class="h-more-news">
+                  <div class="b-more-list">
+                      <ul>
+<li><h2><a href="/criminal/2014/12/10/1006768.html">Укра╖нець хот╕в вивезти до Рос╕╖ м╕льйон долар╕в &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:49</span></li><li><h2><a href="/power/2014/12/10/1006779.html" class="hot">Мэр Запорожья Син подал в отставку </a></h2> <span> | 12:37</span></li><li><h2><a href="/criminal/2014/12/10/1006769.html">М╕л╕ц╕я Запор╕жжя накрила порностуд╕ю з╕ студентками &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:35</span></li><li><h2><a href="/accidents/2014/12/10/1006778.html" class="hot">Ад остался под контролем армии России (карта) </a></h2> <span> | 12:35</span></li><li><h2><a href="/accidents/2014/12/10/1006776.html">Оф╕с волонтер╕в в Одес╕ п╕д╕рвали рад╕окерованою бомбою &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:32</span></li><li><h2><a href="/society/2014/12/10/1006775.html" class="hot">Семья комбата Юлдашева осталась без средств к существованию (фото) </a></h2> <span> | 12:29</span></li><li><h2><a href="/economy/2014/12/10/1006774.html" class="hot">У Порошенко хотят продать &quot;Нафтогаз&quot; </a></h2> <span> | 12:08</span></li><li><h2><a href="/power/2014/12/10/1006754.html">Яценюк спод╕ва╓ться на затвердження Радою програми Кабм╕ну &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:04</span></li><li><h2><a href="/accidents/2014/12/10/1006771.html" class="hot">Луганскую область обстреливают танками и минометами </a></h2> <span> | 12:01</span></li><li><h2><a href="/analytics/2014/12/10/1006770.html" class="hot">День тишины: обстрелы и раненые жители Донбасса </a></h2> <span> | 11:59</span></li><li><h2><a href="/criminal/2014/12/10/1006752.html">М╕лц╕я опиту╓ св╕дк╕в вибуху в Одес╕ &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:41</span></li><li><h2><a href="/accidents/2014/12/10/1006751.html">РНБО вир╕шу╓, чи продовжувати режим тиш╕ на Донбас╕ &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:40</span></li><li><h2><a href="/society/2014/12/10/1006766.html" class="hot">Активисты в Запорожье взбунтовались против мэра Сина (фото) </a></h2> <span> | 11:39</span></li><li><h2><a href="/society/2014/12/10/1006756.html">Рятувальники з Полтави отримали два безп╕лотника &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:35</span></li><li><h2><a href="/accidents/2014/12/10/1006750.html">Террористи продовжують обстр╕ли позиц╕й арм╕╖ &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:28</span></li><li><h2><a href="/sports/2014/12/10/1006764.html">Украинки снова биты на чемпионате Европы по гандболу </a></h2> <span> | 11:26</span></li><li><h2><a href="/accidents/2014/12/10/1006740.html" class="hot">Нацгвард╕я отримала перший броньовик &quot;Рапотор&quot; &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:22</span></li><li><h2><a href="/society/2014/12/10/1006761.html" class="hot">Следком допросит замглавы Меджлиса из-за протестов в Крыму </a></h2> <span> | 11:12</span></li><li><h2><a href="/power/2014/12/10/1006743.html">Укра╖на хоче в╕д Рос╕╖ компенсац╕╖ за агрес╕ю &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:11</span></li><li><h2><a href="/society/2014/12/10/1006741.html">Священик прода╓ трофе╖ з Донбасу заради в╕йськових &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:08</span></li>                      </ul>
+                  </div>
+                  <div class="b-news-links"><span>Все: <a href="/news/ukraine/2014/12/10/">за сегодня</a>&nbsp;&nbsp;<a href="/news/ukraine/2014/12/09/">за вчера</a></span><a href="/rss/news/ukraine.rss" class="rss">RSS</a></div>
+                  <div class="clr"></div>
+              </div>
+          </div>
+          <div class="b-more-news" id="lastnews-tab-3" style="display: none">
+              <div class="h-more-news">
+                  <div class="b-more-list">
+                      <ul>
+<li><h2><a href="/culture/2014/12/10/1006781.html">Установку &quot;Ока Саурона&quot; в Москве отменили </a></h2> <span> | 13:11</span></li><li><h2><a href="/power/2014/12/10/1006780.html" class="hot">Копач не верит в искренность Путина по урегулированию в Украине </a></h2> <span> | 13:10</span></li><li><h2><a href="/accidents/2014/12/10/1006777.html">Тайфун на Ф╕л╕пп╕нах залишив 2,5 млн постраждалих &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:56</span></li><li><h2><a href="/power/2014/12/10/1006772.html">Укра╖на пос╕ла 13 м╕сце у списку м╕л╕тар╕зованих кра╖н &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:54</span></li><li><h2><a href="/power/2014/12/10/1006758.html">ЦРУ брехало Обам╕ про тортури у тюрьмах &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:35</span></li><li><h2><a href="/power/2014/12/10/1006767.html">Байден закликав Укра╖ну не втратити шанс на свободу &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:28</span></li><li><h2><a href="/society/2014/12/10/1006762.html">На Ейфелев╕й веж╕ в╕дкрили каток &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 12:00</span></li><li><h2><a href="/society/2014/12/10/1006760.html">В ╤тал╕╖ в&#39;язн╕ готують вип╕чку до Р╕здва &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:56</span></li><li><h2><a href="/economy/2014/12/10/1006757.html">╢вросоюз надумав будувати св╕й П╕вденний пот╕к &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:51</span></li><li><h2><a href="/criminal/2014/12/10/1006746.html">Н╕дерланди розпочали розсл╕дування катастрофи Бо╖нга &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:30</span></li><li><h2><a href="/culture/2014/12/10/1006763.html">&quot;Словом года&quot; в Австралии стало высказывание о Путине </a></h2> <span> | 11:21</span></li><li><h2><a href="/power/2014/12/10/1006747.html">Меркель запевнила Кличко у п╕дтримц╕ ц╕л╕сност╕ Укра╖ни &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 11:20</span></li><li><h2><a href="/kaleidoscope/2014/12/10/1006749.html">В McDonald&#39;s в Швейцарии показали порно </a></h2> <span> | 10:45</span></li><li><h2><a href="/accidents/2014/12/10/1006742.html" class="hot">Austrian Airlines уволили Нетребко за поддержку террористов (фото) </a></h2> <span> | 10:16</span></li><li><h2><a href="/economy/2014/12/10/1006745.html" class="hot">В Германии расчитывают достроить &quot;Южный поток&quot; </a></h2> <span> | 10:11</span></li><li><h2><a href="/accidents/2014/12/10/1006730.html" class="hot">Истребители НАТО перехватила 6 бомбардировщиков России над Балтикой </a></h2> <span> | 09:33</span></li><li><h2><a href="/society/2014/12/10/1006729.html">Австр╕я критику╓ сп╕вачку Нетребко за п╕дтримку терорист╕в &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2> <span> | 09:28</span></li><li><h2><a href="/power/2014/12/10/1006733.html">Украина заняла 13 место в рейтинге милитаризованых стран </a></h2> <span> | 09:05</span></li><li><h2><a href="/economy/2014/12/10/1006721.html" class="hot">Цена нефти  WTI снизилась до 62,97 доллара </a></h2> <span> | 08:53</span></li><li><h2><a href="/society/2014/12/10/1006719.html">Гопко, Лещенко и Солонтаю вручили премию в США </a></h2> <span> | 08:01</span></li>                      </ul>
+                  </div>
+                  <div class="b-news-links"><span>Все: <a href="/news/world/2014/12/10/">за сегодня</a>&nbsp;&nbsp;<a href="/news/world/2014/12/09/">за вчера</a></span><a href="/rss/news/world.rss" class="rss">RSS</a></div>
+                  <div class="clr"></div>
+              </div>
+          </div>
+          <!--/more news-->
+
+
+        
+        <div style="margin-bottom: 10px;">  
+  <a href="https://www.youtube.com/podrobnosti?sub_confirmation=1" target="_blank"><img src="/img/youtube_button.jpg" alt="Подробности на YouTube" /></a>
+  <br/><br/>
+  <div class="b-tabs">
+    <ul id="social-tabs">
+      <li onclick="showTab('social', this)" class="active"><a href="javascript:;"><strong>ВКонтакте</strong></a></li>
+      <li onclick="showTab('social', this)"><a href="javascript:;"><strong>Facebook</strong></a></li>
+    </ul>
+  </div>
+
+  <div id="social-tab-1" style="height: 262px;">
+  <!-- VK Widget -->
+  <div id="vk_groups"></div>
+  <script type="text/javascript">
+  VK.Widgets.Group("vk_groups", {mode: 0, width: "300", height: "250"}, 25582670);
+  </script>
+  </div>
+
+  <div  id="social-tab-2" style="height: 262px; display: none;">
+  <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpodrobnosti&amp;width=300&amp;height=250&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=120687834768520" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:250px;" allowTransparency="true"></iframe>  
+  </div>
+</div>
+        
+        <div class="b-premium-banner">
+         <script type="text/javascript">document.write('<script type="text/javascript" src="http://lbn.podrobnosti.ua/show/80/?t=10047259&sync='+(typeof lbn_sync != 'undefined' ? lbn_sync : 0)+'"></'+'scr'+'ipt>');</script>
+        </div>
+
+        <div class="clr"></div>
+
+        <script type="text/javascript" src="http://inter.ua/ru/video/export.js"></script>
+        
+                    <!--poll-->
+            <div class="b-vox-populi">
+                <div class="b-block-name"><h3>Голосование&nbsp;недели</h3></div>
+                <div class="b-right-block">
+                    <div class="h-right-block">
+                        <div class="b-vox-populi-name">Какой бы политической силе вы отдали предпочтение на выборах?</div>
+                        
+                        <div class="b-vox-populi-choise">
+                          <form method="post" action="/cgi-bin/voting/vote.cgi" onsubmit="window.open('about:blank','vr','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,fullscreen=no,channelmode=no,width=650px,height=400px');" target="vr">
+                          <input type="hidden" name="id" value="8473">
+<input type="radio" name="answer" id="votanswer1" value="40992408" /> <label for="votanswer1">ВО &quot;Батькiвщина&quot;</label>
+<input type="radio" name="answer" id="votanswer2" value="40992409" /> <label for="votanswer2">Народный фронт</label>
+<input type="radio" name="answer" id="votanswer3" value="40992410" /> <label for="votanswer3">Оппозиционный блок</label>
+<input type="radio" name="answer" id="votanswer4" value="40992411" /> <label for="votanswer4">Блок Петра Порошенко</label>
+<input type="radio" name="answer" id="votanswer5" value="40992412" /> <label for="votanswer5">ВО &quot;Свобода&quot;</label>
+<input type="radio" name="answer" id="votanswer6" value="40992414" /> <label for="votanswer6">Радикальная партия Ляшко</label>
+                            <input type="radio" name="answer" id="votanswer_custom" value="user" /> <label for="votanswer_custom" class="other">свой вариант</label>
+                            <input type="text" class="other_input" name="user" maxlength="254" onclick="jQuery('#votanswer_custom').attr('checked', 'checked')" onfocus="jQuery('#votanswer_custom').attr('checked', 'checked')" />
+                            <div class="b-vox-populi-btn"><input type="submit" class="button" class="vox_submit" value="Отправить" /> <a href="javascript:;" onclick="window.open('/perl/voting/results.pl?q=8473&p=main','vr','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,fullscreen=no,channelmode=no,width=650px,height=400px');">Результаты</a></div>
+                            </form>
+                        </div>
+
+                        <div class="clr"></div>
+                        <div class="b-block-links"><a href="/voting/">Все голосования</a></div>
+                    </div>
+                </div>
+            </div>
+            <!--/poll-->
+
+        
+        <div class="b-ad-block">  
+<div id="admixer_async_1127377631"></div>
+<script type="text/javascript">
+    (function () {
+
+        var ss = document.createElement('script');
+        ss.onload   = ss.onreadystatechange = function () {
+            var w = window, d = document;
+
+            w.admixZArr = (w.admixZArr || []);
+
+            w.admixerSmOptions = (w.admixerSmOptions || {});
+
+            w.admixerSmOptions.showAdsOnLoad = true;
+
+            if (!w.admixerSm) {
+
+                var adms = document.createElement('script');
+
+                adms.async = true;
+
+                adms.type = 'text/javascript';
+
+                adms.src = 'http://cdn.admixer.net/scriptlib/asm2.js?v=3';
+
+                var node = d.getElementsByTagName('script')[0];
+
+                node.parentNode.insertBefore(adms, node);
+
+            }
+            window.admixZArr = (window.admixZArr || []);
+            window.admixZArr.push({ z: '39345358-0029-4e8a-a393-11a5ba43b39c', ph: 'admixer_async_1127377631', maxItemsCount: 4, loadCallback: function (slot) { slot.customTeasersRender = true; }, renderedCallback: function (slot) { renderTeasers1(slot.data, slot.phId); } });
+        };
+
+        ss.src = 'http://admixermonitorstorage.blob.core.windows.net/podrobnosti-ua/320x480.js';
+        ss.async = true;
+        ss.type = 'text/javascript';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(ss, node);
+    }
+  )();
+</script>
+
+</div>
+
+                        <div class="b-block-name"><h3>Самое обсуждаемое</h3></div>
+                <div class="b-block">
+                    <div class="h-block">
+                        <div class="b-others-list">
+                        <div class="b-news-item">
+                            <div class="b-news-header">
+                                <div class="b-news-img-sm"><a href="/culture/2014/12/10/1006781.html"><img src="http://podrobnosti.ua/upload/news/2014/12/10/1006781_1.jpg" alt="Установку &quot;Ока Саурона&quot; в Москве отменили" title="Установку &quot;Ока Саурона&quot; в Москве отменили" /></a></div>
+                                <div class="b-news-info">
+                                    <div class="b-news-title-sm"><h2><a href="/culture/2014/12/10/1006781.html">Установку &quot;Ока Саурона&quot; в Москве отменили </a></h2></div>
+                                    <div class="b-news-date">10 декабря 2014 | 13:11</div>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="b-news-desc-sm"><a href="/culture/2014/12/10/1006781.html">Инсталляция арт-объекта &quot;Око Саурона&quot; на крыше одной из башен комплекса &quot;IQ-квартал&quot; в бизнес-центре Москва-Сити 11 декабря, отменилась. Такое решения приняла компания галс Девелопмент, которой принадлежит здание. </a></div>
+                            <div class="b-news-read">Комментариев: 0</div>
+                        </div>
+                        <div class="b-news-item">
+                            <div class="b-news-header">
+                                <div class="b-news-img-sm"><a href="/power/2014/12/10/1006780.html"><img src="http://podrobnosti.ua/upload/news/2014/12/10/1006780_1.jpg" alt="Копач не верит в искренность Путина по урегулированию в Украине" title="Копач не верит в искренность Путина по урегулированию в Украине" /></a></div>
+                                <div class="b-news-info">
+                                    <div class="b-news-title-sm"><h2><a href="/power/2014/12/10/1006780.html">Копач не верит в искренность Путина по урегулированию в Украине </a></h2></div>
+                                    <div class="b-news-date">10 декабря 2014 | 13:10</div>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="b-news-desc-sm"><a href="/power/2014/12/10/1006780.html">Премьер-министр Польши Эва Копач отметила эффективность санкций против России из-за ситуации в Украине. Санкции в отношении России приносят желаемые результаты, отметила Копач.</a></div>
+                            <div class="b-news-read">Комментариев: 0</div>
+                        </div>
+                        <div class="b-news-item">
+                            <div class="b-news-header">
+                                <div class="b-news-img-sm"><a href="/accidents/2014/12/10/1006777.html"><img src="http://podrobnosti.ua/upload/news/2014/12/10/1006777_1.jpg" alt="Тайфун на Ф╕л╕пп╕нах залишив 2,5 млн постраждалих" title="Тайфун на Ф╕л╕пп╕нах залишив 2,5 млн постраждалих" /></a></div>
+                                <div class="b-news-info">
+                                    <div class="b-news-title-sm"><h2><a href="/accidents/2014/12/10/1006777.html">Тайфун на Ф╕л╕пп╕нах залишив 2,5 млн постраждалих &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2></div>
+                                    <div class="b-news-date">10 декабря 2014 | 12:56</div>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="b-news-desc-sm"><a href="/accidents/2014/12/10/1006777.html">Тайфун &quot;Хагуп╕т&quot; покинув Ф╕л╕пп╕ни, залишивши п╕сля себе два з половиною м╕льйони постраждалих. Кра╖на п╕драхову╓ збитки. Оф╕ц╕йно п╕дтверджено загибель 9 людей, ран╕ше Червоний Хрест пов╕домляв про 27 жертв стих╕╖.</a></div>
+                            <div class="b-news-read">Комментариев: 0</div>
+                        </div>
+                        <div class="b-news-item">
+                            <div class="b-news-header">
+                                <div class="b-news-img-sm"><a href="/power/2014/12/10/1006772.html"><img src="http://podrobnosti.ua/upload/news/2014/12/10/1006772_1.jpg" alt="Укра╖на пос╕ла 13 м╕сце у списку м╕л╕тар╕зованих кра╖н" title="Укра╖на пос╕ла 13 м╕сце у списку м╕л╕тар╕зованих кра╖н" /></a></div>
+                                <div class="b-news-info">
+                                    <div class="b-news-title-sm"><h2><a href="/power/2014/12/10/1006772.html">Укра╖на пос╕ла 13 м╕сце у списку м╕л╕тар╕зованих кра╖н &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2></div>
+                                    <div class="b-news-date">10 декабря 2014 | 12:54</div>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="b-news-desc-sm"><a href="/power/2014/12/10/1006772.html">Три кра╖ни пострадянського простору ув╕йшли в десятку найб╕льш м╕л╕таризованих держав св╕ту. В╕рмен╕я - на третьому м╕сц╕, Рос╕я - на п&#39;ятому ╕ Азербайджан - десятий. Укра╖на - зайняла 13 м╕сце, п╕днявшись за р╕к на с╕м позиц╕й.</a></div>
+                            <div class="b-news-read">Комментариев: 0</div>
+                        </div>
+                        <div class="b-news-item">
+                            <div class="b-news-header">
+                                <div class="b-news-img-sm"><a href="/criminal/2014/12/10/1006768.html"><img src="http://podrobnosti.ua/upload/news/2014/12/10/1006768_1.jpg" alt="Укра╖нець хот╕в вивезти до Рос╕╖ м╕льйон долар╕в" title="Укра╖нець хот╕в вивезти до Рос╕╖ м╕льйон долар╕в" /></a></div>
+                                <div class="b-news-info">
+                                    <div class="b-news-title-sm"><h2><a href="/criminal/2014/12/10/1006768.html">Укра╖нець хот╕в вивезти до Рос╕╖ м╕льйон долар╕в &nbsp;<img src="http://podrobnosti.ua/img/video_ico.gif" alt="Видео" title="Видео" /></a></h2></div>
+                                    <div class="b-news-date">10 декабря 2014 | 12:49</div>
+                                </div>
+                                <div class="clr"></div>
+                            </div>
+                            <div class="b-news-desc-sm"><a href="/criminal/2014/12/10/1006768.html">Укра╖нець намагався вивезти у Рос╕ю майже м╕льйон долар╕в. Грош╕ заховав у спец╕ально обладнаних н╕шах - в п╕дкрилках передн╕х кол╕с машини. На авт╕вц╕ чолов╕к перетинав контрольно-пропускний пункт Гопт╕вка, що на Харк╕вщин╕.</a></div>
+                            <div class="b-news-read">Комментариев: 0</div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+        <!--ukranews informer-->
+<div class="b-block-name"><h3>Ukranews</h3></div>
+<div class="b-block">
+  <div class="h-block">
+    <div class="b-others-list">
+      
+        <div class="b-news-item">
+          <div class="b-news-header">
+            <div class="b-news-img-sm"><a href="http://ukranews.com/news/149109.Kerri-prosit-kongress-prodlit-operatsiyu-protiv-IG-eshche-na-tri-goda.ru" target="_blank"><img src="http://ukranews.com/uploads/news/2014/12/10/13/d43d4bc6f74efdb133500fdadf9d8be8d0b586a1.jpg" alt="" /></a></div>
+            <div class="b-news-info">
+              <div class="b-news-title-sm"><h2><a href="http://ukranews.com/news/149109.Kerri-prosit-kongress-prodlit-operatsiyu-protiv-IG-eshche-na-tri-goda.ru" target="_blank">Керри просит конгресс продлить операцию против ИГ еще на три года</a></h2></div>
+              <div class="b-news-date">10 декабря 2014 | 13:07</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="b-news-desc-sm"><a href="Керри просит конгресс продлить операцию против ИГ еще на три года" target="_blank">И расширить ее географию...</a></div>
+        </div>
+  
+        <div class="b-news-item">
+          <div class="b-news-header">
+            
+            <div class="b-news-info">
+              <div class="b-news-title-sm"><h2><a href="http://ukranews.com/news/149110.Zavtra-po-vsey-Ukraine-prognoziruyut-sneg-s-dozhdem.ru" target="_blank">Завтра по всей Украине прогнозируют снег с дождем</a></h2></div>
+              <div class="b-news-date">10 декабря 2014 | 13:07</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="b-news-desc-sm"><a href="Завтра по всей Украине прогнозируют снег с дождем" target="_blank">Температура воздуха на протяжении суток в Киеве -1...+1 градус...</a></div>
+        </div>
+  
+        <div class="b-news-item">
+          <div class="b-news-header">
+            <div class="b-news-img-sm"><a href="http://ukranews.com/news/149108.V-Donetskoy-oblasti-po-goryachim-sledam-zaderzhani-dvoe-grabiteley-deystvovavshih-pod-vidom-voennih.ru" target="_blank"><img src="http://ukranews.com/uploads/news/2014/12/10/13/de205db9281d0e727798b78acd0d4c847b964468.jpg" alt="" /></a></div>
+            <div class="b-news-info">
+              <div class="b-news-title-sm"><h2><a href="http://ukranews.com/news/149108.V-Donetskoy-oblasti-po-goryachim-sledam-zaderzhani-dvoe-grabiteley-deystvovavshih-pod-vidom-voennih.ru" target="_blank">В Донецкой области по "горячим следам" задержаны двое грабителей, действовавших под видом военных</a></h2></div>
+              <div class="b-news-date">10 декабря 2014 | 13:05</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="b-news-desc-sm"><a href="В Донецкой области по "горячим следам" задержаны двое грабителей, действовавших под видом военных" target="_blank">Воры под видом военнослужащих с помощью мошеннических действий забирали у людей деньги...</a></div>
+        </div>
+  
+        <div class="b-news-item">
+          <div class="b-news-header">
+            <div class="b-news-img-sm"><a href="http://ukranews.com/news/149107.Ot-tayfuna-Hagupit-postradali-24-milliona-filippintsev.ru" target="_blank"><img src="http://ukranews.com/uploads/news/2014/12/10/13/bde2eff84f0f965ffd8c16370332462adf17fdc0.jpg" alt="" /></a></div>
+            <div class="b-news-info">
+              <div class="b-news-title-sm"><h2><a href="http://ukranews.com/news/149107.Ot-tayfuna-Hagupit-postradali-24-milliona-filippintsev.ru" target="_blank">От тайфуна "Хагупит" пострадали 2,4 миллиона филиппинцев</a></h2></div>
+              <div class="b-news-date">10 декабря 2014 | 13:03</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="b-news-desc-sm"><a href="От тайфуна "Хагупит" пострадали 2,4 миллиона филиппинцев" target="_blank">Он уже покинул территорию страны...</a></div>
+        </div>
+  
+        <div class="b-news-item">
+          <div class="b-news-header">
+            <div class="b-news-img-sm"><a href="http://ukranews.com/news/149105.Kerri-SShA-ne-mayut-namiru-zastosovuvati-viyskovu-silu-proti-Asada.ru" target="_blank"><img src="http://ukranews.com/uploads/news/2014/12/10/12/452e207585222c7670cf6d8b1dccd68b0f367843.jpg" alt="" /></a></div>
+            <div class="b-news-info">
+              <div class="b-news-title-sm"><h2><a href="http://ukranews.com/news/149105.Kerri-SShA-ne-mayut-namiru-zastosovuvati-viyskovu-silu-proti-Asada.ru" target="_blank">Керри: США не намерены применять военную силу против Асада</a></h2></div>
+              <div class="b-news-date">10 декабря 2014 | 12:59</div>
+            </div>
+            <div class="clr"></div>
+          </div>
+          <div class="b-news-desc-sm"><a href="Керри: США не намерены применять военную силу против Асада" target="_blank">Сейчас Вашингтон нацелен только на борьбу с "Исламским государством"...</a></div>
+        </div>
+  
+    </div>
+  </div>
+</div>
+<!--/ukranews informer-->
+
+
+        <div id="SinoptikInformer" style="width:300px; margin-bottom: 10px;" class="SinoptikInformer type1c1"><div class="siHeader"><div class="siLh"><div class="siMh"><a onmousedown="siClickCount();" href="http://sinoptik.ua/" target="_blank">Погода</a><a onmousedown="siClickCount();" class="siLogo" href="http://sinoptik.ua/" target="_blank"><img alt="Прогноз погоды" src="http://informers.sinoptik.ua/img/t.gif" /></a> <span id="siHeader"></span></div></div></div><div class="siBody"><div class="siCity"><div class="siCityName"><a onmousedown="siClickCount();" href="http://sinoptik.ua/погода-киев" target="_blank">Погода в <span>Киеве</span></a></div><div id="siCont0" class="siBodyContent"><div class="siLeft"><div class="siTerm"></div><div class="siT" id="siT0"></div><div id="weatherIco0"></div></div><div class="siInf"><p>влажность: <span id="vl0"></span></p><p>давление: <span id="dav0"></span></p><p>ветер: <span id="wind0"></span></p></div></div></div><div class="siLinks"><span><a onmousedown="siClickCount();" href="http://sinoptik.ua/погода-донецк" target="_blank">Погода в Донецке</a>&nbsp;</span><span><a onmousedown="siClickCount();" href="http://sinoptik.ua/погода-ивано-франковск" target="_blank">Погода в Ивано-Франковске</a>&nbsp;</span></div></div><div class="siFooter"><div class="siLf"><div class="siMf"></div></div></div></div><script type="text/javascript" charset="UTF-8" src="http://informers.sinoptik.ua/js3.php?title=4&amp;wind=3&amp;cities=303010783&amp;lang=ru"></script> 
+
+                
+        <div class="clr"></div>             
+        <div class="b-services-anons">
+          <div class="b-block-name nomargin"><h3>Доставка новостей</h3></div>
+          <div class="b-services-block b-block">
+            <div class="h-services-block">
+              <ul>
+                <li><a href="/iphone.html"><img src="/img/service_iphone.gif" alt="" /></a><a href="/iphone.html" class="iphone">iPhone/iPad</a></li> 
+                <li><a href="/export/"><img src="/img/service_rss.gif" alt="" /></a><a href="/export/" class="rss">RSS</a></li> 
+                <li><a href="/maillist/"><img src="/img/service_mail.gif" alt="" /></a><a href="/maillist/" class="maillist">Почтой</a></li> 
+                <li><a href="/uatoday.html"><img src="/img/service_uatoday.gif" alt="" /></a><a href="/uatoday.html" class="maillist">UA Today</a></li> 
+              </ul>
+            </div>
+          </div>
+        </div>             
+
+
+        <div class="b-services-anons">
+  <div class="b-block-name nomargin"><h3>Ссылки</h3></div>
+  <div class="b-services-block b-block">
+    <div class="h-services-block">
+        <p>Точная погода в Украине на <a href="http://sinoptik.ua/" target="_blank">Sinoptik.ua</a>.<br>
+        Читайте о событиях Украины в <a href="http://www.ukr.net/" target="_blank">ленте новостей Ukr.net</a>.<br>
+        <a href="http://job.ukr.net/" target="_blank">Работа</a> в Украине от JOB.ukr.net, вакансии ведущих
+        компаний.<br>
+        Все <a href="http://kinoafisha.ua/cinema/kiev/" target="_blank">кинотеатры Киева</a> на
+        KINOafisha.ua.<br>
+        TVgid.ua - <a href="http://tvgid.ua/" target="_blank">телепрограмма</a> на неделю.<br>
+        Автобазар Украина <a href="http://avtosale.ua/">avtosale.ua</a> продажа авто: новые и бу.
+        </p>
+    </div>
+  </div>
+</div>
+
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+
+      <div class="clr"></div>
+    </div>
+    
+    
+            <div class="b-ears-inside">
+                
+                <div class="b-ear-anons first wide">
+                    <div class="h-ear-anons">
+                        
+                        <div class="b-ear-anons-img"><a href="/podrobnosti/2014/12/06/1006203.html"><img src="http://podrobnosti.ua/upload/news/2014/12/06/1006203_1.jpg" alt="Брак вуг╕лля може залишити Укра╖ну у темряв╕" /></a></div>
+                        <div class="b-ear-anons-link"><a href="/podrobnosti/2014/12/06/1006203.html">Брак вуг╕лля може залишити Укра╖ну у темряв╕  <img src="http://podrobnosti.ua/img/video_ico.gif" alt="" /></a></div>
+                    </div>
+                </div>
+      
+                <div class="b-ear-anons  wide">
+                    <div class="h-ear-anons">
+                        
+                        <div class="b-ear-anons-img"><a href="/criminal/2014/12/05/1006074.html"><img src="http://podrobnosti.ua/upload/news/2014/12/05/1006074_1.jpg" alt="На Одещин╕ держрибохорону сп╕ймали на браконь╓рств╕" /></a></div>
+                        <div class="b-ear-anons-link"><a href="/criminal/2014/12/05/1006074.html">На Одещин╕ держрибохорону сп╕ймали на браконь╓рств╕  <img src="http://podrobnosti.ua/img/video_ico.gif" alt="" /></a></div>
+                    </div>
+                </div>
+      
+                <div class="b-ear-anons  wide">
+                    <div class="h-ear-anons">
+                        
+                        <div class="b-ear-anons-img"><a href="/podrobnosti/2014/12/05/1006053.html"><img src="http://podrobnosti.ua/upload/news/2014/12/05/1006053_1.jpg" alt="У ДТП на Харк╕вщин╕ постраждало 14 людей" /></a></div>
+                        <div class="b-ear-anons-link"><a href="/podrobnosti/2014/12/05/1006053.html">У ДТП на Харк╕вщин╕ постраждало 14 людей  <img src="http://podrobnosti.ua/img/video_ico.gif" alt="" /></a></div>
+                    </div>
+                </div>
+      
+                <div class="b-ear-anons  wide">
+                    <div class="h-ear-anons">
+                        
+                        <div class="b-ear-anons-img"><a href="/society/2014/12/05/1006050.html"><img src="http://podrobnosti.ua/upload/news/2014/12/05/1006050_1.jpg" alt="У Ватикан╕ встановили 25-метрову ялинку з ╤тал╕╖" /></a></div>
+                        <div class="b-ear-anons-link"><a href="/society/2014/12/05/1006050.html">У Ватикан╕ встановили 25-метрову ялинку з ╤тал╕╖  <img src="http://podrobnosti.ua/img/video_ico.gif" alt="" /></a></div>
+                    </div>
+                </div>
+      
+            </div>
+      
+    
+    <div class="clr"></div>
+    
+    <div class="b-footer-banners">
+      <script type="text/javascript">document.write('<script type="text/javascript" src="http://lbn.podrobnosti.ua/show/66/?t=5736648&sync='+(typeof lbn_sync != 'undefined' ? lbn_sync : 0)+'"></'+'scr'+'ipt>');</script>
+    </div>
+
+    <div class="b-partners-anons">
+      <ul>
+        <li><span>Телевидение для всей семьи:</span></li>
+        <li><a href="http://inter.ua/" rel="nofollow">Интер</a></li>
+        <li><a href="http://ntn.ua/" rel="nofollow">НТН</a></li>
+        <li><a href="http://k1.ua/" rel="nofollow">К1</a></li>
+        <li><a href="http://megatv.ua/" rel="nofollow">Мега</a></li>
+        <li><a href="http://zoomua.tv/" rel="nofollow">Zoom</a></li>
+        <li><a href="http://music.com.ua/" rel="nofollow">@MUSIC</a></li>
+        <li><a href="http://enterfilm.com.ua/" rel="nofollow">Энтер-фильм</a></li>
+        <li><a href="http://k2.ua/" rel="nofollow">К2</a></li>
+        <li><a href="http://interplus.ua/" rel="nofollow">Интер+</a></li>
+        <li><a href="http://intertext.com.ua/" rel="nofollow">Интертекст</a></li>
+      </ul>
+      <div class="clr"></div>
+    </div>               
+
+    <div class="b-footer">
+      
+      <div class="b-need"><h1>Новости дня на Подробности.UA.</h1> <p>Подробности.UA - новостной проект телеканала "Интер". Последние новости Украины, политики, бизнеса, экономики. Новости спорта. Информация о курсах валют, прогноз погоды.</p></div>
+      
+
+      
+
+      <div class="b-copyright">
+        <div class="b-copyright-text">Среда, 10 декабря 2014. &copy; <!--© 2001-2008 --> <a href="http://interactive-marketing.com.ua/" rel="nofollow">ООО "Интерактивный Маркетинг"</a> | <a href="http://interactive-marketing.com.ua/advertising/podrobnosti.html" rel="nofollow">Реклама на сайте</a> | <a href="/contacts.html">Контакты</a> | <span class="b-rss-link"><a href="/export/">RSS 2.0</a></span> | <a href="/sitemap.html">Карта сайта</a>. При любом использовании новостей сайта, гиперссылка (hyperlink) на podrobnosti.ua обязательна. Материалы, опубликованные со ссылкой на информационные агентства "Интерфакс", "Интерфакс-Украина", "Укра╖нськ╕ новини", УН╤АН, "Украинская Фото Группа", не подлежат дальнейшей републикации или распространению в любой форме. ООО "Интерактивный Маркетинг" входит в состав <a href="http://www.uaimg.com" rel="nofollow">Inter Media Group Limited</a>. Сайт разработан в <a href="http://argentum.ua" rel="nofollow">Argentum IT Lab</a>.</div>
+        <div class="b-copyright-adv">
+          <div class="b-counters">
+            <noindex>
+            <!--begin of Top100-->
+            <img src="http://counter.rambler.ru/top100.cnt?268837" alt="" width="0" height="0" border="0" />
+            <!--end of Top100 code-->
+            <ul>
+              <li>
+                <!-- I.UA counter -->
+                <a href="http://www.i.ua/" target="_blank" onclick="this.href='http://i.ua/r.php?38';" title="Rated by I.UA"><script type="text/javascript" language="javascript"><!--
+                iS='<img src="http://r.i.ua/s?u38&p253&n'+Math.random();
+                iD=document;iD.cookie="iua=1";if(iD.cookie)iS+='&c1';
+                try{
+                iS+='&d'+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)
+                +"&w"+screen.width+'&h'+screen.height
+                }catch(e){ }
+                iT=iD.referrer.slice(7);iS+='&r'+escape(iH=window.location.href.slice(7));
+                ((iI=iT.indexOf('/'))!=-1)?(iT=iT.substring(0,iI)):(iI=iT.length);
+                if(iT!=iH.substring(0,iI))iS+='&f'+escape(iD.referrer.slice(7));
+                iD.write(iS+'" border="0" width="88" height="31" />');
+                //--></script></a>
+                <!-- End of I.UA counter -->
+              </li>
+              <li>
+                <!--begin of Top100 logo-->
+                <a href="http://top100.rambler.ru/top100/"><img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-gray2.gif" alt="Rambler's Top100" width=88 height=31 border=0></a>
+                <!--end of Top100 logo -->
+              </li>
+              <li>
+                <!--LiveInternet counter--><script type="text/javascript"><!--
+                new Image().src = "http://counter.yadro.ru/hit?r"+
+                escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                ";h"+escape(document.title.substring(0,80))+
+                ";"+Math.random();//--></script><!--/LiveInternet-->
+                <!--LiveInternet logo--><a href="http://www.liveinternet.ru/click" target="_blank"><img src="http://counter.yadro.ru/logo?44.1" title="LiveInternet" alt="" border="0" width="31" height="31"/></a><!--/LiveInternet-->
+              </li>
+              <li><script type="text/javascript" src="/js/orphus.js"></script><a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="/img/orphus.gif" border="0" width="88" height="31" /></a></li>
+              <li class="last">
+                <div style="margin-top: -12px;">
+                <!--bigmir)net TOP 100-->
+                <script type="text/javascript" language="javascript"><!--
+                function BM_Draw(oBM_STAT){
+                document.write('<table cellpadding="0" cellspacing="0" border="0" style="display:inline;margin-right:4px;"><tr><td><div style="margin:0px;padding:0px;font-size:1px;width:88px;"><div style="background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b59_top.gif\') no-repeat bottom;"> </div><div style="font:10px Tahoma;background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b59_center.gif\');"><div style="text-align:center;"><a href="http://www.bigmir.net/" target="_blank" style="color:#0000ab;text-decoration:none;font:10px Tahoma;">bigmir<span style="color:#ff0000;">)</span>net</a></div><div style="margin-top:3px;padding: 0px 6px 0px 6px;color:#003596;"><div style="float:left;font:10px Tahoma;">'+oBM_STAT.hosts+'</div><div style="float:right;font:10px Tahoma;">'+oBM_STAT.hits+'</div></div><br clear="all"/></div><div style="background:url(\'http://i.bigmir.net/cnt/samples/diagonal/b59_bottom.gif\') no-repeat top;"> </div></div></td></tr></table>');
+                }
+                //-->
+                </script>
+                <script type="text/javascript" language="javascript"><!--
+                bmN=navigator,bmD=document,bmD.cookie='b=b',i=0,bs=[],bm={o:1,v:5035,s:5035,t:0,c:bmD.cookie?1:0,n:Math.round((Math.random()* 1000000)),w:0};
+                for(var f=self;f!=f.parent;f=f.parent)bm.w++;
+                try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins['Shockwave Flash']))bm.m=parseInt(x.description.replace(/([a-zA-Z]|\s)+/,''));
+                else for(var f=3;f<20;f++)if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")'))bm.m=f}catch(e){;}
+                try{bm.y=bmN.javaEnabled()?1:0}catch(e){;}
+                try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){;}
+                r=bmD.referrer.slice(7);if(r&&r.split('/')[0]!=window.location.host){bm.f=escape(r);bm.v^=r.length}
+                bm.v^=window.location.href.length;for(var x in bm) if(/^[ovstcnwmydrf]$/.test(x)) bs[i++]=x+bm[x];
+                bmD.write('<sc'+'ript type="text/javascript" language="javascript" src="http://c.bigmir.net/?'+bs.join('&')+'"></sc'+'ript>');
+                //-->
+                </script>
+                <noscript>
+                <a href="http://www.bigmir.net/" target="_blank"><img src="http://c.bigmir.net/?v5035&s5035&t2" width="88" height="31" alt="bigmir)net TOP 100" title="bigmir)net TOP 100" border="0" /></a>
+                </noscript>
+                <!--bigmir)net TOP 100-->
+                </div>
+              </li>
+            </ul>
+            </noindex>
+          </div>
+          <div class="b-adv"></div>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>           
+    <div class="clr"></div>
+  </div>
+</div>
+
+<div id="social_popup" class="jqmWindow b-social-popup" style="display: none">  
+  <table>
+    <tr><td colspan="3"><img src="/img/popup_logo.jpg" alt="Подробносоти" width="612px" height="101px" /></td></tr>
+    <tr>
+      <td>
+        <div id="vk_groups_popup" style="height: 190px; overflow: hidden;"></div>
+        <script type="text/javascript">
+          VK.Widgets.Group("vk_groups_popup", {mode: 0, width: "300", height: "190"}, 25582670);
+        </script>
+      </td>
+      <td style="width: 12px; white-space: nowrap;">&nbsp;</td>
+      <td><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpodrobnosti&amp;width=300&amp;height=220&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true&amp;appId=120687834768520" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:220px;" allowTransparency="true"></iframe></td>
+    </tr>
+  </table>   
+  <div class="jqmWindow-close"><a href="javascript:;" class="jqmClose">закрыть</a></div>                                                              
+</div>
+
+<!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter24788816 = new Ya.Metrika({id:24788816, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/24788816" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter -->
+
+<!-- MMI CMeter -->
+<noscript>
+<img
+src="http://juke.mmi.bemobile.ua/bug/pic.gif?siteid=podrobnosti.ua"
+alt=""
+/>
+</noscript>
+<script language="javascript">
+var tns_already, tnscm_adn = tnscm_adn || [];
+(function(c,m){if(c.indexOf&&c.indexOf(m)<0){c.unshift(m);}}(tnscm_adn,"inline_cm"));
+if ("undefined"==typeof(tns_already) || null==tns_already || 0==tns_already)
+{
+tns_already=1;
+var i=new Image();
+i.src="http://juke.mmi.bemobile.ua/bug/pic.gif?siteid=podrobnosti.ua&j=1&nocache="+Math.random();
+
+(function(){
+var p=document.getElementsByTagName('head')[0];
+var s=document.createElement("script");
+s.type="text/javascript";
+s.src="http://source.mmi.bemobile.ua/cm/cm.js";
+s.async = true;
+p.appendChild(s);
+})();
+};
+</script>
+<!-- /MMI CMeter -->
+
+</body>
+</html>

@@ -26,6 +26,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -74,7 +75,7 @@ public class ImageParser<T> implements Parser<T> {
 
     @Override
     public byte[] parse(final URI uri, final HttpResponse httpResponse, final LinkReceiver linkReceiver) throws IOException {
-        System.out.println("ImageParser " + uri);
+        //System.out.println("ImageParser " + uri);
         if (hashFunction == null) return null;
         String imageUrl = uri.toString();
         final Hasher hasher = hashFunction.newHasher();
@@ -109,6 +110,10 @@ public class ImageParser<T> implements Parser<T> {
                 try {
                     String lastModified = httpResponse.getFirstHeader("Last-Modified").getValue();
                     item.setLastModifiedDate(sdf.parse(lastModified));
+                } catch (ParseException ex) {
+                    //ignore. last modified will simply not be set
+                }
+                try {
                     VisualIndexer.getInstance().indexAndStore(image, item);
                 } catch (Exception e) {
                     System.out.println("ImageParser parse exeption: " + e);

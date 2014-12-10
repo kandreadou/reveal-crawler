@@ -2,14 +2,19 @@ package gr.iti.mklab.bubing.parser;
 
 import com.google.common.hash.HashFunction;
 import com.google.common.hash.Hasher;
+
 import gr.iti.mklab.image.Utils;
 import gr.iti.mklab.image.VisualIndexer;
 import gr.iti.mklab.simmo.items.Image;
+import gr.iti.mklab.visual.utilities.ImageIOGreyScale;
 import it.unimi.di.law.bubing.parser.BinaryParser;
 import it.unimi.di.law.bubing.parser.HTMLParser;
 import it.unimi.di.law.bubing.util.BURL;
+
 import it.unimi.dsi.fastutil.io.InspectableFileCachedInputStream;
+
 import net.htmlparser.jericho.StreamedSource;
+
 import org.apache.commons.compress.utils.Charsets;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
@@ -64,7 +69,7 @@ public class HTMLImageParser extends HTMLParser {
     }
 
     public void processImageURL(URI uri, URI base, StartTag startTag) throws MalformedURLException, IOException {
-        System.out.println("processImageURL " + uri);
+        System.out.println("#### HTMLImageParser process url" + uri);
         String imgSrc = startTag.getAttributeValue("src");
         String altTxt = startTag.getAttributeValue("alt");
 
@@ -80,7 +85,19 @@ public class HTMLImageParser extends HTMLParser {
 
                 if (Utils.checkContentHeaders(con.getContentLength(), con.getContentType())) {
 
-                    BufferedImage image = ImageIO.read(con.getInputStream());
+                    InputStream is = con.getInputStream();
+
+                    BufferedImage image = null;
+                    try {
+                        image = ImageIO.read(is);
+                    } catch (IllegalArgumentException e) {
+                        // this exception is probably thrown because of a greyscale jpeg image
+                        System.out.println("Exception: " + e.getMessage() + " | Image: " + imgSrc);
+                        image = ImageIOGreyScale.read(is); // retry with the modified class
+                    } catch (MalformedURLException e) {
+                        System.out.println("Malformed url exception. Url: " + imgSrc);
+                    }
+
                     if (Utils.checkImage(image)) {
 
                         Image item = new Image();
@@ -92,10 +109,12 @@ public class HTMLImageParser extends HTMLParser {
                         item.setLastModifiedDate(new Date(con.getLastModified()));
                         item.setObjectId(new ObjectId());
 
-                        /*if (VisualIndexer.getInstance().(item)) {
-                            indexedImgs.add(id);
-                            //TODO: store in the DB
-                        }*/
+                        try {
+                            VisualIndexer.getInstance().indexAndStore(image, item);
+                        } catch (Exception e) {
+                            System.out.println("HTMLImageParser parse exeption: " + e);
+                        }
+
                     }
                 }
             }
@@ -104,7 +123,7 @@ public class HTMLImageParser extends HTMLParser {
 
     @Override
     public byte[] parse(final URI uri, final HttpResponse httpResponse, final LinkReceiver linkReceiver) throws IOException {
-        System.out.println("parser " + uri);
+        System.out.println("#### HTMLImageParser parse" + uri);
         guessedCharset = "ISO-8859-1";
 
         final HttpEntity entity = httpResponse.getEntity();

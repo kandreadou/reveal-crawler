@@ -154,7 +154,7 @@ public class VisualIndexer {
             pca.loadPCAFromFile(pcaFile);
             ImageVectorization.setPcaProjector(pca);
         }
-        int maximumNumVectors = 1000;
+        int maximumNumVectors = 10000;
         int m2 = 64;
         int k_c = 256;
         int numCoarseCentroids = 8192;

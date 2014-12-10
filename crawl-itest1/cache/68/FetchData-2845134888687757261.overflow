@@ -1,0 +1,726 @@
+						<div class="compteur">92</div>
+								<h3><a class="" href="/politique/quebec/426022/otages-de-la-rigueur-budgetaire" >Otages de la «rigueur» budgétaire</a></h3>
+								<div class="specs"><time datetime="2014-12-06 08:10:21">6 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">62</div>
+								<h3><a class="" href="/societe/sante/425982/allo-gaetan-bobo" >Allo Gaétan bobo</a></h3>
+								<div class="specs"><time datetime="2014-12-05 20:04:28">6 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">60</div>
+								<h3><a class="" href="/politique/quebec/425957/austerite-le-prix-d-un-cafe" >Le prix d’un café?</a></h3>
+								<div class="specs"><time datetime="2014-12-05 19:54:29">6 décembre 2014</time></div>
+							</article>
+						</li>
+									</ul>
+					</div>
+	</section>
+
+	<script type="text/javascript">
+		$('#plus_commentes_aimes_tablet div.ferme').hide();
+
+		$('#plus_commentes_aimes_tablet a.voir_aimes').click(function(e){
+			$(this).parent().parent().hide().next().show();
+			e.preventDefault();
+		});
+
+		$('#plus_commentes_aimes_tablet a.voir_commentes').click(function(e){
+			$(this).parent().parent().hide().prev().show();
+			e.preventDefault();
+		});
+	</script>
+					<section id="une_jour_tablet">
+	<header class="titre clearfix">
+            		<h5><a href="/documents/image/une_pdf/edition-2014-12-10.pdf">La une du jour</a></h5>
+            	</header>
+			<a href="/documents/image/une_pdf/edition-2014-12-10.pdf"><img class="photo left" src="/documents/image/une_pdf/edition-2014-12-10.jpg" width="120" alt="La une du jour" title="La une du jour" /></a>
+		<div class="detail clearfix">
+					Saviez-vous que l'abonnement papier vous donne accès à la version électronique?							<hr/>
+			À partir de<br/>
+			<span class="prix">12.65$/mois</span><br/><br/>
+				<a class="bouton" href="/abonnements">S'abonner</a>
+			</div>
+</section>
+				</div>
+				<div id="D6_tablet" class="pub"></div>
+							</div>
+
+			<!-- SUJETS CHAUDS -->
+<section id="sujets_chauds">
+	<div class="bordure_simple">
+		<div class="bordure_double clearfix">
+			<div class="titre left">
+				Sujets chauds
+			</div>
+			<ul class="sujets_liste left">
+									<li><a href="/motcle/petrole">pétrole</a>,</li>
+									<li><a href="/motcle/systeme-de-sante">système de santé</a>,</li>
+									<li><a href="/motcle/assurance-emploi">assurance-emploi</a>,</li>
+									<li><a href="/motcle/chomage">chômage</a>,</li>
+									<li><a href="/motcle/rechauffement-climatique">réchauffement climatique</a>,</li>
+									<li><a href="/motcle/ledevoir-com">ledevoir.com</a></li>
+							</ul>
+		</div>
+	</div>
+</section>
+		</section>
+	</div><!-- Fin #col_principale -->
+
+	<!-- #col_complement -->
+	<div id="col_complement" class="left">
+		
+			<section id="vedette">
+		<header class="titre clearfix">
+			<h5>
+				<a href="#" onclick="return false;">En vedette</a>
+			</h5>
+		</header>
+		<ul>
+						<li>
+				<article class="clearfix">
+											<figure class="left">
+															<a href="http://www.ledevoir.com/planete-terre">
+														<img class="photo" width = "130" height="100" alt="Planète Terre: nouvelle émission du 10 décembre" title="Planète Terre: nouvelle émission du 10 décembre" src="http://media2.ledevoir.com/documents/image/vedette/grande_ebf536cce591bf3852eaf6c92fc37c046ae91863.jpg">
+															</a>
+													</figure>
+										<h3>
+													<a href="http://www.ledevoir.com/planete-terre">
+												Planète Terre: nouvelle émission du 10 décembre													</a>
+											</h3>
+					<div class="specs">
+						<!--time datetime=""></time-->
+											</div>
+				</article>
+			</li>
+						<li>
+				<article class="clearfix">
+											<figure class="left">
+															<a href="http://www.ledevoir.com/motcle/polytechnique-25-ans">
+														<img class="photo" width = "130" height="100" alt="En souvenir d&#039;elles: Polytechnique, 25 ans plus tard" title="En souvenir d&#039;elles: Polytechnique, 25 ans plus tard" src="http://media2.ledevoir.com/documents/image/vedette/grande_ca096b174589daa59f7f5a1f8019628f72f0f596.jpeg">
+															</a>
+													</figure>
+										<h3>
+													<a href="http://www.ledevoir.com/motcle/polytechnique-25-ans">
+												En souvenir d&#039;elles: Polytechnique, 25 ans plus tard													</a>
+											</h3>
+					<div class="specs">
+						<!--time datetime=""></time-->
+											</div>
+				</article>
+			</li>
+						<li>
+				<article class="clearfix">
+											<figure class="left">
+															<a href="http://www.ledevoir.com/dossiers/austerite/28">
+														<img class="photo" width = "130" height="100" alt="Dossier: La face cachée de l&#039;austérité" title="Dossier: La face cachée de l&#039;austérité" src="http://media1.ledevoir.com/documents/image/vedette/grande_da54ffd6cf6f38d72c03046f445ab75ce33ce185.jpg">
+															</a>
+													</figure>
+										<h3>
+													<a href="http://www.ledevoir.com/dossiers/austerite/28">
+												Dossier: La face cachée de l&#039;austérité													</a>
+											</h3>
+					<div class="specs">
+						<!--time datetime=""></time-->
+											</div>
+				</article>
+			</li>
+						<li>
+				<article class="clearfix">
+											<figure class="left">
+															<a href="http://www.ledevoir.com/culture/actualites-culturelles/425679/une-photo-pour-un-cadeau">
+														<img class="photo" width = "130" height="100" alt="Une photo pour un cadeau: un appel aux lecteurs!" title="Une photo pour un cadeau: un appel aux lecteurs!" src="http://media1.ledevoir.com/documents/image/vedette/grande_278d70b4abe5294a38f75fa595b62b4b89696ca2.jpeg">
+															</a>
+													</figure>
+										<h3>
+													<a href="http://www.ledevoir.com/culture/actualites-culturelles/425679/une-photo-pour-un-cadeau">
+												Une photo pour un cadeau: un appel aux lecteurs!													</a>
+											</h3>
+					<div class="specs">
+						<!--time datetime=""></time-->
+											</div>
+				</article>
+			</li>
+					</ul>
+	</section>
+
+		
+			<!-- ZP:D2 -->
+	<div id="D2" class="pub">
+		<div align="center">
+																				<script type="text/javascript" src="http://adserve.atedra.com/serve.php?z=3405"></script>									</div>
+	</div>
+
+		<section id="sociale">
+    <div class="fb-container-like-border">
+		<div class="fb-container-like">
+			<div class="fb-like-box" data-href="http://www.facebook.com/ledevoir" data-width="300" data-show-faces="false" data-stream="false" data-header="false" data-border-color="#afafaf"></div>
+		</div>
+	</div>
+	<div class="fb-container-activity">
+		<div class="fb-activity" data-site="http://www.ledevoir.com" data-app-id="105451392851924" data-width="300" data-height="300" data-header="false" data-recommendations="true" data-border-color="#afafaf"></div>
+	</div>
+
+	<div class="suivre twitter">
+		<img src="http://media1.ledevoir.com/images/ul/icones/ico_twitter.png" width="16" height="16" alt="" /><strong>Le Devoir</strong> sur Twitter<span><a href="https://twitter.com/intent/user?screen_name=LeDevoir" target="_blank">Suivre</a></span>
+	</div>
+
+	<div class="suivre rss">
+		<img src="http://media2.ledevoir.com/images/ul/icones/ico_rss.png" width="16" height="16" alt="" />Fils RSS<span><a href="/flux-rss">S'inscrire</a></span>
+	</div>
+</section>
+			<!-- ZP:D3 -->
+	<div id="D3" class="pub">
+		<div align="center">
+																				<script type="text/javascript" src="http://adserve.atedra.com/serve.php?z=3406"></script>									</div>
+	</div>
+
+			<!-- LES BLOGUES DU DEVOIR -->
+	<section id="blogues">
+		<header class="titre clearfix">
+			<h5><a href="/opinion/blogues">Blogues</a></h5>
+		</header>
+		<ul>
+											<li>
+					<article class="clearfix">
+													<figure class="left">
+								<a href="/opinion/blogues/les-mutations-tranquilles/426131/jouer-au-pong-en-attendant-le-feu-vert"><img src="http://media1.ledevoir.com/documents/image/collaborateurs/normal_fabien-deglise.jpg" width="60" height="60" alt="Fabien Deglise" title="Fabien Deglise" class="photo" /></a>
+							</figure>
+												<h4><a href="/opinion/blogues/les-mutations-tranquilles">Les mutations tranquilles</a></h4>
+						<div class="specs"><time datetime="2014-12-08 12:09:04">8 décembre 2014 12h09</time><span class="splitter">|</span>			<a href="/auteur/fabien-deglise">Fabien Deglise</a>	<!--a href=""></a-->
+</div>
+						<h3><a class="" href="/opinion/blogues/les-mutations-tranquilles/426131/jouer-au-pong-en-attendant-le-feu-vert" >Jouer au Pong en attendant le feu vert</a></h3>
+					</article>
+				</li>
+											<li>
+					<article class="clearfix">
+													<figure class="left">
+								<a href="/opinion/blogues/le-blogue-urbain/425837/cyclistes-et-pietons-une-carte-des-accidents-a-quebec"><img src="http://media2.ledevoir.com/documents/image/collaborateurs/normal_isabelle-porter.jpg" width="60" height="60" alt="Isabelle Porter" title="Isabelle Porter" class="photo" /></a>
+							</figure>
+												<h4><a href="/opinion/blogues/le-blogue-urbain">Le blogue urbain</a></h4>
+						<div class="specs"><time datetime="2014-12-04 17:49:17">4 décembre 2014 17h49</time><span class="splitter">|</span>			<a href="/auteur/isabelle-porter">Isabelle Porter</a>	<!--a href=""></a-->
+</div>
+						<h3><a class="" href="/opinion/blogues/le-blogue-urbain/425837/cyclistes-et-pietons-une-carte-des-accidents-a-quebec" >Cyclistes et piétons : une carte des accidents à Québec</a></h3>
+					</article>
+				</li>
+											<li>
+					<article class="clearfix">
+													<figure class="left">
+								<a href="/opinion/blogues/mots-et-maux-de-la-politique/425031/couillard-a-la-federer"><img src="http://media1.ledevoir.com/documents/image/collaborateurs/normal_antoine-robitaille.jpg" width="60" height="60" alt="Antoine Robitaille" title="Antoine Robitaille" class="photo" /></a>
+							</figure>
+												<h4><a href="/opinion/blogues/mots-et-maux-de-la-politique">Mots et maux de la politique</a></h4>
+						<div class="specs"><time datetime="2014-11-26 16:53:17">26 novembre 2014 16h53</time><span class="splitter">|</span>			<a href="/auteur/antoine-robitaille">Antoine Robitaille</a>	<!--a href=""></a-->
+</div>
+						<h3><a class="" href="/opinion/blogues/mots-et-maux-de-la-politique/425031/couillard-a-la-federer" >Couillard, à la Federer</a></h3>
+					</article>
+				</li>
+					</ul>
+	</section>
+
+			<!-- ZP:D4 -->
+	<div id="D4" class="pub">
+		<div align="center">
+																				<script type="text/javascript">
+sas_pageid='50461/364185';	// Page : LeDevoir.com/accueil
+sas_formatid=21666;		// Format : Îlot 300x250 D4 300x250
+sas_target='';			// Ciblage
+SmartAdServer(sas_pageid,sas_formatid,sas_target);
+</script>
+<noscript>
+<a href="http://www5.smartadserver.com/call/pubjumpi/50461/364185/21666/S/[timestamp]/?" target="_blank">
+<img src="http://www5.smartadserver.com/call/pubi/50461/364185/21666/S/[timestamp]/?" border="0" alt="" /></a>
+</noscript>									</div>
+	</div>
+
+			<!-- ARTICLES LES PLUS COMMENTÉS/AIMÉS -->
+	<section id="plus_commentes_aimes">
+		<div class="ferme">
+			<header>
+				<span>Articles les plus :</span> <strong>Commentés</strong><span class="splitter">|</span><a href="#" class="voir_aimes">Aimés</a>
+			</header>
+							<ul>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">67</div>
+								<h3><a class="" href="/politique/quebec/425935/armes-a-feu-le-quebec-aura-son-registre" >Le Québec aura son registre</a></h3>
+								<div class="specs"><time datetime="2014-12-05 00:14:37">5 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">65</div>
+								<h3><a class="" href="/environnement/actualites-sur-l-environnement/425926/oleoduc-energie-est-couillard-clot-le-chapitre-des-ges" >Couillard clôt le chapitre des GES</a></h3>
+								<div class="specs"><time datetime="2014-12-05 01:13:23">5 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">64</div>
+								<h3><a class="" href="/politique/quebec/425732/collusion-quebec-veut-accelerer-la-rehabilitation-des-entreprises-fautives" >Québec veut accélérer la réhabilitation des entreprises fautives</a></h3>
+								<div class="specs"><time datetime="2014-12-04 00:15:54">4 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">53</div>
+								<h3><a class="" href="/societe/sante/425552/ministre-barrette-et-projet-de-loi-20-je-songe-a-accrocher-mes-patins" >Je songe à accrocher mes patins</a></h3>
+								<div class="specs"><time datetime="2014-12-02 23:06:51">3 décembre 2014</time></div>
+							</article>
+						</li>
+									</ul>
+					</div>
+		<div>
+			<header>
+				<span>Articles les plus :</span> <a href="#" class="voir_commentes">Commentés</a><span class="splitter">|</span><strong>Aimés</strong>
+			</header>
+							<ul>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">151</div>
+								<h3><a class="" href="/societe/actualites-en-societe/426072/les-radicaux-libres" >Les radicaux libres</a></h3>
+								<div class="specs"><time datetime="2014-12-09 08:30:12">8 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">92</div>
+								<h3><a class="" href="/politique/quebec/426022/otages-de-la-rigueur-budgetaire" >Otages de la «rigueur» budgétaire</a></h3>
+								<div class="specs"><time datetime="2014-12-06 08:10:21">6 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">62</div>
+								<h3><a class="" href="/societe/sante/425982/allo-gaetan-bobo" >Allo Gaétan bobo</a></h3>
+								<div class="specs"><time datetime="2014-12-05 20:04:28">6 décembre 2014</time></div>
+							</article>
+						</li>
+											<li>
+							<article class="clearfix">
+								<div class="compteur">60</div>
+								<h3><a class="" href="/politique/quebec/425957/austerite-le-prix-d-un-cafe" >Le prix d’un café?</a></h3>
+								<div class="specs"><time datetime="2014-12-05 19:54:29">6 décembre 2014</time></div>
+							</article>
+						</li>
+									</ul>
+					</div>
+	</section>
+
+	<script type="text/javascript">
+		$('#plus_commentes_aimes div.ferme').hide();
+
+		$('#plus_commentes_aimes a.voir_aimes').click(function(e){
+			$(this).parent().parent().hide().next().show();
+			e.preventDefault();
+		});
+
+		$('#plus_commentes_aimes a.voir_commentes').click(function(e){
+			$(this).parent().parent().hide().prev().show();
+			e.preventDefault();
+		});
+	</script>
+
+			<!-- ZP:D5 -->
+	<div id="D5" class="pub">
+		<div align="center">
+																				<script type="text/javascript">
+sas_pageid='50461/364185';	// Page : LeDevoir.com/accueil
+sas_formatid=21667;		// Format : Îlot 300x250 D5 300x250
+sas_target='';			// Ciblage
+SmartAdServer(sas_pageid,sas_formatid,sas_target);
+</script>
+<noscript>
+<a href="http://www5.smartadserver.com/call/pubjumpi/50461/364185/21667/S/[timestamp]/?" target="_blank">
+<img src="http://www5.smartadserver.com/call/pubi/50461/364185/21667/S/[timestamp]/?" border="0" alt="" /></a>
+</noscript>									</div>
+	</div>
+
+		<section id="une_jour" class="bloc_emphase">
+	<header class="titre clearfix">
+            		<h5><a href="/documents/image/une_pdf/edition-2014-12-10.pdf">La une du jour</a></h5>
+            	</header>
+			<a href="/documents/image/une_pdf/edition-2014-12-10.pdf"><img class="photo left" src="/documents/image/une_pdf/edition-2014-12-10.jpg" width="120" alt="La une du jour" title="La une du jour" /></a>
+		<div class="detail clearfix">
+					Saviez-vous que l'abonnement papier vous donne accès à la version électronique?							<hr/>
+			À partir de<br/>
+			<span class="prix">12.65$/mois</span><br/><br/>
+				<a class="bouton" href="/abonnements">S'abonner</a>
+			</div>
+</section>
+
+			<div class="pub_cta col deux">
+		<a class="bouton" href="http://abonnement.ledevoir.com/profil/creer-votre-profil/2">M'inscrire</a>
+		<img src="http://media2.ledevoir.com/images/ul/graphiques/pub_colonne_2.png" alt="Inscrivez-vous pour participer à la discussion. C'est gratuit!" width="300" height="120">
+	</div>
+
+			<!-- ZP:D6 -->
+	<div id="D6" class="pub">
+		<div align="center">
+																				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Bigbox 300x250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-4812736323600724"
+     data-ad-slot="9402779184"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>									</div>
+	</div>
+
+	</div><!-- Fin #col_complement -->
+
+</div><!-- Fin #col_conteneur -->
+
+	<section id="carousel">
+		<ul id="slider">
+							<li>
+					<div class="slide">
+													<header>
+								<a href="http://www.ledevoir.com/art-de-vivre/vin">Art de vivre - Vins</a>							</header>
+																															<a target="_blank" href="http://www.ledevoir.com/art-de-vivre/vin">
+								<img
+									width="310"									height="192"									border="0" alt="Art de vivre - Vins" src="http://media1.ledevoir.com/documents/image/pub/310x192_vins.jpg"/>
+							</a>
+																							</div>
+				</li>
+							<li>
+					<div class="slide">
+													<header>
+								<a href="http://www.ledevoir.com/art-de-vivre/restaurants">Art de vivre - Restaurants</a>							</header>
+																															<a target="_blank" href="http://www.ledevoir.com/art-de-vivre/restaurants">
+								<img
+									width="310"									height="192"									border="0" alt="Art de vivre - Restaurants" src="http://media1.ledevoir.com/documents/image/pub/310x192_restos.jpg"/>
+							</a>
+																							</div>
+				</li>
+							<li>
+					<div class="slide">
+													<header>
+								<a href="http://www.ledevoir.com/services-et-annonces/horaire-des-films">Horaire des films</a>							</header>
+																															<a target="_blank" href="http://www.ledevoir.com/services-et-annonces/horaire-des-films">
+								<img
+									width="310"									height="192"									border="0" alt="Horaire des films" src="http://media2.ledevoir.com/documents/image/pub/310x192_films.jpg"/>
+							</a>
+																							</div>
+				</li>
+							<li>
+					<div class="slide">
+													<header>
+								<a href="http://www.ledevoir.com/jeux">Mots croisés et Sudoku</a>							</header>
+																															<a target="_blank" href="http://www.ledevoir.com/jeux">
+								<img
+									width="310"									height="192"									border="0" alt="Mots croisés et Sudoku" src="http://media1.ledevoir.com/documents/image/pub/310x192_jeux.jpg"/>
+							</a>
+																							</div>
+				</li>
+							<li>
+					<div class="slide">
+													<header>
+								<a href="http://www.ledevoir.com/fichiers_charme_et_prestige/2012_12_10.pdf">Charme et prestige</a>							</header>
+																															<a target="_blank" href="http://www.ledevoir.com/fichiers_charme_et_prestige/2012_12_10.pdf">
+								<img
+									width="310"									height="192"									border="0" alt="Charme et prestige" src="http://media1.ledevoir.com/documents/image/pub/310x192_charmes.jpg"/>
+							</a>
+																							</div>
+				</li>
+							<li>
+					<div class="slide">
+													<header>
+								<a href="http://www.ledevoir.com/services-et-annonces/carrieres">Carrières</a>							</header>
+																															<a target="_blank" href="http://www.ledevoir.com/services-et-annonces/carrieres">
+								<img
+									width="310"									height="192"									border="0" alt="Carrières" src="http://media1.ledevoir.com/documents/image/pub/310x192_carrrieres.jpg"/>
+							</a>
+																							</div>
+				</li>
+					</ul>
+	</section>
+
+	<script type="text/javascript">
+
+		var slider;
+		var firstLoad = true;
+
+		function setupCarrousel() {
+			if ($(window).width() <= 979) {
+				nbItems = 3;
+			} else {
+				nbItems = 4;
+			}
+
+			if (!firstLoad) {
+				slider.destroyShow();
+			} else {
+				firstLoad = false;
+			}
+
+			slider = $('#slider').bxSlider({
+				controls: false,
+				pager: true,
+				displaySlideQty: nbItems,
+				moveSlideQty: nbItems,
+				infiniteLoop: false
+			});
+
+			$(".bx-pager").addClass("clearfix");
+		}
+
+		$(function(){
+			setupCarrousel();
+		});
+
+		// On window resize, refresh the carrousel so it renders correctly
+		var rtime = new Date(1, 1, 2000, 12,00,00);
+		var timeout = false;
+		var delta = 200;
+
+		$(window).resize(function() {
+			rtime = new Date();
+			if (timeout === false) {
+				timeout = true;
+				setTimeout(resizeEnd, delta);
+			}
+		});
+
+		function resizeEnd() {
+			if (new Date() - rtime < delta) {
+				setTimeout(resizeEnd, delta);
+			} else {
+				timeout = false;
+				setupCarrousel();
+			}
+		}
+
+	</script>
+
+<script type="text/javascript">
+    $(function(){
+        var windowObject = $(window);
+        var pubZones = ['D1', 'D2', 'D3', 'D4', 'D5', 'D6'];
+
+        function detectCurrentView() {
+            if (windowObject.width() <= 979) {
+                return 'tablet';
+            } else {
+                return 'web';
+            }
+        }
+
+        currentView = 'web';
+
+        function togglePubs() {
+            if (currentView != detectCurrentView()) {
+                currentView = detectCurrentView();
+
+                if (detectCurrentView() == 'tablet') {
+                    var strAppendSource = '';
+                    var strAppendTarget = '_tablet';
+                } else {
+                    var strAppendSource = '_tablet';
+                    var strAppendTarget = '';
+                }
+
+                for(zone in pubZones) {
+                    clone = $('#' + pubZones[zone] + strAppendSource).children('div:first').clone();
+                    clone.find('script').remove();
+                    $('#' + pubZones[zone] + strAppendSource).children('div:first').remove();
+
+                    clone.appendTo($('#' + pubZones[zone] + strAppendTarget));
+                }
+            }
+        }
+
+        windowObject.resize(function(){
+            if (!($.browser.msie && ($.browser.version < 10))) {
+                togglePubs();
+            }
+        });
+
+        if (!($.browser.msie && ($.browser.version < 10))) {
+            togglePubs();
+        }
+    });
+</script>
+								<!-- ZP:A2 -->
+	<div id="A2" class="pub">
+		<div align="center">
+																				<script type="text/javascript" src="http://adserve.atedra.com/serve.php?z=3403"></script>									</div>
+	</div>
+			
+			<!-- #raccourcis -->
+<div id="raccourcis" class="clearfix">
+	<div class="promo">
+		<div class="promo_abonnement"><img src="http://media1.ledevoir.com/images/ul/photos/promo_abonnement.png" width="269" height="172" alt="S'abonner au Devoir" /></div>
+		<h5><strong>S'abonner</strong> au devoir</h5>
+		<a href="/abonnement/papier">Abonnement papier</a>
+		<a href="/abonnement/internet">Abonnement numérique</a>
+		<a href="/gerer-mon-profil">Gérez votre abonnement</a>
+	</div>
+	<div class="liens">
+		<div class="col_wrapper clearfix">
+			<div class="col">
+				<header>
+					<h5>À propos</h5>
+				</header>
+				<ul>
+					<li><a href="/le-devoir/le-devoir">Qui sommes-nous</a></li>
+					<li><a href="/le-devoir/direction">Direction</a> et <a href="/le-devoir/redaction">rédaction</a></li>
+					<li><a href="/le-devoir/nous-joindre">Nous joindre</a></li>
+					<li><a href="/abonnements">Service à la clientèle</a></li>
+				</ul>
+			</div>
+
+			<div class="col">
+				<header>
+					<h5>Services</h5>
+				</header>
+				<ul>
+					<li><a href="/services-et-annonces/horaire-des-films">Horaire des films</a></li>
+					<li><a href="/fichiers_annonces_classees/2014_12_10.pdf">Petites annonces</a></li>
+					<li><a href="http://ledevoir.compagnie.com/">Rencontres</a></li>
+					<li><a href="/art-de-vivre/restaurants">Restaurants</a></li>
+					<li><a href="/services-et-annonces/carrieres">Carrières et professions</a></li>
+				</ul>
+			</div>
+
+			<div class="col">
+				<header>
+					<h5>Les sous-sections du Devoir</h5>
+				</header>
+				<ul>
+					<li><a href="/politique">Politiques</a></li>
+					<li><a href="/international">International</a></li>
+					<li><a href="/culture">Culture</a></li>
+					<li><a href="/environnement">Environnement</a></li>
+					<li><a href="/societe">Société</a></li>
+					<li><a href="/economie">Économie</a></li>
+					<li><a href="/sports">Sports</a></li>
+					<li><a href="/art-de-vivre">Art de vivre</a></li>
+				</ul>
+			</div>
+
+			<div class="col dernier">
+				<header>
+					<h5>Publicité</h5>
+				</header>
+				<ul>
+					<li><a href="/le-devoir/publicite">Pour annoncer dans Le Devoir</a></li>
+				</ul>
+
+			</div>
+		</div>
+
+		<div class="recherche_wrapper clearfix">
+			<form class="recherche" action="/recherche">
+				<input type="text" title="recherche" value="Recherche" name="Recherche" alt="Recherche" />
+				<input type="image" src="http://media2.ledevoir.com/images/ul/boutons/search.png" alt="recherche" />
+			</form>
+
+			<div id="logo">
+				<img src="http://media1.ledevoir.com/images/ul/logos/logo_devoir_pp.png" alt="Le Devoir.com - Libre de penser" title="Le Devoir.com - Libre de penser">
+			</div>
+		</div>
+	</div>
+</div><!-- Fin #raccourcis -->
+
+<!-- Fin #pied_page -->
+<footer id="pied_page" class="clearfix">
+	<div class="copy left">&copy; Le Devoir 2002-2014</div>
+	<ul id="utilitaires" class="left">
+				<li>
+			<a href="/politique-de-confidentialite">Politique de confidentialité</a><span class="splitter">|</span>		</li>
+				<li>
+			<a href="/participation-aux-commentaires">Participation aux commentaires</a><span class="splitter">|</span>		</li>
+				<li>
+			<a href="/conditions">Conditions</a><span class="splitter">|</span>		</li>
+				<li>
+			<a href="/aide">Aide</a><span class="splitter">|</span>		</li>
+				<li>
+			<a href="/plan-de-site">Plan de site</a><span class="splitter">|</span>		</li>
+				<li>
+			<a href="/faq">FAQ</a><span class="splitter">|</span>		</li>
+				<li>
+			<a href="/flux-rss">Flux RSS</a>		</li>
+			</ul>
+	<!--div id="signature" class="right">
+		<a target="_blank" href="http://www.adviso.ca/strategie-internet.html">Stratégie Web</a> et <a target="_blank" href="http://www.adviso.ca/referencement.html">référencement</a> par <span>Adviso</span>&nbsp;&nbsp;<a target="_blank" href="http://www.egzakt.com/fr/portfolio/realisations/interactif/site-web">Design Web</a> par <span>Egzakt</span>
+	</div-->
+</footer><!-- Fin #pied_page -->
+		</div>
+
+							
+		<script type="text/javascript" src="/js/gatag_v2.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + gaJsHost + "stats.g.doubleclick.net/dc.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-1157473-1");
+//pageTracker._setDomainName(".ledevoir.com");
+pageTracker._addOrganic("images.google", "prev", true);
+pageTracker._addOrganic("news.google", "q", true);
+
+
+	pageTracker._trackPageview();
+
+
+
+} catch(err) {}</script>
+
+<script type="text/javascript" src="http://s3.amazonaws.com/new.cetrk.com/pages/scripts/0010/1557.js"> </script>
+
+<script type="text/javascript">
+	var _comscore = _comscore || [];
+	_comscore.push({ c1: "2", c2: "9544830" });
+	(function() {
+		var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+		s.async = true;
+		s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+		el.parentNode.insertBefore(s, el);
+	})();
+</script>
+
+<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName('script')[0];
+	a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0010/1557.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<noscript>
+    <img src="http://b.scorecardresearch.com/p?c1=2&c2=9544830&cv=2.0&cj=1"/>
+</noscript>
+		<!--[if lt IE 9]>
+			<script src="/js/html5shiv-printshiv.js"></script>
+		<![endif]-->
+
+        
+                    <script src="/js/jquery.bxSlider.min.js"></script>
+            <script src="/js/jquery.easy-ticker.js"></script>
+        
+        <script src="/js/jquery.fancybox-1.2.1.js"></script>
+        <script src="/js/fonctions.js"></script>
+
+        
+		<script src="/js/jquery.cookie.js"></script>
+
+        <div>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s); js.id = id;
+                    js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=105451392851924";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+        </div>
+
+		<!-- 10.2.3.110-->
+
+			</body>
+</html>
